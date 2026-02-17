@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto — g-digital</title>
+    <meta name="description" content="Contacta con g-digital para conocer nuestras soluciones de derecho computable.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div id="gd-header"></div>
+
+    <!-- Hero -->
+    <section class="gd-hero" style="background-image:url('/assets/images/hero-bg.png'); min-height:280px;">
+        <div class="gd-hero-content">
+            <h1>Hablemos</h1>
+            <p>Cuéntanos tu caso y te orientamos hacia el equipo adecuado.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="gd-breadcrumb">
+        <div class="container">
+            <a href="/index.html">Inicio</a>
+            <span class="separator">&gt;</span>
+            <span class="active">Contacto</span>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <section class="gd-section">
+        <div class="container">
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-7" data-animate>
+                    <form class="gd-form" id="contactForm" novalidate>
+
+                        <!-- CRM hidden fields -->
+                        <input type="hidden" name="utm_source" id="utm_source">
+                        <input type="hidden" name="utm_medium" id="utm_medium">
+                        <input type="hidden" name="utm_campaign" id="utm_campaign">
+                        <input type="hidden" name="referrer" id="referrer">
+
+                        <div class="row g-3">
+                            <!-- Nombre -->
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombre *</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre"
+                                    placeholder="Tu nombre" required>
+                            </div>
+
+                            <!-- Apellidos -->
+                            <div class="col-md-6">
+                                <label for="apellidos" class="form-label">Apellidos *</label>
+                                <input type="text" class="form-control" id="apellidos" name="apellidos"
+                                    placeholder="Tus apellidos" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Correo corporativo *</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    placeholder="nombre@empresa.com" required>
+                            </div>
+
+                            <!-- Teléfono -->
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono" name="telefono"
+                                    placeholder="+34 600 000 000">
+                            </div>
+
+                            <!-- Empresa -->
+                            <div class="col-md-6">
+                                <label for="empresa" class="form-label">Empresa *</label>
+                                <input type="text" class="form-control" id="empresa" name="empresa"
+                                    placeholder="Tu empresa" required>
+                            </div>
+
+                            <!-- Cargo -->
+                            <div class="col-md-6">
+                                <label for="cargo" class="form-label">Cargo</label>
+                                <input type="text" class="form-control" id="cargo" name="cargo" placeholder="Tu cargo">
+                            </div>
+
+                            <!-- Línea de interés -->
+                            <div class="col-12">
+                                <label for="linea" class="form-label">Línea de interés *</label>
+                                <select class="form-select" id="linea" name="linea" required>
+                                    <option value="" disabled selected>Elige una línea</option>
+                                    <option value="confianza-digital">🛡️ Confianza Digital</option>
+                                    <option value="tecnologia-contratos">📄 Tecnología de Contratos</option>
+                                    <option value="activos-digitales">🔗 Activos Digitales</option>
+                                    <option value="grc-ia">🤖 GRC / IA</option>
+                                    <option value="otra">Otra consulta</option>
+                                </select>
+                            </div>
+
+                            <!-- Intención -->
+                            <div class="col-12">
+                                <label for="intencion" class="form-label">¿Qué necesitas?</label>
+                                <select class="form-select" id="intencion" name="intencion">
+                                    <option value="" disabled selected>Selecciona</option>
+                                    <option value="conversacion">Hablar con un experto</option>
+                                    <option value="integracion">Integración / API</option>
+                                    <option value="workshop">Workshop personalizado</option>
+                                    <option value="demo">Ver una demo</option>
+                                    <option value="piloto">Solicitar un piloto</option>
+                                    <option value="exploracion">Explorar posibilidades</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <!-- Mensaje -->
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="mensaje" name="mensaje" rows="4"
+                                    placeholder="Describe brevemente tu caso o necesidad..."></textarea>
+                            </div>
+
+                            <!-- Canal de contacto preferido -->
+                            <div class="col-12">
+                                <label class="form-label">Canal de contacto preferido</label>
+                                <div class="contact-preference">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="pref_email"
+                                            name="pref_email" checked>
+                                        <label class="form-check-label" for="pref_email">Email</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="pref_tel" name="pref_tel">
+                                        <label class="form-check-label" for="pref_tel">Teléfono</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="pref_video"
+                                            name="pref_video">
+                                        <label class="form-check-label" for="pref_video">Videollamada</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- RGPD -->
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rgpd" name="rgpd" required>
+                                    <label class="form-check-label" for="rgpd">
+                                        He leído y acepto la <a href="/politica-privacidad.html"
+                                            target="_blank">política de privacidad</a> y consiento el tratamiento de mis
+                                        datos personales por parte de g-digital / EAD Trust. *
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Opt-in comunicaciones -->
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="optin_comm" name="optin_comm">
+                                    <label class="form-check-label" for="optin_comm">
+                                        Acepto recibir comunicaciones sobre servicios, novedades y eventos de g-digital.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit -->
+                            <div class="col-12">
+                                <button type="submit" class="btn-gd-primary w-100" data-track="form_submit"
+                                    data-track-label="contacto" style="border:none; cursor:pointer; padding:0.85rem;">
+                                    Enviar solicitud
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Contact info sidebar -->
+                <div class="col-lg-4" data-animate>
+                    <div class="gd-card" style="position:sticky; top:100px;">
+                        <h3>Contacto directo</h3>
+                        <p style="margin-bottom:1.5rem;">Si prefieres contactarnos directamente:</p>
+                        <p><strong>Email:</strong><br><a href="mailto:info@g-digital.es">info@g-digital.es</a></p>
+                        <p><strong>Teléfono:</strong><br><a href="tel:+34914321800">+34 914 321 800</a></p>
+                        <p><strong>Dirección:</strong><br>C/ Hermosilla 3,<br>28001 Madrid, España</p>
+                        <hr>
+                        <p style="font-size:0.85rem; color:var(--gd-text-muted);">
+                            g-digital es una empresa del grupo Garrigues Digital,
+                            proveedor de soluciones de derecho computable para procesos críticos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="gd-footer"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+
+</html>
