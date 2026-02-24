@@ -1,174 +1,231 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confianza Digital — g-digital</title>
-    <meta name="description"
-        content="Servicios de confianza digital regulada: evidencia digital con GoCertius, firma electrónica con Signature Manager y custodia con eArchiving.">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/tokens.css">
-    <link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confianza Digital — Servicios eIDAS | g-digital</title>
+  <meta name="description" content="Servicios de confianza cualificados eIDAS: firma electrónica, sellos de tiempo, notificaciones certificadas y custodia digital. QTSP del Grupo Garrigues.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
-    <div id="gd-header"></div>
 
-    <!-- Hero -->
-    <section class="gd-hero" style="background-image:url('/assets/images/hero-bg.png');">
-        <div class="gd-hero-content">
-            <span class="line-hero-badge">🛡️ Confianza Digital</span>
-            <h1>Servicios de confianza<br><span class="text-accent">regulada</span></h1>
-            <p>Evidencia digital, firma electrónica cualificada y custodia a largo plazo para procesos legales críticos.
-            </p>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo">g<span>-digital</span></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="../">Inicio</a>
+      <div class="nav-dropdown">
+        <a href="#">Soluciones &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="confianza-digital.html">&#128274; Confianza Digital</a>
+          <a href="contract-tech.html">&#128196; Contract Tech</a>
+          <a href="activos-digitales.html">&#9981; Activos Digitales</a>
+          <a href="legaltech-ia.html">&#129302; LegalTech &amp; IA</a>
         </div>
-    </section>
-
-    <!-- Breadcrumb -->
-    <div class="gd-breadcrumb">
-        <div class="container">
-            <a href="/index.html">Inicio</a>
-            <span class="separator">&gt;</span>
-            <a href="/soluciones.html">Soluciones</a>
-            <span class="separator">&gt;</span>
-            <span class="active">Confianza Digital</span>
-        </div>
+      </div>
+      <a href="../nosotros.html">Nosotros</a>
+      <a href="../contacto.html">Contacto</a>
+      <a href="../contacto.html" class="nav-cta">Solicitar Demo</a>
     </div>
+  </div>
+</nav>
 
-    <!-- GoCertius -->
-    <section class="gd-section" id="gocertius">
-        <div class="container">
-            <div class="feature-row" data-animate>
-                <div class="feature-image">
-                    <img src="/assets/images/mission.png" alt="GoCertius — Evidencia digital">
-                </div>
-                <div class="feature-content">
-                    <h2>Evidencia Digital — GoCertius</h2>
-                    <p><strong>Certificación de evidencias digitales con plena validez legal.</strong> Captura,
-                        certifica y custodia cualquier contenido digital: capturas de pantalla, comunicaciones
-                        electrónicas, documentos y más.</p>
-                    <p>GoCertius proporciona sello de tiempo cualificado y custodia segura, garantizando la integridad
-                        de la evidencia.</p>
-                    <div class="card-ctas">
-                        <a href="https://www.gocertius.io/" target="_blank" rel="noopener" class="btn-gd-primary"
-                            data-track="cta_click" data-track-label="gocertius_web">Visitar GoCertius</a>
-                        <a href="https://api.gocertius.gocertius.io/apidoc" target="_blank" rel="noopener"
-                            class="btn-gd-outline" data-track="api_click" data-track-label="gocertius_api">Ver API</a>
-                    </div>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="hero hero-sub">
+  <div class="container" style="position:relative; z-index:1;">
+    <div class="badge" style="margin-bottom:1.5rem; background:rgba(255,255,255,0.15); color:white;">eIDAS &amp; QTSP</div>
+    <h1>Servicios de Confianza Digital</h1>
+    <p>Firma electr&oacute;nica, sellos de tiempo, notificaciones certificadas y custodia digital cualificados bajo eIDAS. El QTSP del Grupo Garrigues al servicio de tu organizaci&oacute;n.</p>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section class="section">
+  <div class="container">
+    <div class="accent-bar"></div>
+    <h2>Servicios Cualificados eIDAS</h2>
+    <p style="max-width:640px; margin-bottom:2.5rem;">Plataforma completa de servicios de confianza certificados para empresas y administraciones p&uacute;blicas.</p>
+    <div class="grid-3">
+      <div class="card fade-in">
+        <div class="card-icon">&#9997;</div>
+        <h3>Firma Electr&oacute;nica</h3>
+        <p>Firmas avanzadas y cualificadas (XAdES, CMS) con Signature Manager: gesti&oacute;n centralizada, API REST, SDK mobile y cloud HSM.</p>
+        <span class="badge">eIDAS Cualificado</span>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">&#128338;</div>
+        <h3>Sello de Tiempo Cualificado</h3>
+        <p>Timestamps RFC 3161 que certifican la existencia e integridad de documentos en un momento espec&iacute;fico, con valor probatorio en toda la UE.</p>
+        <span class="badge">RFC 3161</span>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">&#128235;</div>
+        <h3>Notificaciones Certificadas</h3>
+        <p>Notice Manager: env&iacute;o con prueba de recepci&oacute;n v&iacute;a email y SMS certificado. Acuses de recibo con sello de tiempo y firma.</p>
+        <span class="badge">Prueba Legal</span>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">&#128451;</div>
+        <h3>eArchiving — Custodia Cualificada</h3>
+        <p>Custodia digital cualificada (QEA) conforme a eIDAS 2.0. Nube soberana con redundancia, encriptaci&oacute;n e integridad verificable.</p>
+        <span class="badge">eIDAS 2.0</span>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">&#127380;</div>
+        <h3>Credenciales Digitales</h3>
+        <p>Emisi&oacute;n y gesti&oacute;n de certificados digitales avanzados y cualificados. Credential Manager con verificaci&oacute;n de identidad automatizada.</p>
+        <span class="badge">Identidad</span>
+      </div>
+      <div class="card fade-in">
+        <div class="card-icon">&#128241;</div>
+        <h3>EUDI Wallet Ready</h3>
+        <p>Compatibilidad con la Cartera Digital Europea: credenciales verificables, atestaciones cualificadas de atributos y firma remota m&oacute;vil.</p>
+        <span class="badge">Wallet EU</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOCERTIUS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="accent-bar"></div>
+    <h2>GoCertius: SuperApp de Servicios Regulados</h2>
+    <p style="max-width:640px; margin-bottom:2rem;">Plataforma integral que unifica todos nuestros servicios de confianza en una &uacute;nica experiencia. Premiada internacionalmente.</p>
+    <div class="grid-2" style="margin-top:2rem;">
+      <div>
+        <div class="feature fade-in">
+          <div class="feature-icon">&#127942;</div>
+          <div>
+            <h4>Premiada Internacionalmente</h4>
+            <p>Law.com Legal Innovation Award 2025 por innovaci&oacute;n en servicios de confianza digital.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Signature Manager -->
-    <section class="gd-section gd-section-light" id="signature-manager">
-        <div class="container">
-            <div class="feature-row reverse" data-animate>
-                <div class="feature-image">
-                    <img src="/assets/images/hero-bg.png" alt="Signature Manager"
-                        style="height:340px; object-fit:cover;">
-                </div>
-                <div class="feature-content">
-                    <h2>Firma Electrónica — Signature Manager</h2>
-                    <p><strong>Gestión integral de firma electrónica cualificada.</strong> Integra firma electrónica en
-                        cualquier proceso de negocio con la seguridad de un prestador cualificado.</p>
-                    <p>Desde firma simple hasta firma cualificada, Signature Manager cubre todo el espectro de
-                        necesidades de firma electrónica en un entorno regulado.</p>
-                    <div class="card-ctas">
-                        <a href="https://www.eadtrust.eu/en/legaltech-solutions/enterprise-suite/signature-manager/"
-                            target="_blank" rel="noopener" class="btn-gd-outline" data-track="cta_click"
-                            data-track-label="signature_manager">Ver Signature Manager</a>
-                    </div>
-                </div>
-            </div>
+        <div class="feature fade-in">
+          <div class="feature-icon">&#128274;</div>
+          <div>
+            <h4>Inversi&oacute;n de Carga de Prueba</h4>
+            <p>Evidencia digital cualificada que invierte la carga de la prueba. Presunci&oacute;n de legalidad para servicios certificados.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- eArchiving -->
-    <section class="gd-section" id="earchiving">
-        <div class="container">
-            <div class="feature-row" data-animate>
-                <div class="feature-image">
-                    <img src="/assets/images/mission.png" alt="eArchiving — Custodia digital cualificada">
-                </div>
-                <div class="feature-content">
-                    <h2>Custodia Digital — eArchiving</h2>
-                    <p><strong>Servicio de custodia digital cualificada.</strong> Preserva documentos electrónicos a
-                        largo plazo cumpliendo con los requisitos legales y normativos europeos.</p>
-                    <p>eArchiving asegura la disponibilidad, integridad y autenticidad de los documentos custodiados,
-                        proporcionando evidencias verificables de su preservación.</p>
-                </div>
-            </div>
+      </div>
+      <div>
+        <div class="feature fade-in">
+          <div class="feature-icon">&#128736;</div>
+          <div>
+            <h4>Experiencia Unificada</h4>
+            <p>Acceso centralizado a firma, notificaciones, custodia y credenciales. Interfaz intuitiva y seamless.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- Integración API -->
-    <section class="gd-section gd-section-light" id="api">
-        <div class="container">
-            <div class="section-title" data-animate>
-                <h2>Integración <span class="text-accent">API</span></h2>
-                <p>Todos nuestros servicios de confianza son accesibles por API para integrarse directamente en tus
-                    sistemas y procesos.</p>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-4" data-animate>
-                    <div class="gd-card text-center">
-                        <h3>Modular</h3>
-                        <p>Consume servicios individuales o combínalos según tus necesidades específicas.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-animate>
-                    <div class="gd-card text-center">
-                        <h3>Documentada</h3>
-                        <p>API REST con documentación interactiva y entornos de prueba.</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-animate>
-                    <div class="gd-card text-center">
-                        <h3>Regulada</h3>
-                        <p>Respaldada por la infraestructura de un Prestador Cualificado de Servicios de Confianza.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center" style="margin-top:2rem;" data-animate>
-                <a href="https://api.gocertius.gocertius.io/apidoc" target="_blank" rel="noopener"
-                    class="btn-gd-primary" data-track="api_click" data-track-label="api_docs">Ver documentación API</a>
-            </div>
+        <div class="feature fade-in">
+          <div class="feature-icon">&#128203;</div>
+          <div>
+            <h4>Gobernanza y Audit</h4>
+            <p>Trazabilidad completa. Logs inmutables con sello de tiempo y reportes de conformidad regulatoria.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="highlight-box" style="margin-top:2.5rem;">
+      <p><strong>+40.000 evidencias digitales generadas</strong> — GoCertius es la plataforma de referencia en servicios de confianza regulados en Espa&ntilde;a.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- QTSP Legal Note -->
-    <section class="gd-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8" data-animate>
-                    <div class="compliance-note">
-                        <strong>Servicios de confianza (eIDAS):</strong> EAD Trust es Prestador Cualificado de Servicios
-                        de Confianza electrónica conforme al Reglamento (UE) 910/2014. La cualificación aplica por
-                        servicio y únicamente cuando proveedor/servicio figuran como "qualified" en las <a
-                            href="https://eidas.ec.europa.eu/efda/tl-browser/" target="_blank" rel="noopener">Trusted
-                            Lists oficiales</a> (TSL nacional y navegador de la Comisión Europea).
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- EAD FACTORY -->
+<section class="section">
+  <div class="container">
+    <div class="accent-bar"></div>
+    <h2>EAD Factory: Plataforma Modular de API</h2>
+    <p style="max-width:640px; margin-bottom:2rem;">Soluci&oacute;n empresarial para organizaciones que necesitan escala, modularidad y soberan&iacute;a tecnol&oacute;gica.</p>
+    <div class="grid-3" style="margin-top:1.5rem;">
+      <div class="card fade-in">
+        <h3>Concepto de Deuda Legal</h3>
+        <p>Plataformas que generan evidencia digital reutilizable en m&uacute;ltiples procesos. Maximiza el retorno de la inversi&oacute;n en confianza digital.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>API Modular y Escalable</h3>
+        <p>Microservicios con APIs REST, SDKs multiplataforma y plugins de integraci&oacute;n. Arquitectura cloud-native.</p>
+      </div>
+      <div class="card fade-in">
+        <h3>QTSP In-House</h3>
+        <p>Operaci&oacute;n propia del Proveedor de Servicios de Confianza Cualificado. Soberan&iacute;a, control y auditor&iacute;a interna.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- CTA -->
-    <section class="gd-section gd-section-dark" style="text-align:center;">
-        <div class="container" data-animate>
-            <h2 style="color:#fff; margin-bottom:1rem;">¿Necesitas integrar confianza digital?</h2>
-            <p style="color:rgba(255,255,255,0.75); max-width:600px; margin:0 auto 2rem;">Contacta con nuestro equipo
-                para conocer cómo integrar servicios de confianza regulada en tus procesos.</p>
-            <a href="/contacto.html?linea=confianza-digital&intencion=integracion" class="btn-gd-primary"
-                data-track="cta_click" data-track-label="confianza_cta_final">Contactar para integración</a>
-        </div>
-    </section>
+<!-- eIDAS 2.0 -->
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <h2>Conformidad eIDAS 2.0</h2>
+    <p style="max-width:600px; margin:0 auto 2.5rem;">Alineados con el nuevo Reglamento eIDAS 2.0 y los nuevos est&aacute;ndares de confianza digital europea.</p>
+    <div class="grid-3">
+      <div class="fade-in" style="padding:1.5rem;">
+        <h3 style="color:var(--accent);">QEA &amp; QEAA</h3>
+        <p>Atestaciones electr&oacute;nicas cualificadas para identidad digital y atributos verificados.</p>
+      </div>
+      <div class="fade-in" style="padding:1.5rem;">
+        <h3 style="color:var(--accent);">MRQSCD</h3>
+        <p>Dispositivos remotos m&oacute;viles cualificados para firma electr&oacute;nica en smartphones.</p>
+      </div>
+      <div class="fade-in" style="padding:1.5rem;">
+        <h3 style="color:var(--accent);">EUDI Wallet</h3>
+        <p>Cartera Digital Europea para credenciales y atributos verificables.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div id="gd-footer"></div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/components.js"></script>
+<!-- CTA -->
+<section class="section" style="text-align:center; padding:4rem 0;">
+  <div class="container">
+    <h2>Transforma tu Digitalizaci&oacute;n con Confianza</h2>
+    <p style="max-width:500px; margin:0 auto 2rem; color:var(--gray-500);">Descubre c&oacute;mo nuestros servicios de confianza eIDAS pueden optimizar tus procesos y garantizar cumplimiento normativo.</p>
+    <a href="../contacto.html" class="btn btn-accent" style="font-size:1.1rem; padding:1rem 2rem;">Solicitar Demo &#8594;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="grid-4">
+      <div>
+        <h4 style="font-size:1.25rem; color:white; margin-bottom:0.5rem;">g<span style="color:var(--accent);">-digital</span></h4>
+        <p>Divisi&oacute;n de negocios digitales de Garrigues. Innovaci&oacute;n digital con garant&iacute;a legal.</p>
+      </div>
+      <div>
+        <h4>Soluciones</h4>
+        <ul class="footer-links">
+          <li><a href="confianza-digital.html">Confianza Digital</a></li>
+          <li><a href="contract-tech.html">Contract Tech</a></li>
+          <li><a href="activos-digitales.html">Activos Digitales</a></li>
+          <li><a href="legaltech-ia.html">LegalTech &amp; IA</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compa&ntilde;&iacute;a</h4>
+        <ul class="footer-links">
+          <li><a href="../nosotros.html">Nosotros</a></li>
+          <li><a href="../contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>info@g-digital.garrigues.com</p>
+        <p>Madrid, Espa&ntilde;a</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
 </body>
-
 </html>

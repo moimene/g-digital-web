@@ -1,0 +1,24 @@
+// ── Navbar scroll effect ──
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  nav?.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── Mobile menu ──
+document.querySelector('.nav-toggle')?.addEventListener('click', () => {
+  document.querySelector('.nav-links')?.classList.toggle('open');
+});
+
+// ── Fade-in on scroll ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ── Active nav link ──
+const path = window.location.pathname;
+document.querySelectorAll('.nav-links a').forEach(a => {
+  if (a.getAttribute('href') === path || (path.includes('soluciones') && a.textContent.trim() === 'Soluciones')) {
+    a.classList.add('active');
+  }
+});
