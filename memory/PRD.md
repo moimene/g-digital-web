@@ -80,6 +80,17 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - [x] Noticias mantenidas en seccion separada
 - [x] Lightbox con cierre por click y Escape
 
+### Fase 7 — Articulos SEO + Derecho Computable (26 Feb 2026)
+- [x] **Articulo estrella: Derecho Computable y Contrato Computable** (~2.500 palabras, 15 min lectura)
+  - Seciones: El problema del derecho como texto, Que es el Derecho Computable, El Contrato Computable como automata de estados, Los 3 componentes (maquina de estados, orquestador por eventos, logica determinista), Problema de motores de reglas enterrados, Capa de evidencia Trust API, 3 niveles de madurez g-digital
+  - Herramientas referenciadas: Catala, DMN, Accord Project, BPMN+CMMN
+  - Infografia: Derecho Computable (Traditional Law -> Digital Law -> Computable Law)
+  - Tabla: Fases del contrato con evidencia generada por Trust API
+  - Links a Contract Tech y Trust API
+- [x] **Bloque destacado** en Biblioteca de Conocimiento (recursos.html) con link al articulo + infografia
+- [x] **Estructura de /recursos/** como directorio de articulos individuales con URLs limpias
+- [x] Template de articulo SEO reutilizable: hero con tags, back-link, infografia, cuerpo, highlights, related, CTA
+
 ## Backlog (P2-P3)
 
 ### P1 — Restructuracion de paginas existentes
