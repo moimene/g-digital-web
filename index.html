@@ -3,204 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>g-digital — Innovación Digital con Garantía Legal</title>
-  <meta name="description" content="División de negocios digitales de Garrigues. Servicios de confianza eIDAS, contratos computables, activos digitales tokenizados e IA aplicada al derecho.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>g-digital — Infraestructura Digital con Garantia Legal</title>
+  <meta name="description" content="Division de negocios digitales de Garrigues. Servicios de confianza eIDAS, contratos computables, activos digitales tokenizados e IA aplicada al derecho.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-light antialiased">
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">g<span>-digital</span></a>
-    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <a href="/" class="active">Inicio</a>
-      <div class="nav-dropdown">
-        <a href="#">Soluciones &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="soluciones/confianza-digital.html">&#128274; Confianza Digital</a>
-          <a href="soluciones/contract-tech.html">&#128196; Contract Tech</a>
-          <a href="soluciones/activos-digitales.html">&#9981; Activos Digitales</a>
-          <a href="soluciones/legaltech-ia.html">&#129302; LegalTech &amp; IA</a>
+<nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a href="/" class="font-serif text-2xl font-bold text-primary tracking-tight" data-testid="nav-logo">g<span class="text-accent">-digital</span></a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline active" data-nav-link data-testid="nav-home">Inicio</a>
+      <div class="nav-dropdown relative">
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1" data-testid="nav-soluciones">Soluciones <i class="ph ph-caret-down text-xs"></i></a>
+        <div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2">
+          <div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[280px] shadow-2xl shadow-gray-200/60">
+            <a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors" data-testid="nav-confianza">
+              <i class="ph ph-shield-check text-accent text-lg"></i>
+              <span class="text-sm font-medium text-gray-700">Confianza Digital</span>
+            </a>
+            <a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors" data-testid="nav-contract">
+              <i class="ph ph-file-text text-accent text-lg"></i>
+              <span class="text-sm font-medium text-gray-700">Contract Tech</span>
+            </a>
+            <a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors" data-testid="nav-activos">
+              <i class="ph ph-coins text-accent text-lg"></i>
+              <span class="text-sm font-medium text-gray-700">Activos Digitales</span>
+            </a>
+            <a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors" data-testid="nav-legaltech">
+              <i class="ph ph-brain text-accent text-lg"></i>
+              <span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span>
+            </a>
+          </div>
         </div>
       </div>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="recursos.html">Recursos</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="contacto.html" class="nav-cta">Solicitar Demo</a>
+      <a href="nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link data-testid="nav-nosotros">Nosotros</a>
+      <a href="recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link data-testid="nav-recursos">Recursos</a>
+      <a href="contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link data-testid="nav-contacto">Contacto</a>
+      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5" data-testid="nav-cta-demo">Solicitar Demo</a>
     </div>
+    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile">
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+    </button>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container" style="position:relative; z-index:1;">
-    <div class="badge" style="margin-bottom:1.5rem; background:rgba(255,255,255,0.15); color:white;">Grupo Garrigues</div>
-    <h1>Infraestructura Digital con Garant&iacute;a Legal</h1>
-    <p>Somos la divisi&oacute;n de negocios digitales de Garrigues. Dise&ntilde;amos y operamos soluciones tecnol&oacute;gicas que integran el rigor del derecho con la potencia de la innovaci&oacute;n digital.</p>
-    <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-      <a href="contacto.html" class="btn btn-primary">Solicitar una Demo</a>
-      <a href="#soluciones" class="btn btn-outline">Conoce nuestras soluciones</a>
+<!-- Mobile Menu Overlay -->
+<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto" data-testid="mobile-menu">
+  <div class="flex flex-col gap-1">
+    <a href="/" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors" data-testid="mobile-home">Inicio</a>
+    <p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p>
+    <a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors" data-testid="mobile-confianza">
+      <i class="ph ph-shield-check text-accent"></i> Confianza Digital
+    </a>
+    <a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors" data-testid="mobile-contract">
+      <i class="ph ph-file-text text-accent"></i> Contract Tech
+    </a>
+    <a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors" data-testid="mobile-activos">
+      <i class="ph ph-coins text-accent"></i> Activos Digitales
+    </a>
+    <a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors" data-testid="mobile-legaltech">
+      <i class="ph ph-brain text-accent"></i> LegalTech &amp; IA
+    </a>
+    <div class="h-px bg-gray-100 my-2"></div>
+    <a href="nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors" data-testid="mobile-nosotros">Nosotros</a>
+    <a href="recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors" data-testid="mobile-recursos">Recursos</a>
+    <a href="contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors" data-testid="mobile-contacto">Contacto</a>
+    <div class="mt-4">
+      <a href="contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition-all" data-testid="mobile-cta-demo">Solicitar Demo</a>
     </div>
-    <div style="display:flex; gap:2.5rem; margin-top:3rem; flex-wrap:wrap;">
-      <div class="stat"><div class="stat-number">4</div><p>L&iacute;neas de negocio</p></div>
-      <div class="stat"><div class="stat-number">eIDAS</div><p>QTSP cualificado</p></div>
-      <div class="stat"><div class="stat-number">Top 10</div><p>FT Innovative Lawyers</p></div>
-      <div class="stat"><div class="stat-number">40K+</div><p>Evidencias GoCertius</p></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-section">
+  <div class="absolute inset-0">
+    <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[140%] bg-gradient-radial from-accent/10 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute bottom-[-30%] left-[-10%] w-[50%] h-[100%] bg-gradient-radial from-accent/5 to-transparent rounded-full blur-3xl"></div>
+    <!-- Geometric shapes -->
+    <div class="absolute top-32 right-[15%] w-20 h-20 border border-white/10 rounded-2xl rotate-12 float hidden lg:block"></div>
+    <div class="absolute top-60 right-[25%] w-12 h-12 border border-accent/20 rounded-xl -rotate-6 float-slow hidden lg:block"></div>
+    <div class="absolute bottom-32 right-[10%] w-16 h-16 bg-accent/5 rounded-2xl rotate-45 float-slow hidden lg:block"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-24 md:pt-44 md:pb-32">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-white/80 mb-8 fade-in" data-testid="hero-badge">
+        <i class="ph ph-buildings text-accent"></i> Grupo Garrigues
+      </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="hero-heading">
+        Infraestructura Digital<br>con <span class="text-accent italic">Garantia Legal</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed mb-10 fade-in delay-2" data-testid="hero-description">
+        Somos la division de negocios digitales de Garrigues. Disenamos y operamos soluciones tecnologicas que integran el rigor del derecho con la potencia de la innovacion digital.
+      </p>
+      <div class="flex gap-4 flex-wrap mb-16 fade-in delay-3">
+        <a href="contacto.html" class="bg-accent text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all shadow-[0_0_24px_rgba(0,154,119,0.3)] hover:shadow-xl hover:-translate-y-0.5" data-testid="hero-cta-demo">
+          Solicitar una Demo <i class="ph ph-arrow-right ml-1"></i>
+        </a>
+        <a href="#soluciones" class="border border-white/30 text-white px-8 py-4 rounded-full hover:bg-white/10 transition-all backdrop-blur-sm font-medium" data-testid="hero-cta-soluciones">
+          Conoce nuestras soluciones
+        </a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 fade-in delay-4">
+        <div class="text-center md:text-left" data-testid="stat-lineas">
+          <div class="text-3xl md:text-4xl font-bold text-accent font-mono" data-count="4">0</div>
+          <p class="text-sm text-white/50 mt-1">Lineas de negocio</p>
+        </div>
+        <div class="text-center md:text-left" data-testid="stat-eidas">
+          <div class="text-3xl md:text-4xl font-bold text-accent font-mono">eIDAS</div>
+          <p class="text-sm text-white/50 mt-1">QTSP cualificado</p>
+        </div>
+        <div class="text-center md:text-left" data-testid="stat-ft">
+          <div class="text-3xl md:text-4xl font-bold text-accent font-mono">Top 10</div>
+          <p class="text-sm text-white/50 mt-1">FT Innovative Lawyers</p>
+        </div>
+        <div class="text-center md:text-left" data-testid="stat-evidencias">
+          <div class="text-3xl md:text-4xl font-bold text-accent font-mono" data-count="40000">0</div>
+          <p class="text-sm text-white/50 mt-1">Evidencias GoCertius</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- SOLUCIONES -->
-<section id="soluciones" class="section">
-  <div class="container">
-    <div class="accent-bar"></div>
-    <h2>Nuestras Soluciones</h2>
-    <p style="max-width:640px; margin-bottom:2.5rem;">Cuatro l&iacute;neas de negocio que cubren el ciclo completo de la transformaci&oacute;n digital con garant&iacute;a legal.</p>
-    <div class="grid-4">
-      <a href="soluciones/confianza-digital.html" class="card fade-in" style="text-decoration:none;">
-        <div class="card-icon">&#128274;</div>
-        <h3>Confianza Digital</h3>
-        <p>Servicios de confianza eIDAS: firma electr&oacute;nica, sellos de tiempo, notificaciones certificadas y custodia digital. El QTSP del Grupo Garrigues.</p>
-        <span class="card-link">Saber m&aacute;s &rarr;</span>
+<section id="soluciones" class="py-24 md:py-32 bg-white" data-testid="solutions-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-16">
+      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="solutions-heading">Nuestras Soluciones</h2>
+      <p class="text-lg text-gray-500 leading-relaxed fade-in delay-2">Cuatro lineas de negocio que cubren el ciclo completo de la transformacion digital con garantia legal.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <!-- Card 1: Big -->
+      <a href="soluciones/confianza-digital.html" class="group md:col-span-8 bg-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 relative overflow-hidden no-underline fade-in" data-testid="card-confianza">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-accent/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-light flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform duration-500 group-hover:bg-accent/10">
+            <i class="ph ph-shield-check"></i>
+          </div>
+          <h3 class="text-2xl font-serif text-primary mb-3">Confianza Digital</h3>
+          <p class="text-gray-500 leading-relaxed mb-6 max-w-lg">Servicios de confianza eIDAS: firma electronica, sellos de tiempo, notificaciones certificadas y custodia digital. El QTSP del Grupo Garrigues.</p>
+          <span class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2.5 transition-all">Saber mas <i class="ph ph-arrow-right"></i></span>
+        </div>
       </a>
-      <a href="soluciones/contract-tech.html" class="card fade-in" style="text-decoration:none;">
-        <div class="card-icon">&#128196;</div>
-        <h3>Contract Tech</h3>
-        <p>Del contrato como documento al contrato como proceso. CLM con motores de reglas, evidencia cualificada y gesti&oacute;n de posici&oacute;n contractual.</p>
-        <span class="card-link">Saber m&aacute;s &rarr;</span>
+      <!-- Card 2: Tall -->
+      <a href="soluciones/contract-tech.html" class="group md:col-span-4 bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 relative overflow-hidden no-underline fade-in delay-1" data-testid="card-contract">
+        <div class="w-14 h-14 rounded-2xl bg-light flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform duration-500 group-hover:bg-accent/10">
+          <i class="ph ph-file-text"></i>
+        </div>
+        <h3 class="text-2xl font-serif text-primary mb-3">Contract Tech</h3>
+        <p class="text-gray-500 leading-relaxed mb-6">Del contrato como documento al contrato como proceso. CLM con motores de reglas, evidencia cualificada y gestion de posicion contractual.</p>
+        <span class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2.5 transition-all">Saber mas <i class="ph ph-arrow-right"></i></span>
       </a>
-      <a href="soluciones/activos-digitales.html" class="card fade-in" style="text-decoration:none;">
-        <div class="card-icon">&#9981;</div>
-        <h3>Activos Digitales</h3>
-        <p>Tokenizaci&oacute;n de activos reales con gobernanza jur&iacute;dica. Plataformas DLT para mercados de capitales e inmobiliario tokenizado.</p>
-        <span class="card-link">Saber m&aacute;s &rarr;</span>
+      <!-- Card 3 -->
+      <a href="soluciones/activos-digitales.html" class="group md:col-span-4 bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 relative overflow-hidden no-underline fade-in delay-2" data-testid="card-activos">
+        <div class="w-14 h-14 rounded-2xl bg-light flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform duration-500 group-hover:bg-accent/10">
+          <i class="ph ph-coins"></i>
+        </div>
+        <h3 class="text-2xl font-serif text-primary mb-3">Activos Digitales</h3>
+        <p class="text-gray-500 leading-relaxed mb-6">Tokenizacion de activos reales con gobernanza juridica. Plataformas DLT para mercados de capitales e inmobiliario tokenizado.</p>
+        <span class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2.5 transition-all">Saber mas <i class="ph ph-arrow-right"></i></span>
       </a>
-      <a href="soluciones/legaltech-ia.html" class="card fade-in" style="text-decoration:none;">
-        <div class="card-icon">&#129302;</div>
-        <h3>LegalTech &amp; IA</h3>
-        <p>IA aplicada al derecho: cumplimiento AI Act, gobernanza de sistemas IA, bots jur&iacute;dicos y productivizaci&oacute;n de servicios legales.</p>
-        <span class="card-link">Saber m&aacute;s &rarr;</span>
+      <!-- Card 4: Big -->
+      <a href="soluciones/legaltech-ia.html" class="group md:col-span-8 bg-white p-8 md:p-10 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 relative overflow-hidden no-underline fade-in delay-3" data-testid="card-legaltech">
+        <div class="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-accent/5 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 rounded-2xl bg-light flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform duration-500 group-hover:bg-accent/10">
+            <i class="ph ph-brain"></i>
+          </div>
+          <h3 class="text-2xl font-serif text-primary mb-3">LegalTech &amp; IA</h3>
+          <p class="text-gray-500 leading-relaxed mb-6 max-w-lg">IA aplicada al derecho: cumplimiento AI Act, gobernanza de sistemas IA, bots juridicos y productivizacion de servicios legales.</p>
+          <span class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2.5 transition-all">Saber mas <i class="ph ph-arrow-right"></i></span>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
 <!-- PROPUESTA DE VALOR -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="accent-bar"></div>
-    <h2>Por qu&eacute; g-digital</h2>
-    <div class="grid-3" style="margin-top:2rem;">
-      <div class="feature fade-in">
-        <div class="feature-icon">&#9878;</div>
+<section class="py-24 md:py-32 bg-light" data-testid="value-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-2xl mb-16">
+      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="value-heading">Por que g-digital</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex gap-5 fade-in delay-1" data-testid="value-garrigues">
+        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-accent text-xl shadow-sm">
+          <i class="ph ph-scales"></i>
+        </div>
         <div>
-          <h4>Respaldo de Garrigues</h4>
-          <p>Una de las 10 firmas legales m&aacute;s innovadoras de Europa. M&aacute;s de 80 a&ntilde;os de excelencia jur&iacute;dica respaldando cada soluci&oacute;n.</p>
+          <h4 class="text-lg font-serif font-semibold text-primary mb-2">Respaldo de Garrigues</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Una de las 10 firmas legales mas innovadoras de Europa. Mas de 80 anos de excelencia juridica respaldando cada solucion.</p>
         </div>
       </div>
-      <div class="feature fade-in">
-        <div class="feature-icon">&#128272;</div>
+      <div class="flex gap-5 fade-in delay-2" data-testid="value-qtsp">
+        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-accent text-xl shadow-sm">
+          <i class="ph ph-key"></i>
+        </div>
         <div>
-          <h4>QTSP Integrado</h4>
-          <p>EADTrust, nuestro Prestador Cualificado, garantiza validez legal en toda la UE bajo eIDAS. No dependemos de terceros.</p>
+          <h4 class="text-lg font-serif font-semibold text-primary mb-2">QTSP Integrado</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">EADTrust, nuestro Prestador Cualificado, garantiza validez legal en toda la UE bajo eIDAS. No dependemos de terceros.</p>
         </div>
       </div>
-      <div class="feature fade-in">
-        <div class="feature-icon">&#128736;</div>
+      <div class="flex gap-5 fade-in delay-3" data-testid="value-compliance">
+        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-accent text-xl shadow-sm">
+          <i class="ph ph-wrench"></i>
+        </div>
         <div>
-          <h4>Compliance by Design</h4>
-          <p>Los requisitos legales y regulatorios se integran desde el dise&ntilde;o de cada soluci&oacute;n. No es un add-on: es la arquitectura.</p>
+          <h4 class="text-lg font-serif font-semibold text-primary mb-2">Compliance by Design</h4>
+          <p class="text-gray-500 text-sm leading-relaxed">Los requisitos legales y regulatorios se integran desde el diseno de cada solucion. No es un add-on: es la arquitectura.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TRIANGULO -->
-<section class="section section-dark">
-  <div class="container" style="text-align:center;">
-    <h2>El Tri&aacute;ngulo de Legitimidad</h2>
-    <p style="max-width:600px; margin:0 auto 2.5rem;">Tres pilares que garantizan que cada soluci&oacute;n tiene el respaldo legal, la capacidad tecnol&oacute;gica y la infraestructura regulada.</p>
-    <div class="grid-3">
-      <div class="fade-in" style="padding:1.5rem;">
-        <div style="font-size:2.5rem; margin-bottom:1rem;">&#9878;</div>
-        <h3 style="color:var(--accent);">Garrigues</h3>
-        <p>Autoridad legal. Excelencia jur&iacute;dica, credibilidad institucional y red de clientes corporativos.</p>
+<!-- TRIANGULO DE LEGITIMIDAD -->
+<section class="py-24 md:py-32 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="triangle-section">
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px]"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-serif mb-4 fade-in" data-testid="triangle-heading">El Triangulo de Legitimidad</h2>
+    <p class="text-lg text-gray-300 font-light max-w-xl mx-auto mb-16 fade-in delay-1">Tres pilares que garantizan que cada solucion tiene el respaldo legal, la capacidad tecnologica y la infraestructura regulada.</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      <div class="fade-in delay-1 group" data-testid="triangle-garrigues">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:bg-accent/10 group-hover:border-accent/30 transition-all duration-500">
+          <i class="ph ph-scales text-3xl text-accent"></i>
+        </div>
+        <h3 class="text-xl font-serif text-accent mb-3">Garrigues</h3>
+        <p class="text-gray-300/80 text-sm leading-relaxed">Autoridad legal. Excelencia juridica, credibilidad institucional y red de clientes corporativos.</p>
       </div>
-      <div class="fade-in" style="padding:1.5rem;">
-        <div style="font-size:2.5rem; margin-bottom:1rem;">&#128187;</div>
-        <h3 style="color:var(--accent);">g-digital</h3>
-        <p>Capacidad tecnol&oacute;gica. Dise&ntilde;a, construye y opera las soluciones digitales.</p>
+      <div class="fade-in delay-2 group" data-testid="triangle-gdigital">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:bg-accent/10 group-hover:border-accent/30 transition-all duration-500">
+          <i class="ph ph-desktop-tower text-3xl text-accent"></i>
+        </div>
+        <h3 class="text-xl font-serif text-accent mb-3">g-digital</h3>
+        <p class="text-gray-300/80 text-sm leading-relaxed">Capacidad tecnologica. Disena, construye y opera las soluciones digitales.</p>
       </div>
-      <div class="fade-in" style="padding:1.5rem;">
-        <div style="font-size:2.5rem; margin-bottom:1rem;">&#128274;</div>
-        <h3 style="color:var(--accent);">EADTrust</h3>
-        <p>Infraestructura regulada. QTSP cualificado bajo eIDAS con plenas garant&iacute;as legales.</p>
+      <div class="fade-in delay-3 group" data-testid="triangle-eadtrust">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:bg-accent/10 group-hover:border-accent/30 transition-all duration-500">
+          <i class="ph ph-shield-check text-3xl text-accent"></i>
+        </div>
+        <h3 class="text-xl font-serif text-accent mb-3">EADTrust</h3>
+        <p class="text-gray-300/80 text-sm leading-relaxed">Infraestructura regulada. QTSP cualificado bajo eIDAS con plenas garantias legales.</p>
       </div>
     </div>
+
+    <!-- Triangle SVG connector -->
+    <svg class="mx-auto mt-12 opacity-20 hidden md:block" width="400" height="40" viewBox="0 0 400 40" fill="none">
+      <line x1="60" y1="20" x2="340" y2="20" stroke="url(#grad)" stroke-width="1" stroke-dasharray="4 4"/>
+      <circle cx="60" cy="20" r="4" fill="#009A77" opacity="0.5"/>
+      <circle cx="200" cy="20" r="4" fill="#009A77" opacity="0.5"/>
+      <circle cx="340" cy="20" r="4" fill="#009A77" opacity="0.5"/>
+      <defs><linearGradient id="grad"><stop stop-color="#009A77" stop-opacity="0"/><stop offset="0.5" stop-color="#009A77"/><stop offset="1" stop-color="#009A77" stop-opacity="0"/></linearGradient></defs>
+    </svg>
   </div>
 </section>
 
 <!-- PARTNERS -->
-<section class="section">
-  <div class="container" style="text-align:center;">
-    <p style="color:var(--gray-500); font-size:0.85rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:2rem;">Partners y Reconocimientos</p>
-    <div class="partners">
-      <span>GARRIGUES</span><span>EADTrust</span><span>ioBuilders</span><span>MICROSOFT AZURE</span><span>ORACLE CLOUD</span><span>HEDERA</span><span>ICADE</span>
+<section class="py-24 md:py-28 bg-white" data-testid="partners-section">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="text-xs font-semibold text-gray-400 uppercase tracking-[0.2em] mb-10 fade-in" data-testid="partners-label">Partners y Reconocimientos</p>
+    <div class="flex items-center justify-center gap-8 md:gap-14 flex-wrap mb-12 fade-in delay-1">
+      <span class="text-sm font-bold text-gray-400 tracking-wide hover:text-primary transition-colors cursor-default">GARRIGUES</span>
+      <span class="text-sm font-bold text-gray-400 tracking-wide hover:text-primary transition-colors cursor-default">EADTrust</span>
+      <span class="text-sm font-bold text-gray-400 tracking-wide hover:text-primary transition-colors cursor-default">ioBuilders</span>
+      <span class="text-sm font-bold text-gray-400 tracking-wide hover:text-primary transition-colors cursor-default">MICROSOFT AZURE</span>
+      <span class="text-sm font-bold text-gray-400 tracking-wide hover:text-primary transition-colors cursor-default">ORACLE CLOUD</span>
+      <span class="text-sm font-bold text-gray-400 tracking-wide hover:text-primary transition-colors cursor-default">HEDERA</span>
+      <span class="text-sm font-bold text-gray-400 tracking-wide hover:text-primary transition-colors cursor-default">ICADE</span>
     </div>
-    <div style="margin-top:2rem; display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;">
-      <div class="badge">&#127942; Law.com 2025 &mdash; Tecnolog&iacute;a Disruptiva</div>
-      <div class="badge">&#127942; FT Innovative Lawyers &mdash; Top 10 Europa</div>
-      <div class="badge">&#127942; The Lawyer &mdash; Best Use of Technology</div>
+    <div class="flex gap-4 justify-center flex-wrap fade-in delay-2">
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-light text-sm font-semibold text-accent border border-accent/10" data-testid="award-lawcom">
+        <i class="ph ph-trophy text-gold"></i> Law.com 2025 — Tecnologia Disruptiva
+      </span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-light text-sm font-semibold text-accent border border-accent/10" data-testid="award-ft">
+        <i class="ph ph-trophy text-gold"></i> FT Innovative Lawyers — Top 10 Europa
+      </span>
+      <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-light text-sm font-semibold text-accent border border-accent/10" data-testid="award-lawyer">
+        <i class="ph ph-trophy text-gold"></i> The Lawyer — Best Use of Technology
+      </span>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section section-dark" style="text-align:center; padding:4rem 0;">
-  <div class="container">
-    <h2>&iquest;Listo para integrar infraestructura LegalTech?</h2>
-    <p style="max-width:500px; margin:0 auto 2rem;">Descubre c&oacute;mo g-digital puede convertirse en tu aliado estrat&eacute;gico en la era de la confianza digital.</p>
-    <a href="contacto.html" class="btn btn-primary" style="font-size:1.1rem; padding:1rem 2rem;">Solicitar Demo &#8594;</a>
+<section class="py-24 md:py-28 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="cta-section">
+  <div class="absolute inset-0">
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[100px]"></div>
+  </div>
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-serif mb-6 fade-in" data-testid="cta-heading">Listo para integrar infraestructura LegalTech?</h2>
+    <p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">Descubre como g-digital puede convertirse en tu aliado estrategico en la era de la confianza digital.</p>
+    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] hover:shadow-xl hover:-translate-y-0.5 fade-in delay-2" data-testid="cta-button">
+      Solicitar Demo <i class="ph ph-arrow-right"></i>
+    </a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="grid-4">
+<footer class="bg-dark text-white py-16" data-testid="footer">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
       <div>
-        <h4 style="font-size:1.25rem; color:white; margin-bottom:0.5rem;">g<span style="color:var(--accent);">-digital</span></h4>
-        <p>Divisi&oacute;n de negocios digitales de Garrigues. Innovaci&oacute;n digital con garant&iacute;a legal.</p>
+        <a href="/" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a>
+        <p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues. Innovacion digital con garantia legal.</p>
       </div>
       <div>
-        <h4>Soluciones</h4>
-        <ul class="footer-links">
-          <li><a href="soluciones/confianza-digital.html">Confianza Digital</a></li>
-          <li><a href="soluciones/contract-tech.html">Contract Tech</a></li>
-          <li><a href="soluciones/activos-digitales.html">Activos Digitales</a></li>
-          <li><a href="soluciones/legaltech-ia.html">LegalTech &amp; IA</a></li>
+        <h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4>
+        <ul class="space-y-2.5">
+          <li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors" data-testid="footer-confianza">Confianza Digital</a></li>
+          <li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors" data-testid="footer-contract">Contract Tech</a></li>
+          <li><a href="soluciones/activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors" data-testid="footer-activos">Activos Digitales</a></li>
+          <li><a href="soluciones/legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors" data-testid="footer-legaltech">LegalTech &amp; IA</a></li>
         </ul>
       </div>
       <div>
-        <h4>Compa&ntilde;&iacute;a</h4>
-        <ul class="footer-links">
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+        <h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4>
+        <ul class="space-y-2.5">
+          <li><a href="nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors" data-testid="footer-nosotros">Nosotros</a></li>
+          <li><a href="recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors" data-testid="footer-recursos">Recursos</a></li>
+          <li><a href="contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors" data-testid="footer-contacto">Contacto</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contacto</h4>
-        <p>info@g-digital.garrigues.com</p>
-        <p>Madrid, Espa&ntilde;a</p>
+        <h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4>
+        <p class="text-white/50 text-sm">info@g-digital.garrigues.com</p>
+        <p class="text-white/50 text-sm mt-1">Madrid, Espana</p>
+        <div class="flex gap-3 mt-4">
+          <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all" data-testid="footer-linkedin" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo text-white/60 text-sm"></i>
+          </a>
+          <a href="#" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all" data-testid="footer-twitter" aria-label="Twitter">
+            <i class="ph ph-x-logo text-white/60 text-sm"></i>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
+    <div class="border-t border-white/10 mt-12 pt-8 text-center">
+      <p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
