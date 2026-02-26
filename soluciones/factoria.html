@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Factoría — Trust API | Compliance Injection | g-digital</title>
+  <meta name="description" content="Trust API: infraestructura eIDAS cualificada que convierte cualquier operación digital en evidencia legal con una llamada REST. 4 microservicios, 298 escenarios, 18 sectores.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-sans text-gray-800 bg-light antialiased">
+
+<!-- NAV -->
+<nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a href="../" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="../" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
+      <div class="nav-dropdown relative">
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a>
+        <div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2">
+          <div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[300px] shadow-2xl shadow-gray-200/60">
+            <a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors bg-accent/5 border border-accent/10"><i class="ph ph-lightning text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">La Factoria</span><span class="text-xs text-gray-500">Trust API &middot; Compliance Injection</span></div></a>
+            <a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a>
+            <a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a>
+            <a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a>
+            <a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a>
+          </div>
+        </div>
+      </div>
+      <a href="../nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Nosotros</a>
+      <a href="../recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a>
+      <a href="../contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
+      <a href="../contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
+    </div>
+    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span></button>
+  </div>
+</nav>
+<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition-all">Solicitar Demo</a></div></div></div>
+
+<!-- HERO -->
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-factoria">
+  <div class="absolute inset-0">
+    <div class="absolute top-[-20%] right-[-10%] w-[60%] h-[140%] bg-gradient-radial from-accent/10 to-transparent rounded-full blur-3xl"></div>
+    <div class="absolute top-20 right-[12%] w-24 h-24 border border-accent/20 rounded-2xl rotate-12 float hidden lg:block"></div>
+    <div class="absolute bottom-20 right-[20%] w-16 h-16 bg-accent/5 rounded-xl -rotate-6 float-slow hidden lg:block"></div>
+  </div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-24 md:pt-44 md:pb-32">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 backdrop-blur-sm border border-accent/30 text-sm font-semibold text-accent mb-8 fade-in" data-testid="factoria-badge">
+        <i class="ph ph-lightning"></i> Prioridad Comercial &middot; Oceano Azul
+      </div>
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="factoria-heading">
+        Una llamada REST.<br><span class="text-accent italic">Evidencia legal cualificada.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed mb-10 fade-in delay-2">
+        Trust API es la infraestructura eIDAS que inyecta cumplimiento legal en cualquier proceso digital existente. Sin migrar plataformas. Sin cambiar tu arquitectura. <strong class="text-white">Compliance Injection.</strong>
+      </p>
+      <div class="flex gap-4 flex-wrap mb-16 fade-in delay-3">
+        <a href="../contacto.html" class="bg-accent text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all shadow-[0_0_24px_rgba(0,154,119,0.3)]" data-testid="factoria-cta-demo">Solicitar Demo de Trust API <i class="ph ph-arrow-right ml-1"></i></a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 fade-in delay-4">
+        <div class="text-center md:text-left" data-testid="stat-microservicios"><div class="text-3xl md:text-4xl font-bold text-accent font-mono" data-count="4">0</div><p class="text-sm text-white/50 mt-1">Microservicios eIDAS</p></div>
+        <div class="text-center md:text-left" data-testid="stat-escenarios"><div class="text-3xl md:text-4xl font-bold text-accent font-mono" data-count="298">0</div><p class="text-sm text-white/50 mt-1">Escenarios de integracion</p></div>
+        <div class="text-center md:text-left" data-testid="stat-sectores"><div class="text-3xl md:text-4xl font-bold text-accent font-mono" data-count="18">0</div><p class="text-sm text-white/50 mt-1">Sectores mapeados</p></div>
+        <div class="text-center md:text-left" data-testid="stat-latencia"><div class="text-3xl md:text-4xl font-bold text-accent font-mono">~45ms</div><p class="text-sm text-white/50 mt-1">Latencia media</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEUDA LEGAL -->
+<section class="py-24 md:py-32 bg-white" data-testid="deuda-legal-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16">
+      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="deuda-heading">Tu organizacion acumula <span class="text-accent">Deuda Legal</span></h2>
+      <p class="text-lg text-gray-500 leading-relaxed fade-in delay-2">Igual que la Deuda Tecnica, la <strong class="text-primary">Deuda Legal</strong> son operaciones digitales sin validez probatoria que se acumulan silenciosamente. No duele hasta que la necesitas &mdash; ante un juez, un regulador o un auditor.</p>
+    </div>
+    <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm fade-in delay-3" data-testid="deuda-table">
+      <table class="w-full">
+        <thead class="bg-primary"><tr><th class="px-4 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider">Operacion</th><th class="px-4 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider">Sin Trust API</th><th class="px-4 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider">Riesgo</th><th class="px-4 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider">Con Trust API</th></tr></thead>
+        <tbody class="divide-y divide-gray-50">
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Albaranes de entrega</td><td class="px-4 py-3 text-sm text-gray-500">PDF en carpeta compartida</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Cliente niega recepcion, no cobras</td><td class="px-4 py-3 text-sm text-accent font-medium">Firma + sello + geolocalizacion</td></tr>
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Aprobaciones de pago</td><td class="px-4 py-3 text-sm text-gray-500">Log en base de datos</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Auditor cuestiona segregacion</td><td class="px-4 py-3 text-sm text-accent font-medium">Doble firma cualificada + timestamp</td></tr>
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Cambios de IBAN proveedor</td><td class="px-4 py-3 text-sm text-gray-500">Ticket en helpdesk</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Fraude BEC, banco no reembolsa</td><td class="px-4 py-3 text-sm text-accent font-medium">Verificacion certificada + custodia</td></tr>
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Consentimientos RGPD</td><td class="px-4 py-3 text-sm text-gray-500">Flag en CRM</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Usuario denuncia, sancion AEPD</td><td class="px-4 py-3 text-sm text-accent font-medium">Sello cualificado + notificacion</td></tr>
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Controles APPCC</td><td class="px-4 py-3 text-sm text-gray-500">Hoja Excel</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Inspeccion Sanidad, sancion grave</td><td class="px-4 py-3 text-sm text-accent font-medium">Timestamp por lectura IoT</td></tr>
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Decisiones de IA</td><td class="px-4 py-3 text-sm text-gray-500">Log efimero</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Usuario impugna, no puedes explicar</td><td class="px-4 py-3 text-sm text-accent font-medium">Custodia dataset + log sellado</td></tr>
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Comunicaciones de despido</td><td class="px-4 py-3 text-sm text-gray-500">Email sin acuse</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Trabajador alega no recepcion</td><td class="px-4 py-3 text-sm text-accent font-medium">Notificacion certificada + sello</td></tr>
+          <tr class="hover:bg-light transition-colors"><td class="px-4 py-3 text-sm font-medium text-primary">Versiones de contrato</td><td class="px-4 py-3 text-sm text-gray-500">Carpeta &laquo;Versiones&raquo;</td><td class="px-4 py-3 text-sm text-red-600 font-medium">Contraparte alega version diferente</td><td class="px-4 py-3 text-sm text-accent font-medium">Versionado certificado + custodia</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- THE STACK: 4 MICROSERVICIOS -->
+<section class="py-24 md:py-32 bg-light" data-testid="stack-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16">
+      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="stack-heading">The Stack: 4 Microservicios eIDAS</h2>
+      <p class="text-lg text-gray-500 leading-relaxed fade-in delay-2">Una API unificada. Cuatro microservicios. Cada uno integra un servicio de confianza eIDAS cualificado, expuesto como primitivas REST.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Evidence Manager -->
+      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="ms-evidence">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl group-hover:scale-110 transition-transform"><i class="ph ph-stamp"></i></div>
+          <div><span class="text-xs font-mono font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">01</span><h3 class="text-xl font-serif text-primary mt-1">Evidence Manager</h3></div>
+        </div>
+        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Inmutabilidad como servicio</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">Hashing SHA-256 automatico + Qualified Timestamping (TSA). Cada archivo, log o dato queda sellado con fecha cierta cualificada.</p>
+        <div class="space-y-2 mb-4">
+          <p class="text-xs text-primary font-medium"><i class="ph ph-scales text-accent mr-1"></i> Presuncion de fecha exacta (Art. 41.2 eIDAS)</p>
+          <p class="text-xs text-primary font-medium"><i class="ph ph-scales text-accent mr-1"></i> Inversion de carga de prueba (Art. 326.4 LEC)</p>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Logs</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Fotos siniestro</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">IoT data</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">APPCC</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Decisiones IA</span>
+        </div>
+      </div>
+      <!-- Signature Manager -->
+      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="ms-signature">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl group-hover:scale-110 transition-transform"><i class="ph ph-pen-nib"></i></div>
+          <div><span class="text-xs font-mono font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">02</span><h3 class="text-xl font-serif text-primary mt-1">Signature Manager</h3></div>
+        </div>
+        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Firma como servicio</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">Firmas XAdES, CMS. Cloud HSM. SDK mobile. Desde firma simple hasta cualificada con certificado. Equivalencia a firma manuscrita en toda la UE.</p>
+        <div class="space-y-2 mb-4">
+          <p class="text-xs text-primary font-medium"><i class="ph ph-scales text-accent mr-1"></i> Equivalencia firma manuscrita (Art. 25.2 eIDAS)</p>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Contratos</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Consentimientos</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Albaranes</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">KYC</span>
+        </div>
+      </div>
+      <!-- Notification Manager -->
+      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="ms-notification">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl group-hover:scale-110 transition-transform"><i class="ph ph-envelope-simple"></i></div>
+          <div><span class="text-xs font-mono font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">03</span><h3 class="text-xl font-serif text-primary mt-1">Notification Manager</h3></div>
+        </div>
+        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Notificacion como servicio</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">Notificaciones por email y SMS con prueba de envio, entrega y contenido. Acuses de recibo con sello de tiempo y firma cualificada.</p>
+        <div class="space-y-2 mb-4">
+          <p class="text-xs text-primary font-medium"><i class="ph ph-scales text-accent mr-1"></i> Entrega Electronica Certificada eIDAS</p>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Despidos</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Regulatorias</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Vencimientos</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Reclamaciones</span>
+        </div>
+      </div>
+      <!-- Custody Manager -->
+      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-3" data-testid="ms-custody">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl group-hover:scale-110 transition-transform"><i class="ph ph-vault"></i></div>
+          <div><span class="text-xs font-mono font-bold text-accent bg-accent/10 px-2 py-0.5 rounded">04</span><h3 class="text-xl font-serif text-primary mt-1">Custody Manager</h3></div>
+        </div>
+        <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">Custodia como servicio</p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">Almacenamiento certificado con garantia de integridad a largo plazo. Custodia Digital Cualificada (QEA) conforme a eIDAS 2.0. Nube soberana europea.</p>
+        <div class="space-y-2 mb-4">
+          <p class="text-xs text-primary font-medium"><i class="ph ph-scales text-accent mr-1"></i> Custodia Cualificada eIDAS 2.0</p>
+        </div>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Historiales</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Datasets IA</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Expedientes</span>
+          <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-light text-gray-500">Batch records</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARGUMENTO LEGAL: Por que NO blockchain -->
+<section class="py-24 md:py-32 bg-white" data-testid="legal-argument-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16">
+      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="legal-heading">Inversion de la Carga de la Prueba</h2>
+      <p class="text-lg text-gray-500 leading-relaxed fade-in delay-2"><strong class="text-primary">Sin Trust API</strong>: tus PDFs son &laquo;papel mojado&raquo; en juicio. La carga de la prueba esta en TU empresa. <strong class="text-primary">Con Trust API</strong>: la contraparte debe demostrar que tu evidencia es falsa.</p>
+    </div>
+    <div class="overflow-x-auto rounded-2xl border border-gray-100 shadow-sm fade-in delay-3" data-testid="legal-table">
+      <table class="w-full">
+        <thead class="bg-primary"><tr><th class="px-5 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider">Tecnologia</th><th class="px-5 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider">Efecto legal en Espana/UE</th><th class="px-5 py-3 text-left text-white text-xs font-semibold uppercase tracking-wider">Base normativa</th></tr></thead>
+        <tbody class="divide-y divide-gray-50">
+          <tr class="hover:bg-light"><td class="px-5 py-4 text-sm text-gray-700">Blockchain publico</td><td class="px-5 py-4 text-sm text-red-600 font-medium">Ninguna presuncion legal. Debes demostrar la relacion hash-documento</td><td class="px-5 py-4 text-sm text-gray-400">&mdash;</td></tr>
+          <tr class="hover:bg-light"><td class="px-5 py-4 text-sm text-gray-700">Sello de tiempo NO cualificado</td><td class="px-5 py-4 text-sm text-yellow-600 font-medium">Admisible como prueba, pero sin presuncion. El juez evalua libremente</td><td class="px-5 py-4 text-sm text-gray-400">Jurisprudencia variable</td></tr>
+          <tr class="bg-accent/5 hover:bg-accent/10"><td class="px-5 py-4 text-sm font-bold text-primary">Sello CUALIFICADO (eIDAS) <span class="ml-1 px-1.5 py-0.5 rounded text-[10px] bg-accent text-white font-bold">TRUST API</span></td><td class="px-5 py-4 text-sm text-accent font-bold">Presuncion legal de fecha e integridad</td><td class="px-5 py-4 text-sm font-mono text-primary text-xs">Art. 41.2 eIDAS, Art. 326.4 LEC</td></tr>
+          <tr class="bg-accent/5 hover:bg-accent/10"><td class="px-5 py-4 text-sm font-bold text-primary">Firma Cualificada (QES) <span class="ml-1 px-1.5 py-0.5 rounded text-[10px] bg-accent text-white font-bold">TRUST API</span></td><td class="px-5 py-4 text-sm text-accent font-bold">Equivalencia a firma manuscrita en toda la UE</td><td class="px-5 py-4 text-sm font-mono text-primary text-xs">Art. 25.2 eIDAS</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS TECNICAS -->
+<section class="py-24 md:py-32 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="specs-section">
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <h2 class="text-3xl md:text-5xl font-serif mb-4 text-center fade-in" data-testid="specs-heading">Especificaciones Tecnicas</h2>
+    <p class="text-lg text-gray-300 font-light max-w-xl mx-auto mb-16 text-center fade-in delay-1">Infraestructura enterprise-grade. Una llamada REST. Eso es todo.</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+      <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10 fade-in delay-1" data-testid="spec-uptime"><p class="text-3xl font-mono font-bold text-accent">99.99%</p><p class="text-sm text-gray-400 mt-1">Uptime SLA</p></div>
+      <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10 fade-in delay-2" data-testid="spec-latencia"><p class="text-3xl font-mono font-bold text-accent">~45ms</p><p class="text-sm text-gray-400 mt-1">Latencia media</p></div>
+      <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10 fade-in delay-3" data-testid="spec-soc"><p class="text-3xl font-mono font-bold text-accent">SOC 2</p><p class="text-sm text-gray-400 mt-1">Type II &middot; ISO 27001</p></div>
+      <div class="text-center p-6 rounded-2xl bg-white/5 border border-white/10 fade-in delay-4" data-testid="spec-formato"><p class="text-3xl font-mono font-bold text-accent">JSON</p><p class="text-sm text-gray-400 mt-1">Native &middot; snake_case</p></div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-white/5 border border-white/10 fade-in delay-2">
+        <h4 class="text-accent font-serif text-lg mb-3">Formato</h4>
+        <ul class="space-y-1.5 text-sm text-gray-300/80">
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> JSON-Native (sin XML, sin SOAP)</li>
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> snake_case, ISO 8601, UUIDs v4</li>
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> SDK TypeScript/JavaScript</li>
+        </ul>
+      </div>
+      <div class="p-6 rounded-2xl bg-white/5 border border-white/10 fade-in delay-3">
+        <h4 class="text-accent font-serif text-lg mb-3">Eventos</h4>
+        <ul class="space-y-1.5 text-sm text-gray-300/80">
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> Webhooks en tiempo real</li>
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> signature.completed</li>
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> notification.delivered</li>
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> evidence.sealed</li>
+        </ul>
+      </div>
+      <div class="p-6 rounded-2xl bg-white/5 border border-white/10 fade-in delay-4">
+        <h4 class="text-accent font-serif text-lg mb-3">Entornos</h4>
+        <ul class="space-y-1.5 text-sm text-gray-300/80">
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> <span class="font-mono text-xs">api.int</span> &mdash; Integracion</li>
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> <span class="font-mono text-xs">api.pre</span> &mdash; Pre-produccion</li>
+          <li class="flex items-center gap-2"><i class="ph ph-check-circle text-accent text-xs"></i> <span class="font-mono text-xs">api.pro</span> &mdash; Produccion</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRACIONES -->
+<section class="py-24 md:py-32 bg-white" data-testid="integraciones-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16">
+      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="integ-heading">Se integra en tu stack. Sin migraciones.</h2>
+      <p class="text-lg text-gray-500 leading-relaxed fade-in delay-2">Integraciones predefinidas con los principales sistemas enterprise. Una llamada REST es todo lo que necesitas.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 fade-in delay-3">
+      <div class="bg-light p-4 rounded-2xl text-center hover:bg-accent/5 hover:border-accent/20 border border-transparent transition-all" data-testid="int-sap"><p class="font-bold text-sm text-primary">SAP</p><p class="text-xs text-gray-400">ERP &amp; SuccessFactors</p></div>
+      <div class="bg-light p-4 rounded-2xl text-center hover:bg-accent/5 hover:border-accent/20 border border-transparent transition-all" data-testid="int-workday"><p class="font-bold text-sm text-primary">Workday</p><p class="text-xs text-gray-400">HCM &middot; 11 escenarios</p></div>
+      <div class="bg-light p-4 rounded-2xl text-center hover:bg-accent/5 hover:border-accent/20 border border-transparent transition-all" data-testid="int-dynamics"><p class="font-bold text-sm text-primary">Dynamics</p><p class="text-xs text-gray-400">CRM &amp; ERP</p></div>
+      <div class="bg-light p-4 rounded-2xl text-center hover:bg-accent/5 hover:border-accent/20 border border-transparent transition-all" data-testid="int-sharepoint"><p class="font-bold text-sm text-primary">SharePoint</p><p class="text-xs text-gray-400">Gestion documental</p></div>
+      <div class="bg-light p-4 rounded-2xl text-center hover:bg-accent/5 hover:border-accent/20 border border-transparent transition-all" data-testid="int-n8n"><p class="font-bold text-sm text-primary">n8n / Zapier</p><p class="text-xs text-gray-400">Automatizacion</p></div>
+      <div class="bg-light p-4 rounded-2xl text-center hover:bg-accent/5 hover:border-accent/20 border border-transparent transition-all" data-testid="int-power"><p class="font-bold text-sm text-primary">Power Automate</p><p class="text-xs text-gray-400">Low-code Microsoft</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 HORIZONTES -->
+<section class="py-24 md:py-32 bg-light" data-testid="horizontes-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl mb-16">
+      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="horizontes-heading">Tres horizontes de valor</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="h1">
+        <div class="text-3xl font-mono font-bold text-accent mb-4">H1</div>
+        <h3 class="text-xl font-serif text-primary mb-3">Prevencion de litigios</h3>
+        <p class="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Dolor inmediato</p>
+        <p class="text-gray-500 text-sm leading-relaxed">&laquo;Cada operacion sin certificar es un riesgo. Aqui tienes 6 operaciones en tu organizacion que hoy son Deuda Legal.&raquo;</p>
+      </div>
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="h2">
+        <div class="text-3xl font-mono font-bold text-accent mb-4">H2</div>
+        <h3 class="text-xl font-serif text-primary mb-3">Cumplimiento regulatorio</h3>
+        <p class="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Obligacion a medio plazo</p>
+        <p class="text-gray-500 text-sm leading-relaxed">&laquo;DORA, NIS2, AI Act, eIDAS 2.0 &mdash; todos exigen trazabilidad y evidencia. Trust API te da cumplimiento out-of-the-box.&raquo;</p>
+      </div>
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="h3">
+        <div class="text-3xl font-mono font-bold text-accent mb-4">H3</div>
+        <h3 class="text-xl font-serif text-primary mb-3">Infraestructura EU 2030</h3>
+        <p class="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-2">Ventaja estrategica</p>
+        <p class="text-gray-500 text-sm leading-relaxed">&laquo;Las organizaciones que adopten ahora PKI eIDAS cualificada como infraestructura tendran ventaja cuando el marco europeo se complete.&raquo;</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODELOS DE ENTRADA -->
+<section class="py-24 md:py-32 bg-white" data-testid="modelos-section">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-serif text-primary mb-12 fade-in" data-testid="modelos-heading">Empieza donde quieras. Escala cuando lo necesites.</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-light p-8 rounded-3xl border border-gray-200 hover:border-accent/50 transition-all hover:shadow-xl fade-in" data-testid="modelo-poc">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-flask"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-2">POC / Piloto</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-3">1&ndash;2 microservicios, 1 caso de uso, 2&ndash;3 meses. Demostrar valor en un flujo concreto.</p>
+        <span class="text-xs font-mono text-accent font-semibold">Inversion minima, resultado medible</span>
+      </div>
+      <div class="bg-light p-8 rounded-3xl border-2 border-accent/30 hover:border-accent transition-all hover:shadow-xl relative fade-in delay-1" data-testid="modelo-departamental">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-xs font-bold bg-accent text-white">Recomendado</span>
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-buildings"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-2">Departamental</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-3">2&ndash;3 microservicios, 1 departamento/proceso. Eliminar Deuda Legal de un proceso completo.</p>
+        <span class="text-xs font-mono text-accent font-semibold">Impacto operativo real</span>
+      </div>
+      <div class="bg-light p-8 rounded-3xl border border-gray-200 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-2" data-testid="modelo-enterprise">
+        <div class="w-12 h-12 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-globe"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-2">Enterprise</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-3">4 microservicios, multiples departamentos. Trust API como capa de infraestructura corporativa.</p>
+        <span class="text-xs font-mono text-accent font-semibold">PKI publica eIDAS 2.0</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 md:py-28 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="cta-factoria">
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-serif mb-6 fade-in">Cuanta Deuda Legal acumula tu organizacion?</h2>
+    <p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">20 minutos. Te mostramos los escenarios mas relevantes para tu sector. Sin compromiso.</p>
+    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] fade-in delay-2" data-testid="cta-factoria-btn">Solicitar Demo de Trust API <i class="ph ph-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues. Innovacion digital con garantia legal.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="../nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="../recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors">Recursos</a></li><li><a href="../contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
