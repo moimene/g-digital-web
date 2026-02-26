@@ -3,279 +3,256 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recursos &mdash; g-digital | Conocimiento para la Transformaci&oacute;n Digital</title>
-  <meta name="description" content="Recursos, blog y observatorio: compartimos conocimiento sobre tecnolog&iacute;a, confianza digital, contratos, activos digitales y cumplimiento.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Recursos — g-digital | Conocimiento para la Transformacion Digital</title>
+  <meta name="description" content="Recursos, blog y observatorio: compartimos conocimiento sobre tecnologia, confianza digital, contratos, activos digitales y cumplimiento.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-light antialiased">
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/" class="nav-logo">g<span>-digital</span></a>
-    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <a href="/">Inicio</a>
-      <div class="nav-dropdown">
-        <a href="#">Soluciones &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="soluciones/confianza-digital.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Confianza Digital</a>
-          <a href="soluciones/contract-tech.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>Contract Tech</a>
-          <a href="soluciones/activos-digitales.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>Activos Digitales</a>
-          <a href="soluciones/legaltech-ia.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px;"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/><path d="M8.56 13a8 8 0 0 0-2.3 3.5"/><path d="M15.44 13a8 8 0 0 1 2.3 3.5"/></svg>LegalTech &amp; IA</a>
+<nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a href="/" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
+      <div class="nav-dropdown relative">
+        <a href="#" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a>
+        <div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2">
+          <div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[280px] shadow-2xl shadow-gray-200/60">
+            <a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a>
+            <a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a>
+            <a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a>
+            <a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a>
+          </div>
         </div>
       </div>
-      <a href="nosotros.html">Nosotros</a>
-      <a href="recursos.html" class="active">Recursos</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="contacto.html" class="nav-cta">Solicitar Demo</a>
+      <a href="nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Nosotros</a>
+      <a href="recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline active" data-nav-link>Recursos</a>
+      <a href="contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
+      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5">Solicitar Demo</a>
     </div>
+    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile">
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+      <span class="block w-6 h-0.5 bg-gray-700 transition-all duration-300"></span>
+    </button>
   </div>
 </nav>
+<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto">
+  <div class="flex flex-col gap-1">
+    <a href="/" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a>
+    <p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p>
+    <a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a>
+    <a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a>
+    <a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a>
+    <a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a>
+    <div class="h-px bg-gray-100 my-2"></div>
+    <a href="nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a>
+    <a href="recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a>
+    <a href="contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a>
+    <div class="mt-4"><a href="contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition-all">Solicitar Demo</a></div>
+  </div>
+</div>
 
 <!-- HERO -->
-<section class="hero hero-sub">
-  <div class="container" style="position:relative; z-index:1;">
-    <h1>Conocimiento para Decisiones Informadas</h1>
-    <p>Compartimos aprendizajes y an&aacute;lisis sobre tecnolog&iacute;as y soluciones donde la seguridad jur&iacute;dica, la evidencia y la trazabilidad son elementos clave.</p>
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-recursos">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24">
+    <div class="max-w-3xl">
+      <h1 class="text-4xl md:text-6xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in" data-testid="recursos-heading">Conocimiento para <span class="text-accent italic">Decisiones Informadas</span></h1>
+      <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-1">Compartimos aprendizajes y analisis sobre tecnologias y soluciones donde la seguridad juridica, la evidencia y la trazabilidad son elementos clave.</p>
+    </div>
   </div>
 </section>
 
-<!-- FILTROS -->
-<section class="section" style="padding-bottom:0;">
-  <div class="container">
-    <div class="resource-filters">
-      <button class="filter-btn active" data-filter="all">Todos</button>
-      <button class="filter-btn" data-filter="confianza">Confianza Digital</button>
-      <button class="filter-btn" data-filter="contratos">Contract Tech</button>
-      <button class="filter-btn" data-filter="activos">Activos Digitales</button>
-      <button class="filter-btn" data-filter="ia">LegalTech &amp; IA</button>
+<!-- FILTERS -->
+<section class="py-8 bg-white border-b border-gray-100 sticky top-[72px] z-30" data-testid="filters-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex gap-2 flex-wrap">
+      <button class="px-5 py-2 rounded-full text-sm font-medium border transition-all bg-primary text-white border-primary" data-filter-btn data-filter="all" data-testid="filter-all">Todos</button>
+      <button class="px-5 py-2 rounded-full text-sm font-medium border transition-all bg-white text-gray-600 border-gray-200 hover:border-accent hover:text-accent" data-filter-btn data-filter="confianza" data-testid="filter-confianza">Confianza Digital</button>
+      <button class="px-5 py-2 rounded-full text-sm font-medium border transition-all bg-white text-gray-600 border-gray-200 hover:border-accent hover:text-accent" data-filter-btn data-filter="contratos" data-testid="filter-contratos">Contract Tech</button>
+      <button class="px-5 py-2 rounded-full text-sm font-medium border transition-all bg-white text-gray-600 border-gray-200 hover:border-accent hover:text-accent" data-filter-btn data-filter="activos" data-testid="filter-activos">Activos Digitales</button>
+      <button class="px-5 py-2 rounded-full text-sm font-medium border transition-all bg-white text-gray-600 border-gray-200 hover:border-accent hover:text-accent" data-filter-btn data-filter="ia" data-testid="filter-ia">LegalTech &amp; IA</button>
     </div>
   </div>
 </section>
 
 <!-- BLOG -->
-<section class="section">
-  <div class="container">
-    <div class="accent-bar"></div>
-    <h2>Blog: la voz de g-digital</h2>
-    <p style="max-width:640px; margin-bottom:2.5rem;">Reflexiones y an&aacute;lisis sobre soluciones y tecnolog&iacute;as que soportan operaciones donde la seguridad jur&iacute;dica es cr&iacute;tica.</p>
-    <div class="grid-3 resource-grid">
-
-      <!-- ARTICULO 1: eIDAS -->
-      <article class="resource-card fade-in" data-category="confianza">
-        <div class="resource-card-header">
-          <span class="resource-tag">Confianza Digital</span>
-          <span class="resource-date">Febrero 2026</span>
+<section class="py-24 md:py-28 bg-white" data-testid="blog-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in delay-1" data-testid="blog-heading">Blog: la voz de g-digital</h2>
+    <p class="text-gray-500 max-w-xl mb-12 fade-in delay-2">Reflexiones y analisis sobre soluciones y tecnologias que soportan operaciones donde la seguridad juridica es critica.</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Article 1 -->
+      <article class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 flex flex-col fade-in" data-category="confianza" data-testid="article-eidas">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">Confianza Digital</span>
+          <span class="text-xs text-gray-400 font-mono">Feb 2026</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
-        </div>
-        <h3>eIDAS 2.0 y el nuevo marco de identidad digital europea</h3>
-        <p>El Reglamento (UE) 2024/1183, que modifica eIDAS, establece la European Digital Identity Wallet como pieza central de la identidad digital en la UE. Este art&iacute;culo analiza c&oacute;mo la transici&oacute;n de servicios de confianza cualificados &mdash;firma electr&oacute;nica, sellos de tiempo, entrega electr&oacute;nica certificada&mdash; hacia un ecosistema de carteras de identidad transforma la forma en que empresas y ciudadanos interact&uacute;an con la administraci&oacute;n y entre s&iacute;.</p>
-        <div class="resource-meta">
-          <span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            8 min lectura
-          </span>
-        </div>
-        <a href="#eidas-2" class="card-link">Leer art&iacute;culo &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/10 transition-colors"><i class="ph ph-shield-check"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">eIDAS 2.0 y el nuevo marco de identidad digital europea</h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-grow mb-4">El Reglamento (UE) 2024/1183 establece la European Digital Identity Wallet como pieza central de la identidad digital en la UE.</p>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-clock"></i> 8 min lectura</div>
+        <a href="#eidas-2" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all" data-testid="link-eidas">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </article>
 
-      <!-- ARTICULO 2: Contract Tech -->
-      <article class="resource-card fade-in" data-category="contratos">
-        <div class="resource-card-header">
-          <span class="resource-tag">Contract Tech</span>
-          <span class="resource-date">Febrero 2026</span>
+      <!-- Article 2 -->
+      <article class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 flex flex-col fade-in delay-1" data-category="contratos" data-testid="article-clm">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">Contract Tech</span>
+          <span class="text-xs text-gray-400 font-mono">Feb 2026</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6"/><path d="M9 15l3 3 3-3"/></svg>
-        </div>
-        <h3>Del contrato-documento al contrato-proceso: por qu&eacute; el CLM tradicional se queda corto</h3>
-        <p>La gesti&oacute;n contractual heredada trata el contrato como un PDF est&aacute;tico. Sin embargo, un contrato es un proceso con estados, obligaciones condicionales y eventos que disparan consecuencias jur&iacute;dicas. Analizamos c&oacute;mo los motores de reglas declarativos permiten externalizar la l&oacute;gica de negocio del c&oacute;digo, haciendo que la gesti&oacute;n contractual sea escalable, auditable y mantenible por equipos legales.</p>
-        <div class="resource-meta">
-          <span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            10 min lectura
-          </span>
-        </div>
-        <a href="#contract-process" class="card-link">Leer art&iacute;culo &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/10 transition-colors"><i class="ph ph-file-text"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Del contrato-documento al contrato-proceso: por que el CLM tradicional se queda corto</h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-grow mb-4">Los motores de reglas declarativos permiten externalizar la logica de negocio del codigo, haciendo la gestion contractual escalable y auditable.</p>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-clock"></i> 10 min lectura</div>
+        <a href="#contract-process" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all" data-testid="link-clm">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </article>
 
-      <!-- ARTICULO 3: MiCA -->
-      <article class="resource-card fade-in" data-category="activos">
-        <div class="resource-card-header">
-          <span class="resource-tag">Activos Digitales</span>
-          <span class="resource-date">Enero 2026</span>
+      <!-- Article 3 -->
+      <article class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 flex flex-col fade-in delay-2" data-category="activos" data-testid="article-mica">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">Activos Digitales</span>
+          <span class="text-xs text-gray-400 font-mono">Ene 2026</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
-        </div>
-        <h3>MiCA en vigor: qu&eacute; implica para la tokenizaci&oacute;n de activos reales en Europa</h3>
-        <p>Con la plena aplicaci&oacute;n del Reglamento MiCA (Markets in Crypto-Assets), Europa dispone por primera vez de un marco armonizado para criptoactivos. Examinamos las categor&iacute;as regulatorias &mdash;ART, EMT y otros criptoactivos&mdash;, los requisitos para emisores y proveedores de servicios, y c&oacute;mo la tokenizaci&oacute;n de activos inmobiliarios y financieros encaja en este nuevo paradigma regulatorio.</p>
-        <div class="resource-meta">
-          <span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            12 min lectura
-          </span>
-        </div>
-        <a href="#mica-tokenizacion" class="card-link">Leer art&iacute;culo &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/10 transition-colors"><i class="ph ph-coins"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">MiCA en vigor: que implica para la tokenizacion de activos reales en Europa</h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-grow mb-4">Europa dispone por primera vez de un marco armonizado para criptoactivos. Examinamos las categorias regulatorias y los requisitos.</p>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-clock"></i> 12 min lectura</div>
+        <a href="#mica-tokenizacion" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all" data-testid="link-mica">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </article>
 
-      <!-- ARTICULO 4: AI Act -->
-      <article class="resource-card fade-in" data-category="ia">
-        <div class="resource-card-header">
-          <span class="resource-tag">LegalTech &amp; IA</span>
-          <span class="resource-date">Enero 2026</span>
+      <!-- Article 4 -->
+      <article class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 flex flex-col fade-in" data-category="ia" data-testid="article-aiact">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">LegalTech &amp; IA</span>
+          <span class="text-xs text-gray-400 font-mono">Ene 2026</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93L12 22"/><path d="M12 2a4 4 0 0 0-4 4c0 1.95 1.4 3.58 3.25 3.93"/><path d="M8.56 13a8 8 0 0 0-2.3 3.5"/><path d="M15.44 13a8 8 0 0 1 2.3 3.5"/></svg>
-        </div>
-        <h3>AI Act: gobernanza de sistemas de IA en entornos regulados</h3>
-        <p>El Reglamento europeo de Inteligencia Artificial (AI Act) establece obligaciones diferenciadas seg&uacute;n el nivel de riesgo de los sistemas de IA. Analizamos las implicaciones pr&aacute;cticas para organizaciones que despliegan IA en &aacute;mbitos jur&iacute;dicos y de cumplimiento: clasificaci&oacute;n de riesgos, requisitos de transparencia, documentaci&oacute;n t&eacute;cnica obligatoria y el rol de los sistemas de gesti&oacute;n de calidad en la conformidad con la norma.</p>
-        <div class="resource-meta">
-          <span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            11 min lectura
-          </span>
-        </div>
-        <a href="#ai-act-gobernanza" class="card-link">Leer art&iacute;culo &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/10 transition-colors"><i class="ph ph-brain"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">AI Act: gobernanza de sistemas de IA en entornos regulados</h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-grow mb-4">Obligaciones diferenciadas segun el nivel de riesgo. Clasificacion, transparencia y documentacion tecnica obligatoria.</p>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-clock"></i> 11 min lectura</div>
+        <a href="#ai-act-gobernanza" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all" data-testid="link-aiact">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </article>
 
-      <!-- ARTICULO 5: Evidencia electr&oacute;nica -->
-      <article class="resource-card fade-in" data-category="confianza">
-        <div class="resource-card-header">
-          <span class="resource-tag">Confianza Digital</span>
-          <span class="resource-date">Diciembre 2025</span>
+      <!-- Article 5 -->
+      <article class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 flex flex-col fade-in delay-1" data-category="confianza" data-testid="article-evidencia">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">Confianza Digital</span>
+          <span class="text-xs text-gray-400 font-mono">Dic 2025</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
-        </div>
-        <h3>Evidencia electr&oacute;nica cualificada: de la captura al valor probatorio</h3>
-        <p>La eficacia probatoria de una evidencia digital depende de su cadena de custodia. Examinamos c&oacute;mo los sellos de tiempo cualificados y la custodia digital conforme a eIDAS transforman capturas de pantalla, logs de sistema y comunicaciones electr&oacute;nicas en elementos con presunci&oacute;n de integridad ante tribunales. Incluimos un an&aacute;lisis de jurisprudencia reciente sobre la admisibilidad de evidencias digitales en procesos civiles y mercantiles.</p>
-        <div class="resource-meta">
-          <span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            9 min lectura
-          </span>
-        </div>
-        <a href="#evidencia-cualificada" class="card-link">Leer art&iacute;culo &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/10 transition-colors"><i class="ph ph-check-circle"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Evidencia electronica cualificada: de la captura al valor probatorio</h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-grow mb-4">Sellos de tiempo cualificados y custodia digital conforme a eIDAS transforman capturas en elementos con presuncion de integridad.</p>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-clock"></i> 9 min lectura</div>
+        <a href="#evidencia-cualificada" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all" data-testid="link-evidencia">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </article>
 
-      <!-- ARTICULO 6: GRC -->
-      <article class="resource-card fade-in" data-category="ia">
-        <div class="resource-card-header">
-          <span class="resource-tag">LegalTech &amp; IA</span>
-          <span class="resource-date">Diciembre 2025</span>
+      <!-- Article 6 -->
+      <article class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl hover:shadow-gray-100/50 flex flex-col fade-in delay-2" data-category="ia" data-testid="article-grc">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">LegalTech &amp; IA</span>
+          <span class="text-xs text-gray-400 font-mono">Dic 2025</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Arquitectura GRC: del cumplimiento reactivo al modelo Obligaciones-Riesgos-Controles</h3>
-        <p>Las organizaciones que gestionan el cumplimiento de forma reactiva asumen riesgos significativos. Presentamos un marco estructurado donde cada obligaci&oacute;n normativa se vincula a riesgos evaluados, controles dise&ntilde;ados, evidencias generadas e issues trazables. Analizamos c&oacute;mo la arquitectura multi-tenant con audit logs inmutables (WORM) y aislamiento por Row-Level Security permite operar plataformas GRC a escala sin comprometer la integridad de los datos.</p>
-        <div class="resource-meta">
-          <span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            13 min lectura
-          </span>
-        </div>
-        <a href="#grc-arquitectura" class="card-link">Leer art&iacute;culo &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/10 transition-colors"><i class="ph ph-shield-warning"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Arquitectura GRC: del cumplimiento reactivo al modelo Obligaciones-Riesgos-Controles</h3>
+        <p class="text-gray-500 text-sm leading-relaxed flex-grow mb-4">Marco estructurado donde cada obligacion normativa se vincula a riesgos evaluados, controles y evidencias trazables.</p>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-clock"></i> 13 min lectura</div>
+        <a href="#grc-arquitectura" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all" data-testid="link-grc">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </article>
-
     </div>
   </div>
 </section>
 
 <!-- NOTICIAS -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="accent-bar"></div>
-    <h2>Noticias: los medios hablan de nosotros</h2>
-    <p style="max-width:640px; margin-bottom:2.5rem;">Cobertura en prensa y medios especializados sobre nuestros proyectos, alianzas y reconocimientos.</p>
-    <div class="grid-3">
-      <div class="resource-card fade-in">
-        <div class="resource-card-header">
-          <span class="resource-tag" style="background:var(--gray-100); color:var(--gray-700);">Prensa</span>
-          <span class="resource-date">2025</span>
+<section class="py-24 md:py-28 bg-light" data-testid="noticias-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in delay-1" data-testid="noticias-heading">Noticias: los medios hablan de nosotros</h2>
+    <p class="text-gray-500 max-w-xl mb-12 fade-in delay-2">Cobertura en prensa y medios especializados sobre nuestros proyectos, alianzas y reconocimientos.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="noticia-microsoft">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">Prensa</span>
+          <span class="text-xs text-gray-400 font-mono">2025</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
-        </div>
-        <h3>Garrigues y Microsoft: acuerdo para impulsar la IA en el sector legal</h3>
-        <p>El acuerdo estrat&eacute;gico entre Garrigues y Microsoft Azure posiciona a g-digital como plataforma de referencia para la integraci&oacute;n de inteligencia artificial en operaciones legales, combinando la infraestructura cloud de Microsoft con la experiencia jur&iacute;dica del despacho.</p>
-        <a href="#" class="card-link">Leer en elderecho.com &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-newspaper"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Garrigues y Microsoft: acuerdo para impulsar la IA en el sector legal</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">El acuerdo estrategico posiciona a g-digital como plataforma de referencia para la integracion de IA en operaciones legales.</p>
+        <a href="#" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all" data-testid="link-noticia-ms">Leer en elderecho.com <i class="ph ph-arrow-right"></i></a>
       </div>
-      <div class="resource-card fade-in">
-        <div class="resource-card-header">
-          <span class="resource-tag" style="background:var(--gray-100); color:var(--gray-700);">Reconocimiento</span>
-          <span class="resource-date">2025</span>
+      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="noticia-ft">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">Reconocimiento</span>
+          <span class="text-xs text-gray-400 font-mono">2025</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <h3>Financial Times Innovative Lawyers: Garrigues entre los Top 10 de Europa</h3>
-        <p>El ranking del Financial Times reconoce a Garrigues entre las diez firmas legales m&aacute;s innovadoras de Europa, destacando la divisi&oacute;n g-digital por su aportaci&oacute;n en servicios de confianza cualificados y la plataforma GoCertius.</p>
-        <a href="#" class="card-link">Ver ranking &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-star"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Financial Times Innovative Lawyers: Garrigues entre los Top 10 de Europa</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">El ranking reconoce a Garrigues por su aportacion en servicios de confianza cualificados y la plataforma GoCertius.</p>
+        <a href="#" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all" data-testid="link-noticia-ft">Ver ranking <i class="ph ph-arrow-right"></i></a>
       </div>
-      <div class="resource-card fade-in">
-        <div class="resource-card-header">
-          <span class="resource-tag" style="background:var(--gray-100); color:var(--gray-700);">Prensa</span>
-          <span class="resource-date">2025</span>
+      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="noticia-lawcom">
+        <div class="flex justify-between items-center mb-4">
+          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">Prensa</span>
+          <span class="text-xs text-gray-400 font-mono">2025</span>
         </div>
-        <div class="resource-icon-wrap">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6z"/></svg>
-        </div>
-        <h3>Law.com: g-digital premiada por tecnolog&iacute;a disruptiva en el sector legal</h3>
-        <p>La publicaci&oacute;n especializada Law.com distingue a g-digital en la categor&iacute;a de tecnolog&iacute;a disruptiva por su enfoque integrado de servicios de confianza, gesti&oacute;n contractual y gobernanza de IA bajo un mismo paraguas con garant&iacute;a legal.</p>
-        <a href="#" class="card-link">Leer cobertura &rarr;</a>
+        <div class="w-12 h-12 rounded-2xl bg-light flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-newspaper"></i></div>
+        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Law.com: g-digital premiada por tecnologia disruptiva en el sector legal</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-4">La publicacion distingue a g-digital por su enfoque integrado de servicios de confianza y gobernanza de IA.</p>
+        <a href="#" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all" data-testid="link-noticia-lawcom">Leer cobertura <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- OBSERVATORIO -->
-<section class="section">
-  <div class="container">
-    <div class="grid-2" style="gap:3rem; align-items:center;">
-      <div>
-        <div class="accent-bar"></div>
-        <h2>Observatorio LegalTech Garrigues &mdash; ICADE</h2>
-        <p>Punto de encuentro para el sector legal, donde conectar e impulsar juntos la transformaci&oacute;n del sector para aprovechar las ventajas de la tecnolog&iacute;a y mejorar c&oacute;mo funciona nuestro ordenamiento jur&iacute;dico.</p>
-        <div style="margin-top:1.5rem;">
-          <div class="obs-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+<section class="py-24 md:py-28 bg-white" data-testid="observatorio-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="fade-in">
+        <div class="w-12 h-1 bg-accent rounded-full mb-6"></div>
+        <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4" data-testid="observatorio-heading">Observatorio LegalTech Garrigues — ICADE</h2>
+        <p class="text-gray-500 leading-relaxed mb-8">Punto de encuentro para el sector legal, donde conectar e impulsar juntos la transformacion del sector para aprovechar las ventajas de la tecnologia.</p>
+        <div class="space-y-5">
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center"><i class="ph ph-calendar text-accent"></i></div>
             <div>
-              <strong>Eventos y encuentros</strong>
-              <p style="margin:0; font-size:0.9rem;">Sesiones presenciales y online con profesionales del sector legal y tecnol&oacute;gico.</p>
+              <strong class="text-sm text-primary block mb-0.5">Eventos y encuentros</strong>
+              <p class="text-gray-500 text-sm m-0">Sesiones presenciales y online con profesionales del sector legal y tecnologico.</p>
             </div>
           </div>
-          <div class="obs-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center"><i class="ph ph-users text-accent"></i></div>
             <div>
-              <strong>Experiencias de adopci&oacute;n</strong>
-              <p style="margin:0; font-size:0.9rem;">Casos reales sobre qu&eacute; funciona y qu&eacute; no en la transformaci&oacute;n digital del sector legal.</p>
+              <strong class="text-sm text-primary block mb-0.5">Experiencias de adopcion</strong>
+              <p class="text-gray-500 text-sm m-0">Casos reales sobre que funciona y que no en la transformacion digital del sector legal.</p>
             </div>
           </div>
-          <div class="obs-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <div class="flex gap-4 items-start">
+            <div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center"><i class="ph ph-chat-circle text-accent"></i></div>
             <div>
-              <strong>Conversaciones sobre desaf&iacute;os</strong>
-              <p style="margin:0; font-size:0.9rem;">Di&aacute;logo abierto sobre las oportunidades y retos del sector.</p>
+              <strong class="text-sm text-primary block mb-0.5">Conversaciones sobre desafios</strong>
+              <p class="text-gray-500 text-sm m-0">Dialogo abierto sobre las oportunidades y retos del sector.</p>
             </div>
           </div>
         </div>
-        <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
-          <a href="#" class="btn btn-accent btn-sm">Ver eventos del Observatorio</a>
-          <a href="contacto.html" class="btn btn-sm" style="border:1px solid var(--gray-300); color:var(--gray-700);">Proponer colaboraci&oacute;n</a>
+        <div class="flex gap-3 mt-8 flex-wrap">
+          <a href="#" class="bg-accent text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-primary transition-all" data-testid="btn-eventos">Ver eventos del Observatorio</a>
+          <a href="contacto.html" class="border border-gray-200 text-gray-700 px-6 py-2.5 rounded-full text-sm font-medium hover:border-accent hover:text-accent transition-all" data-testid="btn-colaboracion">Proponer colaboracion</a>
         </div>
       </div>
-      <div class="obs-visual">
-        <div class="obs-visual-card">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <h4 style="margin-top:1.25rem; font-size:1.1rem;">Colaboraci&oacute;n acad&eacute;mica</h4>
-          <p style="font-size:0.9rem; margin:0;">Garrigues e ICADE impulsan conjuntamente la investigaci&oacute;n aplicada en tecnolog&iacute;a legal, formando a la pr&oacute;xima generaci&oacute;n de profesionales del derecho digital.</p>
+      <div class="flex items-center justify-center fade-in delay-2">
+        <div class="bg-gradient-to-br from-light to-accent/5 border border-accent/15 rounded-3xl p-10 text-center max-w-sm">
+          <i class="ph ph-globe text-accent text-5xl mb-4"></i>
+          <h4 class="text-lg font-serif text-primary mb-3">Colaboracion academica</h4>
+          <p class="text-gray-500 text-sm leading-relaxed m-0">Garrigues e ICADE impulsan conjuntamente la investigacion aplicada en tecnologia legal, formando a la proxima generacion de profesionales del derecho digital.</p>
         </div>
       </div>
     </div>
@@ -283,68 +260,51 @@
 </section>
 
 <!-- CTA -->
-<section class="section section-dark" style="text-align:center; padding:4rem 0;">
-  <div class="container">
-    <h2>&iquest;Quieres profundizar?</h2>
-    <p style="max-width:500px; margin:0 auto 2rem;">Si necesitas orientaci&oacute;n espec&iacute;fica sobre firma electr&oacute;nica, CLM, GRC, IA o activos digitales, escr&iacute;benos y te recomendamos recursos seg&uacute;n tu caso.</p>
-    <a href="contacto.html" class="btn btn-primary" style="font-size:1.1rem; padding:1rem 2rem;">Contactar con el equipo &rarr;</a>
+<section class="py-24 md:py-28 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="cta-recursos">
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-serif mb-6 fade-in">Quieres profundizar?</h2>
+    <p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">Si necesitas orientacion especifica sobre firma electronica, CLM, GRC, IA o activos digitales, escribenos y te recomendamos recursos segun tu caso.</p>
+    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] fade-in delay-2" data-testid="cta-recursos-btn">Contactar con el equipo <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="grid-4">
+<footer class="bg-dark text-white py-16" data-testid="footer">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
       <div>
-        <h4 style="font-size:1.25rem; color:white; margin-bottom:0.5rem;">g<span style="color:var(--accent);">-digital</span></h4>
-        <p>Divisi&oacute;n de negocios digitales de Garrigues. Innovaci&oacute;n digital con garant&iacute;a legal.</p>
+        <a href="/" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a>
+        <p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues. Innovacion digital con garantia legal.</p>
       </div>
       <div>
-        <h4>Soluciones</h4>
-        <ul class="footer-links">
-          <li><a href="soluciones/confianza-digital.html">Confianza Digital</a></li>
-          <li><a href="soluciones/contract-tech.html">Contract Tech</a></li>
-          <li><a href="soluciones/activos-digitales.html">Activos Digitales</a></li>
-          <li><a href="soluciones/legaltech-ia.html">LegalTech &amp; IA</a></li>
+        <h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4>
+        <ul class="space-y-2.5">
+          <li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li>
+          <li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li>
+          <li><a href="soluciones/activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li>
+          <li><a href="soluciones/legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li>
         </ul>
       </div>
       <div>
-        <h4>Compa&ntilde;&iacute;a</h4>
-        <ul class="footer-links">
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="recursos.html">Recursos</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+        <h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4>
+        <ul class="space-y-2.5">
+          <li><a href="nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li>
+          <li><a href="recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors">Recursos</a></li>
+          <li><a href="contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contacto</h4>
-        <p>info@g-digital.garrigues.com</p>
-        <p>Madrid, Espa&ntilde;a</p>
+        <h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4>
+        <p class="text-white/50 text-sm">info@g-digital.garrigues.com</p>
+        <p class="text-white/50 text-sm mt-1">Madrid, Espana</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
+    <div class="border-t border-white/10 mt-12 pt-8 text-center">
+      <p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
     </div>
   </div>
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-/* Resource filters */
-document.querySelectorAll('.filter-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    this.classList.add('active');
-    var filter = this.getAttribute('data-filter');
-    document.querySelectorAll('.resource-card[data-category]').forEach(function(card) {
-      if (filter === 'all' || card.getAttribute('data-category') === filter) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-});
-</script>
 </body>
 </html>
