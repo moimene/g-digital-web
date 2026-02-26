@@ -148,7 +148,20 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - [x] **Plan de adaptacion UX** documentado: 3 fases (critico/visual/adicional) con analisis comparativo de ambas webs
 - [x] **22 paginas totales** + hub sectores = funcionando
 
-## Backlog
+### Fase 12 — 4 nuevas pildoras estrategicas (26 Feb 2026)
+- [x] **QDLT: Qualified Blockchain** — Las Qualified Electronic Ledgers de eIDAS 2.0: antes/despues en efectos juridicos del blockchain, tabla comparativa (publica/privada/QDLT), conexion con tokenizacion y EADTrust
+- [x] **Gobernanza de Sistemas IA** — Por que un GRC generico no sirve, AIMS Console + Trust API como solucion integrada, 20 escenarios de AI Compliance, servicio hibrido tech + derecho
+- [x] **Catalogo Estatal de Facultades** — Ontologia para poderes, bastanteo automatizado, ejemplo hoy (texto libre) vs manana (ontologia estructurada), conexion con EUDI Wallet y QEAA
+- [x] **eIDAS Vision 2030** — Internet como plataforma transaccional, comparativa eIDAS 2014 (servicios puntuales) vs eIDAS 2030 (infraestructura), donde quedan los viejos servicios, posicionamiento Trust API como puente
+- [x] 4 pildoras con badge NUEVO anadidas a Biblioteca de Conocimiento
+- [x] **26 paginas totales**, todas verificadas 200 OK
+
+## Sitio completo: 26 paginas
+- 4 principales: Homepage, Nosotros (con fotos + logos reales), Recursos (Biblioteca), Contacto
+- 1 hub: Sectores
+- 5 soluciones: Factoria, Confianza Digital, Contract Tech, Activos Digitales, LegalTech & IA
+- 8 sectores: Banca, Seguros, Salud, Logistica, RRHH, Alimentacion, Telecom, Farmaceutico
+- 8 articulos SEO: Derecho Computable, Deuda Legal, Inversion Carga Prueba, eIDAS 2.0, QDLT Blockchain, Gobernanza IA, Catalogo Facultades, eIDAS Vision 2030
 
 ### P1 — Restructuracion de paginas existentes
 - [ ] Restructurar Confianza Digital como 3 capas (Factoria -> Soluciones LegalTech -> GoCertius)
