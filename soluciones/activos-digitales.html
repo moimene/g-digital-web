@@ -3,155 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activos Digitales — Tokenizaci&oacute;n DLT | g-digital</title>
-  <meta name="description" content="Tokenización de activos reales con gobernanza jurídica. Plataformas DLT para mercados de capitales e inmobiliario tokenizado.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Activos Digitales — Tokenizacion DLT | g-digital</title>
+  <meta name="description" content="Tokenizacion de activos reales con gobernanza juridica. Plataformas DLT para mercados de capitales e inmobiliario tokenizado.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="font-sans text-gray-800 bg-light antialiased">
 
 <!-- NAV -->
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="../" class="nav-logo">g<span>-digital</span></a>
-    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <a href="../">Inicio</a>
-      <div class="nav-dropdown">
-        <a href="#">Soluciones &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="confianza-digital.html">&#128274; Confianza Digital</a>
-          <a href="contract-tech.html">&#128196; Contract Tech</a>
-          <a href="activos-digitales.html">&#9981; Activos Digitales</a>
-          <a href="legaltech-ia.html">&#129302; LegalTech &amp; IA</a>
-        </div>
-      </div>
-      <a href="../nosotros.html">Nosotros</a>
-      <a href="../recursos.html">Recursos</a>
-      <a href="../contacto.html">Contacto</a>
-      <a href="../contacto.html" class="nav-cta">Solicitar Demo</a>
+<nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a href="../" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="../" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
+      <div class="nav-dropdown relative"><a href="#" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a><div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2"><div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[280px] shadow-2xl shadow-gray-200/60"><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a></div></div></div>
+      <a href="../nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Nosotros</a>
+      <a href="../recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a>
+      <a href="../contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
+      <a href="../contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
     </div>
+    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span></button>
   </div>
 </nav>
+<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition-all">Solicitar Demo</a></div></div></div>
 
 <!-- HERO -->
-<section class="hero hero-sub">
-  <div class="container" style="position:relative; z-index:1;">
-    <div class="badge" style="margin-bottom:1.5rem; background:rgba(255,255,255,0.15); color:white;">DLT &amp; Blockchain</div>
-    <h1>Tokenizaci&oacute;n y Blockchain con Gobernanza Jur&iacute;dica</h1>
-    <p>Infraestructura DLT para activos tokenizados del mundo real (RWA) con conformidad regulatoria integral y el respaldo de Garrigues.</p>
-  </div>
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-activos">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24"><div class="max-w-3xl">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-white/80 mb-8 fade-in"><i class="ph ph-coins text-accent"></i> DLT &amp; Blockchain</div>
+    <h1 class="text-4xl md:text-6xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="activos-heading">Tokenizacion y Blockchain con <span class="text-accent italic">Gobernanza Juridica</span></h1>
+    <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Infraestructura DLT para activos tokenizados del mundo real (RWA) con conformidad regulatoria integral y el respaldo de Garrigues.</p>
+  </div></div>
 </section>
 
 <!-- INTRO -->
-<section class="section">
-  <div class="container">
-    <div class="accent-bar"></div>
-    <h2>Activos Digitales: El Partner Estrat&eacute;gico</h2>
-    <p style="max-width:700px; margin-bottom:2rem;">Combinamos la experiencia de <strong>Garrigues</strong> en regulaci&oacute;n financiera con la infraestructura DLT de <strong>ioBuilders</strong> y los servicios de confianza de <strong>EADTrust</strong>.</p>
-    <div class="highlight-box">
-      <p><strong>Alianza ioBuilders:</strong> Inversi&oacute;n estrat&eacute;gica de Garrigues en ioBuilders para desarrollar infraestructura DLT de clase empresarial destinada a mercados financieros tokenizados.</p>
+<section class="py-24 md:py-32 bg-white" data-testid="intro-activos">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+    <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1">Activos Digitales: El Partner Estrategico</h2>
+    <p class="text-gray-500 text-lg max-w-2xl mb-8 fade-in delay-2">Combinamos la experiencia de <strong class="text-primary">Garrigues</strong> en regulacion financiera con la infraestructura DLT de <strong class="text-primary">ioBuilders</strong> y los servicios de confianza de <strong class="text-primary">EADTrust</strong>.</p>
+    <div class="bg-gradient-to-r from-light to-accent/5 border-l-4 border-accent p-6 rounded-r-2xl fade-in delay-3">
+      <p class="text-primary font-medium text-sm"><strong>Alianza ioBuilders:</strong> Inversion estrategica de Garrigues en ioBuilders para desarrollar infraestructura DLT de clase empresarial destinada a mercados financieros tokenizados.</p>
     </div>
   </div>
 </section>
 
 <!-- AREAS -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="accent-bar"></div>
-    <h2>&Aacute;reas de Soluci&oacute;n</h2>
-    <div class="grid-2" style="margin-top:2rem;">
-      <div class="card fade-in">
-        <div class="badge" style="margin-bottom:1rem;">OpenBrick</div>
-        <h3>Tokenizaci&oacute;n Inmobiliaria</h3>
-        <p>Fraccionamiento de activos inmobiliarios bajo el R&eacute;gimen Piloto DLT de la UE con supervisi&oacute;n de CNMV. Liquidez secundaria en mercados regulados.</p>
+<section class="py-24 md:py-32 bg-light" data-testid="areas-section">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
+    <h2 class="text-3xl md:text-5xl font-serif text-primary mb-12 fade-in delay-1">Areas de Solucion</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="area-openbrick">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent mb-4 inline-block">OpenBrick</span>
+        <h3 class="text-xl font-serif text-primary mb-3">Tokenizacion Inmobiliaria</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Fraccionamiento de activos inmobiliarios bajo el Regimen Piloto DLT de la UE con supervision de CNMV.</p>
       </div>
-      <div class="card fade-in">
-        <div class="badge" style="margin-bottom:1rem;">Sylot / Adhara+</div>
-        <h3>Financiaci&oacute;n y Deuda Tokenizada</h3>
-        <p>Sindicaci&oacute;n de cr&eacute;ditos en blockchain. Automatizaci&oacute;n de contratos de asignaci&oacute;n de cr&eacute;dito e instrumentos de deuda tokenizados.</p>
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="area-sylot">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent mb-4 inline-block">Sylot / Adhara+</span>
+        <h3 class="text-xl font-serif text-primary mb-3">Financiacion y Deuda Tokenizada</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Sindicacion de creditos en blockchain. Automatizacion de contratos e instrumentos de deuda tokenizados.</p>
       </div>
-      <div class="card fade-in">
-        <div class="badge" style="margin-bottom:1rem;">CBDC / Bonos</div>
-        <h3>Mercados de Capitales Digitales</h3>
-        <p>Emisi&oacute;n regulada de bonos digitales, CBDC e instrumentos de renta fija tokenizados. Validaci&oacute;n CNMV, BdE y ESMA.</p>
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="area-cbdc">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent mb-4 inline-block">CBDC / Bonos</span>
+        <h3 class="text-xl font-serif text-primary mb-3">Mercados de Capitales Digitales</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Emision regulada de bonos digitales, CBDC e instrumentos de renta fija tokenizados.</p>
       </div>
-      <div class="card fade-in">
-        <div class="badge" style="margin-bottom:1rem;">ESG / Carbon</div>
-        <h3>Activos No Financieros y ESG</h3>
-        <p>Certificados de energ&iacute;a, cr&eacute;ditos de carbono y activos ambientales con trazabilidad blockchain y validaci&oacute;n de origen.</p>
+      <div class="bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-3" data-testid="area-esg">
+        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent mb-4 inline-block">ESG / Carbon</span>
+        <h3 class="text-xl font-serif text-primary mb-3">Activos No Financieros y ESG</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Certificados de energia, creditos de carbono y activos ambientales con trazabilidad blockchain.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROPUESTA DE VALOR -->
-<section class="section section-dark">
-  <div class="container" style="text-align:center;">
-    <h2>Propuesta de Valor</h2>
-    <p style="max-width:600px; margin:0 auto 2.5rem;">Tres pilares que garantizan que cada soluci&oacute;n de activos digitales tiene el respaldo necesario.</p>
-    <div class="grid-3">
-      <div class="fade-in" style="padding:1.5rem;">
-        <h3 style="color:var(--accent);">Conformidad Legal</h3>
-        <p>Equipo de Regulaci&oacute;n Financiera de Garrigues. Cumplimiento CNMV, BdE y ESMA.</p>
-      </div>
-      <div class="fade-in" style="padding:1.5rem;">
-        <h3 style="color:var(--accent);">Infraestructura DLT</h3>
-        <p>Tecnolog&iacute;a blockchain de clase empresarial con ioBuilders. Escalabilidad y seguridad.</p>
-      </div>
-      <div class="fade-in" style="padding:1.5rem;">
-        <h3 style="color:var(--accent);">Gobernanza Jur&iacute;dica</h3>
-        <p>Modelos con EADTrust que integran marcos legales, regulatorios y tecnol&oacute;gicos.</p>
-      </div>
+<section class="py-24 md:py-32 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="valor-activos">
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-serif mb-4 fade-in">Propuesta de Valor</h2>
+    <p class="text-lg text-gray-300 font-light max-w-xl mx-auto mb-12 fade-in delay-1">Tres pilares que garantizan cada solucion de activos digitales.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="fade-in delay-1 group"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-all"><i class="ph ph-scales text-2xl text-accent"></i></div><h3 class="text-lg font-serif text-accent mb-2">Conformidad Legal</h3><p class="text-gray-300/80 text-sm">Equipo de Regulacion Financiera de Garrigues. Cumplimiento CNMV, BdE y ESMA.</p></div>
+      <div class="fade-in delay-2 group"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-all"><i class="ph ph-tree-structure text-2xl text-accent"></i></div><h3 class="text-lg font-serif text-accent mb-2">Infraestructura DLT</h3><p class="text-gray-300/80 text-sm">Tecnologia blockchain de clase empresarial con ioBuilders.</p></div>
+      <div class="fade-in delay-3 group"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-all"><i class="ph ph-shield-check text-2xl text-accent"></i></div><h3 class="text-lg font-serif text-accent mb-2">Gobernanza Juridica</h3><p class="text-gray-300/80 text-sm">Modelos con EADTrust que integran marcos legales, regulatorios y tecnologicos.</p></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="section" style="text-align:center; padding:4rem 0;">
-  <div class="container">
-    <h2>Transforme sus Activos con Tokenizaci&oacute;n Regulada</h2>
-    <p style="max-width:500px; margin:0 auto 2rem; color:var(--gray-500);">Blockchain con gobernanza jur&iacute;dica integral para tokenizar activos reales en mercados financieros regulados.</p>
-    <a href="../contacto.html" class="btn btn-accent" style="font-size:1.1rem; padding:1rem 2rem;">Contactar &#8594;</a>
+<section class="py-20 bg-white text-center" data-testid="cta-activos">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in">Transforme sus Activos con Tokenizacion Regulada</h2>
+    <p class="text-gray-500 mb-8 fade-in delay-1">Blockchain con gobernanza juridica integral para tokenizar activos reales en mercados financieros regulados.</p>
+    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold hover:bg-primary transition-all shadow-lg shadow-accent/20 hover:-translate-y-0.5 fade-in delay-2" data-testid="cta-activos-btn">Contactar <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="grid-4">
-      <div>
-        <h4 style="font-size:1.25rem; color:white; margin-bottom:0.5rem;">g<span style="color:var(--accent);">-digital</span></h4>
-        <p>Divisi&oacute;n de negocios digitales de Garrigues. Innovaci&oacute;n digital con garant&iacute;a legal.</p>
-      </div>
-      <div>
-        <h4>Soluciones</h4>
-        <ul class="footer-links">
-          <li><a href="confianza-digital.html">Confianza Digital</a></li>
-          <li><a href="contract-tech.html">Contract Tech</a></li>
-          <li><a href="activos-digitales.html">Activos Digitales</a></li>
-          <li><a href="legaltech-ia.html">LegalTech &amp; IA</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Compa&ntilde;&iacute;a</h4>
-        <ul class="footer-links">
-          <li><a href="../nosotros.html">Nosotros</a></li>
-          <li><a href="../contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contacto</h4>
-        <p>info@g-digital.garrigues.com</p>
-        <p>Madrid, Espa&ntilde;a</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
-    </div>
-  </div>
-</footer>
+<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="../nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="../contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
 
 <script src="../js/main.js"></script>
 </body>
