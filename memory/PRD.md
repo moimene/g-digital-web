@@ -91,6 +91,28 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - [x] **Estructura de /recursos/** como directorio de articulos individuales con URLs limpias
 - [x] Template de articulo SEO reutilizable: hero con tags, back-link, infografia, cuerpo, highlights, related, CTA
 
+### Fase 8 — Articulos SEO individuales (26 Feb 2026)
+- [x] **Articulo "Deuda Legal"** (~1.800 palabras, 10 min): Analogia con deuda tecnica, 8 operaciones criticas detalladas con Hoy/Riesgo/Con Trust API, argumento legal, tabla blockchain vs eIDAS, como cuantificar, Compliance Injection
+- [x] **Articulo "Inversion de la Carga de la Prueba"** (~1.500 palabras, 12 min): Principio procesal, base normativa detallada (Art. 41.2 eIDAS, Art. 25.2 eIDAS, Art. 326.4 LEC, Ley 6/2020), por que blockchain NO invierte la carga, 2 infografias integradas
+- [x] **3 articulos operativos** en /recursos/ con URLs SEO limpias: derecho-computable, deuda-legal, inversion-carga-prueba
+- [x] Links cruzados entre articulos (related cards al final de cada uno)
+- [x] Links desde pildoras en Biblioteca de Conocimiento a articulos individuales
+- [x] **12 paginas totales** verificadas: 200 OK en todas
+
+## Paginas totales del sitio: 12
+1. index.html (Homepage)
+2. nosotros.html (Sobre nosotros)
+3. recursos.html (Biblioteca de Conocimiento)
+4. contacto.html (Contacto)
+5. soluciones/factoria.html (La Factoria - Trust API)
+6. soluciones/confianza-digital.html (Confianza Digital - 3 capas)
+7. soluciones/contract-tech.html (Contract Tech - 3 lineas)
+8. soluciones/activos-digitales.html (Activos Digitales)
+9. soluciones/legaltech-ia.html (LegalTech & IA)
+10. recursos/derecho-computable.html (Articulo SEO)
+11. recursos/deuda-legal.html (Articulo SEO)
+12. recursos/inversion-carga-prueba.html (Articulo SEO)
+
 ## Backlog (P2-P3)
 
 ### P1 — Restructuracion de paginas existentes
