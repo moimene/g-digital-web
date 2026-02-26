@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inversion de la Carga de la Prueba — Art. 326.4 LEC y eIDAS | g-digital</title>
+  <meta name="description" content="Que es la inversion de la carga de la prueba, como funciona con servicios eIDAS cualificados (Art. 41.2 eIDAS, Art. 326.4 LEC), y por que blockchain no tiene el mismo efecto legal.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-sans text-gray-800 bg-light antialiased">
+
+<!-- NAV (simplified) -->
+<nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a href="../" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="../" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
+      <a href="../recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a>
+      <a href="../contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
+      <a href="../contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
+    </div>
+    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span></button>
+  </div>
+</nav>
+<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Inicio</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Contacto</a></div></div>
+
+<!-- HERO -->
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="article-hero">
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pt-36 pb-16 md:pt-44 md:pb-20">
+    <a href="../recursos.html" class="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-8 fade-in"><i class="ph ph-arrow-left"></i> Biblioteca de Conocimiento</a>
+    <div class="flex items-center gap-3 mb-6 fade-in delay-1">
+      <span class="px-3 py-1 rounded-full text-xs font-bold bg-primary/30 text-white">MARCO LEGAL</span>
+      <span class="text-xs text-gray-400 font-mono">12 min lectura</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl lg:text-6xl font-serif font-medium leading-[1.1] mb-6 tracking-tight fade-in delay-2" data-testid="article-heading">Inversion de la <span class="text-accent italic">Carga de la Prueba</span></h1>
+    <p class="text-lg md:text-xl text-gray-300 font-light max-w-2xl leading-relaxed fade-in delay-3">Art. 326.4 LEC y Art. 41.2 eIDAS. El beneficio legal mas valioso de los servicios de confianza cualificados: la presuncion de autenticidad e integridad.</p>
+  </div>
+</section>
+
+<!-- INFOGRAPHIC -->
+<section class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div class="flex justify-center fade-in">
+        <img src="../img/inversion-carga-prueba.png" alt="Inversion de la carga de la prueba: sin Trust API vs con Trust API" class="w-full max-w-lg rounded-3xl shadow-lg border border-gray-100" data-testid="main-infographic">
+      </div>
+      <div class="fade-in delay-1">
+        <img src="../img/concepto-inversion-carga.png" alt="Impacto legal de eIDAS en la inversion de la carga de la prueba" class="w-full rounded-3xl shadow-lg border border-gray-100" data-testid="detailed-infographic">
+      </div>
+    </div>
+    <p class="text-xs text-gray-400 text-center mt-4">Infografias: Inversion de la carga de la prueba con servicios eIDAS cualificados</p>
+  </div>
+</section>
+
+<!-- ARTICLE -->
+<section class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <article>
+      <h2 class="text-2xl md:text-3xl font-serif text-primary mb-6 fade-in">El principio: quien debe probar que</h2>
+      <p class="text-gray-600 leading-relaxed mb-6 fade-in">En el derecho procesal, la <strong class="text-primary">carga de la prueba</strong> determina quien debe demostrar un hecho ante el tribunal. Normalmente, quien alega un hecho debe probarlo. Pero los servicios de confianza cualificados eIDAS cambian esta dinamica de forma radical.</p>
+      <p class="text-gray-600 leading-relaxed mb-6 fade-in">Cuando un documento esta certificado con un <strong class="text-primary">sello de tiempo cualificado</strong> o una <strong class="text-primary">firma electronica cualificada</strong>, goza de <strong class="text-primary">presuncion legal de autenticidad e integridad</strong>. Esto significa que no es tu empresa quien debe demostrar que el documento es autentico &mdash; es la contraparte quien debe demostrar que es falso.</p>
+
+      <div class="bg-gradient-to-br from-primary to-dark p-8 rounded-3xl text-white my-10 fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="p-5 rounded-2xl bg-red-500/10 border border-red-500/20">
+            <p class="text-xs font-mono text-red-300 mb-2">SIN servicios cualificados</p>
+            <p class="text-sm text-gray-300 m-0">&laquo;Senoria, este PDF demuestra que...&raquo; &mdash; Tienes que probar TU que el documento es autentico, integro y que la fecha es correcta.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-accent/10 border border-accent/30">
+            <p class="text-xs font-mono text-accent mb-2">CON servicios cualificados eIDAS</p>
+            <p class="text-sm text-white m-0">&laquo;Este documento tiene sello cualificado&raquo; &mdash; La contraparte debe demostrar que es falso. La presuncion legal esta de TU lado.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-serif text-primary mb-6 mt-12 fade-in">Base normativa</h2>
+      <div class="space-y-4 my-8 fade-in">
+        <div class="bg-light p-5 rounded-2xl border border-gray-100">
+          <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-accent/10 text-accent">Art. 41.2 Reglamento eIDAS</span></div>
+          <p class="text-sm text-gray-600 m-0">Los sellos de tiempo cualificados gozan de <strong class="text-primary">presuncion de exactitud de fecha y hora</strong> e integridad de los datos a los que se vinculan. Presuncion que se aplica en todos los Estados miembros de la UE.</p>
+        </div>
+        <div class="bg-light p-5 rounded-2xl border border-gray-100">
+          <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-accent/10 text-accent">Art. 25.2 Reglamento eIDAS</span></div>
+          <p class="text-sm text-gray-600 m-0">La firma electronica cualificada tiene un efecto juridico <strong class="text-primary">equivalente al de una firma manuscrita</strong>. Validez en toda la UE sin necesidad de acuerdos bilaterales.</p>
+        </div>
+        <div class="bg-light p-5 rounded-2xl border border-gray-100">
+          <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-accent/10 text-accent">Art. 326.4 LEC (Espana)</span></div>
+          <p class="text-sm text-gray-600 m-0">Cuando un documento privado sea impugnado, si ha sido firmado con firma electronica reconocida, se estara a lo establecido en la legislacion sobre firma electronica. <strong class="text-primary">Inversion efectiva de la carga de la prueba</strong> en el ordenamiento procesal espanol.</p>
+        </div>
+        <div class="bg-light p-5 rounded-2xl border border-gray-100">
+          <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-accent/10 text-accent">Ley 6/2020 (Espana)</span></div>
+          <p class="text-sm text-gray-600 m-0">Regulacion nacional de servicios electronicos de confianza. Transpone eIDAS al ordenamiento juridico espanol y establece el regimen de los prestadores cualificados.</p>
+        </div>
+      </div>
+
+      <h2 class="text-2xl md:text-3xl font-serif text-primary mb-6 mt-12 fade-in">Por que blockchain NO invierte la carga de la prueba</h2>
+      <p class="text-gray-600 leading-relaxed mb-6 fade-in">Esta es una confusion frecuente. Un hash en una blockchain publica demuestra inmutabilidad tecnica, pero <strong class="text-primary">no tiene presuncion legal en Espana ni en la UE</strong>. Si vas a juicio con un hash de Ethereum, tienes que demostrar tu la relacion entre el hash y el documento, la integridad de la cadena, y que no hubo manipulacion previa al hash.</p>
+      <p class="text-gray-600 leading-relaxed mb-6 fade-in">Con un sello de tiempo cualificado eIDAS, nada de eso es necesario. La presuncion legal es automatica por el mero hecho de usar un servicio cualificado emitido por un QTSP supervisado.</p>
+
+      <div class="bg-gradient-to-r from-light to-accent/5 border-l-4 border-accent p-6 rounded-r-2xl my-10 fade-in">
+        <p class="text-primary font-medium text-sm m-0"><strong>Trust API solo utiliza servicios CUALIFICADOS</strong> &mdash; los unicos con efectos legales privilegiados en el Reglamento eIDAS y la legislacion procesal espanola. EADTrust, el QTSP del Grupo Garrigues, respalda cada operacion.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="py-16 bg-light">
+  <div class="max-w-4xl mx-auto px-6">
+    <h3 class="text-xl font-serif text-primary mb-6">Sigue explorando</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <a href="deuda-legal.html" class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl no-underline fade-in"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">CONCEPTO</span><h4 class="text-sm font-serif text-primary mt-3 mb-1">Deuda Legal</h4><p class="text-xs text-gray-500 m-0">La deuda oculta de tus operaciones digitales</p></a>
+      <a href="derecho-computable.html" class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl no-underline fade-in delay-1"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">ARTICULO</span><h4 class="text-sm font-serif text-primary mt-3 mb-1">Derecho Computable</h4><p class="text-xs text-gray-500 m-0">El contrato como automata de estados</p></a>
+      <a href="../soluciones/factoria.html" class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl no-underline fade-in delay-2"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/10 text-accent">SOLUCION</span><h4 class="text-sm font-serif text-primary mt-3 mb-1">Trust API</h4><p class="text-xs text-gray-500 m-0">4 microservicios eIDAS cualificados</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain">
+  <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-serif mb-6 fade-in">Quieres la presuncion legal de tu lado?</h2>
+    <p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">Una llamada REST. Evidencia legal cualificada. Inversion de la carga de la prueba.</p>
+    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] fade-in delay-2">Solicitar Demo <i class="ph ph-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Recursos</h4><ul class="space-y-2.5"><li><a href="derecho-computable.html" class="text-white/50 text-sm hover:text-accent transition-colors">Derecho Computable</a></li><li><a href="deuda-legal.html" class="text-white/50 text-sm hover:text-accent transition-colors">Deuda Legal</a></li><li><a href="inversion-carga-prueba.html" class="text-white/50 text-sm hover:text-accent transition-colors">Inversion Carga de Prueba</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="../nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="../recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors">Recursos</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></div></footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
