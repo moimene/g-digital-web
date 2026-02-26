@@ -3,217 +3,295 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mapa de Conocimiento — Derecho + Tecnologia | g-digital</title>
-  <meta name="description" content="Mapa interactivo de conceptos g-digital: navega las conexiones entre eIDAS, Trust API, Contract Tech, IA, Activos Digitales y todas las pildoras de conocimiento.">
+  <title>Mapa de Conocimiento — Grafo Interactivo | g-digital</title>
+  <meta name="description" content="Grafo interactivo del ecosistema de conocimiento g-digital. Navega las conexiones entre eIDAS, Trust API, Contract Tech, Agencia IA Legal, Activos Digitales y 8 sectores.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .node { cursor: pointer; transition: all 0.3s; }
-    .node:hover { transform: scale(1.05); }
-    .node.active { ring: 3px; ring-color: #009A77; }
-    .edge { stroke: #D1D5DB; stroke-width: 1.5; stroke-dasharray: 6 4; transition: stroke 0.3s; }
-    .edge.lit { stroke: #009A77; stroke-width: 2; stroke-dasharray: none; }
-    .detail-panel { transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
+    #graph-container { width: 100%; height: 70vh; min-height: 500px; position: relative; overflow: hidden; background: #022C22; border-radius: 1.5rem; }
+    #graph-container svg { width: 100%; height: 100%; }
+    .graph-node { cursor: pointer; }
+    .graph-node circle { transition: r 0.3s, fill-opacity 0.3s; }
+    .graph-node text { fill: white; font-family: 'Manrope', sans-serif; pointer-events: none; }
+    .graph-link { stroke-opacity: 0.15; transition: stroke-opacity 0.3s, stroke-width 0.3s; }
+    .graph-link.highlighted { stroke-opacity: 0.8; stroke-width: 3; }
+    .graph-node.dimmed circle { fill-opacity: 0.15; }
+    .graph-node.dimmed text { fill-opacity: 0.15; }
+    .graph-link.dimmed { stroke-opacity: 0.03; }
+    .node-tooltip { position: absolute; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border: 1px solid #E5E7EB; border-radius: 16px; padding: 16px 20px; pointer-events: none; opacity: 0; transition: opacity 0.25s; max-width: 320px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); z-index: 100; }
+    .node-tooltip.visible { opacity: 1; pointer-events: auto; }
   </style>
 </head>
 <body class="font-sans text-gray-800 bg-light antialiased">
 
 <nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300"><div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]"><a href="/" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a><div class="hidden lg:flex items-center gap-8"><a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a><a href="recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a><a href="contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a><a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a></div></div></nav>
-<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="/" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Inicio</a><a href="recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Recursos</a></div></div>
 
 <!-- HERO -->
 <section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain">
-  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-16 md:pt-44 md:pb-20">
-    <a href="recursos.html" class="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-8 fade-in"><i class="ph ph-arrow-left"></i> Biblioteca de Conocimiento</a>
-    <h1 class="text-3xl md:text-5xl font-serif font-medium leading-[1.1] mb-6 tracking-tight fade-in delay-1">Mapa de <span class="text-accent italic">Conocimiento</span></h1>
-    <p class="text-lg text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Navega las conexiones entre conceptos. Haz clic en un nodo para explorar sus relaciones y acceder al articulo completo.</p>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-8 md:pt-36 md:pb-12">
+    <div class="flex items-center justify-between flex-wrap gap-4">
+      <div>
+        <a href="recursos.html" class="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-4"><i class="ph ph-arrow-left"></i> Biblioteca</a>
+        <h1 class="text-2xl md:text-4xl font-serif font-medium tracking-tight">Mapa de <span class="text-accent italic">Conocimiento</span></h1>
+        <p class="text-sm text-gray-400 mt-2 max-w-md">Haz clic en un nodo para iluminar sus conexiones. Haz clic en el fondo para reiniciar. Arrastra para reorganizar.</p>
+      </div>
+      <div class="flex gap-2 flex-wrap">
+        <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-accent/20 text-accent border border-accent/30">Confianza Digital</span>
+        <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-gold/20 text-gold border border-gold/30">Contract Tech</span>
+        <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-purple-500/20 text-purple-300 border border-purple-500/30">Agencia IA Legal</span>
+        <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">Activos Digitales</span>
+        <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-white/10 text-gray-300 border border-white/20">Sectores</span>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- KNOWLEDGE MAP -->
-<section class="py-16 md:py-24 bg-white" data-testid="knowledge-map">
+<!-- GRAPH -->
+<section class="py-8 md:py-12 bg-light">
   <div class="max-w-7xl mx-auto px-6">
-
-    <!-- Cluster: CONFIANZA DIGITAL & eIDAS -->
-    <div class="mb-16">
-      <h2 class="text-sm font-mono font-bold text-accent uppercase tracking-widest mb-8 fade-in">Confianza Digital &amp; eIDAS</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-        <a href="recursos/eidas-vision-2030.html" class="group bg-gradient-to-br from-primary to-dark p-4 rounded-2xl text-white text-center no-underline hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-vision2030">
-          <i class="ph ph-globe text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold m-0">eIDAS Vision 2030</p>
-          <p class="text-[10px] text-gray-400 m-0">Vision estrategica</p>
-        </a>
-        <a href="recursos/eidas-2.html" class="group bg-white p-4 rounded-2xl border border-gray-200 text-center no-underline hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-eidas2">
-          <i class="ph ph-shield-check text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">eIDAS 2.0</p>
-          <p class="text-[10px] text-gray-400 m-0">Reglamento</p>
-        </a>
-        <a href="recursos/inversion-carga-prueba.html" class="group bg-white p-4 rounded-2xl border border-gray-200 text-center no-underline hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-inversion">
-          <i class="ph ph-scales text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">Inversion Carga Prueba</p>
-          <p class="text-[10px] text-gray-400 m-0">Art. 326.4 LEC</p>
-        </a>
-        <a href="recursos/deuda-legal.html" class="group bg-white p-4 rounded-2xl border-2 border-red-200 text-center no-underline hover:border-red-400 hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-deuda">
-          <i class="ph ph-warning-circle text-red-500 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">Deuda Legal</p>
-          <p class="text-[10px] text-red-400 m-0">Concepto clave</p>
-        </a>
-        <a href="soluciones/factoria.html" class="group bg-accent/10 p-4 rounded-2xl border-2 border-accent/30 text-center no-underline hover:bg-accent/20 hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-trustapi">
-          <i class="ph ph-lightning text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">Trust API</p>
-          <p class="text-[10px] text-accent font-bold m-0">La Factoria</p>
-        </a>
-        <a href="soluciones/confianza-digital.html" class="group bg-white p-4 rounded-2xl border border-gray-200 text-center no-underline hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-confianza">
-          <i class="ph ph-lock text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">3 Capas</p>
-          <p class="text-[10px] text-gray-400 m-0">Confianza Digital</p>
-        </a>
-      </div>
-      <!-- Connections text -->
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="text-[10px] font-mono text-gray-400">eIDAS 2030 <i class="ph ph-arrow-right text-accent"></i> eIDAS 2.0 <i class="ph ph-arrow-right text-accent"></i> Inversion Carga <i class="ph ph-arrow-right text-accent"></i> Deuda Legal <i class="ph ph-arrow-right text-accent"></i> Trust API <i class="ph ph-arrow-right text-accent"></i> 3 Capas</span>
-      </div>
+    <div id="graph-container" data-testid="knowledge-graph">
+      <svg id="graph-svg"></svg>
     </div>
-
-    <!-- Cluster: CONTRACT TECH & DERECHO COMPUTABLE -->
-    <div class="mb-16">
-      <h2 class="text-sm font-mono font-bold text-gold uppercase tracking-widest mb-8 fade-in">Contract Tech &amp; Derecho Computable</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
-        <a href="recursos/derecho-computable.html" class="group bg-gradient-to-br from-primary to-dark p-4 rounded-2xl text-white text-center no-underline hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-computable">
-          <i class="ph ph-code text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold m-0">Derecho Computable</p>
-          <p class="text-[10px] text-gray-400 m-0">Vision fundacional</p>
-        </a>
-        <a href="soluciones/contract-tech.html" class="group bg-white p-4 rounded-2xl border border-gray-200 text-center no-underline hover:border-gold hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-contracttech">
-          <i class="ph ph-file-text text-gold text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">Contract Tech</p>
-          <p class="text-[10px] text-gray-400 m-0">3 lineas de servicio</p>
-        </a>
-        <a href="recursos/catalogo-facultades.html" class="group bg-white p-4 rounded-2xl border-2 border-gold/30 text-center no-underline hover:border-gold hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-facultades">
-          <i class="ph ph-stamp text-gold text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">Catalogo Facultades</p>
-          <p class="text-[10px] text-gold m-0">Nuevo</p>
-        </a>
-        <div class="bg-light p-4 rounded-2xl text-center border border-dashed border-gray-300">
-          <i class="ph ph-puzzle-piece text-gray-400 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-gray-500 m-0">Piezas LEGO</p>
-          <p class="text-[10px] text-gray-400 m-0">Building blocks</p>
-        </div>
-        <div class="bg-light p-4 rounded-2xl text-center border border-dashed border-gray-300">
-          <i class="ph ph-robot text-gray-400 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-gray-500 m-0">Contract Guardian</p>
-          <p class="text-[10px] text-gray-400 m-0">Agente IA</p>
-        </div>
-      </div>
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="text-[10px] font-mono text-gray-400">Derecho Computable <i class="ph ph-arrow-right text-gold"></i> Contract Tech (3 lineas) <i class="ph ph-arrow-right text-gold"></i> Catalogo Facultades <i class="ph ph-arrows-left-right text-accent"></i> Trust API</span>
-      </div>
-    </div>
-
-    <!-- Cluster: AGENCIA IA LEGAL -->
-    <div class="mb-16">
-      <h2 class="text-sm font-mono font-bold text-purple-600 uppercase tracking-widest mb-8 fade-in">Agencia IA Legal Garrigues</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
-        <a href="recursos/gobernanza-ia.html" class="group bg-gradient-to-br from-primary to-dark p-4 rounded-2xl text-white text-center no-underline hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-gobernanza">
-          <i class="ph ph-brain text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold m-0">Gobernanza IA</p>
-          <p class="text-[10px] text-gray-400 m-0">AIMS + Trust API</p>
-        </a>
-        <a href="soluciones/legaltech-ia.html" class="group bg-white p-4 rounded-2xl border border-gray-200 text-center no-underline hover:border-purple-400 hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-legaltech">
-          <i class="ph ph-compass-tool text-purple-500 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">GRC Compass Core</p>
-          <p class="text-[10px] text-gray-400 m-0">16 modulos &middot; RIA</p>
-        </a>
-        <div class="bg-purple-50 p-4 rounded-2xl border border-purple-200 text-center">
-          <i class="ph ph-shield-warning text-purple-500 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">AI Act (RIA)</p>
-          <p class="text-[10px] text-purple-400 m-0">Reg. 2024/1689</p>
-        </div>
-        <div class="bg-purple-50 p-4 rounded-2xl border border-purple-200 text-center">
-          <i class="ph ph-certificate text-purple-500 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">ISO 42001</p>
-          <p class="text-[10px] text-purple-400 m-0">AIMS Certified</p>
-        </div>
-        <div class="bg-light p-4 rounded-2xl text-center border border-dashed border-gray-300">
-          <i class="ph ph-scales text-gray-400 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-gray-500 m-0">Garrigues Asesora</p>
-          <p class="text-[10px] text-gray-400 m-0">Skills &middot; Guardrails</p>
-        </div>
-      </div>
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="text-[10px] font-mono text-gray-400">Garrigues (asesoria) <i class="ph ph-arrow-right text-purple-400"></i> g-digital (productos: AIMS + GRC) <i class="ph ph-arrow-right text-accent"></i> Trust API (evidencia ciclo de vida dato)</span>
-      </div>
-    </div>
-
-    <!-- Cluster: ACTIVOS DIGITALES & BLOCKCHAIN -->
-    <div class="mb-16">
-      <h2 class="text-sm font-mono font-bold text-primary uppercase tracking-widest mb-8 fade-in">Activos Digitales &amp; DLT</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <a href="recursos/qdlt-blockchain.html" class="group bg-gradient-to-br from-primary to-dark p-4 rounded-2xl text-white text-center no-underline hover:shadow-xl hover:-translate-y-1 transition-all" data-testid="node-qdlt">
-          <i class="ph ph-link-simple text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold m-0">QDLT Blockchain</p>
-          <p class="text-[10px] text-gray-400 m-0">Qualified DLT</p>
-        </a>
-        <a href="soluciones/activos-digitales.html" class="group bg-white p-4 rounded-2xl border border-gray-200 text-center no-underline hover:border-accent hover:shadow-xl hover:-translate-y-1 transition-all">
-          <i class="ph ph-coins text-accent text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-primary m-0">Activos Digitales</p>
-          <p class="text-[10px] text-gray-400 m-0">Tokenizacion RWA</p>
-        </a>
-        <div class="bg-light p-4 rounded-2xl text-center border border-dashed border-gray-300">
-          <i class="ph ph-building-apartment text-gray-400 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-gray-500 m-0">OpenBrick</p>
-          <p class="text-[10px] text-gray-400 m-0">Inmobiliario</p>
-        </div>
-        <div class="bg-light p-4 rounded-2xl text-center border border-dashed border-gray-300">
-          <i class="ph ph-currency-circle-dollar text-gray-400 text-2xl mb-2"></i>
-          <p class="text-xs font-semibold text-gray-500 m-0">Sylot</p>
-          <p class="text-[10px] text-gray-400 m-0">Prestamos DLT</p>
-        </div>
-      </div>
-      <div class="flex flex-wrap gap-2 mt-4">
-        <span class="text-[10px] font-mono text-gray-400">QDLT (eIDAS 2.0) <i class="ph ph-arrow-right text-accent"></i> Activos Digitales <i class="ph ph-arrow-right text-accent"></i> OpenBrick / Sylot <i class="ph ph-arrows-left-right text-gold"></i> Contract Tech (CLM Mono-contrato)</span>
-      </div>
-    </div>
-
-    <!-- CROSS-CLUSTER CONNECTIONS -->
-    <div class="bg-gradient-to-r from-primary to-dark p-8 rounded-3xl text-white relative overflow-hidden fade-in">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-bl-full"></div>
-      <div class="relative z-10">
-        <h3 class="text-xl font-serif mb-6">Conexiones entre clusters</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-          <div class="flex items-start gap-3"><i class="ph ph-arrows-left-right text-accent mt-0.5"></i><p class="text-gray-300 m-0"><strong class="text-white">Trust API</strong> es transversal: alimenta Confianza Digital, Contract Tech, Gobernanza IA y Activos Digitales con evidencia cualificada</p></div>
-          <div class="flex items-start gap-3"><i class="ph ph-arrows-left-right text-accent mt-0.5"></i><p class="text-gray-300 m-0"><strong class="text-white">eIDAS 2.0</strong> habilita QDLT (blockchain cualificado), EUDI Wallet (identidad), QEAA (Catalogo Facultades) y nuevos servicios</p></div>
-          <div class="flex items-start gap-3"><i class="ph ph-arrows-left-right text-accent mt-0.5"></i><p class="text-gray-300 m-0"><strong class="text-white">Derecho Computable</strong> es la vision que une Contract Tech (automata de estados) con Trust API (evidencia por transicion)</p></div>
-          <div class="flex items-start gap-3"><i class="ph ph-arrows-left-right text-accent mt-0.5"></i><p class="text-gray-300 m-0"><strong class="text-white">Agencia IA Legal</strong>: Garrigues asesora (guardrails) + g-digital productos (AIMS/GRC) + Trust API (evidencia ciclo de vida)</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTORES: donde converge todo -->
-    <div class="mt-16">
-      <h2 class="text-sm font-mono font-bold text-accent uppercase tracking-widest mb-8 fade-in">Sectores: donde converge todo</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-2">
-        <a href="sectores/banca.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 hover:border-accent/30 border border-transparent transition-all"><i class="ph ph-bank text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">Banca</p></a>
-        <a href="sectores/seguros.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 transition-all"><i class="ph ph-umbrella text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">Seguros</p></a>
-        <a href="sectores/salud.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 transition-all"><i class="ph ph-first-aid text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">Salud</p></a>
-        <a href="sectores/logistica.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 transition-all"><i class="ph ph-truck text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">Logistica</p></a>
-        <a href="sectores/rrhh.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 transition-all"><i class="ph ph-users text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">RRHH</p></a>
-        <a href="sectores/alimentacion.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 transition-all"><i class="ph ph-orange-slice text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">APPCC</p></a>
-        <a href="sectores/telecomunicaciones.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 transition-all"><i class="ph ph-phone text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">Telecom</p></a>
-        <a href="sectores/farmaceutico.html" class="bg-light p-3 rounded-xl text-center no-underline hover:bg-accent/10 transition-all"><i class="ph ph-pill text-accent text-lg"></i><p class="text-[10px] font-semibold text-primary m-0 mt-1">Pharma</p></a>
-      </div>
-    </div>
-
+    <div class="node-tooltip" id="tooltip"></div>
   </div>
 </section>
 
-<section class="py-20 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain"><div class="relative z-10 max-w-3xl mx-auto px-6 text-center"><h2 class="text-3xl md:text-4xl font-serif mb-6 fade-in">26 paginas. 8 articulos. 8 sectores. Un ecosistema.</h2><p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">Nadie mas tiene este nivel de contenido tecnico-juridico integrado.</p><a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] fade-in delay-2">Solicitar Demo <i class="ph ph-arrow-right"></i></a></div></section>
+<!-- DETAIL PANEL -->
+<section class="py-12 bg-white" id="detail-section" style="display:none;" data-testid="detail-panel">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-light p-8 rounded-3xl border border-gray-100" id="detail-content"></div>
+  </div>
+</section>
 
-<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="border-t border-white/10 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></div></footer>
+<!-- LIST VIEW -->
+<section class="py-16 bg-light">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="text-xl font-serif text-primary mb-8">Todos los nodos del ecosistema</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2" id="node-list"></div>
+  </div>
+</section>
+
+<section class="py-20 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain"><div class="relative z-10 max-w-3xl mx-auto px-6 text-center"><h2 class="text-2xl md:text-3xl font-serif mb-6">27 paginas. Un ecosistema interconectado.</h2><a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)]">Solicitar Demo <i class="ph ph-arrow-right"></i></a></div></section>
+
+<footer class="bg-dark text-white py-12"><div class="max-w-7xl mx-auto px-6 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></footer>
+
+<script>
+const NODES = [
+  // Confianza Digital cluster
+  {id:'vision2030',label:'eIDAS Vision 2030',group:'confianza',size:18,url:'recursos/eidas-vision-2030.html',desc:'Internet como plataforma segura para transacciones con efectos legales en Europa'},
+  {id:'eidas2',label:'eIDAS 2.0',group:'confianza',size:16,url:'recursos/eidas-2.html',desc:'Reglamento (UE) 2024/1183. EUDI Wallet, QEA, QEAA, MRQSCD'},
+  {id:'inversion',label:'Inversion Carga Prueba',group:'confianza',size:15,url:'recursos/inversion-carga-prueba.html',desc:'Art. 326.4 LEC + Art. 41.2 eIDAS. Presuncion legal de autenticidad'},
+  {id:'deuda',label:'Deuda Legal',group:'confianza',size:17,url:'recursos/deuda-legal.html',desc:'Operaciones sin validez probatoria que se acumulan silenciosamente'},
+  {id:'trustapi',label:'Trust API',group:'confianza',size:22,url:'soluciones/factoria.html',desc:'La Factoria: 4 microservicios eIDAS, 298 escenarios, ~45ms, 99.99%'},
+  {id:'3capas',label:'3 Capas',group:'confianza',size:14,url:'soluciones/confianza-digital.html',desc:'Factoria (API) → Soluciones LegalTech → GoCertius (SuperApp)'},
+  // Contract Tech cluster
+  {id:'computable',label:'Derecho Computable',group:'contract',size:18,url:'recursos/derecho-computable.html',desc:'Del derecho como texto al derecho como codigo ejecutable. Contrato como automata de estados'},
+  {id:'contracttech',label:'Contract Tech',group:'contract',size:16,url:'soluciones/contract-tech.html',desc:'3 lineas: Piezas LEGO, CLM Mono-contrato, CLM Posicion Contractual'},
+  {id:'facultades',label:'Catalogo Facultades',group:'contract',size:14,url:'recursos/catalogo-facultades.html',desc:'Ontologia para estandarizar poderes y reducir friccion del bastanteo'},
+  // Agencia IA Legal cluster
+  {id:'gobernanza',label:'Gobernanza IA',group:'ia',size:17,url:'recursos/gobernanza-ia.html',desc:'AIMS Console + Trust API: gobernanza con evidencia cualificada'},
+  {id:'grc',label:'GRC Compass Core',group:'ia',size:15,url:'soluciones/legaltech-ia.html',desc:'16 modulos, 31 RBAC, WORM audit, multi-dominio (RGPD, DORA, AI Act, NIS2)'},
+  {id:'aiact',label:'AI Act (RIA)',group:'ia',size:13,url:'recursos/gobernanza-ia.html',desc:'Reglamento (UE) 2024/1689. Clasificacion por riesgo, transparencia'},
+  // Activos Digitales cluster
+  {id:'qdlt',label:'QDLT Blockchain',group:'activos',size:16,url:'recursos/qdlt-blockchain.html',desc:'Qualified Electronic Ledgers. Blockchain con presuncion legal eIDAS 2.0'},
+  {id:'activos',label:'Activos Digitales',group:'activos',size:15,url:'soluciones/activos-digitales.html',desc:'Tokenizacion RWA con gobernanza juridica. OpenBrick, Sylot'},
+  // Sectores
+  {id:'banca',label:'Banca',group:'sector',size:11,url:'sectores/banca.html',desc:'20 escenarios: DORA, KYC, scoring IA, SCA'},
+  {id:'seguros',label:'Seguros',group:'sector',size:11,url:'sectores/seguros.html',desc:'20 escenarios: IDD, contratacion telefonica, siniestros'},
+  {id:'salud',label:'Salud',group:'sector',size:11,url:'sectores/salud.html',desc:'25 escenarios: consentimiento, historia clinica, teleconsulta'},
+  {id:'logistica',label:'Logistica',group:'sector',size:10,url:'sectores/logistica.html',desc:'20 escenarios: albaranes, cadena frio, RASFF'},
+  {id:'rrhh',label:'RRHH',group:'sector',size:10,url:'sectores/rrhh.html',desc:'18+ escenarios: registro jornada, despidos, PRL'},
+  {id:'alimentacion',label:'APPCC',group:'sector',size:10,url:'sectores/alimentacion.html',desc:'20 escenarios: controles APPCC, cadena frio IoT'},
+  {id:'telecom',label:'Telecom',group:'sector',size:10,url:'sectores/telecomunicaciones.html',desc:'20 escenarios: contratacion certificada, portabilidad'},
+  {id:'pharma',label:'Pharma',group:'sector',size:10,url:'sectores/farmaceutico.html',desc:'20 escenarios: Batch Record QP, CSV, farmacovigilancia'},
+];
+
+const LINKS = [
+  // Confianza chain
+  {source:'vision2030',target:'eidas2',strength:0.9},
+  {source:'eidas2',target:'inversion',strength:0.8},
+  {source:'inversion',target:'deuda',strength:0.7},
+  {source:'deuda',target:'trustapi',strength:0.9},
+  {source:'trustapi',target:'3capas',strength:0.8},
+  // Contract chain
+  {source:'computable',target:'contracttech',strength:0.9},
+  {source:'contracttech',target:'facultades',strength:0.6},
+  // IA chain
+  {source:'gobernanza',target:'grc',strength:0.9},
+  {source:'gobernanza',target:'aiact',strength:0.8},
+  {source:'grc',target:'aiact',strength:0.7},
+  // Activos chain
+  {source:'qdlt',target:'activos',strength:0.9},
+  {source:'qdlt',target:'eidas2',strength:0.7},
+  // Cross-cluster
+  {source:'trustapi',target:'contracttech',strength:0.7},
+  {source:'trustapi',target:'gobernanza',strength:0.8},
+  {source:'trustapi',target:'activos',strength:0.6},
+  {source:'trustapi',target:'computable',strength:0.5},
+  {source:'eidas2',target:'qdlt',strength:0.7},
+  {source:'eidas2',target:'facultades',strength:0.5},
+  {source:'activos',target:'contracttech',strength:0.4},
+  // Sectors connect to Trust API
+  {source:'trustapi',target:'banca',strength:0.5},
+  {source:'trustapi',target:'seguros',strength:0.5},
+  {source:'trustapi',target:'salud',strength:0.5},
+  {source:'trustapi',target:'logistica',strength:0.4},
+  {source:'trustapi',target:'rrhh',strength:0.4},
+  {source:'trustapi',target:'alimentacion',strength:0.4},
+  {source:'trustapi',target:'telecom',strength:0.4},
+  {source:'trustapi',target:'pharma',strength:0.4},
+  // Sectors to IA
+  {source:'gobernanza',target:'banca',strength:0.4},
+  {source:'grc',target:'banca',strength:0.3},
+];
+
+const COLORS = {
+  confianza: '#009A77',
+  contract: '#D4AF37',
+  ia: '#A855F7',
+  activos: '#3B82F6',
+  sector: '#6B7280'
+};
+
+const container = document.getElementById('graph-container');
+const svg = d3.select('#graph-svg');
+const tooltip = document.getElementById('tooltip');
+const width = container.clientWidth;
+const height = container.clientHeight;
+
+svg.attr('viewBox', [0, 0, width, height]);
+
+const simulation = d3.forceSimulation(NODES)
+  .force('link', d3.forceLink(LINKS).id(d => d.id).distance(d => 120 / d.strength).strength(d => d.strength * 0.3))
+  .force('charge', d3.forceManyBody().strength(-400))
+  .force('center', d3.forceCenter(width / 2, height / 2))
+  .force('collision', d3.forceCollide().radius(d => d.size + 15))
+  .force('x', d3.forceX(width / 2).strength(0.04))
+  .force('y', d3.forceY(height / 2).strength(0.04));
+
+const link = svg.append('g').selectAll('line').data(LINKS).join('line')
+  .attr('class', 'graph-link')
+  .attr('stroke', d => {
+    const src = NODES.find(n => n.id === (typeof d.source === 'string' ? d.source : d.source.id));
+    return src ? COLORS[src.group] : '#6B7280';
+  })
+  .attr('stroke-width', d => d.strength * 2);
+
+const node = svg.append('g').selectAll('g').data(NODES).join('g')
+  .attr('class', 'graph-node')
+  .call(d3.drag().on('start', dragstarted).on('drag', dragged).on('end', dragended));
+
+node.append('circle')
+  .attr('r', d => d.size)
+  .attr('fill', d => COLORS[d.group])
+  .attr('fill-opacity', 0.85)
+  .attr('stroke', d => COLORS[d.group])
+  .attr('stroke-width', 2)
+  .attr('stroke-opacity', 0.3);
+
+node.append('text')
+  .text(d => d.label)
+  .attr('text-anchor', 'middle')
+  .attr('dy', d => d.size + 14)
+  .attr('font-size', d => d.size > 15 ? '11px' : '9px')
+  .attr('font-weight', d => d.size > 15 ? '600' : '400')
+  .attr('fill-opacity', 0.9);
+
+// Hover
+node.on('mouseover', function(event, d) {
+  const [x, y] = d3.pointer(event, container);
+  tooltip.innerHTML = `
+    <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+      <span style="width:10px;height:10px;border-radius:50%;background:${COLORS[d.group]}"></span>
+      <strong style="font-family:'Playfair Display',serif;color:#004438;font-size:14px;">${d.label}</strong>
+    </div>
+    <p style="font-size:12px;color:#6B7280;margin:0;line-height:1.5;">${d.desc}</p>
+    <p style="font-size:10px;color:#009A77;margin-top:8px;font-weight:600;">Clic para iluminar conexiones &middot; Doble clic para ir al articulo</p>
+  `;
+  tooltip.style.left = Math.min(x + 20, width - 340) + 'px';
+  tooltip.style.top = (y - 20) + 'px';
+  tooltip.classList.add('visible');
+});
+node.on('mouseout', () => tooltip.classList.remove('visible'));
+
+// Click: highlight connections
+node.on('click', function(event, d) {
+  event.stopPropagation();
+  const connected = new Set();
+  connected.add(d.id);
+  LINKS.forEach(l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    if (sid === d.id) connected.add(tid);
+    if (tid === d.id) connected.add(sid);
+  });
+  node.classed('dimmed', n => !connected.has(n.id));
+  link.classed('dimmed', l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    return !connected.has(sid) || !connected.has(tid);
+  });
+  link.classed('highlighted', l => {
+    const sid = typeof l.source === 'string' ? l.source : l.source.id;
+    const tid = typeof l.target === 'string' ? l.target : l.target.id;
+    return (sid === d.id || tid === d.id);
+  });
+  // Show detail
+  const detail = document.getElementById('detail-section');
+  const content = document.getElementById('detail-content');
+  const connList = Array.from(connected).filter(id => id !== d.id).map(id => {
+    const n = NODES.find(nn => nn.id === id);
+    return n ? `<a href="${n.url}" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium no-underline" style="background:${COLORS[n.group]}15;color:${COLORS[n.group]};border:1px solid ${COLORS[n.group]}30">${n.label}</a>` : '';
+  }).join('');
+  content.innerHTML = `
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <span style="width:14px;height:14px;border-radius:50%;background:${COLORS[d.group]}"></span>
+      <h3 style="font-family:'Playfair Display',serif;color:#004438;font-size:1.5rem;margin:0;">${d.label}</h3>
+    </div>
+    <p style="color:#6B7280;font-size:0.9rem;line-height:1.6;margin-bottom:16px;">${d.desc}</p>
+    <p style="font-size:0.75rem;font-weight:600;color:#004438;margin-bottom:8px;">Conectado con:</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;">${connList}</div>
+    <a href="${d.url}" style="display:inline-flex;align-items:center;gap:6px;background:#009A77;color:white;padding:8px 20px;border-radius:999px;font-size:0.85rem;font-weight:600;text-decoration:none;">Ir al articulo <span>&rarr;</span></a>
+  `;
+  detail.style.display = 'block';
+  detail.scrollIntoView({behavior:'smooth',block:'nearest'});
+});
+
+// Click background: reset
+svg.on('click', () => {
+  node.classed('dimmed', false);
+  link.classed('dimmed', false);
+  link.classed('highlighted', false);
+  document.getElementById('detail-section').style.display = 'none';
+});
+
+// Double click: navigate
+node.on('dblclick', (event, d) => { window.location.href = d.url; });
+
+simulation.on('tick', () => {
+  link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+  node.attr('transform', d => {
+    d.x = Math.max(d.size, Math.min(width - d.size, d.x));
+    d.y = Math.max(d.size, Math.min(height - d.size, d.y));
+    return `translate(${d.x},${d.y})`;
+  });
+});
+
+function dragstarted(event) { if (!event.active) simulation.alphaTarget(0.3).restart(); event.subject.fx = event.subject.x; event.subject.fy = event.subject.y; }
+function dragged(event) { event.subject.fx = event.x; event.subject.fy = event.y; }
+function dragended(event) { if (!event.active) simulation.alphaTarget(0); event.subject.fx = null; event.subject.fy = null; }
+
+// Build list view
+const listEl = document.getElementById('node-list');
+NODES.forEach(n => {
+  listEl.innerHTML += `<a href="${n.url}" class="bg-white p-3 rounded-xl text-center no-underline hover:shadow-lg hover:-translate-y-0.5 transition-all border border-gray-100 hover:border-opacity-50" style="border-color:${COLORS[n.group]}30"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${COLORS[n.group]};margin-bottom:4px;"></span><p style="font-size:11px;font-weight:600;color:#004438;margin:0;">${n.label}</p><p style="font-size:9px;color:#9CA3AF;margin:0;">${n.group}</p></a>`;
+});
+</script>
+
 <script src="js/main.js"></script>
 </body>
 </html>
