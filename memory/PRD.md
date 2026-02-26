@@ -139,6 +139,15 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 10-12. Articulos SEO: Derecho Computable, Deuda Legal, Inversion Carga de Prueba
 13-15. Sectores: Banca & Fintech, Seguros & Insurtech, Salud & Digital Health
 
+### Fase 11 — Fotos reales + Hub sectores + Articulo eIDAS + Logos SVG + Plan UX (26 Feb 2026)
+- [x] **Fotos reales del equipo** descargadas e integradas: 6 profesionales con foto real de g-digital.garrigues.com
+- [x] **Logos SVG oficiales** descargados (15): g-digital, Garrigues, Garrigues Digital, EADTrust, EAD Factory, GoCertius, ioBuilders, Microsoft, Oracle, OpenBrick, iconos de soluciones, Somos Garrigues
+- [x] **Logos integrados** en Nosotros: seccion "Somos Garrigues" con logos reales (Garrigues, Garrigues Digital_, g-digital), partners con logos (ioBuilders, Microsoft, Oracle)
+- [x] **Hub /sectores/** creado: grid de 8 sectores con escenarios, regulacion, badges, stats (298/18/1 REST)
+- [x] **Articulo eIDAS 2.0** creado: EUDI Wallet, QEA/QEAA, MRQSCD, como prepararse, infografia integrada, JSON-LD
+- [x] **Plan de adaptacion UX** documentado: 3 fases (critico/visual/adicional) con analisis comparativo de ambas webs
+- [x] **22 paginas totales** + hub sectores = funcionando
+
 ## Backlog
 
 ### P1 — Restructuracion de paginas existentes
