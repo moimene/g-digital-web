@@ -1,0 +1,11 @@
+{
+  "name": "g-digital-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx serve /app -l 3000 -s --no-clipboard"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
