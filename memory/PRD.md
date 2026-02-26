@@ -71,6 +71,15 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - [x] **CTAs al prototipo interactivo**: link a legalappfactory.lovable.app + specs documentation
 - [x] Contenido del prototipo integrado en la web corporativa manteniendo coherencia visual
 
+### Fase 6 — Biblioteca de Conocimiento / Recursos (26 Feb 2026)
+- [x] **Rediseno completo** de la pagina de Recursos como "Biblioteca de Conocimiento: Derecho + Tecnologia"
+- [x] **6 infografias clickables** con lightbox (zoom): eIDAS completo, Inversion Carga de Prueba, Ley 6/2020, CLM Corazon Tecnologico, Canal de Arrendamiento 15 fases, Estandar K-TECH Arras
+- [x] **12 pildoras de conocimiento** organizadas por categoria: Marco Legal (2), Tecnologia de Confianza (3), Contract Tech (3), Aplicaciones Practicas (3), IA (1)
+- [x] **Filtros por categoria** con sticky bar: Todos, Marco Legal, Tecnologia, Contract Tech, Aplicaciones, IA & Cumplimiento
+- [x] **CTA a demos interactivas**: links a trust-seal-demo.lovable.app/conceptos y legalappfactory.lovable.app
+- [x] Noticias mantenidas en seccion separada
+- [x] Lightbox con cierre por click y Escape
+
 ## Backlog (P2-P3)
 
 ### P1 — Restructuracion de paginas existentes
