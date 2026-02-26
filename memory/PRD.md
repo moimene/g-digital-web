@@ -44,12 +44,25 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - g-digital-content.md — Motor de contenido B2B
 
 ### Fase 3 — Infografias Conceptuales (26 Feb 2026)
-- [x] **Compliance Injection** — Hero visual de La Factoria: flujo de proceso con inyeccion API
-- [x] **Iceberg de Deuda Legal** — Metafora visual: lo que ves vs lo que acumulas (8 operaciones)
-- [x] **Trust API Stack** — Diagrama de arquitectura: 4 microservicios + sistemas enterprise
-- [x] **Inversion de Carga de Prueba** — Split visual antes/despues con balanza de justicia
-- [x] **Triangulo de Legitimidad** — Diagrama relacional: Garrigues + g-digital + EADTrust
-- [x] 100% tests pasados
+- [x] 10 infografias generadas e integradas:
+  - Compliance Injection (hero Factoria)
+  - Iceberg de Deuda Legal (Factoria)
+  - Trust API Stack 4 microservicios (Factoria)
+  - Inversion de Carga de Prueba (Factoria)
+  - Triangulo de Legitimidad (Homepage)
+  - Arquitectura 3 Capas (Confianza Digital)
+  - 3 Niveles Madurez Contractual (Contract Tech)
+  - Contrato Automata de Estados (Contract Tech)
+  - GRC Compass Model O-R-C-E-I (LegalTech & IA)
+  - De Activo Real a Token Regulado (Activos Digitales)
+
+### Fase 4 — Restructuracion P1 de Contenidos (26 Feb 2026)
+- [x] **Confianza Digital** restructurada con arquitectura de 3 capas: Capa 1 Factoria (dark card con link), Capa 2 Soluciones LegalTech EADTrust (Signature Manager, Noticeman, eArchiving, Credential Manager), Capa 3 GoCertius SuperApp (+40K evidencias, Law.com 2025)
+- [x] **Contract Tech** restructurada con 3 lineas: Linea 1 Piezas LEGO (building blocks API, flujo pre-contratacion a terminacion), Linea 2 CLM Mono-contrato (prestamos, arrendamientos, arras, modelos embebido y propio), Linea 3 CLM Posicion Contractual (portafolio estrategico, Contract Guardian IA, dashboard ejecutivo)
+- [x] **LegalTech & IA** ampliada: GRC Compass Core con stats (16 modulos, 31 roles RBAC, WORM, RLS) + 7 dominios normativos + infografia
+- [x] **Activos Digitales** ampliada con infografia de tokenizacion
+- [x] Vision "Contrato Computable" con diagrama de automata de estados
+- [x] 95% tests pasados
 
 ## Backlog (P1-P3)
 
