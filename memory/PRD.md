@@ -120,7 +120,20 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - [x] JSON-LD schema anadido en paginas sectoriales
 - [x] **15 paginas totales** verificadas: 200 OK en todas
 
-## Paginas totales del sitio: 15
+### Fase 10 — Nosotros con contenido corporativo real + Sectoriales (26 Feb 2026)
+- [x] **Nosotros reescrita** con contenido de g-digital.garrigues.com:
+  - Mision con texto real del sitio corporativo
+  - "Somos Garrigues" con 3 entidades (Garrigues: primer despacho UE, Garrigues Digital: TechLaw, g-digital: LawTech)
+  - EADTrust con detalle real (51%, rPaaS, QTSP)
+  - **6 profesionales reales**: Eduardo Abad (socio), Moises Menendez (director), Oscar del Barrio (producto), Hugo Alonso (desarrollo), Belen Aguayo (product owner), Albi Rodriguez (Latam)
+  - **4 profesionales Garrigues gobierno**: Jose Ramon Morales, Cristina Mesa, Alejandro Padin, Alejandro Huertas
+  - Partners reales con descripciones: ioBuilders (participacion), Microsoft Azure, Oracle Cloud
+  - Observatorio con link a Comillas/ICADE
+  - JSON-LD Organization schema
+- [x] **5 paginas sectoriales nuevas**: Logistica, RRHH & Laboral (Workday/SAP), Alimentacion & APPCC, Telecomunicaciones, Farmaceutico
+- [x] **20 paginas totales** verificadas
+
+## Paginas totales del sitio: 20
 1-4. Homepage, Nosotros, Recursos (Biblioteca), Contacto
 5-9. Soluciones: Factoria, Confianza Digital, Contract Tech, Activos Digitales, LegalTech & IA
 10-12. Articulos SEO: Derecho Computable, Deuda Legal, Inversion Carga de Prueba
