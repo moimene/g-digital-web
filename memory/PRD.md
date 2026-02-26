@@ -43,6 +43,14 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - g-digital-playbook.md — Comportamiento comercial, objeciones
 - g-digital-content.md — Motor de contenido B2B
 
+### Fase 3 — Infografias Conceptuales (26 Feb 2026)
+- [x] **Compliance Injection** — Hero visual de La Factoria: flujo de proceso con inyeccion API
+- [x] **Iceberg de Deuda Legal** — Metafora visual: lo que ves vs lo que acumulas (8 operaciones)
+- [x] **Trust API Stack** — Diagrama de arquitectura: 4 microservicios + sistemas enterprise
+- [x] **Inversion de Carga de Prueba** — Split visual antes/despues con balanza de justicia
+- [x] **Triangulo de Legitimidad** — Diagrama relacional: Garrigues + g-digital + EADTrust
+- [x] 100% tests pasados
+
 ## Backlog (P1-P3)
 
 ### P1 — Restructuracion de paginas existentes
