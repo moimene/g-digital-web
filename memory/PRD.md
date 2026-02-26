@@ -113,7 +113,20 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 11. recursos/deuda-legal.html (Articulo SEO)
 12. recursos/inversion-carga-prueba.html (Articulo SEO)
 
-## Backlog (P2-P3)
+### Fase 9 — Paginas Sectoriales (26 Feb 2026)
+- [x] **Banca & Fintech** (/sectores/banca): dolor (DORA, KYC, scoring IA), 6 escenarios detallados con endpoints API, marco regulatorio (DORA, NIS2, AI Act, eIDAS 2.0), 4 buyer personas con mensajes diferenciados (CISO, CIO, CLO, CFO)
+- [x] **Seguros & Insurtech** (/sectores/seguros): dolor (IDD, contratacion telefonica, siniestros), 6 escenarios con 2 demos live (contratacion seguro, contratacion telefonica), regulacion IDD
+- [x] **Salud & Digital Health** (/sectores/salud): dolor (Ley 41/2002, RGPD Art. 9, telemedicina), 6 escenarios (consentimiento, historia clinica, teleconsulta, receta, clinical trials, notificacion resultados), 25 escenarios total
+- [x] JSON-LD schema anadido en paginas sectoriales
+- [x] **15 paginas totales** verificadas: 200 OK en todas
+
+## Paginas totales del sitio: 15
+1-4. Homepage, Nosotros, Recursos (Biblioteca), Contacto
+5-9. Soluciones: Factoria, Confianza Digital, Contract Tech, Activos Digitales, LegalTech & IA
+10-12. Articulos SEO: Derecho Computable, Deuda Legal, Inversion Carga de Prueba
+13-15. Sectores: Banca & Fintech, Seguros & Insurtech, Salud & Digital Health
+
+## Backlog
 
 ### P1 — Restructuracion de paginas existentes
 - [ ] Restructurar Confianza Digital como 3 capas (Factoria -> Soluciones LegalTech -> GoCertius)
