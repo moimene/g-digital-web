@@ -18,10 +18,10 @@
     .graph-node circle { transition: r 0.3s, fill-opacity 0.3s; }
     .graph-node text { fill: white; font-family: 'Manrope', sans-serif; pointer-events: none; }
     .graph-link { stroke-opacity: 0.15; transition: stroke-opacity 0.3s, stroke-width 0.3s; }
-    .graph-link.highlighted { stroke-opacity: 0.8; stroke-width: 3; }
-    .graph-node.dimmed circle { fill-opacity: 0.15; }
-    .graph-node.dimmed text { fill-opacity: 0.15; }
-    .graph-link.dimmed { stroke-opacity: 0.03; }
+    .graph-gLink.highlighted { stroke-opacity: 0.8; stroke-width: 3; }
+    .graph-gNode.dimmed circle { fill-opacity: 0.15; }
+    .graph-gNode.dimmed text { fill-opacity: 0.15; }
+    .graph-gLink.dimmed { stroke-opacity: 0.03; }
     .node-tooltip { position: absolute; background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); border: 1px solid #E5E7EB; border-radius: 16px; padding: 16px 20px; pointer-events: none; opacity: 0; transition: opacity 0.25s; max-width: 320px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); z-index: 100; }
     .node-tooltip.visible { opacity: 1; pointer-events: auto; }
   </style>
@@ -193,7 +193,7 @@ gNode.append('circle')
   .attr('stroke-width', 2)
   .attr('stroke-opacity', 0.3);
 
-node.append('text')
+gNode.append('text')
   .text(d => d.label)
   .attr('text-anchor', 'middle')
   .attr('dy', d => d.size + 14)
@@ -202,7 +202,7 @@ node.append('text')
   .attr('fill-opacity', 0.9);
 
 // Hover
-node.on('mouseover', function(event, d) {
+gNode.on('mouseover', function(event, d) {
   const [x, y] = d3.pointer(event, container);
   tooltip.innerHTML = `
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
@@ -216,10 +216,10 @@ node.on('mouseover', function(event, d) {
   tooltip.style.top = (y - 20) + 'px';
   tooltip.classList.add('visible');
 });
-node.on('mouseout', () => tooltip.classList.remove('visible'));
+gNode.on('mouseout', () => tooltip.classList.remove('visible'));
 
 // Click: highlight connections
-node.on('click', function(event, d) {
+gNode.on('click', function(event, d) {
   event.stopPropagation();
   const connected = new Set();
   connected.add(d.id);
@@ -229,13 +229,13 @@ node.on('click', function(event, d) {
     if (sid === d.id) connected.add(tid);
     if (tid === d.id) connected.add(sid);
   });
-  node.classed('dimmed', n => !connected.has(n.id));
-  link.classed('dimmed', l => {
+  gNode.classed('dimmed', n => !connected.has(n.id));
+  gLink.classed('dimmed', l => {
     const sid = typeof l.source === 'string' ? l.source : l.source.id;
     const tid = typeof l.target === 'string' ? l.target : l.target.id;
     return !connected.has(sid) || !connected.has(tid);
   });
-  link.classed('highlighted', l => {
+  gLink.classed('highlighted', l => {
     const sid = typeof l.source === 'string' ? l.source : l.source.id;
     const tid = typeof l.target === 'string' ? l.target : l.target.id;
     return (sid === d.id || tid === d.id);
@@ -263,18 +263,18 @@ node.on('click', function(event, d) {
 
 // Click background: reset
 svg.on('click', () => {
-  node.classed('dimmed', false);
-  link.classed('dimmed', false);
-  link.classed('highlighted', false);
+  gNode.classed('dimmed', false);
+  gLink.classed('dimmed', false);
+  gLink.classed('highlighted', false);
   document.getElementById('detail-section').style.display = 'none';
 });
 
 // Double click: navigate
-node.on('dblclick', (event, d) => { window.location.href = d.url; });
+gNode.on('dblclick', (event, d) => { window.location.href = d.url; });
 
 simulation.on('tick', () => {
-  link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-  node.attr('transform', d => {
+  gLink.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+  gNode.attr('transform', d => {
     d.x = Math.max(d.size, Math.min(width - d.size, d.x));
     d.y = Math.max(d.size, Math.min(height - d.size, d.y));
     return `translate(${d.x},${d.y})`;
