@@ -51,6 +51,19 @@ if (mobileToggle && mobileMenu) {
     bars[1].style.opacity = '1';
     bars[2].style.transform = '';
   });
+
+  // Close mobile menu when clicking a link
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      mobileOverlay?.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      const bars = mobileToggle.querySelectorAll('span');
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '1';
+      bars[2].style.transform = '';
+    });
+  });
 }
 
 // ── Intersection Observer for animations ──
