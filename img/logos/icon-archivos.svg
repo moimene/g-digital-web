@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="65" viewBox="0 0 65 65">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Bounding_box" data-name="Bounding box" d="M0,0H65V65H0Z" fill="#56f35d" style="isolation: isolate"/>
+    </clipPath>
+  </defs>
+  <g id="high_density" clip-path="url(#clip-path)" style="isolation: isolate">
+    <path id="high_density-2" data-name="high_density" d="M0,0H35.625V35.625H0ZM0,41.666H4.375v4.375H0Zm10.417,0h4.375v4.375H10.417Zm10.416,0h4.375v4.375H20.833Zm10.417,0h4.375v4.375H31.25Zm10.416,0h4.375v4.375H41.666Zm0-10.416h4.375v4.375H41.666Zm0-10.417h4.375v4.375H41.666Zm0-10.416h4.375v4.375H41.666ZM41.666,0h4.375V4.375H41.666Z" transform="translate(9.479 9.479)" fill="#56f35d" style="isolation: isolate"/>
+  </g>
+</svg>

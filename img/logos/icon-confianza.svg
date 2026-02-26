@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="65" height="65" viewBox="0 0 65 65">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Bounding_box" data-name="Bounding box" d="M0,0H65V65H0Z" fill="#56f35d" style="isolation: isolate"/>
+    </clipPath>
+  </defs>
+  <g id="dashboard_customize" clip-path="url(#clip-path)" style="isolation: isolate">
+    <path id="dashboard_customize-2" data-name="dashboard_customize" d="M20.313,0V20.313H0V0ZM47.4,0V20.313H27.083V0ZM20.313,27.083V47.4H0V27.083Zm18.958,0v8.125H47.4v4.063H39.271V47.4H35.208V39.271H27.083V35.208h8.125V27.083Z" transform="translate(8.802 8.802)" fill="#56f35d" style="isolation: isolate"/>
+  </g>
+</svg>
