@@ -64,7 +64,14 @@ Refactorizacion completa de la pagina web corporativa de g-digital (division de 
 - [x] Vision "Contrato Computable" con diagrama de automata de estados
 - [x] 95% tests pasados
 
-## Backlog (P1-P3)
+### Fase 5 — Integracion Prototipo Factoria (26 Feb 2026)
+- [x] **Certificaciones regulatorias** integradas: eIDAS QTSP, ISO 27001, ISO 20000, ISO 9001, ENS Alto, INCIBE, Ministerio
+- [x] **6 Demos Live** con links a aplicaciones funcionales en produccion: Seguro, Proptech, Consentimiento Web, Rent-a-Car, Automotive, Contratacion Telefonica
+- [x] **Developer Experience** completa: JSON-Native, Webhooks (events), Sandboxing (3 entornos), SDK TypeScript code example
+- [x] **CTAs al prototipo interactivo**: link a legalappfactory.lovable.app + specs documentation
+- [x] Contenido del prototipo integrado en la web corporativa manteniendo coherencia visual
+
+## Backlog (P2-P3)
 
 ### P1 — Restructuracion de paginas existentes
 - [ ] Restructurar Confianza Digital como 3 capas (Factoria -> Soluciones LegalTech -> GoCertius)
