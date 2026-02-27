@@ -7,7 +7,7 @@
   <meta name="description" content="Grafo interactivo del ecosistema de conocimiento g-digital. Navega las conexiones entre eIDAS, Trust API, Contract Tech, Agencia IA Legal, Activos Digitales y 8 sectores.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
@@ -28,7 +28,7 @@
 </head>
 <body class="font-sans text-gray-800 bg-light antialiased">
 
-<nav class="nav-main fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300"><div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]"><a href="/" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a><div class="hidden lg:flex items-center gap-8"><a href="/" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Inicio</a><a href="recursos.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Recursos</a><a href="contacto.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Contacto</a><a href="contacto.html" class="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-accent/80 transition-all">Solicitar Demo</a></div></div></nav>
+<nav class="nav-main fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300"><div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]"><a href="/" class="font-heading text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a><div class="hidden lg:flex items-center gap-8"><a href="/" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Inicio</a><a href="recursos.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Recursos</a><a href="contacto.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Contacto</a><a href="contacto.html" class="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-accent/80 transition-all">Solicitar Demo</a></div></div></nav>
 
 <!-- HERO -->
 <section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain">
@@ -36,7 +36,7 @@
     <div class="flex items-center justify-between flex-wrap gap-4">
       <div>
         <a href="recursos.html" class="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-4"><i class="ph ph-arrow-left"></i> Biblioteca</a>
-        <h1 class="text-2xl md:text-4xl font-serif font-medium tracking-tight">Mapa de <span class="text-accent italic">Conocimiento</span></h1>
+        <h1 class="text-2xl md:text-4xl font-heading font-medium tracking-tight">Mapa de <span class="text-accent italic">Conocimiento</span></h1>
         <p class="text-sm text-gray-400 mt-2 max-w-md">Haz clic en un nodo para iluminar sus conexiones. Haz clic en el fondo para reiniciar. Arrastra para reorganizar.</p>
       </div>
       <div class="flex gap-2 flex-wrap">
@@ -70,12 +70,12 @@
 <!-- LIST VIEW -->
 <section class="py-16 bg-light">
   <div class="max-w-7xl mx-auto px-6">
-    <h2 class="text-xl font-serif text-primary mb-8">Todos los nodos del ecosistema</h2>
+    <h2 class="text-xl font-heading text-primary mb-8">Todos los nodos del ecosistema</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2" id="node-list"></div>
   </div>
 </section>
 
-<section class="py-20 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain"><div class="relative z-10 max-w-3xl mx-auto px-6 text-center"><h2 class="text-2xl md:text-3xl font-serif mb-6">27 paginas. Un ecosistema interconectado.</h2><a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)]">Solicitar Demo <i class="ph ph-arrow-right"></i></a></div></section>
+<section class="py-20 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain"><div class="relative z-10 max-w-3xl mx-auto px-6 text-center"><h2 class="text-2xl md:text-3xl font-heading mb-6">27 paginas. Un ecosistema interconectado.</h2><a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)]">Solicitar Demo <i class="ph ph-arrow-right"></i></a></div></section>
 
 <footer class="bg-dark text-white py-12"><div class="max-w-7xl mx-auto px-6 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></footer>
 
