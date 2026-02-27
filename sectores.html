@@ -6,23 +6,23 @@
   <title>Sectores — Trust API por Industria | g-digital</title>
   <meta name="description" content="298 escenarios de integracion de Trust API en 18 sectores. Paginas sectoriales con escenarios especificos, regulacion aplicable y demos para Banca, Seguros, Salud, Logistica, RRHH, Alimentacion, Telecom y Farmaceutico.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="font-sans text-gray-800 bg-light antialiased">
+<body class="font-body text-gray-700 bg-white antialiased">
 
 <!-- NAV -->
 <nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-    <a href="/" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <a href="/" class="font-heading text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
     <div class="hidden lg:flex items-center gap-8">
       <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
       <a href="nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Nosotros</a>
       <a href="recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a>
       <a href="contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
-      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
+      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Contactar</a>
     </div>
     <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu"><span class="block w-6 h-0.5 bg-gray-700"></span><span class="block w-6 h-0.5 bg-gray-700"></span><span class="block w-6 h-0.5 bg-gray-700"></span></button>
   </div>
@@ -35,7 +35,7 @@
   <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24">
     <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-sm font-semibold text-accent mb-8 fade-in"><i class="ph ph-factory"></i> 298 escenarios &middot; 18 sectores</div>
-      <h1 class="text-4xl md:text-6xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="sectores-heading">Trust API por <span class="text-accent italic">sector</span></h1>
+      <h1 class="text-4xl md:text-6xl font-heading font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="sectores-heading">Trust API por <span class="text-accent italic">sector</span></h1>
       <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Cada industria tiene sus propios dolores, regulaciones y escenarios criticos. Trust API tiene soluciones especificas para cada una. Selecciona tu sector.</p>
     </div>
   </div>
@@ -46,65 +46,65 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      <a href="sectores/banca.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in" data-testid="sector-banca">
+      <a href="sectores/banca.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in" data-testid="sector-banca">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-bank"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">Banca &amp; Fintech</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Banca &amp; Fintech</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">20 escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">DORA, NIS2, KYC, scoring IA, SCA, SEPBLAC. Cumplimiento regulatorio con una llamada REST.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">DORA</span><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">AI Act</span><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">eIDAS</span></div>
       </a>
 
-      <a href="sectores/seguros.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-1" data-testid="sector-seguros">
+      <a href="sectores/seguros.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-1" data-testid="sector-seguros">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-umbrella"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">Seguros &amp; Insurtech</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Seguros &amp; Insurtech</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">20 escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">IDD, contratacion telefonica certificada, gestion de siniestros con cadena de custodia digital.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">IDD</span><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">Siniestros</span><span class="px-2 py-0.5 rounded text-[10px] bg-red-50 text-red-500">2 DEMOS</span></div>
       </a>
 
-      <a href="sectores/salud.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-2" data-testid="sector-salud">
+      <a href="sectores/salud.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-2" data-testid="sector-salud">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-first-aid"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">Salud &amp; Digital Health</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Salud &amp; Digital Health</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">25 escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Consentimiento informado Ley 41/2002, historia clinica, teleconsulta, receta electronica.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">Ley 41/2002</span><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">RGPD Art.9</span></div>
       </a>
 
-      <a href="sectores/logistica.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-3" data-testid="sector-logistica">
+      <a href="sectores/logistica.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-3" data-testid="sector-logistica">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-truck"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">Logistica &amp; Supply Chain</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Logistica &amp; Supply Chain</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">20 escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Albaranes con firma biometrica, cadena de frio IoT, trazabilidad RASFF certificada.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">RASFF</span><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">IoT</span></div>
       </a>
 
-      <a href="sectores/rrhh.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in" data-testid="sector-rrhh">
+      <a href="sectores/rrhh.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in" data-testid="sector-rrhh">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-users"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">RRHH &amp; Laboral</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">RRHH &amp; Laboral</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">18+ escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Registro jornada RD 8/2019, despidos certificados, PRL Art. 19. Integracion Workday y SAP SF.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">RD 8/2019</span><span class="px-2 py-0.5 rounded text-[10px] bg-blue-50 text-blue-600">Workday</span><span class="px-2 py-0.5 rounded text-[10px] bg-orange-50 text-orange-600">SAP</span></div>
       </a>
 
-      <a href="sectores/alimentacion.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-1" data-testid="sector-alimentacion">
+      <a href="sectores/alimentacion.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-1" data-testid="sector-alimentacion">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-orange-slice"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">Alimentacion &amp; APPCC</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Alimentacion &amp; APPCC</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">20 escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Registros APPCC certificados, cadena de frio IoT sellada, trazabilidad AESAN/RASFF.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">APPCC</span><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">AESAN</span></div>
       </a>
 
-      <a href="sectores/telecomunicaciones.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-2" data-testid="sector-telecom">
+      <a href="sectores/telecomunicaciones.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-2" data-testid="sector-telecom">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-phone"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">Telecomunicaciones</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Telecomunicaciones</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">20 escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Contratacion telefonica certificada, portabilidad con timestamp, expedientes de reclamacion.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">CNMC</span></div>
       </a>
 
-      <a href="sectores/farmaceutico.html" class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-3" data-testid="sector-farmaceutico">
+      <a href="sectores/farmaceutico.html" class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl no-underline fade-in delay-3" data-testid="sector-farmaceutico">
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-pill"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-1">Farmaceutico</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Farmaceutico</h3>
         <p class="text-xs font-mono text-accent font-semibold mb-2">20 escenarios</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Batch Record QP, validacion CSV, farmacovigilancia ICSR, serializacion FMD. La industria mas regulada.</p>
         <div class="flex flex-wrap gap-1"><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">GMP</span><span class="px-2 py-0.5 rounded text-[10px] bg-light text-gray-500">FMD</span></div>
@@ -128,14 +128,14 @@
 <!-- CTA -->
 <section class="py-24 md:py-28 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain">
   <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-5xl font-serif mb-6 fade-in">No encuentras tu sector?</h2>
+    <h2 class="text-3xl md:text-5xl font-heading mb-6 fade-in">No encuentras tu sector?</h2>
     <p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">298 escenarios en 18 categorias. Es muy probable que tengamos escenarios mapeados para tu industria. Hablemos.</p>
-    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] fade-in delay-2">Contactar con el equipo <i class="ph ph-arrow-right"></i></a>
+    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-all  fade-in delay-2">Contactar con el equipo <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="/" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Sectores</h4><ul class="space-y-2"><li><a href="sectores/banca.html" class="text-white/50 text-sm hover:text-accent transition-colors">Banca</a></li><li><a href="sectores/seguros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Seguros</a></li><li><a href="sectores/salud.html" class="text-white/50 text-sm hover:text-accent transition-colors">Salud</a></li><li><a href="sectores/logistica.html" class="text-white/50 text-sm hover:text-accent transition-colors">Logistica</a></li><li><a href="sectores/rrhh.html" class="text-white/50 text-sm hover:text-accent transition-colors">RRHH</a></li><li><a href="sectores/alimentacion.html" class="text-white/50 text-sm hover:text-accent transition-colors">Alimentacion</a></li><li><a href="sectores/telecomunicaciones.html" class="text-white/50 text-sm hover:text-accent transition-colors">Telecom</a></li><li><a href="sectores/farmaceutico.html" class="text-white/50 text-sm hover:text-accent transition-colors">Farmaceutico</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2"><li><a href="soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors">La Factoria</a></li><li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></div></footer>
+<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="/" class="font-heading text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Sectores</h4><ul class="space-y-2"><li><a href="sectores/banca.html" class="text-white/50 text-sm hover:text-accent transition-colors">Banca</a></li><li><a href="sectores/seguros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Seguros</a></li><li><a href="sectores/salud.html" class="text-white/50 text-sm hover:text-accent transition-colors">Salud</a></li><li><a href="sectores/logistica.html" class="text-white/50 text-sm hover:text-accent transition-colors">Logistica</a></li><li><a href="sectores/rrhh.html" class="text-white/50 text-sm hover:text-accent transition-colors">RRHH</a></li><li><a href="sectores/alimentacion.html" class="text-white/50 text-sm hover:text-accent transition-colors">Alimentacion</a></li><li><a href="sectores/telecomunicaciones.html" class="text-white/50 text-sm hover:text-accent transition-colors">Telecom</a></li><li><a href="sectores/farmaceutico.html" class="text-white/50 text-sm hover:text-accent transition-colors">Farmaceutico</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2"><li><a href="soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors">La Factoria</a></li><li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></div></footer>
 
 <script src="js/main.js"></script>
 </body>

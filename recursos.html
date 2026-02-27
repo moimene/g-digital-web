@@ -6,8 +6,8 @@
   <title>Biblioteca de Conocimiento — g-digital | Derecho + Tecnologia</title>
   <meta name="description" content="Pildoras de conocimiento sobre confianza digital eIDAS, contract tech, activos digitales, IA y cumplimiento. Infografias, conceptos clave y analisis de g-digital.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -21,32 +21,32 @@
     .lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 12px; }
   </style>
 </head>
-<body class="font-sans text-gray-800 bg-light antialiased">
+<body class="font-body text-gray-700 bg-white antialiased">
 
 <!-- NAV -->
 <nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-    <a href="/" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <a href="/" class="font-heading text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
     <div class="hidden lg:flex items-center gap-8">
       <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
       <div class="nav-dropdown relative"><a href="#" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a><div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2"><div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[300px] shadow-2xl shadow-gray-200/60"><a href="soluciones/factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors bg-accent/5 border border-accent/10"><i class="ph ph-lightning text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">La Factoria</span><span class="text-xs text-gray-500">Trust API</span></div></a><a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a><a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a><a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a><a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a></div></div></div>
       <a href="nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Nosotros</a>
       <a href="recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline active" data-nav-link>Recursos</a>
       <a href="contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
-      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
+      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Contactar</a>
     </div>
     <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span></button>
   </div>
 </nav>
 <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="/" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="soluciones/factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition-all">Solicitar Demo</a></div></div></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="/" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="soluciones/factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark transition-all">Contactar</a></div></div></div>
 
 <!-- HERO -->
 <section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-recursos">
   <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24">
     <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-white/80 mb-8 fade-in"><i class="ph ph-book-open text-accent"></i> Biblioteca de Conocimiento</div>
-      <h1 class="text-4xl md:text-6xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="recursos-heading">Derecho + <span class="text-accent italic">Tecnologia</span></h1>
+      <h1 class="text-4xl md:text-6xl font-heading font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="recursos-heading">Derecho + <span class="text-accent italic">Tecnologia</span></h1>
       <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Pildoras de conocimiento que explican los conceptos clave donde la seguridad juridica, la evidencia y la trazabilidad son elementos criticos. Infografias que comunican mas que el texto.</p>
       <a href="mapa.html" class="inline-flex items-center gap-2 mt-6 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-accent hover:bg-accent/20 transition-all fade-in delay-3"><i class="ph ph-graph"></i> Explorar Mapa de Conocimiento interactivo</a>
     </div>
@@ -70,7 +70,7 @@
 <!-- BLOQUE DESTACADO: DERECHO COMPUTABLE -->
 <section class="py-16 bg-white" data-testid="featured-article">
   <div class="max-w-7xl mx-auto px-6">
-    <a href="recursos/derecho-computable.html" class="group block bg-gradient-to-r from-primary to-dark p-8 md:p-12 rounded-3xl text-white relative overflow-hidden no-underline fade-in" data-testid="featured-link">
+    <a href="recursos/derecho-computable.html" class="group block bg-gradient-to-r from-primary to-dark p-8 md:p-12 rounded-xl text-white relative overflow-hidden no-underline fade-in" data-testid="featured-link">
       <div class="absolute top-0 right-0 w-72 h-72 bg-accent/10 rounded-bl-full"></div>
       <div class="absolute bottom-0 left-[30%] w-20 h-20 border border-white/10 rounded-2xl rotate-12 hidden lg:block"></div>
       <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -79,7 +79,7 @@
             <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">ARTICULO DESTACADO</span>
             <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/20 text-accent">15 min</span>
           </div>
-          <h3 class="text-2xl md:text-3xl font-serif text-white mb-4 leading-tight">Derecho Computable y Contrato Computable</h3>
+          <h3 class="text-2xl md:text-3xl font-heading text-white mb-4 leading-tight">Derecho Computable y Contrato Computable</h3>
           <p class="text-gray-300/80 text-sm leading-relaxed mb-6">Del derecho como texto ambiguo al derecho como codigo ejecutable. Por que un contrato es un automata de estados &mdash; y como eso transforma la gestion contractual con evidencia cualificada en cada transicion.</p>
           <span class="inline-flex items-center gap-2 text-accent font-semibold text-sm group-hover:gap-3 transition-all">Leer el articulo completo <i class="ph ph-arrow-right"></i></span>
         </div>
@@ -95,60 +95,60 @@
 <section class="py-24 md:py-28 bg-white" data-testid="infografias-section">
   <div class="max-w-7xl mx-auto px-6">
     <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in delay-1" data-testid="infografias-heading">Infografias: nuestra vision en una imagen</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in delay-1" data-testid="infografias-heading">Infografias: nuestra vision en una imagen</h2>
     <p class="text-gray-500 max-w-xl mb-12 fade-in delay-2">Las infografias explican conceptualmente mas que el texto. Haz clic para ampliar.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- eIDAS Completo -->
-      <div class="pill-img-overlay rounded-3xl h-72 fade-in" data-category="marco-legal" onclick="openLightbox(this)" data-testid="pill-eidas">
-        <img src="img/concepto-eidas-completo.png" alt="eIDAS: Como transforma Internet en plataforma transaccional segura" class="w-full h-full object-cover rounded-3xl">
+      <div class="pill-img-overlay rounded-xl h-72 fade-in" data-category="marco-legal" onclick="openLightbox(this)" data-testid="pill-eidas">
+        <img src="img/concepto-eidas-completo.png" alt="eIDAS: Como transforma Internet en plataforma transaccional segura" class="w-full h-full object-cover rounded-xl">
         <div class="pill-label">
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/80 text-white mb-2 inline-block">MARCO LEGAL</span>
-          <h3 class="text-white font-serif text-lg leading-tight">Reglamento eIDAS: La Infraestructura Digital Europea</h3>
+          <h3 class="text-white font-heading text-lg leading-tight">Reglamento eIDAS: La Infraestructura Digital Europea</h3>
           <p class="text-white/60 text-xs mt-1">Vision completa de como eIDAS transforma Internet en plataforma transaccional segura</p>
         </div>
       </div>
       <!-- Inversion Carga -->
-      <div class="pill-img-overlay rounded-3xl h-72 fade-in delay-1" data-category="marco-legal" onclick="openLightbox(this)" data-testid="pill-inversion">
-        <img src="img/concepto-inversion-carga.png" alt="Inversion de la Carga de la Prueba - Art. 326.4 LEC" class="w-full h-full object-cover rounded-3xl">
+      <div class="pill-img-overlay rounded-xl h-72 fade-in delay-1" data-category="marco-legal" onclick="openLightbox(this)" data-testid="pill-inversion">
+        <img src="img/concepto-inversion-carga.png" alt="Inversion de la Carga de la Prueba - Art. 326.4 LEC" class="w-full h-full object-cover rounded-xl">
         <div class="pill-label">
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/80 text-white mb-2 inline-block">MARCO LEGAL</span>
-          <h3 class="text-white font-serif text-lg leading-tight">Inversion de la Carga de la Prueba</h3>
+          <h3 class="text-white font-heading text-lg leading-tight">Inversion de la Carga de la Prueba</h3>
           <p class="text-white/60 text-xs mt-1">Art. 326.4 LEC &mdash; Impacto en juicios con servicios cualificados</p>
         </div>
       </div>
       <!-- Ley 6/2020 -->
-      <div class="pill-img-overlay rounded-3xl h-72 fade-in delay-2" data-category="marco-legal" onclick="openLightbox(this)" data-testid="pill-ley6">
-        <img src="img/concepto-ley-6-2020.png" alt="Ley 6/2020 Espana - Servicios Electronicos de Confianza" class="w-full h-full object-cover rounded-3xl">
+      <div class="pill-img-overlay rounded-xl h-72 fade-in delay-2" data-category="marco-legal" onclick="openLightbox(this)" data-testid="pill-ley6">
+        <img src="img/concepto-ley-6-2020.png" alt="Ley 6/2020 Espana - Servicios Electronicos de Confianza" class="w-full h-full object-cover rounded-xl">
         <div class="pill-label">
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/80 text-white mb-2 inline-block">MARCO LEGAL</span>
-          <h3 class="text-white font-serif text-lg leading-tight">Ley 6/2020 (Espana)</h3>
+          <h3 class="text-white font-heading text-lg leading-tight">Ley 6/2020 (Espana)</h3>
           <p class="text-white/60 text-xs mt-1">Regulacion nacional de servicios electronicos de confianza</p>
         </div>
       </div>
       <!-- CLM Corazon -->
-      <div class="pill-img-overlay rounded-3xl h-72 fade-in" data-category="clm" onclick="openLightbox(this)" data-testid="pill-clm">
-        <img src="img/concepto-clm-corazon.jpeg" alt="CLM: Corazon tecnologico del Contract Lifecycle Management" class="w-full h-full object-cover rounded-3xl">
+      <div class="pill-img-overlay rounded-xl h-72 fade-in" data-category="clm" onclick="openLightbox(this)" data-testid="pill-clm">
+        <img src="img/concepto-clm-corazon.jpeg" alt="CLM: Corazon tecnologico del Contract Lifecycle Management" class="w-full h-full object-cover rounded-xl">
         <div class="pill-label">
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/80 text-white mb-2 inline-block">CONTRACT TECH</span>
-          <h3 class="text-white font-serif text-lg leading-tight">CLM: Corazon Tecnologico</h3>
+          <h3 class="text-white font-heading text-lg leading-tight">CLM: Corazon Tecnologico</h3>
           <p class="text-white/60 text-xs mt-1">Concepto y beneficios del Contract Lifecycle Management</p>
         </div>
       </div>
       <!-- Canal Arrendamiento -->
-      <div class="pill-img-overlay rounded-3xl h-72 fade-in delay-1" data-category="clm" onclick="openLightbox(this)" data-testid="pill-arrendamiento">
-        <img src="img/concepto-arrendamiento-15.jpeg" alt="Canal de Arrendamiento Certificado - 15 fases con eIDAS" class="w-full h-full object-cover rounded-3xl">
+      <div class="pill-img-overlay rounded-xl h-72 fade-in delay-1" data-category="clm" onclick="openLightbox(this)" data-testid="pill-arrendamiento">
+        <img src="img/concepto-arrendamiento-15.jpeg" alt="Canal de Arrendamiento Certificado - 15 fases con eIDAS" class="w-full h-full object-cover rounded-xl">
         <div class="pill-label">
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/80 text-white mb-2 inline-block">CONTRACT TECH</span>
-          <h3 class="text-white font-serif text-lg leading-tight">Canal de Arrendamiento Certificado</h3>
+          <h3 class="text-white font-heading text-lg leading-tight">Canal de Arrendamiento Certificado</h3>
           <p class="text-white/60 text-xs mt-1">Workflow completo de 15 fases certificadas con eIDAS</p>
         </div>
       </div>
       <!-- K-TECH Arras -->
-      <div class="pill-img-overlay rounded-3xl h-72 fade-in delay-2" data-category="clm" onclick="openLightbox(this)" data-testid="pill-ktech">
-        <img src="img/concepto-ktech-arras.jpeg" alt="Estandar de Arras K-TECH Observatorio Garrigues-ICADE" class="w-full h-full object-cover rounded-3xl">
+      <div class="pill-img-overlay rounded-xl h-72 fade-in delay-2" data-category="clm" onclick="openLightbox(this)" data-testid="pill-ktech">
+        <img src="img/concepto-ktech-arras.jpeg" alt="Estandar de Arras K-TECH Observatorio Garrigues-ICADE" class="w-full h-full object-cover rounded-xl">
         <div class="pill-label">
           <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/80 text-white mb-2 inline-block">CONTRACT TECH</span>
-          <h3 class="text-white font-serif text-lg leading-tight">Estandar de Arras K-TECH</h3>
+          <h3 class="text-white font-heading text-lg leading-tight">Estandar de Arras K-TECH</h3>
           <p class="text-white/60 text-xs mt-1">Modelo del Observatorio Garrigues-ICADE para compraventa inmobiliaria</p>
         </div>
       </div>
@@ -160,140 +160,140 @@
 <section class="py-24 md:py-28 bg-light" data-testid="pildoras-section">
   <div class="max-w-7xl mx-auto px-6">
     <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in delay-1" data-testid="pildoras-heading">Pildoras de Conocimiento</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in delay-1" data-testid="pildoras-heading">Pildoras de Conocimiento</h2>
     <p class="text-gray-500 max-w-xl mb-12 fade-in delay-2">Conceptos esenciales explicados en formato accesible. Cada pildora es una unidad de conocimiento autonoma.</p>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Marco Legal pills -->
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="marco-legal" data-testid="pill-eidas-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="marco-legal" data-testid="pill-eidas-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">MARCO LEGAL</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-scales"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">eIDAS (Reglamento UE 910/2014)</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">eIDAS (Reglamento UE 910/2014)</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Marco europeo de confianza digital. Establece las bases legales para la identificacion electronica y los servicios de confianza en toda la UE.</p>
         <a href="https://trust-seal-demo.lovable.app/conceptos" target="_blank" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Profundizar <i class="ph ph-arrow-square-out"></i></a>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="marco-legal" data-testid="pill-carga-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="marco-legal" data-testid="pill-carga-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">MARCO LEGAL</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-shield-check"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Inversion de la Carga de la Prueba</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Inversion de la Carga de la Prueba</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Art. 326.4 LEC. Los documentos certificados con servicios cualificados tienen presuncion de autenticidad, invirtiendo la carga probatoria.</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">Art. 326.4 LEC &middot; Art. 41.2 eIDAS</span>
       </div>
 
       <!-- Tecnologia pills -->
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="tecnologia" data-testid="pill-sellos-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="tecnologia" data-testid="pill-sellos-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/10 text-accent">TECNOLOGIA</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-stamp"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Sellos de Tiempo Cualificado</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Sellos de Tiempo Cualificado</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Prueba criptografica del momento exacto en que un dato existia, emitida por un Prestador Cualificado. Presuncion legal de fecha cierta.</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">SHA-256 &middot; TSA &middot; RFC 3161</span>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="tecnologia" data-testid="pill-firmas-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="tecnologia" data-testid="pill-firmas-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/10 text-accent">TECNOLOGIA</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-pen-nib"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Firmas Avanzadas vs Cualificadas</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Firmas Avanzadas vs Cualificadas</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Las avanzadas ofrecen identificacion robusta. Las cualificadas requieren certificados QTSP y equivalen a firma manuscrita (Art. 25.2 eIDAS).</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">XAdES &middot; CMS &middot; QES</span>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="tecnologia" data-testid="pill-qtsp-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="tecnologia" data-testid="pill-qtsp-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/10 text-accent">TECNOLOGIA</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-key"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">QTSP: Prestador Cualificado</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">QTSP: Prestador Cualificado</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Entidad autorizada para emitir servicios de confianza cualificados bajo supervision reguladora. EADTrust es el QTSP del Grupo Garrigues.</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">EADTrust &middot; eIDAS &middot; CAB</span>
       </div>
 
       <!-- CLM pills -->
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="clm" data-testid="pill-clm-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="clm" data-testid="pill-clm-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">CONTRACT TECH</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-file-text"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Que es CLM</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Que es CLM</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Contract Lifecycle Management: sistema que gestiona preparacion, negociacion, firma, ejecucion, renovacion y terminacion de contratos.</p>
         <a href="soluciones/contract-tech.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Ver Contract Tech <i class="ph ph-arrow-right"></i></a>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="clm" data-testid="pill-canal-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="clm" data-testid="pill-canal-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">CONTRACT TECH</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-chat-circle-text"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Canal Certificado como Fuente Unica</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Canal Certificado como Fuente Unica</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Todas las comunicaciones quedan en un unico canal certificado, eliminando narrativas contradictorias. Reduccion de litigios.</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">Single Source of Truth</span>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="clm" data-testid="pill-expediente-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="clm" data-testid="pill-expediente-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">CONTRACT TECH</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-folder-open"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Expediente Probatorio</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Expediente Probatorio</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Conjunto completo de evidencias certificadas de un contrato, exportable como PDF con validez legal plena ante tribunales.</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">PDF legal &middot; Hash chain</span>
       </div>
 
       <!-- Aplicaciones pills -->
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="aplicaciones" data-testid="pill-aceptacion-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="aplicaciones" data-testid="pill-aceptacion-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">APLICACION</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-check-circle"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Aceptacion como Firma en Canal Certificado</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Aceptacion como Firma en Canal Certificado</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Una aceptacion textual (&laquo;Acepto&raquo;, &laquo;Confirmo&raquo;) en un canal certificado con sello cualificado constituye firma valida.</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">eIDAS Art. 25 &middot; Firma avanzada</span>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="aplicaciones" data-testid="pill-multimedia-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="aplicaciones" data-testid="pill-multimedia-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">APLICACION</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-camera"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Certificacion Multimedia</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Certificacion Multimedia</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Cada foto o video recibe hash criptografico y sello de tiempo, garantizando que no ha sido alterado desde su captura.</p>
         <span class="px-2 py-1 rounded text-[10px] font-mono bg-light text-gray-500">SHA-256 &middot; EXIF &middot; TSA</span>
       </div>
 
       <!-- IA pills -->
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="ia" data-testid="pill-aiact-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="ia" data-testid="pill-aiact-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-600">IA &amp; CUMPLIMIENTO</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-brain"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">AI Act: Gobernanza de Sistemas IA</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">AI Act: Gobernanza de Sistemas IA</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Obligaciones diferenciadas segun nivel de riesgo. Clasificacion, transparencia y documentacion tecnica obligatoria bajo regulacion europea.</p>
         <a href="soluciones/legaltech-ia.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Ver LegalTech & IA <i class="ph ph-arrow-right"></i></a>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="aplicaciones" data-testid="pill-deuda-card">
+      <div class="group bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="aplicaciones" data-testid="pill-deuda-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">CONCEPTO CLAVE</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-warning-circle"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Deuda Legal</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Deuda Legal</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Operaciones digitales sin validez probatoria que se acumulan silenciosamente. Igual que la deuda tecnica, no duele hasta que la necesitas.</p>
         <a href="recursos/deuda-legal.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </div>
 
       <!-- NUEVAS PILDORAS -->
-      <div class="group bg-white p-6 rounded-3xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="tecnologia" data-testid="pill-qdlt-card">
+      <div class="group bg-white p-6 rounded-xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="tecnologia" data-testid="pill-qdlt-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-accent/10 text-accent">ACTIVOS DIGITALES</span><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">NUEVO</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-link-simple"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">QDLT: Qualified Blockchain</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">QDLT: Qualified Blockchain</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">eIDAS 2.0 introduce las QDLT. Por primera vez, blockchain puede tener presuncion legal en la UE. Pero no toda red vale.</p>
         <a href="recursos/qdlt-blockchain.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="ia" data-testid="pill-gobernanza-ia-card">
+      <div class="group bg-white p-6 rounded-xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-category="ia" data-testid="pill-gobernanza-ia-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-50 text-purple-600">IA &amp; CUMPLIMIENTO</span><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">NUEVO</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-brain"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Gobernanza de Sistemas IA</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Gobernanza de Sistemas IA</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Un imperativo que requiere solucion especifica integrada con servicios regulados de confianza digital. AIMS + Trust API.</p>
         <a href="recursos/gobernanza-ia.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="clm" data-testid="pill-facultades-card">
+      <div class="group bg-white p-6 rounded-xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-category="clm" data-testid="pill-facultades-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">CONTRACT TECH</span><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">NUEVO</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-stamp"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Catalogo Estatal de Facultades</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Catalogo Estatal de Facultades</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">La transformacion de los poderes. Ontologia para estandarizar facultades y reducir la friccion del bastanteo.</p>
         <a href="recursos/catalogo-facultades.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </div>
 
-      <div class="group bg-white p-6 rounded-3xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="marco-legal" data-testid="pill-vision2030-card">
+      <div class="group bg-white p-6 rounded-xl border-2 border-accent/20 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-category="marco-legal" data-testid="pill-vision2030-card">
         <div class="flex items-center gap-2 mb-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary/10 text-primary">VISION ESTRATEGICA</span><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-gold/20 text-gold">NUEVO</span></div>
         <div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4 group-hover:bg-accent/20 transition-colors"><i class="ph ph-globe"></i></div>
-        <h3 class="text-lg font-serif text-primary mb-2">eIDAS: Vision 2030 de Internet</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">eIDAS: Vision 2030 de Internet</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-3">Internet como plataforma segura para transacciones con efectos legales. Donde quedan los &laquo;viejos&raquo; servicios eIDAS 2014?</p>
         <a href="recursos/eidas-vision-2030.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm group-hover:gap-2 transition-all">Leer articulo <i class="ph ph-arrow-right"></i></a>
       </div>
@@ -304,16 +304,16 @@
 <!-- CTA EXPLORAR DEMO -->
 <section class="py-16 bg-white" data-testid="cta-demo-conceptos">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="bg-gradient-to-r from-primary to-dark p-8 md:p-12 rounded-3xl text-white relative overflow-hidden">
+    <div class="bg-gradient-to-r from-primary to-dark p-8 md:p-12 rounded-xl text-white relative overflow-hidden">
       <div class="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-bl-full"></div>
       <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <div class="max-w-xl">
-          <h3 class="text-2xl font-serif mb-3">Quieres ver estos conceptos en accion?</h3>
+          <h3 class="text-2xl font-heading mb-3">Quieres ver estos conceptos en accion?</h3>
           <p class="text-gray-300/80 text-sm leading-relaxed">Explora nuestros demostradores interactivos con infografias ampliables, simuladores de transacciones y escenarios reales de certificacion digital.</p>
         </div>
         <div class="flex gap-3 flex-shrink-0">
-          <a href="https://trust-seal-demo.lovable.app/conceptos" target="_blank" rel="noopener" class="bg-accent text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-white hover:text-primary transition-all shadow-lg" data-testid="cta-conceptos-demo">Explorar Conceptos <i class="ph ph-arrow-square-out ml-1"></i></a>
-          <a href="https://legalappfactory.lovable.app" target="_blank" rel="noopener" class="border border-white/30 text-white px-6 py-3 rounded-full font-medium text-sm hover:bg-white/10 transition-all" data-testid="cta-factoria-demo">Trust API Interactiva <i class="ph ph-arrow-square-out ml-1"></i></a>
+          <a href="https://trust-seal-demo.lovable.app/conceptos" target="_blank" rel="noopener" class="bg-accent text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-white hover:text-primary transition-all shadow-lg" data-testid="cta-conceptos-demo">Explorar Conceptos <i class="ph ph-arrow-square-out ml-1"></i></a>
+          <a href="https://legalappfactory.lovable.app" target="_blank" rel="noopener" class="border border-white/30 text-white px-6 py-3 rounded-lg font-medium text-sm hover:bg-white/10 transition-all" data-testid="cta-factoria-demo">Trust API Interactiva <i class="ph ph-arrow-square-out ml-1"></i></a>
         </div>
       </div>
     </div>
@@ -324,24 +324,24 @@
 <section class="py-24 md:py-28 bg-light" data-testid="noticias-section">
   <div class="max-w-7xl mx-auto px-6">
     <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in delay-1" data-testid="noticias-heading">Noticias</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in delay-1" data-testid="noticias-heading">Noticias</h2>
     <p class="text-gray-500 max-w-xl mb-12 fade-in delay-2">Cobertura en prensa sobre nuestros proyectos, alianzas y reconocimientos.</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="noticia-microsoft">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="noticia-microsoft">
         <div class="flex justify-between items-center mb-4"><span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">Prensa</span><span class="text-xs text-gray-400 font-mono">2025</span></div>
-        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Garrigues y Microsoft: acuerdo para impulsar la IA en el sector legal</h3>
+        <h3 class="text-lg font-heading text-primary mb-3 leading-snug">Garrigues y Microsoft: acuerdo para impulsar la IA en el sector legal</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Acuerdo estrategico que posiciona a g-digital como plataforma de referencia para la integracion de IA en operaciones legales.</p>
         <a href="#" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all">Leer en elderecho.com <i class="ph ph-arrow-right"></i></a>
       </div>
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="noticia-ft">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="noticia-ft">
         <div class="flex justify-between items-center mb-4"><span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">Reconocimiento</span><span class="text-xs text-gray-400 font-mono">2025</span></div>
-        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">FT Innovative Lawyers: Garrigues Top 10 Europa</h3>
+        <h3 class="text-lg font-heading text-primary mb-3 leading-snug">FT Innovative Lawyers: Garrigues Top 10 Europa</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Reconocimiento por servicios de confianza cualificados y la plataforma GoCertius.</p>
         <a href="#" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all">Ver ranking <i class="ph ph-arrow-right"></i></a>
       </div>
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="noticia-lawcom">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="noticia-lawcom">
         <div class="flex justify-between items-center mb-4"><span class="px-3 py-1 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">Prensa</span><span class="text-xs text-gray-400 font-mono">2025</span></div>
-        <h3 class="text-lg font-serif text-primary mb-3 leading-snug">Law.com: g-digital premiada por tecnologia disruptiva</h3>
+        <h3 class="text-lg font-heading text-primary mb-3 leading-snug">Law.com: g-digital premiada por tecnologia disruptiva</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Enfoque integrado de servicios de confianza y gobernanza de IA bajo un mismo paraguas.</p>
         <a href="#" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all">Leer cobertura <i class="ph ph-arrow-right"></i></a>
       </div>
@@ -352,14 +352,14 @@
 <!-- CTA -->
 <section class="py-24 md:py-28 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="cta-recursos">
   <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-5xl font-serif mb-6 fade-in">Necesitas orientacion especifica?</h2>
+    <h2 class="text-3xl md:text-5xl font-heading mb-6 fade-in">Necesitas orientacion especifica?</h2>
     <p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">Firma electronica, CLM, GRC, IA o activos digitales &mdash; escribenos y te recomendamos recursos segun tu caso.</p>
-    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] fade-in delay-2" data-testid="cta-recursos-btn">Contactar con el equipo <i class="ph ph-arrow-right"></i></a>
+    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-all  fade-in delay-2" data-testid="cta-recursos-btn">Contactar con el equipo <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="/" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="soluciones/activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="soluciones/legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors">Recursos</a></li><li><a href="contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
+<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="/" class="font-heading text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="soluciones/activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="soluciones/legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors">Recursos</a></li><li><a href="contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">

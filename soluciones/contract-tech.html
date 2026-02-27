@@ -6,36 +6,36 @@
   <title>Contract Tech (KTECH) — 3 Lineas de Servicio | g-digital</title>
   <meta name="description" content="Del contrato como documento al contrato como proceso. 3 lineas: Piezas LEGO (API), CLM Mono-contrato (por tipologia), CLM Posicion Contractual (portafolio estrategico).">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="font-sans text-gray-800 bg-light antialiased">
+<body class="font-body text-gray-700 bg-white antialiased">
 
 <!-- NAV (same as confianza-digital) -->
 <nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-    <a href="../" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <a href="../" class="font-heading text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
     <div class="hidden lg:flex items-center gap-8">
       <a href="../" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
       <div class="nav-dropdown relative"><a href="#" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a><div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2"><div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[300px] shadow-2xl shadow-gray-200/60"><a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors bg-accent/5 border border-accent/10"><i class="ph ph-lightning text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">La Factoria</span><span class="text-xs text-gray-500">Trust API</span></div></a><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a></div></div></div>
       <a href="../nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Nosotros</a>
       <a href="../recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a>
       <a href="../contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
-      <a href="../contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
+      <a href="../contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Contactar</a>
     </div>
     <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span></button>
   </div>
 </nav>
 <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition-all">Solicitar Demo</a></div></div></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark transition-all">Contactar</a></div></div></div>
 
 <!-- HERO -->
 <section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-contract">
   <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24"><div class="max-w-3xl">
     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-white/80 mb-8 fade-in"><i class="ph ph-file-text text-accent"></i> KTECH</div>
-    <h1 class="text-4xl md:text-6xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="contract-heading">Del Contrato como Documento al <span class="text-accent italic">Contrato como Proceso</span></h1>
+    <h1 class="text-4xl md:text-6xl font-heading font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="contract-heading">Del Contrato como Documento al <span class="text-accent italic">Contrato como Proceso</span></h1>
     <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Tres lineas de servicio diferenciadas. Desde piezas modulares hasta la gestion estrategica de la posicion contractual corporativa. Cada transicion genera evidencia cualificada via Trust API.</p>
   </div></div>
 </section>
@@ -45,17 +45,17 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="max-w-3xl mb-12">
       <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="lineas-heading">3 Niveles de Madurez Contractual</h2>
+      <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1" data-testid="lineas-heading">3 Niveles de Madurez Contractual</h2>
       <p class="text-lg text-gray-500 leading-relaxed fade-in delay-2">No tienes que empezar por arriba. Puedes entrar por donde estes. Cada nivel se construye sobre el anterior.</p>
     </div>
     <div class="flex justify-center mb-16 fade-in delay-2">
-      <img src="../img/madurez-contractual.png" alt="3 niveles de madurez contractual: Piezas LEGO, CLM Mono-contrato, CLM Posicion Contractual" class="w-full max-w-4xl rounded-3xl shadow-lg border border-gray-100" data-testid="madurez-infographic">
+      <img src="../img/madurez-contractual.png" alt="3 niveles de madurez contractual: Piezas LEGO, CLM Mono-contrato, CLM Posicion Contractual" class="w-full max-w-4xl rounded-xl shadow-lg border border-gray-100" data-testid="madurez-infographic">
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Linea 1: Piezas LEGO -->
-      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="linea-lego">
+      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="linea-lego">
         <div class="text-3xl font-mono font-bold text-accent mb-4">01</div>
-        <h3 class="text-xl font-serif text-primary mb-3">Piezas LEGO</h3>
+        <h3 class="text-xl font-heading text-primary mb-3">Piezas LEGO</h3>
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Building Blocks Contractuales</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Componentes modulares de servicios de confianza que se integran via API de la Factoria en tus procesos contractuales existentes. No es un producto cerrado: son piezas que refuerzan juridicamente cada fase.</p>
         <div class="space-y-2 mb-4 text-xs">
@@ -67,10 +67,10 @@
         <p class="text-xs text-gray-400">Para: empresas con procesos contractuales existentes que quieren reforzar juridicamente sin cambiar sistemas</p>
       </div>
       <!-- Linea 2: CLM Mono-contrato -->
-      <div class="group bg-white p-8 rounded-3xl border-2 border-accent/30 hover:border-accent transition-all duration-500 hover:shadow-2xl relative fade-in delay-1" data-testid="linea-mono">
+      <div class="group bg-white p-8 rounded-xl border-2 border-accent/30 hover:border-accent transition-all duration-500 hover:shadow-2xl relative fade-in delay-1" data-testid="linea-mono">
         <span class="absolute -top-3 left-6 px-3 py-0.5 rounded-full text-xs font-bold bg-accent text-white">Mas demandado</span>
         <div class="text-3xl font-mono font-bold text-accent mb-4">02</div>
-        <h3 class="text-xl font-serif text-primary mb-3">CLM Mono-contrato</h3>
+        <h3 class="text-xl font-heading text-primary mb-3">CLM Mono-contrato</h3>
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Por tipologia contractual</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Plataforma optimizada para el ciclo de vida completo de <strong class="text-primary">un tipo de contrato concreto</strong>. No es un CLM generico: esta disenado para las reglas, flujos y particularidades de cada tipologia.</p>
         <div class="space-y-2 mb-4">
@@ -83,9 +83,9 @@
         <p class="text-xs text-gray-500"><i class="ph ph-desktop-tower text-accent mr-1"></i> Como plataforma propia (promotoras, entidades de credito)</p>
       </div>
       <!-- Linea 3: CLM Posicion Contractual -->
-      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="linea-posicion">
+      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="linea-posicion">
         <div class="text-3xl font-mono font-bold text-accent mb-4">03</div>
-        <h3 class="text-xl font-serif text-primary mb-3">CLM Posicion Contractual</h3>
+        <h3 class="text-xl font-heading text-primary mb-3">CLM Posicion Contractual</h3>
         <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Portafolio estrategico</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Gestion del <strong class="text-primary">portafolio contractual como activo estrategico</strong>. No solo almacenar contratos: exposicion agregada, derechos consolidados, riesgos cruzados, oportunidades de renegociacion.</p>
         <div class="space-y-2 mb-4 text-xs">
@@ -105,7 +105,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="fade-in">
         <div class="w-12 h-1 bg-accent rounded-full mb-6"></div>
-        <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4" data-testid="computable-heading">Vision: Contrato Computable</h2>
+        <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4" data-testid="computable-heading">Vision: Contrato Computable</h2>
         <p class="text-gray-500 leading-relaxed mb-6">Un contrato no es solo un documento. Es un <strong class="text-primary">automata de estados</strong> dirigido por eventos, con logica determinista y auditable.</p>
         <div class="space-y-4">
           <div class="flex gap-4 items-start"><div class="flex-shrink-0 w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center"><i class="ph ph-gear text-accent"></i></div><div><strong class="text-sm text-primary block">Maquina de Estados</strong><p class="text-gray-500 text-sm m-0">Transiciones explicitas: borrador, activo, en revision, terminado.</p></div></div>
@@ -120,7 +120,7 @@
         </div>
       </div>
       <div class="flex justify-center fade-in delay-2">
-        <img src="../img/contrato-automata.png" alt="Contrato como automata de estados: cada transicion genera evidencia cualificada" class="w-full max-w-lg rounded-3xl shadow-lg border border-gray-100" data-testid="automata-infographic">
+        <img src="../img/contrato-automata.png" alt="Contrato como automata de estados: cada transicion genera evidencia cualificada" class="w-full max-w-lg rounded-xl shadow-lg border border-gray-100" data-testid="automata-infographic">
       </div>
     </div>
   </div>
@@ -132,14 +132,14 @@
 <!-- CTA -->
 <section class="py-20 bg-light text-center" data-testid="cta-contract">
   <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in">Listo para Transformar tu Gestion Contractual?</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in">Listo para Transformar tu Gestion Contractual?</h2>
     <p class="text-gray-500 mb-8 fade-in delay-1">De documentos estaticos a contratos inteligentes y auditables.</p>
-    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold hover:bg-primary transition-all shadow-lg shadow-accent/20 hover:-translate-y-0.5 fade-in delay-2" data-testid="cta-contract-btn">Solicitar Demo <i class="ph ph-arrow-right"></i></a>
+    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary transition-all shadow-lg shadow-accent/20  fade-in delay-2" data-testid="cta-contract-btn">Solicitar Demo <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="../nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="../contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
+<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="font-heading text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="../nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="../contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
 
 <script src="../js/main.js"></script>
 </body>

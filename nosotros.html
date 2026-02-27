@@ -6,38 +6,38 @@
   <title>Nosotros — g-digital | El negocio digital de Garrigues</title>
   <meta name="description" content="g-digital es la division de negocios digitales de Garrigues. Equipo, mision, partners, EADTrust y Observatorio LegalTech Garrigues-ICADE.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="css/style.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"g-digital","description":"Division de negocios digitales de Garrigues","url":"https://g-digital.garrigues.com","parentOrganization":{"@type":"Organization","name":"Garrigues","url":"https://www.garrigues.com"}}</script>
 </head>
-<body class="font-sans text-gray-800 bg-light antialiased">
+<body class="font-body text-gray-700 bg-white antialiased">
 
 <!-- NAV -->
 <nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-    <a href="/" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <a href="/" class="font-heading text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
     <div class="hidden lg:flex items-center gap-8">
       <a href="/" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
       <div class="nav-dropdown relative"><a href="#" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a><div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2"><div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[300px] shadow-2xl shadow-gray-200/60"><a href="soluciones/factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors bg-accent/5 border border-accent/10"><i class="ph ph-lightning text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">La Factoria</span><span class="text-xs text-gray-500">Trust API</span></div></a><a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a><a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a><a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a><a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a></div></div></div>
       <a href="nosotros.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline active" data-nav-link>Nosotros</a>
       <a href="recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a>
       <a href="contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
-      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
+      <a href="contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Contactar</a>
     </div>
     <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span></button>
   </div>
 </nav>
 <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="/" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="soluciones/factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Nosotros</a><a href="recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Recursos</a><a href="contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Contacto</a><div class="mt-4"><a href="contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-dark transition-all">Solicitar Demo</a></div></div></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="/" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="soluciones/factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="soluciones/confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="soluciones/contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="soluciones/activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="soluciones/legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Nosotros</a><a href="recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Recursos</a><a href="contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Contacto</a><div class="mt-4"><a href="contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark transition-all">Contactar</a></div></div></div>
 
 <!-- HERO -->
 <section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-nosotros">
   <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24">
     <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-white/80 mb-8 fade-in"><i class="ph ph-buildings text-accent"></i> Grupo Garrigues</div>
-      <h1 class="text-4xl md:text-6xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="nosotros-heading">Tecnologia real para situaciones de <span class="text-accent italic">alta complejidad juridica</span></h1>
+      <h1 class="text-4xl md:text-6xl font-heading font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="nosotros-heading">Tecnologia real para situaciones de <span class="text-accent italic">alta complejidad juridica</span></h1>
       <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">g-digital es la division de negocios digitales de Garrigues. Integramos el conocimiento juridico en soluciones que mejoran la eficiencia, fortalecen la seguridad juridica y crean nuevas oportunidades en un entorno regulado.</p>
     </div>
   </div>
@@ -49,14 +49,14 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
       <div class="fade-in">
         <div class="w-12 h-1 bg-accent rounded-full mb-6"></div>
-        <h2 class="text-3xl md:text-5xl font-serif text-primary mb-6" data-testid="mision-heading">Nuestra mision</h2>
+        <h2 class="text-3xl md:text-5xl font-heading text-primary mb-6" data-testid="mision-heading">Nuestra mision</h2>
         <p class="text-lg text-gray-600 leading-relaxed mb-6">Desarrollar soluciones tecnologicas que integren nuestro conocimiento del <strong class="text-primary">derecho de los negocios</strong> en los procesos de nuestros clientes, no solo mejorando la eficiencia y la seguridad juridica, sino tambien habilitando <strong class="text-primary">nuevas oportunidades de negocio</strong> en un entorno cada vez mas digital.</p>
         <div class="bg-gradient-to-r from-light to-accent/5 border-l-4 border-accent p-6 rounded-r-2xl">
           <p class="text-primary font-medium text-sm m-0">Los profesionales de <strong>Garrigues Digital</strong> &mdash; expertos en TechLaw y economia digital &mdash; trabajan estrechamente con los tecnologos de g-digital en el diseno de nuestras soluciones, asegurando que tecnologia y legalidad se integran en cada propuesta.</p>
         </div>
       </div>
       <div class="fade-in delay-2">
-        <div class="bg-gradient-to-br from-primary to-dark p-8 rounded-3xl text-white relative overflow-hidden">
+        <div class="bg-gradient-to-br from-primary to-dark p-8 rounded-xl text-white relative overflow-hidden">
           <div class="absolute top-0 right-0 w-40 h-40 bg-accent/10 rounded-bl-full"></div>
           <div class="relative z-10">
             <p class="text-xs font-mono text-accent uppercase tracking-wider mb-6">Lo que nos diferencia</p>
@@ -77,32 +77,32 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <div class="w-12 h-1 bg-accent rounded-full mb-6 mx-auto fade-in"></div>
-      <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="somos-heading">Somos Garrigues</h2>
+      <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1" data-testid="somos-heading">Somos Garrigues</h2>
       <p class="text-lg text-gray-500 max-w-xl mx-auto fade-in delay-2">Tres niveles de expertise que convergen en cada solucion.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- Garrigues -->
-      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl text-center fade-in" data-testid="entity-garrigues">
+      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl text-center fade-in" data-testid="entity-garrigues">
         <img src="img/logos/garrigues.svg" alt="Garrigues" class="h-10 mx-auto mb-6 opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy">
-        <h3 class="text-xl font-serif text-primary mb-2">Garrigues</h3>
+        <h3 class="text-xl font-heading text-primary mb-2">Garrigues</h3>
         <p class="text-sm font-semibold text-accent mb-3">El primer despacho de abogados de la UE</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Firma internacional de servicios legales y fiscales que asesora a nivel local, regional y global desde todos los angulos del derecho de los negocios.</p>
         <a href="https://www.garrigues.com/es_ES" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all">Saber mas <i class="ph ph-arrow-square-out"></i></a>
       </div>
       <!-- Garrigues Digital -->
-      <div class="group bg-white p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl text-center fade-in delay-1" data-testid="entity-garrigues-digital">
+      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl text-center fade-in delay-1" data-testid="entity-garrigues-digital">
         <img src="img/logos/garrigues-digital.svg" alt="Garrigues Digital" class="h-10 mx-auto mb-6 opacity-80 group-hover:opacity-100 transition-opacity" loading="lazy">
-        <h3 class="text-xl font-serif text-primary mb-2">Garrigues Digital</h3>
+        <h3 class="text-xl font-heading text-primary mb-2">Garrigues Digital</h3>
         <p class="text-sm font-semibold text-accent mb-3">Equipo experto en derecho digital</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Equipo transversal de profesionales de Garrigues que, desde las distintas areas de practica, asesora a las empresas en torno al negocio digital.</p>
         <a href="https://www.garrigues.com/es_ES/garrigues-digital" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all">Saber mas <i class="ph ph-arrow-square-out"></i></a>
       </div>
       <!-- g-digital -->
-      <div class="group bg-gradient-to-br from-primary to-dark p-8 rounded-3xl text-white text-center relative overflow-hidden fade-in delay-2" data-testid="entity-gdigital">
+      <div class="group bg-gradient-to-br from-primary to-dark p-8 rounded-xl text-white text-center relative overflow-hidden fade-in delay-2" data-testid="entity-gdigital">
         <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-full"></div>
         <div class="relative z-10">
           <img src="img/logos/gdigital.svg" alt="g-digital" class="h-10 mx-auto mb-6 brightness-0 invert opacity-90" loading="lazy">
-          <h3 class="text-xl font-serif text-white mb-2">g-digital</h3>
+          <h3 class="text-xl font-heading text-white mb-2">g-digital</h3>
           <p class="text-sm font-semibold text-accent mb-3">Desarrolladores de LawTech</p>
           <p class="text-gray-300/80 text-sm leading-relaxed">Desarrolla soluciones tecnologicas avanzadas para el mundo de los servicios legales, y actua como palanca interna para la transformacion digital del despacho.</p>
         </div>
@@ -125,7 +125,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="fade-in">
         <div class="w-12 h-1 bg-accent rounded-full mb-6"></div>
-        <h2 class="text-3xl md:text-4xl font-serif text-primary mb-6" data-testid="eadtrust-heading">El operador tecnologico del Grupo Garrigues</h2>
+        <h2 class="text-3xl md:text-4xl font-heading text-primary mb-6" data-testid="eadtrust-heading">El operador tecnologico del Grupo Garrigues</h2>
         <p class="text-gray-600 leading-relaxed mb-6">La adquisicion de una participacion del <strong class="text-primary">51% en EADTrust</strong> por parte de Garrigues es fundamental para hacer realidad los productos de g-digital. Ofrecemos un entorno seguro, certificado, regulado y altamente especializado.</p>
         <p class="text-gray-500 text-sm leading-relaxed mb-6">Los productos de g-digital, apoyados por los expertos de Garrigues, se implementan en un marco regulado, asegurando que cumplan con los mas altos estandares y exigencias normativas. Operamos como un <strong class="text-primary">rPaaS</strong> (Regulated Platform as a Service).</p>
         <div class="flex gap-3 flex-wrap">
@@ -136,7 +136,7 @@
         <a href="https://es.linkedin.com/company/eadtrust" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-accent font-semibold text-sm mt-6 hover:gap-3 transition-all" data-testid="eadtrust-link">Conoce EADTrust <i class="ph ph-arrow-square-out"></i></a>
       </div>
       <div class="flex justify-center fade-in delay-2">
-        <img src="img/triangulo-legitimidad.png" alt="Triangulo de Legitimidad: Garrigues + g-digital + EADTrust" class="w-full max-w-sm rounded-3xl" data-testid="triangulo-img">
+        <img src="img/triangulo-legitimidad.png" alt="Triangulo de Legitimidad: Garrigues + g-digital + EADTrust" class="w-full max-w-sm rounded-xl" data-testid="triangulo-img">
       </div>
     </div>
   </div>
@@ -146,47 +146,47 @@
 <section class="py-24 md:py-32 bg-light" data-testid="equipo-section">
   <div class="max-w-7xl mx-auto px-6">
     <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="equipo-heading">Nuestros profesionales</h2>
+    <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1" data-testid="equipo-heading">Nuestros profesionales</h2>
     <p class="text-lg text-gray-500 max-w-2xl mb-12 fade-in delay-2">Equipo especializado en desarrollo de negocio digital que reune profesionales con experiencia en derecho, tecnologia y consultoria estrategica.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="team-eduardo">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="team-eduardo">
         <img src="img/team/eduardo-abad.jpg" alt="Eduardo Abad" class="w-20 h-20 rounded-2xl object-cover mb-4" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-1">Eduardo Abad</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Eduardo Abad</h3>
         <p class="text-xs text-accent font-semibold mb-3">Socio responsable de innovacion y digitalizacion</p>
         <p class="text-gray-500 text-xs leading-relaxed mb-3">Lidera g-digital dentro de la estrategia de Garrigues, impulsando la transformacion digital y el desarrollo de soluciones tecno-legales.</p>
         <div class="flex gap-2"><a href="https://www.garrigues.com/es_ES/equipo/eduardo-abad-valdenebro" target="_blank" class="text-xs text-gray-400 hover:text-accent transition-colors">Perfil Garrigues</a><a href="https://www.linkedin.com/in/eduardo-abad-valdenebro-0699531" target="_blank" class="text-xs text-gray-400 hover:text-accent transition-colors"><i class="ph ph-linkedin-logo"></i></a></div>
       </div>
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="team-moises">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="team-moises">
         <img src="img/team/moises-menendez.jpg" alt="Moises Menendez" class="w-20 h-20 rounded-2xl object-cover mb-4" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-1">Moises Menendez</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Moises Menendez</h3>
         <p class="text-xs text-accent font-semibold mb-3">Director de g-digital</p>
         <p class="text-gray-500 text-xs leading-relaxed mb-3">Dirige g-digital, liderando el desarrollo e implementacion de soluciones digitales innovadoras que integran la cartera de soluciones.</p>
         <a href="https://www.linkedin.com/in/moises-menendez-b4608a10" target="_blank" class="text-xs text-gray-400 hover:text-accent transition-colors"><i class="ph ph-linkedin-logo"></i></a>
       </div>
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="team-oscar">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="team-oscar">
         <img src="img/team/oscar-del-barrio.jpg" alt="Oscar del Barrio" class="w-20 h-20 rounded-2xl object-cover mb-4" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-1">Oscar del Barrio</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Oscar del Barrio</h3>
         <p class="text-xs text-accent font-semibold mb-3">Desarrollo de producto y operaciones</p>
         <p class="text-gray-500 text-xs leading-relaxed mb-3">Supervisa el desarrollo de producto y las operaciones, brindando soporte a negocios como EADTrust, asegurando eficacia y calidad.</p>
         <a href="https://www.linkedin.com/in/oscar-del-barrio-aa78056" target="_blank" class="text-xs text-gray-400 hover:text-accent transition-colors"><i class="ph ph-linkedin-logo"></i></a>
       </div>
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="team-hugo">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="team-hugo">
         <img src="img/team/hugo-alonso.jpg" alt="Hugo Alonso" class="w-20 h-20 rounded-2xl object-cover mb-4" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-1">Hugo Alonso</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Hugo Alonso</h3>
         <p class="text-xs text-accent font-semibold mb-3">Desarrollo de soluciones</p>
         <p class="text-gray-500 text-xs leading-relaxed mb-3">Lidera el desarrollo de soluciones, coordinando equipos internos y externos para garantizar la entrega de productos innovadores y de alta calidad.</p>
         <a href="https://www.linkedin.com/in/vhalonso" target="_blank" class="text-xs text-gray-400 hover:text-accent transition-colors"><i class="ph ph-linkedin-logo"></i></a>
       </div>
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="team-belen">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="team-belen">
         <img src="img/team/belen-aguayo.jpg" alt="Belen Aguayo" class="w-20 h-20 rounded-2xl object-cover mb-4" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-1">Belen Aguayo</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Belen Aguayo</h3>
         <p class="text-xs text-accent font-semibold mb-3">Abogada experta LegalTech &middot; Product Owner</p>
         <p class="text-gray-500 text-xs leading-relaxed mb-3">Coordina la colaboracion entre Garrigues y g-digital, asegurando que cada producto cumpla con los estandares legales y tecnologicos mas exigentes.</p>
         <a href="https://www.linkedin.com/in/belen-aguayo-ms" target="_blank" class="text-xs text-gray-400 hover:text-accent transition-colors"><i class="ph ph-linkedin-logo"></i></a>
       </div>
-      <div class="bg-white p-6 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="team-albi">
+      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="team-albi">
         <img src="img/team/albi-rodriguez.jpg" alt="Albi Rodriguez" class="w-20 h-20 rounded-2xl object-cover mb-4" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-1">Albi Rodriguez</h3>
+        <h3 class="text-lg font-heading text-primary mb-1">Albi Rodriguez</h3>
         <p class="text-xs text-accent font-semibold mb-3">Observatorio LegalTech &middot; Expansion Latam</p>
         <p class="text-gray-500 text-xs leading-relaxed mb-3">Coordina el Observatorio LegalTech, participando en la difusion y promocion de las soluciones g-digital en la region Latam.</p>
         <a href="https://www.linkedin.com/in/albi-rodriguez-jaramillo-67413b21" target="_blank" class="text-xs text-gray-400 hover:text-accent transition-colors"><i class="ph ph-linkedin-logo"></i></a>
@@ -194,7 +194,7 @@
     </div>
     <!-- Gobierno Garrigues -->
     <div class="mt-16 fade-in delay-3">
-      <h3 class="text-lg font-serif text-primary mb-6">Profesionales de Garrigues en el gobierno de g-digital</h3>
+      <h3 class="text-lg font-heading text-primary mb-6">Profesionales de Garrigues en el gobierno de g-digital</h3>
       <div class="flex flex-wrap gap-4">
         <a href="https://www.garrigues.com/es_ES/equipo/jose-ramon-morales" target="_blank" class="bg-white px-5 py-3 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg text-sm font-medium text-primary no-underline">Jose Ramon Morales</a>
         <a href="https://www.garrigues.com/es_ES/equipo/cristina-mesa-sanchez" target="_blank" class="bg-white px-5 py-3 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg text-sm font-medium text-primary no-underline">Cristina Mesa Sanchez</a>
@@ -209,29 +209,29 @@
 <section class="py-24 md:py-32 bg-white" data-testid="partners-section">
   <div class="max-w-7xl mx-auto px-6">
     <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-5xl font-serif text-primary mb-4 fade-in delay-1" data-testid="partners-heading">Nuestros partners</h2>
+    <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1" data-testid="partners-heading">Nuestros partners</h2>
     <p class="text-lg text-gray-500 max-w-2xl mb-12 fade-in delay-2">La colaboracion es un pilar fundamental. Al asociarnos con lideres de la industria, garantizamos que nuestras soluciones esten respaldadas por la mejor infraestructura y expertise.</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <!-- ioBuilders -->
-      <div class="bg-light p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in" data-testid="partner-iobuilders">
+      <div class="bg-light p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in" data-testid="partner-iobuilders">
         <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-4">Partner tecnologico</p>
         <img src="img/logos/iobuilders.svg" alt="ioBuilders" class="h-8 mb-4 opacity-70" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-3">ioBuilders</h3>
+        <h3 class="text-lg font-heading text-primary mb-3">ioBuilders</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">La alianza fortalece nuestra posicion como lideres en innovacion tecnologica dentro del sector financiero. Experiencia en blockchain, seguridad y cumplimiento normativo. <strong class="text-primary">Estamos en su capital.</strong></p>
         <a href="https://io.builders/" target="_blank" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all">Saber mas <i class="ph ph-arrow-square-out"></i></a>
       </div>
       <!-- Microsoft -->
-      <div class="bg-light p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-1" data-testid="partner-microsoft">
+      <div class="bg-light p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-1" data-testid="partner-microsoft">
         <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-4">Cloud EU Sovereign</p>
         <img src="img/logos/microsoft.svg" alt="Microsoft Azure" class="h-8 mb-4 opacity-70" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-3">Microsoft Azure</h3>
+        <h3 class="text-lg font-heading text-primary mb-3">Microsoft Azure</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Lider global en tecnologia cloud, fundamental para nuestras soluciones de confianza digital. Ofrece la seguridad y escalabilidad que nuestros clientes requieren.</p>
       </div>
       <!-- Oracle -->
-      <div class="bg-light p-8 rounded-3xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-2" data-testid="partner-oracle">
+      <div class="bg-light p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-2" data-testid="partner-oracle">
         <p class="text-xs font-semibold text-accent uppercase tracking-wider mb-4">Cloud EU Sovereign</p>
         <img src="img/logos/oracle.svg" alt="Oracle Cloud" class="h-8 mb-4 opacity-70" loading="lazy">
-        <h3 class="text-lg font-serif text-primary mb-3">Oracle Cloud</h3>
+        <h3 class="text-lg font-heading text-primary mb-3">Oracle Cloud</h3>
         <p class="text-gray-500 text-sm leading-relaxed mb-4">Plataforma robusta para gestion de datos y aplicaciones empresariales, facilitando la integracion de procesos digitales complejos.</p>
       </div>
     </div>
@@ -241,11 +241,11 @@
 <!-- RECONOCIMIENTOS -->
 <section class="py-24 md:py-32 bg-light" data-testid="reconocimientos-section">
   <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-12 fade-in">Reconocimiento internacional</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-12 fade-in">Reconocimiento internacional</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-8 rounded-3xl border border-gray-100 text-center hover:border-accent/50 transition-all hover:shadow-2xl fade-in"><div class="w-14 h-14 mx-auto rounded-2xl bg-gold/10 flex items-center justify-center mb-4"><i class="ph ph-trophy text-gold text-2xl"></i></div><h3 class="text-lg font-serif text-primary mb-2">Financial Times</h3><p class="text-gray-500 text-sm">Top 10 Innovative Lawyers Europa</p></div>
-      <div class="bg-white p-8 rounded-3xl border border-gray-100 text-center hover:border-accent/50 transition-all hover:shadow-2xl fade-in delay-1"><div class="w-14 h-14 mx-auto rounded-2xl bg-gold/10 flex items-center justify-center mb-4"><i class="ph ph-trophy text-gold text-2xl"></i></div><h3 class="text-lg font-serif text-primary mb-2">Law.com 2025</h3><p class="text-gray-500 text-sm">GoCertius — Tecnologia Disruptiva</p></div>
-      <div class="bg-white p-8 rounded-3xl border border-gray-100 text-center hover:border-accent/50 transition-all hover:shadow-2xl fade-in delay-2"><div class="w-14 h-14 mx-auto rounded-2xl bg-gold/10 flex items-center justify-center mb-4"><i class="ph ph-trophy text-gold text-2xl"></i></div><h3 class="text-lg font-serif text-primary mb-2">The Lawyer</h3><p class="text-gray-500 text-sm">Best Firm-wide Use of Technology</p></div>
+      <div class="bg-white p-8 rounded-xl border border-gray-100 text-center hover:border-accent/50 transition-all hover:shadow-2xl fade-in"><div class="w-14 h-14 mx-auto rounded-2xl bg-gold/10 flex items-center justify-center mb-4"><i class="ph ph-trophy text-gold text-2xl"></i></div><h3 class="text-lg font-heading text-primary mb-2">Financial Times</h3><p class="text-gray-500 text-sm">Top 10 Innovative Lawyers Europa</p></div>
+      <div class="bg-white p-8 rounded-xl border border-gray-100 text-center hover:border-accent/50 transition-all hover:shadow-2xl fade-in delay-1"><div class="w-14 h-14 mx-auto rounded-2xl bg-gold/10 flex items-center justify-center mb-4"><i class="ph ph-trophy text-gold text-2xl"></i></div><h3 class="text-lg font-heading text-primary mb-2">Law.com 2025</h3><p class="text-gray-500 text-sm">GoCertius — Tecnologia Disruptiva</p></div>
+      <div class="bg-white p-8 rounded-xl border border-gray-100 text-center hover:border-accent/50 transition-all hover:shadow-2xl fade-in delay-2"><div class="w-14 h-14 mx-auto rounded-2xl bg-gold/10 flex items-center justify-center mb-4"><i class="ph ph-trophy text-gold text-2xl"></i></div><h3 class="text-lg font-heading text-primary mb-2">The Lawyer</h3><p class="text-gray-500 text-sm">Best Firm-wide Use of Technology</p></div>
     </div>
   </div>
 </section>
@@ -255,12 +255,12 @@
   <div class="relative z-10 max-w-7xl mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div class="fade-in">
-        <h2 class="text-3xl md:text-4xl font-serif mb-4">Observatorio LegalTech Garrigues &mdash; ICADE</h2>
+        <h2 class="text-3xl md:text-4xl font-heading mb-4">Observatorio LegalTech Garrigues &mdash; ICADE</h2>
         <p class="text-gray-300/80 leading-relaxed mb-6">Espacio abierto para los actores de la industria legal que quieren compartir experiencias y conocimiento sobre como la tecnologia esta transformando el sector, y analizar los desafios y oportunidades que implica para la profesion y el negocio.</p>
-        <a href="https://www.comillas.edu/investigacion/observatorio-legaltech/" target="_blank" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-full font-semibold text-sm hover:bg-white hover:text-primary transition-all" data-testid="observatorio-link">Ir al Observatorio <i class="ph ph-arrow-square-out"></i></a>
+        <a href="https://www.comillas.edu/investigacion/observatorio-legaltech/" target="_blank" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-white hover:text-primary transition-all" data-testid="observatorio-link">Ir al Observatorio <i class="ph ph-arrow-square-out"></i></a>
       </div>
       <div class="flex justify-center fade-in delay-2">
-        <div class="bg-white/5 border border-white/10 rounded-3xl p-10 text-center backdrop-blur-sm"><i class="ph ph-globe text-accent text-5xl mb-4"></i><h4 class="text-lg font-serif text-white mb-3">Colaboracion academica</h4><p class="text-gray-300/60 text-sm m-0">Garrigues e ICADE impulsan conjuntamente la investigacion aplicada en tecnologia legal.</p></div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-10 text-center backdrop-blur-sm"><i class="ph ph-globe text-accent text-5xl mb-4"></i><h4 class="text-lg font-heading text-white mb-3">Colaboracion academica</h4><p class="text-gray-300/60 text-sm m-0">Garrigues e ICADE impulsan conjuntamente la investigacion aplicada en tecnologia legal.</p></div>
       </div>
     </div>
   </div>
@@ -269,12 +269,12 @@
 <!-- VALORES -->
 <section class="py-24 md:py-32 bg-white" data-testid="valores-section">
   <div class="max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-12 fade-in">Nuestros valores</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-12 fade-in">Nuestros valores</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="fade-in group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-handshake text-accent text-2xl"></i></div><h3 class="text-base font-serif text-primary mb-2">Confianza</h3><p class="text-gray-500 text-sm">Seguridad juridica y conformidad regulatoria en cada solucion.</p></div>
-      <div class="fade-in delay-1 group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-lightbulb text-accent text-2xl"></i></div><h3 class="text-base font-serif text-primary mb-2">Innovacion</h3><p class="text-gray-500 text-sm">Tecnologias emergentes con criterio empresarial responsable.</p></div>
-      <div class="fade-in delay-2 group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-arrows-clockwise text-accent text-2xl"></i></div><h3 class="text-base font-serif text-primary mb-2">Adaptabilidad</h3><p class="text-gray-500 text-sm">Pensamos siempre en la mejor solucion para cada necesidad. Flexibilidad con proposito.</p></div>
-      <div class="fade-in delay-3 group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-ruler text-accent text-2xl"></i></div><h3 class="text-base font-serif text-primary mb-2">Rigor</h3><p class="text-gray-500 text-sm">Metodologia, estandarizacion, ontologias y mejores practicas para que nuestras soluciones escalen y sean confiables.</p></div>
+      <div class="fade-in group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-handshake text-accent text-2xl"></i></div><h3 class="text-base font-heading text-primary mb-2">Confianza</h3><p class="text-gray-500 text-sm">Seguridad juridica y conformidad regulatoria en cada solucion.</p></div>
+      <div class="fade-in delay-1 group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-lightbulb text-accent text-2xl"></i></div><h3 class="text-base font-heading text-primary mb-2">Innovacion</h3><p class="text-gray-500 text-sm">Tecnologias emergentes con criterio empresarial responsable.</p></div>
+      <div class="fade-in delay-2 group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-arrows-clockwise text-accent text-2xl"></i></div><h3 class="text-base font-heading text-primary mb-2">Adaptabilidad</h3><p class="text-gray-500 text-sm">Pensamos siempre en la mejor solucion para cada necesidad. Flexibilidad con proposito.</p></div>
+      <div class="fade-in delay-3 group"><div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors"><i class="ph ph-ruler text-accent text-2xl"></i></div><h3 class="text-base font-heading text-primary mb-2">Rigor</h3><p class="text-gray-500 text-sm">Metodologia, estandarizacion, ontologias y mejores practicas para que nuestras soluciones escalen y sean confiables.</p></div>
     </div>
   </div>
 </section>
@@ -282,14 +282,14 @@
 <!-- CTA -->
 <section class="py-20 bg-light text-center">
   <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-4 fade-in">Quieres conocernos mejor?</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in">Quieres conocernos mejor?</h2>
     <p class="text-gray-500 mb-8 fade-in delay-1">Hablemos de como g-digital puede acompanar tu transformacion digital con garantia legal.</p>
-    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold hover:bg-primary transition-all shadow-lg shadow-accent/20 hover:-translate-y-0.5 fade-in delay-2" data-testid="cta-nosotros-btn">Contactar <i class="ph ph-arrow-right"></i></a>
+    <a href="contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary transition-all shadow-lg shadow-accent/20  fade-in delay-2" data-testid="cta-nosotros-btn">Contactar <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="/" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues. Innovacion digital con garantia legal.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="soluciones/activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="soluciones/legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors">Recursos</a></li><li><a href="contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p><div class="flex gap-3 mt-4"><a href="https://es.linkedin.com/company/eadtrust" target="_blank" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all" aria-label="LinkedIn"><i class="ph ph-linkedin-logo text-white/60 text-sm"></i></a></div></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
+<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="/" class="font-heading text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues. Innovacion digital con garantia legal.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="soluciones/confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="soluciones/contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="soluciones/activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="soluciones/legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="recursos.html" class="text-white/50 text-sm hover:text-accent transition-colors">Recursos</a></li><li><a href="contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p><div class="flex gap-3 mt-4"><a href="https://es.linkedin.com/company/eadtrust" target="_blank" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-accent/20 hover:border-accent/30 transition-all" aria-label="LinkedIn"><i class="ph ph-linkedin-logo text-white/60 text-sm"></i></a></div></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
 
 <script src="js/main.js"></script>
 </body>

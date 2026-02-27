@@ -6,23 +6,23 @@
   <title>Trust API para Salud y Digital Health — Consentimiento Informado, Telemedicina | g-digital</title>
   <meta name="description" content="Trust API para salud: consentimiento informado con firma cualificada (Ley 41/2002), historia clinica certificada, teleconsulta sellada, receta electronica. 25 escenarios.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="../css/style.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Trust API para Salud y Digital Health","publisher":{"@type":"Organization","name":"g-digital (Grupo Garrigues)"}}</script>
 </head>
-<body class="font-sans text-gray-800 bg-light antialiased">
+<body class="font-body text-gray-700 bg-white antialiased">
 
 <!-- NAV -->
 <nav class="nav-main fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-transparent transition-all duration-300" data-testid="main-nav">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-    <a href="../" class="font-serif text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
+    <a href="../" class="font-heading text-2xl font-bold text-primary tracking-tight">g<span class="text-accent">-digital</span></a>
     <div class="hidden lg:flex items-center gap-8">
       <a href="../" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Inicio</a>
       <a href="../recursos.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Recursos</a>
       <a href="../contacto.html" class="text-sm font-medium text-gray-600 hover:text-primary transition-colors link-underline" data-nav-link>Contacto</a>
-      <a href="../contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Solicitar Demo</a>
+      <a href="../contacto.html" class="bg-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-dark transition-all shadow-lg shadow-primary/20">Contactar</a>
     </div>
     <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu"><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span><span class="block w-6 h-0.5 bg-gray-700 transition-all"></span></button>
   </div>
@@ -35,10 +35,10 @@
   <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24">
     <div class="max-w-3xl">
       <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/20 border border-accent/30 text-sm font-semibold text-accent mb-8 fade-in"><i class="ph ph-first-aid"></i> Sector Prioritario &middot; 25 escenarios</div>
-      <h1 class="text-4xl md:text-6xl font-serif font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="salud-heading">Trust API para <span class="text-accent italic">Salud y Digital Health</span></h1>
+      <h1 class="text-4xl md:text-6xl font-heading font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="salud-heading">Trust API para <span class="text-accent italic">Salud y Digital Health</span></h1>
       <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Un consentimiento informado sin firma cualificada es impugnable. Con Trust API, cada acto medico queda certificado con evidencia eIDAS: consentimiento, historia clinica, teleconsulta, receta electronica.</p>
       <div class="flex gap-4 flex-wrap mt-10 fade-in delay-3">
-        <a href="../contacto.html" class="bg-accent text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-all shadow-[0_0_24px_rgba(0,154,119,0.3)]" data-testid="salud-cta">Ver escenarios para Salud <i class="ph ph-arrow-right ml-1"></i></a>
+        <a href="../contacto.html" class="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all " data-testid="salud-cta">Ver escenarios para Salud <i class="ph ph-arrow-right ml-1"></i></a>
       </div>
     </div>
   </div>
@@ -48,22 +48,22 @@
 <section class="py-24 md:py-32 bg-white" data-testid="dolor-salud">
   <div class="max-w-7xl mx-auto px-6">
     <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-5xl font-serif text-primary mb-12 fade-in delay-1">El dolor en Salud</h2>
+    <h2 class="text-3xl md:text-5xl font-heading text-primary mb-12 fade-in delay-1">El dolor en Salud</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-light p-6 rounded-3xl border border-gray-100 fade-in">
+      <div class="bg-light p-6 rounded-xl border border-gray-100 fade-in">
         <div class="flex items-center gap-2 mb-3"><i class="ph ph-warning-circle text-red-500 text-xl"></i><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">LEY 41/2002</span></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Consentimiento informado impugnable</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Consentimiento informado impugnable</h3>
         <p class="text-gray-500 text-sm leading-relaxed">La Ley 41/2002 de autonomia del paciente exige consentimiento informado. Sin firma cualificada, es cuestionable en un procedimiento de responsabilidad medica.</p>
         <span class="text-xs font-mono text-accent">Ley 41/2002 Art. 8</span>
       </div>
-      <div class="bg-light p-6 rounded-3xl border border-gray-100 fade-in delay-1">
+      <div class="bg-light p-6 rounded-xl border border-gray-100 fade-in delay-1">
         <div class="flex items-center gap-2 mb-3"><i class="ph ph-warning-circle text-red-500 text-xl"></i><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">RGPD</span></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Historia clinica sin trazabilidad</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Historia clinica sin trazabilidad</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Accesos a la historia clinica sin certificar. Modificaciones sin timestamp. Datos sensibles (Art. 9 RGPD) sin cadena de custodia.</p>
       </div>
-      <div class="bg-light p-6 rounded-3xl border border-gray-100 fade-in delay-2">
+      <div class="bg-light p-6 rounded-xl border border-gray-100 fade-in delay-2">
         <div class="flex items-center gap-2 mb-3"><i class="ph ph-warning-circle text-red-500 text-xl"></i><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">TELEMEDICINA</span></div>
-        <h3 class="text-lg font-serif text-primary mb-2">Teleconsulta sin evidencia</h3>
+        <h3 class="text-lg font-heading text-primary mb-2">Teleconsulta sin evidencia</h3>
         <p class="text-gray-500 text-sm leading-relaxed">Sesiones de telemedicina sin registro certificado. Decisiones clinicas sin timestamp. Prescripciones sin firma cualificada.</p>
       </div>
     </div>
@@ -74,36 +74,36 @@
 <section class="py-24 md:py-32 bg-light" data-testid="escenarios-salud">
   <div class="max-w-7xl mx-auto px-6">
     <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-4xl font-serif text-primary mb-12 fade-in delay-1">25 escenarios para Salud y Digital Health</h2>
+    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-12 fade-in delay-1">25 escenarios para Salud y Digital Health</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg fade-in">
         <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-50 text-red-500">DEMO LIVE</span><span class="px-2 py-0.5 rounded text-[10px] font-mono bg-accent/10 text-accent">Signature</span></div>
-        <h4 class="text-sm font-serif font-semibold text-primary mb-1">Consentimiento informado con firma cualificada</h4>
+        <h4 class="text-sm font-heading font-semibold text-primary mb-1">Consentimiento informado con firma cualificada</h4>
         <p class="text-xs text-gray-500 m-0">Firma biometrica + audit trail completo. Cumplimiento Ley 41/2002. Prueba irrefutable de autonomia del paciente.</p>
       </div>
       <div class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg fade-in delay-1">
         <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-accent/10 text-accent mb-2 inline-block">POST /v1/timestamps</span>
-        <h4 class="text-sm font-serif font-semibold text-primary mb-1">Acceso a historia clinica certificado</h4>
+        <h4 class="text-sm font-heading font-semibold text-primary mb-1">Acceso a historia clinica certificado</h4>
         <p class="text-xs text-gray-500 m-0">Cada acceso sellado con timestamp: quien, cuando, que consulto. Trazabilidad RGPD completa para datos Art. 9.</p>
       </div>
       <div class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg fade-in">
         <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-accent/10 text-accent mb-2 inline-block">POST /v1/evidence</span>
-        <h4 class="text-sm font-serif font-semibold text-primary mb-1">Teleconsulta con timestamp</h4>
+        <h4 class="text-sm font-heading font-semibold text-primary mb-1">Teleconsulta con timestamp</h4>
         <p class="text-xs text-gray-500 m-0">Sesion de telemedicina sellada: inicio, fin, participantes, decisiones clinicas registradas con evidencia cualificada.</p>
       </div>
       <div class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg fade-in delay-1">
         <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-accent/10 text-accent mb-2 inline-block">POST /v1/signatures/qualified</span>
-        <h4 class="text-sm font-serif font-semibold text-primary mb-1">Receta electronica firmada</h4>
+        <h4 class="text-sm font-heading font-semibold text-primary mb-1">Receta electronica firmada</h4>
         <p class="text-xs text-gray-500 m-0">Firma cualificada del prescriptor. Trazabilidad del acto de prescripcion. Verificacion de identidad del profesional.</p>
       </div>
       <div class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg fade-in">
         <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-accent/10 text-accent mb-2 inline-block">POST /v1/custody</span>
-        <h4 class="text-sm font-serif font-semibold text-primary mb-1">Custodia de datos de investigacion clinica</h4>
+        <h4 class="text-sm font-heading font-semibold text-primary mb-1">Custodia de datos de investigacion clinica</h4>
         <p class="text-xs text-gray-500 m-0">Clinical trials: custodia certificada de datasets, protocolos e ICFs. Cadena de custodia para auditorias de buenas practicas clinicas.</p>
       </div>
       <div class="bg-white p-5 rounded-2xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-lg fade-in delay-1">
         <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-accent/10 text-accent mb-2 inline-block">POST /v1/notifications</span>
-        <h4 class="text-sm font-serif font-semibold text-primary mb-1">Notificacion de resultados certificada</h4>
+        <h4 class="text-sm font-heading font-semibold text-primary mb-1">Notificacion de resultados certificada</h4>
         <p class="text-xs text-gray-500 m-0">Comunicacion de resultados diagnosticos con acuse de recibo. Prueba de que el paciente fue informado.</p>
       </div>
     </div>
@@ -114,14 +114,14 @@
 <!-- CTA -->
 <section class="py-24 md:py-28 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="cta-salud">
   <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-5xl font-serif mb-6 fade-in">25 escenarios de Trust API para Salud.</h2>
+    <h2 class="text-3xl md:text-5xl font-heading mb-6 fade-in">25 escenarios de Trust API para Salud.</h2>
     <p class="text-lg text-gray-300 font-light mb-10 fade-in delay-1">Consentimiento informado, teleconsulta, receta, investigacion clinica. Todo certificado.</p>
-    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary transition-all shadow-[0_0_30px_rgba(0,154,119,0.35)] fade-in delay-2" data-testid="cta-salud-btn">Solicitar Demo Sectorial <i class="ph ph-arrow-right"></i></a>
+    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-primary transition-all  fade-in delay-2" data-testid="cta-salud-btn">Solicitar Demo Sectorial <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="font-serif text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Sectores</h4><ul class="space-y-2.5"><li><a href="banca.html" class="text-white/50 text-sm hover:text-accent transition-colors">Banca</a></li><li><a href="seguros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Seguros</a></li><li><a href="salud.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">Salud</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="../soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors">La Factoria</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></div></footer>
+<footer class="bg-dark text-white py-16"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="font-heading text-2xl font-bold tracking-tight">g<span class="text-accent">-digital</span></a><p class="text-white/50 text-sm mt-4">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Sectores</h4><ul class="space-y-2.5"><li><a href="banca.html" class="text-white/50 text-sm hover:text-accent transition-colors">Banca</a></li><li><a href="seguros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Seguros</a></li><li><a href="salud.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">Salud</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="../soluciones/factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors">La Factoria</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues).</p></div></div></footer>
 
 <script src="../js/main.js"></script>
 </body>
