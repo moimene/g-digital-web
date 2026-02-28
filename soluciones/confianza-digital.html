@@ -3,138 +3,348 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Confianza Digital — Arquitectura de 3 Capas | g-digital</title>
-  <meta name="description" content="Servicios de confianza cualificados eIDAS en 3 capas: La Factoria (API), Soluciones LegalTech EADTrust (productos), GoCertius (SuperApp). QTSP del Grupo Garrigues.">
+  <title>Confianza Digital — Servicios de Confianza eIDAS Cualificados | g-digital</title>
+  <meta name="description" content="Servicios de confianza eIDAS cualificados del Grupo Garrigues. Tres plataformas: GoCertius (móvil), Enterprise Suite (SaaS corporativo) y La Factoría (API). Operados por EADTrust, QTSP cualificado.">
+  <meta property="og:title" content="Confianza Digital — g-digital | Servicios eIDAS Cualificados">
+  <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{heading:['Poppins','Century Gothic','sans-serif'],body:['Rubik','Calibri','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <script defer data-domain="g-digital.garrigues.com" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
   <link rel="stylesheet" href="../css/style.css">
+<style>
+  .nav-dropdown-menu{display:none}
+  .nav-dropdown:hover .nav-dropdown-menu{display:block}
+  .mobile-menu{transform:translateX(100%);transition:transform .3s ease}
+  .mobile-menu:not(.translate-x-full){transform:translateX(0)}
+</style>
 </head>
-<body class="font-body text-gray-700 bg-white antialiased">
+<body class="font-sans text-gray-700 bg-white antialiased">
 
 <!-- NAV -->
-<nav class="nav-main fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300" data-testid="main-nav">
+<nav class="nav-main fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-    <a href="../" class="flex items-center"><img src="../img/logos/gdigital.svg" alt="g-digital" class="h-7 brightness-0 invert"></a>
+    <a href="../" class="flex items-center gap-2"><span class="text-xl font-bold text-white">g<span class="text-accent">-digital</span></span></a>
     <div class="hidden lg:flex items-center gap-8">
-      <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Inicio</a>
-      <div class="nav-dropdown relative"><a href="#" class="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a><div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2"><div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[300px] shadow-2xl shadow-gray-200/60"><a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors bg-accent/5 border border-accent/10"><i class="ph ph-lightning text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">La Factoria</span><span class="text-xs text-gray-500">Trust API</span></div></a><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a></div></div></div>
-      <a href="../nosotros.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Nosotros</a>
-      <a href="../recursos.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Recursos</a>
-      <a href="../contacto.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Contacto</a>
+      <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Inicio</a>
+      <div class="nav-dropdown relative">
+        <a href="#" class="text-sm font-medium text-white transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a>
+        <div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2">
+          <div class="bg-white border border-gray-100 rounded-2xl p-3 min-w-[340px] shadow-2xl shadow-gray-200/60">
+            <p class="px-3 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">Líneas de negocio</p>
+            <a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-light border border-gray-200"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-semibold text-primary">Confianza Digital</span></a>
+            <a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a>
+            <a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a>
+            <a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a>
+            <div class="h-px bg-gray-100 my-2"></div>
+            <p class="px-3 pb-1 text-[10px] font-semibold text-gray-400 uppercase tracking-widest">Plataformas (Confianza Digital)</p>
+            <a href="enterprise-suite.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-buildings text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">Enterprise Suite</span><span class="text-xs text-gray-500">Plataforma SaaS corporativa</span></div></a>
+            <a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-lightning text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">La Factoría</span><span class="text-xs text-gray-500">Trust API · Compliance Injection</span></div></a>
+          </div>
+        </div>
+      </div>
+      <a href="../nosotros.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Nosotros</a>
+      <a href="../recursos.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Recursos</a>
+      <a href="../contacto.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contacto</a>
       <a href="../contacto.html" class="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-accent/80 transition-all">Contactar</a>
     </div>
-    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span></button>
+    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menú"><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span></button>
   </div>
 </nav>
 <div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-lightning text-accent"></i> La Factoria</a><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark transition-all">Contactar</a></div></div></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Líneas de negocio</p><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Plataformas</p><a href="enterprise-suite.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-buildings text-accent"></i> Enterprise Suite</a><a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light"><i class="ph ph-lightning text-accent"></i> La Factoría</a><div class="h-px bg-gray-100 my-2"></div><a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Nosotros</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light">Contacto</a><div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark transition-all">Contactar</a></div></div></div>
 
 <!-- HERO -->
-<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-confianza">
-  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24">
-    <div class="max-w-3xl">
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-white/80 mb-8 fade-in"><i class="ph ph-shield-check text-accent"></i> eIDAS &amp; QTSP</div>
-      <h1 class="text-4xl md:text-6xl font-heading font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="confianza-heading">Servicios de <span class="text-accent italic">Confianza Digital</span></h1>
-      <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Tres capas de producto que cubren desde la infraestructura API enterprise hasta la experiencia de usuario individual. El QTSP del Grupo Garrigues al servicio de tu organizacion.</p>
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-dark text-white overflow-hidden">
+  <div class="absolute inset-0"><div class="absolute top-[-20%] right-[-10%] w-[60%] h-[140%] bg-gradient-radial from-accent/10 to-transparent rounded-full blur-3xl"></div></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-28">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00C896]/20 backdrop-blur-sm border border-[#00C896]/30 text-sm font-semibold text-[#00C896] mb-8">
+      <i class="ph ph-shield-check"></i> Línea de negocio · Confianza Digital
+    </div>
+    <h1 class="font-serif text-4xl md:text-6xl text-white font-medium leading-[1.08] mb-6 tracking-tight max-w-4xl">Confianza Digital:<br><span class="text-[#00C896] italic">Seguridad Jurídica para Cada Operación</span></h1>
+    <p class="text-lg md:text-xl text-gray-300 font-light max-w-2xl leading-relaxed mb-10">Dos bloques de capacidad. Los servicios regulados de un QTSP cualificado, más tres plataformas diseñadas por g-digital con el respaldo jurídico de Garrigues. Desde tu móvil, desde tu ordenador o directamente integrados en tus procesos.</p>
+
+    <!-- Buyer persona micro-orientación -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl">
+      <a href="#gocertius" class="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all no-underline group">
+        <div class="flex items-center gap-2 mb-2"><i class="ph ph-device-mobile text-[#00C896]"></i><span class="text-xs font-semibold text-white">Profesional / PYME</span></div>
+        <p class="text-xs text-gray-400 m-0">GoCertius &mdash; confianza digital en tu móvil</p>
+      </a>
+      <a href="#enterprise-suite" class="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all no-underline group">
+        <div class="flex items-center gap-2 mb-2"><i class="ph ph-desktop text-[#00C896]"></i><span class="text-xs font-semibold text-white">Gran empresa / COO</span></div>
+        <p class="text-xs text-gray-400 m-0">Enterprise Suite &mdash; confianza digital SaaS</p>
+      </a>
+      <a href="#factoria" class="bg-white/5 border border-white/10 rounded-xl p-4 hover:bg-white/10 transition-all no-underline group">
+        <div class="flex items-center gap-2 mb-2"><i class="ph ph-lightning text-[#00C896]"></i><span class="text-xs font-semibold text-white">CTO / Equipo técnico</span></div>
+        <p class="text-xs text-gray-400 m-0">La Factoría &mdash; API integrada en tus procesos</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ARQUITECTURA 3 CAPAS -->
-<section class="py-24 md:py-32 bg-white" data-testid="capas-section">
+<!-- BLOQUE A: SERVICIOS QTSP REGULADOS -->
+<section class="py-20 md:py-28 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="max-w-3xl mb-12">
-      <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-      <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1" data-testid="capas-heading">Arquitectura de 3 Capas</h2>
-      <p class="text-lg text-gray-500 leading-relaxed fade-in delay-2">g-digital disena. EADTrust opera. Tres puntos de entrada segun tu necesidad: infraestructura API, productos departamentales o experiencia de usuario.</p>
-    </div>
-    <div class="flex justify-center mb-16 fade-in delay-2">
-      <img src="../img/arquitectura-3-capas.png" alt="Arquitectura de 3 capas: Factoria API, Soluciones LegalTech, GoCertius SuperApp" class="w-full max-w-4xl rounded-xl shadow-lg border border-gray-100" data-testid="capas-infographic">
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Capa 1: Factoria -->
-      <div class="group bg-gradient-to-br from-primary to-dark p-8 rounded-xl text-white relative overflow-hidden fade-in" data-testid="capa-factoria">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-full"></div>
-        <div class="relative z-10">
-          <span class="text-xs font-mono font-bold text-accent bg-accent/20 px-2 py-0.5 rounded mb-4 inline-block">CAPA 1 &mdash; INFRAESTRUCTURA</span>
-          <h3 class="text-xl font-heading text-white mb-3">La Factoria (Trust API)</h3>
-          <p class="text-gray-300/80 text-sm leading-relaxed mb-4">Plataforma modular de APIs. 4 microservicios eIDAS cualificados (Evidence, Signature, Notification, Custody) como primitivas REST componibles. El motor invisible que alimenta todo lo demas.</p>
-          <p class="text-xs text-gray-400 mb-4">Para: Enterprise &middot; Integracion via API</p>
-          <a href="factoria.html" class="inline-flex items-center gap-1 text-accent font-semibold text-sm hover:gap-2 transition-all" data-testid="link-factoria">Explorar Trust API <i class="ph ph-arrow-right"></i></a>
-        </div>
+    <span class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-4">Bloque A &middot; La base regulada</span>
+    <h2 class="font-serif text-3xl md:text-5xl font-medium text-primary mb-4">Servicios de Confianza Cualificados</h2>
+    <p class="text-gray-500 max-w-2xl mb-12">EADTrust, el Prestador Cualificado del Grupo Garrigues, opera los servicios eIDAS sobre los que se construye todo lo demás.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-light rounded-xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-pen-nib text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-2">Firma con certificados</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Persona física, representante, sello de entidad. Firma avanzada (AES) y cualificada (QES). Equivalencia a firma manuscrita (Art. 25.2 eIDAS).</p>
       </div>
-      <!-- Capa 2: Soluciones LegalTech -->
-      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-1" data-testid="capa-soluciones">
-        <span class="text-xs font-mono font-bold text-accent bg-accent/10 px-2 py-0.5 rounded mb-4 inline-block">CAPA 2 &mdash; PRODUCTOS</span>
-        <h3 class="text-xl font-heading text-primary mb-3">Soluciones LegalTech EADTrust</h3>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4">Productos construidos sobre la Factoria. Resuelven necesidades concretas para empresas.</p>
-        <div class="space-y-3 mb-4">
-          <div class="flex items-center gap-3 p-2 rounded-xl bg-light"><i class="ph ph-pen-nib text-accent"></i><div><p class="text-sm font-semibold text-primary">Signature Manager</p><p class="text-xs text-gray-400">Firmas XAdES, CMS, cloud HSM, SDK mobile</p></div></div>
-          <div class="flex items-center gap-3 p-2 rounded-xl bg-light"><i class="ph ph-envelope-simple text-accent"></i><div><p class="text-sm font-semibold text-primary">Noticeman</p><p class="text-xs text-gray-400">Notificaciones certificadas email y SMS</p></div></div>
-          <div class="flex items-center gap-3 p-2 rounded-xl bg-light"><i class="ph ph-archive-box text-accent"></i><div><p class="text-sm font-semibold text-primary">eArchiving</p><p class="text-xs text-gray-400">Custodia digital cualificada QEA</p></div></div>
-          <div class="flex items-center gap-3 p-2 rounded-xl bg-light"><i class="ph ph-identification-badge text-accent"></i><div><p class="text-sm font-semibold text-primary">Credential Manager</p><p class="text-xs text-gray-400">Certificados digitales, verificacion de identidad</p></div></div>
-        </div>
-        <p class="text-xs text-gray-400">Para: Departamentos &middot; Productos empaquetados</p>
+      <div class="bg-light rounded-xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-clock-countdown text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-2">Sello de tiempo cualificado</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">RFC 3161. Presunción de fecha e integridad (Art. 41.2 eIDAS). Inversión de la carga de la prueba (Art. 326.4 LEC).</p>
       </div>
-      <!-- Capa 3: GoCertius -->
-      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="capa-gocertius">
-        <span class="text-xs font-mono font-bold text-accent bg-accent/10 px-2 py-0.5 rounded mb-4 inline-block">CAPA 3 &mdash; SUPERAPP</span>
-        <h3 class="text-xl font-heading text-primary mb-3">GoCertius</h3>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4">La SuperApp de servicios regulados. Unifica todos los servicios de confianza en una experiencia accesible. Pruebas electronicas, chats certificados, evidencia digital al alcance de profesionales.</p>
-        <div class="flex gap-3 mb-4">
-          <div class="text-center p-3 rounded-xl bg-light flex-1"><p class="text-lg font-mono font-bold text-accent">+40K</p><p class="text-[10px] text-gray-400">Evidencias</p></div>
-          <div class="text-center p-3 rounded-xl bg-light flex-1"><p class="text-lg font-mono font-bold text-gold">Law.com</p><p class="text-[10px] text-gray-400">Award 2025</p></div>
+      <div class="bg-light rounded-xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-envelope-simple text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-2">Entrega electrónica certificada</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">ERDS (Arts. 43-44 eIDAS). Prueba de envío, entrega y contenido. El burofax digital regulado por eIDAS.</p>
+      </div>
+      <div class="bg-light rounded-xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-vault text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-2">Custodia LTV</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Perfiles PAdES-LTV y XAdES-LTA. Re-sellado periódico. Garantía de integridad a largo plazo. Preparado para archivo cualificado eIDAS 2.</p>
+      </div>
+      <div class="bg-light rounded-xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-identification-card text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-2">Credenciales digitales</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Certificados de persona, entidad, representante y sello. Cloud HSM con QSCD cualificado.</p>
+      </div>
+      <div class="bg-light rounded-xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-wallet text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-2">EUDI Wallet Ready</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Cartera Digital Europea. Credenciales verificables, attestations cualificadas (QEA/QEAA) y firma remota móvil.</p>
+      </div>
+    </div>
+    <div class="mt-8">
+      <a href="https://www.eadtrust.eu" target="_blank" class="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">Catálogo completo en eadtrust.eu <i class="ph ph-arrow-up-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOQUE B: TRES PLATAFORMAS g-digital -->
+<section class="py-20 md:py-28 bg-light">
+  <div class="max-w-7xl mx-auto px-6">
+    <span class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-4">Bloque B &middot; Tres plataformas</span>
+    <h2 class="font-serif text-3xl md:text-5xl font-medium text-primary mb-4">Tres plataformas para acceder a la Confianza Digital</h2>
+    <p class="text-gray-500 max-w-2xl mb-16">g-digital diseña y pone en producción tres plataformas con el soporte jurídico de Garrigues. Cada una para un contexto de uso diferente.</p>
+
+    <div class="space-y-8">
+      <!-- GoCertius -->
+      <div id="gocertius" class="bg-white rounded-xl p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-all">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl flex-shrink-0"><i class="ph ph-device-mobile"></i></div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <h3 class="text-2xl font-serif text-primary">GoCertius</h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-gold/10 text-gold uppercase tracking-wider">SuperApp &middot; Law.com Award 2025</span>
+            </div>
+            <p class="text-sm text-accent font-medium">Confianza Digital en tu Móvil</p>
+          </div>
         </div>
-        <p class="text-xs text-gray-400">Para: Profesionales individuales &middot; Adopcion directa</p>
+        <p class="text-gray-600 leading-relaxed mb-6">SuperApp de certificación para profesionales y PYMEs. Certifica fotos, vídeos, chats y comunicaciones con sellos de tiempo cualificado para efectos legales. Sin integración técnica, sin infraestructura. Abre la app, certifica, presenta como prueba.</p>
+        <div class="grid md:grid-cols-3 gap-4 mb-6">
+          <div class="flex items-start gap-2"><i class="ph ph-check-circle text-accent mt-0.5"></i><span class="text-sm text-gray-600">Certificación de hechos (fotos, vídeos, capturas)</span></div>
+          <div class="flex items-start gap-2"><i class="ph ph-check-circle text-accent mt-0.5"></i><span class="text-sm text-gray-600">Sello de tiempo cualificado sobre cualquier archivo</span></div>
+          <div class="flex items-start gap-2"><i class="ph ph-check-circle text-accent mt-0.5"></i><span class="text-sm text-gray-600">Chat Certificado (Telegram + sellos cualificados)</span></div>
+          <div class="flex items-start gap-2"><i class="ph ph-check-circle text-accent mt-0.5"></i><span class="text-sm text-gray-600">Multimedia certificada con geolocalización</span></div>
+          <div class="flex items-start gap-2"><i class="ph ph-check-circle text-accent mt-0.5"></i><span class="text-sm text-gray-600">+40.000 evidencias gestionadas (2025-2026)</span></div>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-users"></i> Para: profesional independiente, abogado, perito, PYME, autónomo</div>
+        <a href="https://gocertius.io" target="_blank" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-accent/80 transition-all">Visitar gocertius.io <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+
+      <!-- Enterprise Suite -->
+      <div id="enterprise-suite" class="bg-white rounded-xl p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-all">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl flex-shrink-0"><i class="ph ph-buildings"></i></div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <h3 class="text-2xl font-serif text-primary">Enterprise Suite</h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-accent/10 text-accent uppercase tracking-wider">Plataforma SaaS &middot; Garrigues Cliente 0</span>
+            </div>
+            <p class="text-sm text-accent font-medium">Confianza Digital en tu Ordenador</p>
+          </div>
+        </div>
+        <p class="text-gray-600 leading-relaxed mb-6">Plataforma SaaS que integra firma electrónica, notificaciones certificadas, custodia cualificada y gestión de certificados en un entorno corporativo unificado. Multi-usuario, con soberanía digital en EU Sovereign Cloud.</p>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">Signature Manager</h4><p class="text-gray-500 text-xs">Firma AES/QES con flujos complejos y rol de Validador legal</p></div>
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">Notice Manager</h4><p class="text-gray-500 text-xs">Notificaciones certificadas multicanal (email, WhatsApp, SMS, RCS)</p></div>
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">eArchiving</h4><p class="text-gray-500 text-xs">Custodia LTV con re-sellado periódico y lógica WORM</p></div>
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">Credential Manager</h4><p class="text-gray-500 text-xs">Certificados en Cloud HSM con delegación segura</p></div>
+        </div>
+        <div class="bg-primary/5 border border-primary/10 rounded-lg p-4 mb-6">
+          <p class="text-primary text-sm m-0"><strong>Garrigues usa Enterprise Suite internamente como Cliente 0.</strong> La plataforma se prueba con transacciones reales antes de ofrecerse al mercado. 1.500+ profesionales, 3.000+ procesos de firma, 20+ TB custodiados.</p>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-users"></i> Para: Director Legal, CTO, COO en gran empresa</div>
+        <a href="enterprise-suite.html" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-accent/80 transition-all" onclick="plausible('click_cta_contact', {props: {page: 'confianza-digital', cta_type: 'enterprise_suite'}})">Descubrir Enterprise Suite <i class="ph ph-arrow-right"></i></a>
+      </div>
+
+      <!-- La Factoría -->
+      <div id="factoria" class="bg-white rounded-xl p-8 md:p-10 border border-gray-100 hover:shadow-xl transition-all">
+        <div class="flex items-start gap-4 mb-6">
+          <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl flex-shrink-0"><i class="ph ph-lightning"></i></div>
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+              <h3 class="text-2xl font-serif text-primary">La Factoría</h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-accent/10 text-accent uppercase tracking-wider">API como Producto &middot; +290 Escenarios</span>
+            </div>
+            <p class="text-sm text-accent font-medium">Confianza Digital Integrada en tus Procesos</p>
+          </div>
+        </div>
+        <p class="text-gray-600 leading-relaxed mb-6">API como producto. Inyecta servicios de confianza eIDAS cualificados directamente en cada proceso de tu organización con una llamada REST. Sin migrar plataformas, sin rediseñar flujos. 4 microservicios, +290 escenarios en 18 sectores.</p>
+        <div class="grid md:grid-cols-2 gap-4 mb-6">
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">Evidence Manager</h4><p class="text-gray-500 text-xs">Hashing SHA-256 + Qualified Timestamping (TSA)</p></div>
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">Signature Manager</h4><p class="text-gray-500 text-xs">Firma AES/QES vía API, QSCD cloud, SDK mobile</p></div>
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">Notification Manager</h4><p class="text-gray-500 text-xs">ERDS (entrega electrónica certificada)</p></div>
+          <div class="bg-light rounded-lg p-4 border border-gray-100"><h4 class="font-semibold text-primary text-sm mb-1">Custody Manager</h4><p class="text-gray-500 text-xs">Archivo LTV soberano con re-sellado</p></div>
+        </div>
+        <div class="flex items-center gap-3 text-xs text-gray-400 mb-4"><i class="ph ph-users"></i> Para: CTO, arquitecto de software, equipo de integración</div>
+        <div class="flex gap-3">
+          <a href="factoria.html" class="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-accent/80 transition-all" onclick="plausible('click_cta_contact', {props: {page: 'confianza-digital', cta_type: 'factoria'}})">Explorar La Factoría <i class="ph ph-arrow-right"></i></a>
+          <a href="../escenarios.html" class="inline-flex items-center gap-2 border border-gray-200 text-primary px-6 py-3 rounded-lg font-semibold text-sm hover:border-accent hover:text-accent transition-all">Ver +290 escenarios <i class="ph ph-arrow-right"></i></a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICIOS QTSP LEGACY -->
-<section class="py-24 md:py-32 bg-light" data-testid="qtsp-legacy-section">
+<!-- MAPA DE NAVEGACIÓN -->
+<section class="py-16 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in delay-1">Servicios QTSP Legacy EADTrust</h2>
-    <p class="text-gray-500 max-w-xl mb-12 fade-in delay-2">La base regulada. Cartera historica de servicios como Prestador Cualificado que constituye el sustrato sobre el que se construye todo el ecosistema.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in" data-testid="qtsp-firma"><div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-pen-nib"></i></div><h3 class="text-lg font-heading text-primary mb-2">Firma Electronica</h3><p class="text-gray-500 text-sm">Avanzada y cualificada. XAdES, CMS. Equivalencia a firma manuscrita (Art. 25.2 eIDAS).</p><span class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">eIDAS Cualificado</span></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-1" data-testid="qtsp-sello"><div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-clock-countdown"></i></div><h3 class="text-lg font-heading text-primary mb-2">Sello de Tiempo Cualificado</h3><p class="text-gray-500 text-sm">RFC 3161. Presuncion de fecha e integridad (Art. 41.2 eIDAS).</p><span class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">RFC 3161</span></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-2" data-testid="qtsp-notificacion"><div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-envelope-simple"></i></div><h3 class="text-lg font-heading text-primary mb-2">Entrega Electronica Certificada</h3><p class="text-gray-500 text-sm">Prueba de envio, entrega y contenido via email y SMS certificado.</p><span class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">Prueba Legal</span></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-3" data-testid="qtsp-custodia"><div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-vault"></i></div><h3 class="text-lg font-heading text-primary mb-2">Custodia Cualificada (QEA)</h3><p class="text-gray-500 text-sm">eIDAS 2.0. Nube soberana con redundancia, encriptacion e integridad.</p><span class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">eIDAS 2.0</span></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-4" data-testid="qtsp-credenciales"><div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-identification-badge"></i></div><h3 class="text-lg font-heading text-primary mb-2">Credenciales Digitales</h3><p class="text-gray-500 text-sm">Certificados de persona fisica, representante, sello de entidad.</p><span class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">Identidad</span></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-xl fade-in delay-5" data-testid="qtsp-wallet"><div class="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-xl mb-4"><i class="ph ph-device-mobile"></i></div><h3 class="text-lg font-heading text-primary mb-2">EUDI Wallet Ready</h3><p class="text-gray-500 text-sm">Cartera Digital Europea: credenciales verificables, atestaciones cualificadas, firma remota movil.</p><span class="mt-3 inline-block px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent">Wallet EU</span></div>
+    <h2 class="font-serif text-2xl md:text-3xl font-medium text-primary mb-8">Cómo se conecta todo</h2>
+    <div class="bg-light rounded-xl p-8 border border-gray-100">
+      <div class="font-mono text-sm text-gray-600 space-y-2">
+        <p class="font-bold text-primary m-0"><i class="ph ph-shield-check text-accent mr-2"></i>CONFIANZA DIGITAL <span class="font-normal text-gray-400">(esta página)</span></p>
+        <p class="ml-6 m-0">├── <span class="text-gray-500">Servicios QTSP regulados</span> <span class="text-gray-400">(EADTrust)</span> ← la base</p>
+        <p class="ml-6 m-0">├── <a href="https://gocertius.io" target="_blank" class="text-accent hover:underline">GoCertius</a> ← en tu móvil</p>
+        <p class="ml-6 m-0">├── <a href="enterprise-suite.html" class="text-accent hover:underline">Enterprise Suite</a> ← en tu ordenador</p>
+        <p class="ml-6 m-0">└── <a href="factoria.html" class="text-accent hover:underline">La Factoría (Trust API)</a> ← en tus procesos</p>
+        <p class="ml-14 m-0">└── <a href="../escenarios.html" class="text-accent hover:underline">+290 Escenarios de integración</a></p>
+      </div>
+    </div>
+    <p class="text-sm text-gray-400 mt-4">Confianza Digital es la línea de negocio. Enterprise Suite y La Factoría son las plataformas que la hacen operativa. Los Escenarios son aplicaciones concretas de La Factoría en 18 sectores.</p>
+  </div>
+</section>
+
+<!-- SOBERANÍA DIGITAL vs PLATAFORMAS US -->
+<section class="py-20 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <span class="inline-block px-3 py-1 rounded-full bg-red-50 text-red-600 text-xs font-semibold uppercase tracking-widest mb-4">Diferenciador</span>
+    <h2 class="font-serif text-3xl md:text-5xl font-medium text-primary mb-4">Soberanía Digital vs. Plataformas US</h2>
+    <p class="text-gray-500 max-w-xl mb-12">Tres riesgos estructurales que afectan a plataformas de firma sujetas a jurisdicción estadounidense.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-red-50/50 border border-red-100 rounded-xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center text-red-600 text-xl mb-4"><i class="ph ph-scales"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-3">Riesgo Legal/Probatorio</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Plataformas US emiten firmas AES (avanzadas), no QES (cualificadas). Sin presunción de validez Art. 326.4 LEC.</p>
+        <div class="bg-white border-l-4 border-accent p-3 rounded-r-lg"><p class="text-accent font-semibold text-xs m-0">g-digital</p><p class="text-gray-500 text-xs mt-1 m-0">Firma QES. Equivalencia a firma manuscrita (Art. 25.2 eIDAS). Inversión de carga de prueba.</p></div>
+      </div>
+      <div class="bg-red-50/50 border border-red-100 rounded-xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center text-red-600 text-xl mb-4"><i class="ph ph-globe-hemisphere-west"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-3">Riesgo Schrems II</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Los metadatos de identidad y auditoría pueden transferirse a EEUU. Post-Schrems II, riesgo de violación RGPD.</p>
+        <div class="bg-white border-l-4 border-accent p-3 rounded-r-lg"><p class="text-accent font-semibold text-xs m-0">g-digital</p><p class="text-gray-500 text-xs mt-1 m-0">100% EU Sovereign Cloud. Sin transferencias internacionales.</p></div>
+      </div>
+      <div class="bg-red-50/50 border border-red-100 rounded-xl p-8">
+        <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center text-red-600 text-xl mb-4"><i class="ph ph-flag"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-3">Riesgo CLOUD Act</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Matrices US obligadas legalmente a entregar datos almacenados en la UE. Viola RGPD Art. 48.</p>
+        <div class="bg-white border-l-4 border-accent p-3 rounded-r-lg"><p class="text-accent font-semibold text-xs m-0">g-digital</p><p class="text-gray-500 text-xs mt-1 m-0">Operador europeo (EADTrust). Inmunidad frente a órdenes extraterritoriales.</p></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- eIDAS 2.0 -->
-<section class="py-24 md:py-32 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="eidas2-section">
-  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-5xl font-heading mb-4 fade-in">Conformidad eIDAS 2.0</h2>
-    <p class="text-lg text-gray-300 font-light max-w-xl mx-auto mb-12 fade-in delay-1">Alineados con el nuevo Reglamento y los nuevos estandares de confianza digital europea.</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="fade-in delay-1 group"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-all"><i class="ph ph-identification-card text-2xl text-accent"></i></div><h3 class="text-lg font-heading text-accent mb-2">QEA &amp; QEAA</h3><p class="text-gray-300/80 text-sm">Atestaciones electronicas cualificadas para identidad digital y atributos verificados.</p></div>
-      <div class="fade-in delay-2 group"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-all"><i class="ph ph-device-mobile text-2xl text-accent"></i></div><h3 class="text-lg font-heading text-accent mb-2">MRQSCD</h3><p class="text-gray-300/80 text-sm">Dispositivos remotos moviles cualificados para firma electronica.</p></div>
-      <div class="fade-in delay-3 group"><div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-accent/10 group-hover:border-accent/30 transition-all"><i class="ph ph-wallet text-2xl text-accent"></i></div><h3 class="text-lg font-heading text-accent mb-2">EUDI Wallet</h3><p class="text-gray-300/80 text-sm">Cartera Digital Europea para credenciales y atributos verificables.</p></div>
+<section class="py-20 md:py-28 bg-gradient-to-br from-primary to-dark text-white">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <span class="inline-block px-3 py-1 rounded-full bg-[#00C896]/20 text-[#00C896] text-xs font-semibold uppercase tracking-widest mb-4">Futuro</span>
+    <h2 class="font-serif text-3xl md:text-5xl text-white font-medium mb-4">Plataformas evolutivas para eIDAS 2.0</h2>
+    <p class="text-gray-300 max-w-2xl mx-auto mb-12">Las tres plataformas diseñadas por g-digital son evolutivas. Conforme se publiquen los actos delegados de eIDAS 2.0, los nuevos servicios se incorporarán automáticamente.</p>
+    <div class="grid md:grid-cols-4 gap-6">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"><i class="ph ph-archive-box text-[#00C896] text-2xl mb-3"></i><h3 class="text-white font-semibold text-sm mb-1">Archivo Cualificado</h3><p class="text-gray-400 text-xs">Arts. 45i-45j eIDAS 2</p></div>
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"><i class="ph ph-identification-badge text-[#00C896] text-2xl mb-3"></i><h3 class="text-white font-semibold text-sm mb-1">EUDI Wallet</h3><p class="text-gray-400 text-xs">Credenciales verificables</p></div>
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"><i class="ph ph-device-mobile text-[#00C896] text-2xl mb-3"></i><h3 class="text-white font-semibold text-sm mb-1">QSCD Cloud</h3><p class="text-gray-400 text-xs">Firma remota móvil</p></div>
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"><i class="ph ph-atom text-[#00C896] text-2xl mb-3"></i><h3 class="text-white font-semibold text-sm mb-1">Post-Quantum</h3><p class="text-gray-400 text-xs">Cripto-agilidad RSA 4096+</p></div>
     </div>
   </div>
 </section>
 
+<!-- BUYER PERSONA COMPLETO -->
+<section class="py-20 md:py-28 bg-light">
+  <div class="max-w-7xl mx-auto px-6">
+    <h2 class="font-serif text-3xl md:text-4xl font-medium text-primary mb-12">¿Quién necesita qué?</h2>
+    <div class="overflow-x-auto rounded-xl border border-gray-100">
+      <table class="w-full bg-white">
+        <thead class="bg-primary"><tr><th class="px-5 py-3 text-left text-white text-xs font-semibold uppercase">Perfil</th><th class="px-5 py-3 text-left text-white text-xs font-semibold uppercase">Necesidad</th><th class="px-5 py-3 text-left text-white text-xs font-semibold uppercase">Plataforma</th></tr></thead>
+        <tbody class="divide-y divide-gray-50">
+          <tr class="hover:bg-light"><td class="px-5 py-4 text-sm font-medium text-primary">Profesional / PYME / Autónomo</td><td class="px-5 py-4 text-sm text-gray-500">Certificar hechos, comunicaciones, documentos desde el móvil. Sin infraestructura técnica.</td><td class="px-5 py-4"><a href="https://gocertius.io" target="_blank" class="text-accent font-semibold text-sm">GoCertius →</a></td></tr>
+          <tr class="hover:bg-light"><td class="px-5 py-4 text-sm font-medium text-primary">Director Legal / COO en gran empresa</td><td class="px-5 py-4 text-sm text-gray-500">Plataforma corporativa unificada. Multi-usuario, soberanía digital.</td><td class="px-5 py-4"><a href="enterprise-suite.html" class="text-accent font-semibold text-sm">Enterprise Suite →</a></td></tr>
+          <tr class="hover:bg-light"><td class="px-5 py-4 text-sm font-medium text-primary">CTO / Arquitecto de software</td><td class="px-5 py-4 text-sm text-gray-500">Integrar servicios eIDAS en sus propios sistemas vía API. Control total, latencia mínima.</td><td class="px-5 py-4"><a href="factoria.html" class="text-accent font-semibold text-sm">La Factoría →</a></td></tr>
+          <tr class="hover:bg-light"><td class="px-5 py-4 text-sm font-medium text-primary">Cualquiera de los anteriores</td><td class="px-5 py-4 text-sm text-gray-500">Servicios QTSP individuales sin plataforma específica.</td><td class="px-5 py-4"><a href="https://www.eadtrust.eu" target="_blank" class="text-accent font-semibold text-sm">EADTrust directo →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Franja compacta: Diseño + Operación -->
+<section class="py-8 bg-white border-y border-gray-100">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 m-0">Diseñado por <strong class="text-primary">g-digital</strong> (Grupo Garrigues) · Operado por <strong class="text-primary">EADTrust</strong> (QTSP cualificado) · ISO 27001, 20000-1, 9001, ENS Alto</p>
+  </div>
+</section>
+
 <!-- CTA -->
-<section class="py-20 bg-white text-center" data-testid="cta-confianza">
+<section class="py-20 md:py-28 bg-gradient-to-br from-primary to-dark text-white text-center">
   <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in">Transforma tu Digitalizacion con Confianza</h2>
-    <p class="text-gray-500 mb-8 fade-in delay-1">Tres capas de producto. Un QTSP propio. El respaldo de Garrigues.</p>
-    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary transition-all shadow-lg shadow-accent/20  fade-in delay-2" data-testid="cta-confianza-btn">Solicitar Demo <i class="ph ph-arrow-right"></i></a>
+    <h2 class="font-serif text-3xl md:text-4xl text-white font-medium mb-4">¿Qué plataforma necesita tu organización?</h2>
+    <p class="text-gray-200 mb-8">Cuéntenos su contexto y le orientamos hacia la solución más adecuada. 20 minutos con un arquitecto legal-tecnológico de g-digital.</p>
+    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all" onclick="plausible('click_cta_contact', {props: {page: 'confianza-digital', cta_type: 'footer_cta'}})">Consultar con nuestro equipo <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="flex items-center"><img src="../img/logos/gdigital.svg" alt="g-digital" class="h-6 brightness-0 invert"></a><p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="factoria.html" class="text-white/50 text-sm hover:text-accent transition-colors font-medium">La Factoria (Trust API)</a></li><li><a href="confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="../nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="../contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
+<footer class="bg-[#0a0a0a] text-gray-400 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div><span class="text-xl font-bold text-white">g<span class="text-accent">-digital</span></span><p class="text-sm mt-3 leading-relaxed">División de negocios digitales de Garrigues. Infraestructura digital con garantía legal.</p></div>
+      <div><h4 class="text-white font-semibold text-sm mb-4">Soluciones</h4><ul class="space-y-2 text-sm"><li><a href="confianza-digital.html" class="hover:text-accent transition-colors font-medium">Confianza Digital</a></li><li class="pl-3"><a href="enterprise-suite.html" class="hover:text-accent transition-colors">Enterprise Suite</a></li><li class="pl-3"><a href="factoria.html" class="hover:text-accent transition-colors">La Factoría</a></li><li><a href="contract-tech.html" class="hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div>
+      <div><h4 class="text-white font-semibold text-sm mb-4">Compañía</h4><ul class="space-y-2 text-sm"><li><a href="../nosotros.html" class="hover:text-accent transition-colors">Nosotros</a></li><li><a href="../recursos.html" class="hover:text-accent transition-colors">Recursos</a></li><li><a href="../contacto.html" class="hover:text-accent transition-colors">Contacto</a></li></ul></div>
+      <div><h4 class="text-white font-semibold text-sm mb-4">Contacto</h4><p class="text-sm">info@g-digital.garrigues.com</p><p class="text-sm mt-1">Madrid, España</p><div class="flex gap-3 mt-4"><a href="https://www.linkedin.com/company/g-digital-garrigues" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent/20 transition-colors"><i class="ph ph-linkedin-logo text-sm"></i></a></div></div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 text-xs text-gray-500">
+      <p>&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
+      <div class="flex gap-6"><a href="https://www.garrigues.com/es_ES/aviso-legal" target="_blank" class="hover:text-accent transition-colors">Aviso Legal</a><a href="https://www.garrigues.com/es_ES/politica-privacidad" target="_blank" class="hover:text-accent transition-colors">Política de Privacidad</a><a href="https://www.garrigues.com/es_ES/politica-cookies" target="_blank" class="hover:text-accent transition-colors">Política de Cookies</a><button onclick="document.getElementById('cookie-banner').classList.remove('hidden')" class="hover:text-accent transition-colors">Preferencias de cookies</button></div>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 p-4 md:p-6 hidden">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-4">
+    <div class="flex-1"><p class="text-sm text-gray-700"><strong>Cookies:</strong> Utilizamos Plausible Analytics (sin cookies) para métricas básicas. Si aceptas, activaremos Google Analytics para mejorar tu experiencia. <a href="https://www.garrigues.com/es_ES/politica-cookies" target="_blank" class="text-accent underline">Más información</a>.</p></div>
+    <div class="flex gap-3 shrink-0">
+      <button onclick="document.getElementById('cookie-banner').classList.add('hidden'); localStorage.setItem('cookies','essential')" class="px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Solo esenciales</button>
+      <button onclick="document.getElementById('cookie-banner').classList.add('hidden'); localStorage.setItem('cookies','all')" class="px-4 py-2 text-sm font-medium text-white bg-accent rounded-lg hover:bg-accent/80 transition-colors">Aceptar analíticas</button>
+    </div>
+  </div>
+</div>
 
 <script src="../js/main.js"></script>
+<script>
+if (!localStorage.getItem('cookies')) { document.getElementById('cookie-banner').classList.remove('hidden'); }
+const navToggle = document.getElementById('nav-toggle'); const mobileMenu = document.getElementById('mobile-menu'); const mobileOverlay = document.getElementById('mobile-overlay');
+if (navToggle && mobileMenu && mobileOverlay) { navToggle.addEventListener('click', () => { mobileMenu.classList.toggle('translate-x-full'); mobileOverlay.classList.toggle('hidden'); }); mobileOverlay.addEventListener('click', () => { mobileMenu.classList.add('translate-x-full'); mobileOverlay.classList.add('hidden'); }); }
+</script>
 </body>
 </html>
