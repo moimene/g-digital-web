@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mapa de Conocimiento — Grafo Interactivo | g-digital</title>
-  <meta name="description" content="Grafo interactivo del ecosistema de conocimiento g-digital. Navega las conexiones entre eIDAS, Trust API, Contract Tech, Agencia IA Legal, Activos Digitales y 8 sectores.">
+  <meta name="description" content="Grafo interactivo del ecosistema de conocimiento g-digital. Navega las conexiónes entre eIDAS, Trust API, Contract Tech, Agencia IA Legal, Activos Digitales y 8 sectores.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#022C22',light:'#F8FAFC',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
       <div>
         <a href="recursos.html" class="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-4"><i class="ph ph-arrow-left"></i> Biblioteca</a>
         <h1 class="text-2xl md:text-4xl font-heading font-medium tracking-tight">Mapa de <span class="text-accent italic">Conocimiento</span></h1>
-        <p class="text-sm text-gray-400 mt-2 max-w-md">Haz clic en un nodo para iluminar sus conexiones. Haz clic en el fondo para reiniciar. Arrastra para reorganizar.</p>
+        <p class="text-sm text-gray-400 mt-2 max-w-md">Haz clic en un nodo para iluminar sus conexiónes. Haz clic en el fondo para reiniciar. Arrastra para reorganizar.</p>
       </div>
       <div class="flex gap-2 flex-wrap">
         <span class="px-3 py-1 rounded-full text-[10px] font-bold bg-accent/20 text-accent border border-accent/30">Confianza Digital</span>
@@ -82,37 +82,37 @@
 <script>
 const NODES = [
   // Confianza Digital cluster
-  {id:'vision2030',label:'eIDAS Vision 2030',group:'confianza',size:18,url:'recursos/eidas-vision-2030.html',desc:'Internet como plataforma segura para transacciones con efectos legales en Europa'},
+  {id:'visión2030',label:'eIDAS Visión 2030',group:'confianza',size:18,url:'recursos/eidas-visión-2030.html',desc:'Internet como plataforma segura para transacciones con efectos legales en Europa'},
   {id:'eidas2',label:'eIDAS 2.0',group:'confianza',size:16,url:'recursos/eidas-2.html',desc:'Reglamento (UE) 2024/1183. EUDI Wallet, QEA, QEAA, MRQSCD'},
-  {id:'inversion',label:'Inversion Carga Prueba',group:'confianza',size:15,url:'recursos/inversion-carga-prueba.html',desc:'Art. 326.4 LEC + Art. 41.2 eIDAS. Presuncion legal de autenticidad'},
+  {id:'inversion',label:'Inversión Carga Prueba',group:'confianza',size:15,url:'recursos/inversion-carga-prueba.html',desc:'Art. 326.4 LEC + Art. 41.2 eIDAS. Presuncion legal de autenticidad'},
   {id:'deuda',label:'Deuda Legal',group:'confianza',size:17,url:'recursos/deuda-legal.html',desc:'Operaciones sin validez probatoria que se acumulan silenciosamente'},
-  {id:'trustapi',label:'Trust API',group:'confianza',size:22,url:'soluciones/factoria.html',desc:'La Factoria: 4 microservicios eIDAS, 298 escenarios, ~45ms, 99.99%'},
-  {id:'3capas',label:'3 Capas',group:'confianza',size:14,url:'soluciones/confianza-digital.html',desc:'Factoria (API) → Soluciones LegalTech → GoCertius (SuperApp)'},
+  {id:'trustapi',label:'Trust API',group:'confianza',size:22,url:'soluciónes/factoria.html',desc:'La Factoria: 4 microservicios eIDAS, 298 escenarios, ~45ms, 99.99%'},
+  {id:'3capas',label:'3 Capas',group:'confianza',size:14,url:'soluciónes/confianza-digital.html',desc:'Factoria (API) → Soluciones LegalTech → GoCertius (SuperApp)'},
   // Contract Tech cluster
-  {id:'computable',label:'Derecho Computable',group:'contract',size:18,url:'recursos/derecho-computable.html',desc:'Del derecho como texto al derecho como codigo ejecutable. Contrato como automata de estados'},
-  {id:'contracttech',label:'Contract Tech',group:'contract',size:16,url:'soluciones/contract-tech.html',desc:'3 lineas: Piezas LEGO, CLM Mono-contrato, CLM Posicion Contractual'},
-  {id:'facultades',label:'Catalogo Facultades',group:'contract',size:14,url:'recursos/catalogo-facultades.html',desc:'Ontologia para estandarizar poderes y reducir friccion del bastanteo'},
+  {id:'computable',label:'Derecho Computable',group:'contract',size:18,url:'recursos/derecho-computable.html',desc:'Del derecho como texto al derecho como código ejecutable. Contrato como autómata de estados'},
+  {id:'contracttech',label:'Contract Tech',group:'contract',size:16,url:'soluciónes/contract-tech.html',desc:'3 lineas: Piezas LEGO, CLM Mono-contrato, CLM Posicion Contractual'},
+  {id:'facultades',label:'Catálogo Facultades',group:'contract',size:14,url:'recursos/catalogo-facultades.html',desc:'Ontología para estandarizar poderes y reducir friccion del bastanteo'},
   // Agencia IA Legal cluster
   {id:'gobernanza',label:'Gobernanza IA',group:'ia',size:17,url:'recursos/gobernanza-ia.html',desc:'AIMS Console + Trust API: gobernanza con evidencia cualificada'},
-  {id:'grc',label:'GRC Compass Core',group:'ia',size:15,url:'soluciones/legaltech-ia.html',desc:'16 modulos, 31 RBAC, WORM audit, multi-dominio (RGPD, DORA, AI Act, NIS2)'},
+  {id:'grc',label:'GRC Compass Core',group:'ia',size:15,url:'soluciónes/legaltech-ia.html',desc:'16 modulos, 31 RBAC, WORM audit, multi-dominio (RGPD, DORA, AI Act, NIS2)'},
   {id:'aiact',label:'AI Act (RIA)',group:'ia',size:13,url:'recursos/gobernanza-ia.html',desc:'Reglamento (UE) 2024/1689. Clasificacion por riesgo, transparencia'},
   // Activos Digitales cluster
-  {id:'qdlt',label:'QDLT Blockchain',group:'activos',size:16,url:'recursos/qdlt-blockchain.html',desc:'Qualified Electronic Ledgers. Blockchain con presuncion legal eIDAS 2.0'},
-  {id:'activos',label:'Activos Digitales',group:'activos',size:15,url:'soluciones/activos-digitales.html',desc:'Tokenizacion RWA con gobernanza juridica. OpenBrick, Sylot'},
+  {id:'qdlt',label:'QDLT Blockchain',group:'activos',size:16,url:'recursos/qdlt-blockchain.html',desc:'Qualified Electronic Ledgers. Blockchain con presunción legal eIDAS 2.0'},
+  {id:'activos',label:'Activos Digitales',group:'activos',size:15,url:'soluciónes/activos-digitales.html',desc:'Tokenizacion RWA con gobernanza jurídica. OpenBrick, Sylot'},
   // Sectores
   {id:'banca',label:'Banca',group:'sector',size:11,url:'sectores/banca.html',desc:'20 escenarios: DORA, KYC, scoring IA, SCA'},
-  {id:'seguros',label:'Seguros',group:'sector',size:11,url:'sectores/seguros.html',desc:'20 escenarios: IDD, contratacion telefonica, siniestros'},
+  {id:'seguros',label:'Seguros',group:'sector',size:11,url:'sectores/seguros.html',desc:'20 escenarios: IDD, contratación telefonica, siniestros'},
   {id:'salud',label:'Salud',group:'sector',size:11,url:'sectores/salud.html',desc:'25 escenarios: consentimiento, historia clinica, teleconsulta'},
-  {id:'logistica',label:'Logistica',group:'sector',size:10,url:'sectores/logistica.html',desc:'20 escenarios: albaranes, cadena frio, RASFF'},
+  {id:'logística',label:'Logística',group:'sector',size:10,url:'sectores/logística.html',desc:'20 escenarios: albaranes, cadena frio, RASFF'},
   {id:'rrhh',label:'RRHH',group:'sector',size:10,url:'sectores/rrhh.html',desc:'18+ escenarios: registro jornada, despidos, PRL'},
   {id:'alimentacion',label:'APPCC',group:'sector',size:10,url:'sectores/alimentacion.html',desc:'20 escenarios: controles APPCC, cadena frio IoT'},
-  {id:'telecom',label:'Telecom',group:'sector',size:10,url:'sectores/telecomunicaciones.html',desc:'20 escenarios: contratacion certificada, portabilidad'},
-  {id:'pharma',label:'Pharma',group:'sector',size:10,url:'sectores/farmaceutico.html',desc:'20 escenarios: Batch Record QP, CSV, farmacovigilancia'},
+  {id:'telecom',label:'Telecom',group:'sector',size:10,url:'sectores/telecomunicaciónes.html',desc:'20 escenarios: contratación certificada, portabilidad'},
+  {id:'pharma',label:'Pharma',group:'sector',size:10,url:'sectores/farmacéutico.html',desc:'20 escenarios: Batch Record QP, CSV, farmacovigilancia'},
 ];
 
 const LINKS = [
   // Confianza chain
-  {source:'vision2030',target:'eidas2',strength:0.9},
+  {source:'visión2030',target:'eidas2',strength:0.9},
   {source:'eidas2',target:'inversion',strength:0.8},
   {source:'inversion',target:'deuda',strength:0.7},
   {source:'deuda',target:'trustapi',strength:0.9},
@@ -139,7 +139,7 @@ const LINKS = [
   {source:'trustapi',target:'banca',strength:0.5},
   {source:'trustapi',target:'seguros',strength:0.5},
   {source:'trustapi',target:'salud',strength:0.5},
-  {source:'trustapi',target:'logistica',strength:0.4},
+  {source:'trustapi',target:'logística',strength:0.4},
   {source:'trustapi',target:'rrhh',strength:0.4},
   {source:'trustapi',target:'alimentacion',strength:0.4},
   {source:'trustapi',target:'telecom',strength:0.4},
@@ -210,7 +210,7 @@ gNode.on('mouseover', function(event, d) {
       <strong style="font-family:'Playfair Display',serif;color:#004438;font-size:14px;">${d.label}</strong>
     </div>
     <p style="font-size:12px;color:#6B7280;margin:0;line-height:1.5;">${d.desc}</p>
-    <p style="font-size:10px;color:#009A77;margin-top:8px;font-weight:600;">Clic para iluminar conexiones &middot; Doble clic para ir al articulo</p>
+    <p style="font-size:10px;color:#009A77;margin-top:8px;font-weight:600;">Clic para iluminar conexiónes &middot; Doble clic para ir al articulo</p>
   `;
   tooltip.style.left = Math.min(x + 20, width - 340) + 'px';
   tooltip.style.top = (y - 20) + 'px';
