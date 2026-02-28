@@ -4,179 +4,233 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LegalTech &amp; IA — Cumplimiento y Gobernanza IA | g-digital</title>
-  <meta name="description" content="IA aplicada al derecho: cumplimiento AI Act, gobernanza de sistemas IA, bots juridicos y productivizacion de servicios legales con GRC Compass Core.">
+  <meta name="description" content="IA aplicada al derecho: cumplimiento AI Act, gobernanza de sistemas IA, bots jurídicos y productivización de servicios legales con GRC Compass Core.">
+  <meta property="og:title" content="LegalTech &amp; IA — g-digital | IA con Garantía Legal">
+  <meta property="og:type" content="website">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{heading:['Poppins','Century Gothic','sans-serif'],body:['Rubik','Calibri','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="../css/style.css">
+  <script defer data-domain="g-digital.garrigues.com" src="https://plausible.io/js/script.js"></script>
+  <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
 </head>
-<body class="font-body text-gray-700 bg-white antialiased">
+<body class="font-sans text-gray-700 bg-white antialiased">
 
 <!-- NAV -->
-<nav class="nav-main fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300" data-testid="main-nav">
+<nav class="nav-main fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
-    <a href="../" class="flex items-center"><img src="../img/logos/gdigital.svg" alt="g-digital" class="h-7 brightness-0 invert"></a>
+    <a href="../" class="flex items-center gap-2"><span class="text-xl font-bold text-white">g<span class="text-accent">-digital</span></span></a>
     <div class="hidden lg:flex items-center gap-8">
-      <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Inicio</a>
-      <div class="nav-dropdown relative"><a href="#" class="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a><div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2"><div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[280px] shadow-2xl shadow-gray-200/60"><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">LegalTech &amp; IA</span></a></div></div></div>
-      <a href="../nosotros.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Nosotros</a>
-      <a href="../recursos.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Recursos</a>
-      <a href="../contacto.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors link-underline" data-nav-link>Contacto</a>
-      <a href="../contacto.html" class="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-accent/80 transition-all">Contactar</a>
-    </div>
-    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Menu" data-testid="nav-toggle-mobile"><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span></button>
-  </div>
-</nav>
-<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
-<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto"><div class="flex flex-col gap-1"><a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a><p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p><a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a><a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a><a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a><a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a><div class="h-px bg-gray-100 my-2"></div><a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a><a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a><a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a><div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark transition-all">Contactar</a></div></div></div>
-
-<!-- HERO -->
-<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-[#003030] text-white overflow-hidden grain" data-testid="hero-legaltech">
-  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-24"><div class="max-w-3xl">
-    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 text-sm font-medium text-white/80 mb-8 fade-in"><i class="ph ph-brain text-accent"></i> Agencia IA Legal Garrigues</div>
-    <h1 class="text-4xl md:text-6xl font-heading font-medium leading-[1.08] mb-6 tracking-tight fade-in delay-1" data-testid="legaltech-heading">Agencia IA Legal: <span class="text-accent italic">Asesoria, Productos y Evidencia</span></h1>
-    <p class="text-lg md:text-xl text-gray-300 font-light max-w-xl leading-relaxed fade-in delay-2">Garrigues asesora e inyecta cumplimiento en el sistema (skills, guardarriles, gobernanza). g-digital aporta los productos: desde la Consola GRC de conformidad con el RIA e ISO 42001, hasta los servicios integrados de confianza digital para el ciclo de vida del dato y el comportamiento del sistema de IA.</p>
-  </div></div>
-</section>
-
-<!-- AGENCIA IA LEGAL: 3 CAPAS -->
-<section class="py-24 md:py-32 bg-white" data-testid="agencia-ia-section">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1">Tres capas para gobernar la IA</h2>
-    <p class="text-gray-500 max-w-2xl mb-12 fade-in delay-2">La Agencia IA Legal de Garrigues opera en tres capas complementarias. Garrigues asesora. g-digital construye los productos. Trust API certifica la evidencia.</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Garrigues: Asesoria -->
-      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-purple-300 transition-all duration-500 hover:shadow-2xl fade-in" data-testid="capa-garrigues-ia">
-        <span class="text-xs font-mono font-bold text-purple-500 bg-purple-50 px-2 py-0.5 rounded mb-4 inline-block">CAPA 1 &mdash; ASESORIA</span>
-        <div class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-500 text-2xl mb-4"><i class="ph ph-scales"></i></div>
-        <h3 class="text-xl font-heading text-primary mb-3">Garrigues asesora</h3>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4">Inyecta cumplimiento en el sistema de IA. Diseno de skills dedicadas, guardarriles, politicas de gobernanza, evaluacion de riesgos por nivel AI Act, y acompanamiento regulatorio continuo.</p>
-        <div class="space-y-2 text-xs">
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-purple-500"></i> Clasificacion de riesgo AI Act</div>
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-purple-500"></i> Diseno de guardarriles y skills</div>
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-purple-500"></i> Evaluacion de impacto (FRIA)</div>
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-purple-500"></i> Acompanamiento regulatorio</div>
-        </div>
-      </div>
-      <!-- g-digital: Productos -->
-      <div class="group bg-gradient-to-br from-primary to-dark p-8 rounded-xl text-white relative overflow-hidden fade-in delay-1" data-testid="capa-gdigital-ia">
-        <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-full"></div>
-        <div class="relative z-10">
-          <span class="text-xs font-mono font-bold text-accent bg-accent/20 px-2 py-0.5 rounded mb-4 inline-block">CAPA 2 &mdash; PRODUCTOS</span>
-          <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-accent text-2xl mb-4"><i class="ph ph-compass-tool"></i></div>
-          <h3 class="text-xl font-heading text-white mb-3">g-digital construye</h3>
-          <p class="text-gray-300/80 text-sm leading-relaxed mb-4">Productos de gobernanza que dan soporte al cumplimiento: desde la Consola GRC de conformidad con el RIA e ISO 42001, hasta AIMS Console para registro y monitoreo de sistemas IA.</p>
-          <div class="space-y-2 text-xs">
-            <div class="flex items-center gap-2 text-gray-300"><i class="ph ph-check-circle text-accent"></i> AIMS Console (registro, clasificacion, monitoreo)</div>
-            <div class="flex items-center gap-2 text-gray-300"><i class="ph ph-check-circle text-accent"></i> GRC Compass Core (16 modulos, 31 RBAC)</div>
-            <div class="flex items-center gap-2 text-gray-300"><i class="ph ph-check-circle text-accent"></i> Legal AI Products (asistentes juridicos)</div>
-            <div class="flex items-center gap-2 text-gray-300"><i class="ph ph-check-circle text-accent"></i> Documentacion tecnica AI Act</div>
+      <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Inicio</a>
+      <div class="nav-dropdown relative">
+        <a href="#" class="text-sm font-medium text-white transition-colors flex items-center gap-1">Soluciones <i class="ph ph-caret-down text-xs"></i></a>
+        <div class="nav-dropdown-menu absolute top-full left-[-1rem] pt-2">
+          <div class="bg-white border border-gray-100 rounded-2xl p-2 min-w-[300px] shadow-2xl shadow-gray-200/60">
+            <a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors bg-accent/5 border border-accent/10"><i class="ph ph-lightning text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">La Factoría</span><span class="text-xs text-gray-500">Trust API · Compliance Injection</span></div></a>
+            <a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Confianza Digital</span></a>
+            <a href="enterprise-suite.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-buildings text-accent text-lg"></i><div><span class="text-sm font-semibold text-primary block">Enterprise Suite</span><span class="text-xs text-gray-500">Plataforma de Certeza Legal</span></div></a>
+            <a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-file-text text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Contract Tech</span></a>
+            <a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-light transition-colors"><i class="ph ph-coins text-accent text-lg"></i><span class="text-sm font-medium text-gray-700">Activos Digitales</span></a>
+            <a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-light border border-gray-200"><i class="ph ph-brain text-accent text-lg"></i><span class="text-sm font-semibold text-primary">LegalTech &amp; IA</span></a>
           </div>
         </div>
       </div>
-      <!-- Trust API: Evidencia -->
-      <div class="group bg-white p-8 rounded-xl border border-gray-100 hover:border-accent/50 transition-all duration-500 hover:shadow-2xl fade-in delay-2" data-testid="capa-trustapi-ia">
-        <span class="text-xs font-mono font-bold text-accent bg-accent/10 px-2 py-0.5 rounded mb-4 inline-block">CAPA 3 &mdash; EVIDENCIA</span>
-        <div class="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl mb-4"><i class="ph ph-lightning"></i></div>
-        <h3 class="text-xl font-heading text-primary mb-3">Trust API certifica</h3>
-        <p class="text-gray-500 text-sm leading-relaxed mb-4">Servicios integrados de confianza digital para asegurar el cumplimiento del ciclo de vida del dato y el comportamiento del sistema de IA. Evidencia cualificada eIDAS irrefutable ante reguladores.</p>
-        <div class="space-y-2 text-xs">
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-accent"></i> Custodia de datasets de entrenamiento</div>
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-accent"></i> Sellado de decisiones con timestamp</div>
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-accent"></i> Versionado certificado de modelos</div>
-          <div class="flex items-center gap-2 text-primary"><i class="ph ph-check-circle text-accent"></i> Auditoria de sesgo con evidencia WORM</div>
+      <a href="../nosotros.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Nosotros</a>
+      <a href="../escenarios.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Escenarios</a>
+      <a href="../recursos.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Recursos</a>
+      <a href="../contacto.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contacto</a>
+      <a href="../contacto.html" class="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-accent/80 transition-all">Contactar</a>
+    </div>
+    <button id="nav-toggle" class="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menú"><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span><span class="block w-6 h-0.5 bg-gray-300 transition-all"></span></button>
+  </div>
+</nav>
+<div id="mobile-overlay" class="hidden fixed inset-0 bg-black/30 backdrop-blur-sm z-40"></div>
+<div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl pt-20 px-6 overflow-y-auto">
+  <div class="flex flex-col gap-1">
+    <a href="../" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Inicio</a>
+    <p class="px-4 pt-4 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-widest">Soluciones</p>
+    <a href="factoria.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-lightning text-accent"></i> La Factoría</a>
+    <a href="confianza-digital.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-shield-check text-accent"></i> Confianza Digital</a>
+    <a href="enterprise-suite.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-buildings text-accent"></i> Enterprise Suite</a>
+    <a href="contract-tech.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-file-text text-accent"></i> Contract Tech</a>
+    <a href="activos-digitales.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-gray-600 hover:bg-light transition-colors"><i class="ph ph-coins text-accent"></i> Activos Digitales</a>
+    <a href="legaltech-ia.html" class="flex items-center gap-3 px-4 py-3 rounded-xl text-primary font-semibold bg-accent/5"><i class="ph ph-brain text-accent"></i> LegalTech &amp; IA</a>
+    <div class="h-px bg-gray-100 my-2"></div>
+    <a href="../nosotros.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Nosotros</a>
+    <a href="../escenarios.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Escenarios</a>
+    <a href="../recursos.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Recursos</a>
+    <a href="../contacto.html" class="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-light transition-colors">Contacto</a>
+    <div class="mt-4"><a href="../contacto.html" class="block text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-dark transition-all">Contactar</a></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-dark text-white overflow-hidden">
+  <div class="absolute inset-0"><div class="absolute top-[-20%] right-[-10%] w-[60%] h-[140%] bg-gradient-radial from-accent/10 to-transparent rounded-full blur-3xl"></div></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 pt-36 pb-20 md:pt-44 md:pb-28">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00C896]/20 backdrop-blur-sm border border-[#00C896]/30 text-sm font-semibold text-[#00C896] mb-8">
+      <i class="ph ph-brain"></i> LegalTech &amp; IA
+    </div>
+    <h1 class="font-serif text-4xl md:text-6xl text-white font-medium leading-[1.08] mb-6 tracking-tight max-w-4xl">IA Aplicada al Derecho:<br><span class="text-[#00C896] italic">Cumplimiento y Gobernanza</span></h1>
+    <p class="text-lg md:text-xl text-gray-300 font-light max-w-2xl leading-relaxed mb-10">Soluciones integrales de Inteligencia Artificial para el sector jurídico. Servicio híbrido tecnología + derecho, diseñado para facilitar la conformidad con AI Act.</p>
+    <a href="../contacto.html" class="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary transition-all inline-flex items-center gap-2" onclick="plausible('click_cta_contact', {props: {page: 'legaltech-ia', cta_type: 'hero'}})">Solicitar demo <i class="ph ph-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- AI COMPLIANCE -->
+<section class="py-20 md:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <span class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-4">AI Compliance</span>
+    <h2 class="font-serif text-3xl md:text-5xl font-medium text-primary mb-4">Cumplimiento &amp; Gobernanza IA</h2>
+    <p class="text-gray-500 max-w-xl mb-12">Servicio híbrido tecnología + derecho diseñado para facilitar el cumplimiento integral de la regulación de Inteligencia Artificial.</p>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-light rounded-2xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-scales text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-3">Cumplimiento AI Act</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Alineación con la normativa europea de IA. Diseñado para facilitar la conformidad regulatoria en todos los procesos que emplean sistemas de IA.</p>
+      </div>
+      <div class="bg-light rounded-2xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-shield-warning text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-3">Diseño de guardarriles</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Límites y protecciones en sistemas de IA diseñados para promover un comportamiento seguro y predecible.</p>
+      </div>
+      <div class="bg-light rounded-2xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-microscope text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-3">Análisis de sistemas IA</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Evaluación de asistentes virtuales, algoritmos de puntuación, filtrado de CV y otras aplicaciones de IA.</p>
+      </div>
+      <div class="bg-light rounded-2xl p-8 border border-gray-100">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5"><i class="ph ph-puzzle-piece text-accent text-2xl"></i></div>
+        <h3 class="font-semibold text-primary text-lg mb-3">Servicio híbrido Tech + Derecho</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Integración de expertise tecnológico con conocimiento jurídico especializado de Garrigues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AIMS CONSOLE -->
+<section class="py-20 md:py-28 bg-light">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <span class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-4">Plataforma</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-medium text-primary mb-6">AIMS Console</h2>
+        <p class="text-lg text-gray-500 mb-2">Sistema de Gestión de IA (Capa 4)</p>
+        <p class="text-gray-500 leading-relaxed mb-8">Plataforma para registrar, clasificar y monitorizar la conformidad de sistemas de Inteligencia Artificial en la organización.</p>
+        <div class="flex gap-2 flex-wrap">
+          <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">ISO 42001</span>
+          <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">RIA / AIMS</span>
+          <span class="px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">EU AI Act</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4"><i class="ph ph-list-checks text-accent text-xl"></i></div>
+          <h3 class="font-semibold text-primary mb-2">Registro</h3>
+          <p class="text-gray-500 text-xs">Catálogo completo de todos los sistemas de IA en la organización.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4"><i class="ph ph-funnel text-accent text-xl"></i></div>
+          <h3 class="font-semibold text-primary mb-2">Clasificación</h3>
+          <p class="text-gray-500 text-xs">Categorización por nivel de riesgo y cumplimiento normativo.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4"><i class="ph ph-chart-line text-accent text-xl"></i></div>
+          <h3 class="font-semibold text-primary mb-2">Monitoreo</h3>
+          <p class="text-gray-500 text-xs">Seguimiento continuo del rendimiento y conformidad regulatoria.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-gray-100">
+          <div class="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-4"><i class="ph ph-seal-check text-accent text-xl"></i></div>
+          <h3 class="font-semibold text-primary mb-2">Evidencia</h3>
+          <p class="text-gray-500 text-xs">Documentación y trazabilidad de conformidad. Auditoría WORM.</p>
         </div>
       </div>
     </div>
-    <!-- Flow -->
-    <div class="hidden md:flex justify-center items-center gap-4 mt-8 fade-in delay-3">
-      <span class="text-xs font-mono text-purple-400">Garrigues asesora</span>
-      <i class="ph ph-arrow-right text-accent"></i>
-      <span class="text-xs font-mono text-accent font-semibold">g-digital productos</span>
-      <i class="ph ph-arrow-right text-accent"></i>
-      <span class="text-xs font-mono text-accent">Trust API certifica</span>
-      <i class="ph ph-arrow-right text-accent"></i>
-      <span class="text-xs font-mono text-gray-400">Evidencia ante regulador</span>
-    </div>
   </div>
 </section>
 
-<!-- AIMS -->
-<section class="py-24 md:py-32 bg-light" data-testid="aims-section">
+<!-- LEGAL AI PRODUCTS -->
+<section class="py-20 md:py-28 bg-white">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1">AIMS Console — Sistema de Gestion de IA</h2>
-    <p class="text-gray-500 max-w-xl mb-12 fade-in delay-2">Plataforma para registrar, clasificar y monitorizar la conformidad de sistemas de Inteligencia Artificial.</p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-2xl fade-in" data-testid="aims-registro"><h3 class="text-lg font-heading text-primary mb-2">Registro</h3><p class="text-gray-500 text-sm">Catalogo completo de todos los sistemas de IA en la organizacion.</p></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-2xl fade-in delay-1" data-testid="aims-clasificacion"><h3 class="text-lg font-heading text-primary mb-2">Clasificacion</h3><p class="text-gray-500 text-sm">Categorizacion por nivel de riesgo y cumplimiento normativo.</p></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-2xl fade-in delay-2" data-testid="aims-monitoreo"><h3 class="text-lg font-heading text-primary mb-2">Monitoreo</h3><p class="text-gray-500 text-sm">Seguimiento continuo del rendimiento y conformidad regulatoria.</p></div>
-      <div class="bg-white p-6 rounded-xl border border-gray-100 hover:border-accent/50 transition-all hover:shadow-2xl fade-in delay-3" data-testid="aims-evidencia"><h3 class="text-lg font-heading text-primary mb-2">Evidencia</h3><p class="text-gray-500 text-sm">Documentacion y trazabilidad de conformidad. Auditoria WORM.</p></div>
-    </div>
-    <div class="flex gap-3 mt-8 flex-wrap fade-in delay-4">
-      <span class="px-4 py-2 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/10">ISO 42001</span>
-      <span class="px-4 py-2 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/10">RIA / AIMS</span>
-      <span class="px-4 py-2 rounded-full text-xs font-semibold bg-accent/10 text-accent border border-accent/10">EU AI Act</span>
-    </div>
-  </div>
-</section>
-
-<!-- LEGAL AI -->
-<section class="py-24 md:py-32 bg-white" data-testid="legal-ai-section">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="w-12 h-1 bg-accent rounded-full mb-6 fade-in"></div>
-    <h2 class="text-3xl md:text-5xl font-heading text-primary mb-4 fade-in delay-1">Legal AI Products — Agencia IA LegalTech</h2>
-    <p class="text-gray-500 max-w-xl mb-8 fade-in delay-2">Suite de asistentes digitales inteligentes especializados en tareas juridicas.</p>
-    <div class="bg-gradient-to-r from-light to-accent/5 border-l-4 border-accent p-6 rounded-r-2xl fade-in delay-3">
-      <p class="text-primary font-medium text-sm"><strong>Asistentes desarrollados con:</strong> NLP especializado en lenguaje juridico &middot; Modelos GPT entrenados sobre jurisprudencia y normativa espanola &middot; Co-desarrollados con abogados de Garrigues &middot; Servicios legales productivizados e inteligentes.</p>
+    <span class="inline-block px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold uppercase tracking-widest mb-4">AI Products</span>
+    <h2 class="font-serif text-3xl md:text-4xl font-medium text-primary mb-4">Legal AI Products</h2>
+    <p class="text-gray-500 max-w-xl mb-8">Suite de asistentes digitales inteligentes especializados en tareas jurídicas.</p>
+    <div class="bg-primary/5 border border-primary/10 rounded-2xl p-8 mb-12">
+      <p class="text-primary text-sm leading-relaxed"><strong>Desarrollados con:</strong> NLP especializado en lenguaje jurídico · Modelos GPT entrenados sobre jurisprudencia y normativa española · Co-desarrollados con abogados de Garrigues · Servicios legales productivizados e inteligentes.</p>
     </div>
   </div>
 </section>
 
 <!-- GRC -->
-<section class="py-24 md:py-32 bg-gradient-to-br from-dark via-primary to-[#003030] text-white relative overflow-hidden grain" data-testid="grc-section">
-  <div class="relative z-10 max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div>
-        <h2 class="text-3xl md:text-5xl font-heading mb-4 fade-in">GRC Compass Core</h2>
-        <p class="text-lg text-gray-300 font-light mb-8 fade-in delay-1">Gobernanza, Riesgo y Cumplimiento. Modelo integral: Obligaciones &rarr; Riesgos &rarr; Controles &rarr; Evidencias &rarr; Incidencias.</p>
-        <div class="grid grid-cols-2 gap-4 mb-8 fade-in delay-2">
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center"><p class="text-2xl font-mono font-bold text-accent">16</p><p class="text-xs text-gray-400">Modulos especializados</p></div>
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center"><p class="text-2xl font-mono font-bold text-accent">31</p><p class="text-xs text-gray-400">Roles RBAC</p></div>
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center"><p class="text-2xl font-mono font-bold text-accent">WORM</p><p class="text-xs text-gray-400">Audit inmutable</p></div>
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-center"><p class="text-2xl font-mono font-bold text-accent">RLS</p><p class="text-xs text-gray-400">Multi-Tenant</p></div>
-        </div>
-        <div class="flex flex-wrap gap-2 fade-in delay-3">
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-300">RGPD</span>
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-300">DORA</span>
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-300">NIS2</span>
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-300">AI Act</span>
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-300">ESG</span>
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-300">Canal Denuncias</span>
-          <span class="px-3 py-1 rounded-full text-xs font-semibold bg-white/10 text-gray-300">Prevencion</span>
-        </div>
+<section class="py-20 md:py-28 bg-gradient-to-br from-primary to-dark text-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="inline-block px-3 py-1 rounded-full bg-[#00C896]/20 text-[#00C896] text-xs font-semibold uppercase tracking-widest mb-4">GRC</span>
+      <h2 class="font-serif text-3xl md:text-5xl text-white font-medium mb-4">Gobernanza, Riesgo y Cumplimiento</h2>
+      <p class="text-gray-300 max-w-2xl mx-auto">Modelo integral: Obligaciones → Riesgos → Controles → Evidencias → Incidencias</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+        <h3 class="text-[#00C896] font-semibold text-lg mb-3">GRC Compass Core</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">16 módulos especializados. Arquitectura Multi-Tenant con RLS y 31 roles RBAC.</p>
       </div>
-      <div class="flex justify-center fade-in delay-2">
-        <img src="../img/grc-compass.png" alt="GRC Compass Core: modelo Obligaciones-Riesgos-Controles-Evidencias-Incidencias" class="w-full max-w-sm rounded-xl opacity-90 hover:opacity-100 transition-opacity" data-testid="grc-infographic">
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+        <h3 class="text-[#00C896] font-semibold text-lg mb-3">Audit WORM</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">Almacenamiento inmutable Write Once, Read Many. Trazabilidad completa de todas las operaciones.</p>
+      </div>
+      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+        <h3 class="text-[#00C896] font-semibold text-lg mb-3">Multi-Dominio</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">RGPD, Prevención, Canal de Denuncias, AI Act, NIS2, DORA, ESG. Un framework, múltiples dominios.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="py-20 bg-white text-center" data-testid="cta-legaltech">
+<section class="py-20 md:py-28 bg-white text-center">
   <div class="max-w-3xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-heading text-primary mb-4 fade-in">Transforma tu Organizacion Juridica con IA</h2>
-    <p class="text-gray-500 mb-8 fade-in delay-1">Descubre como nuestras soluciones de IA aplicada al derecho pueden mejorar tu cumplimiento y productividad.</p>
-    <a href="../contacto.html" class="inline-flex items-center gap-2 bg-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-primary transition-all shadow-lg shadow-accent/20  fade-in delay-2" data-testid="cta-legaltech-btn">Solicitar Demo <i class="ph ph-arrow-right"></i></a>
+    <h2 class="font-serif text-3xl md:text-5xl font-medium text-primary mb-6">Transforma tu organización jurídica con IA</h2>
+    <p class="text-gray-500 text-lg mb-10">Descubre cómo nuestras soluciones de IA aplicada al derecho pueden mejorar tu cumplimiento y productividad.</p>
+    <a href="../contacto.html" class="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary transition-all inline-flex items-center gap-2" onclick="plausible('click_cta_contact', {props: {page: 'legaltech-ia', cta_type: 'footer_cta'}})">Solicitar demo <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-dark text-white py-16" data-testid="footer"><div class="max-w-7xl mx-auto px-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8"><div><a href="../" class="flex items-center"><img src="../img/logos/gdigital.svg" alt="g-digital" class="h-6 brightness-0 invert"></a><p class="text-white/50 text-sm mt-4 leading-relaxed">Division de negocios digitales de Garrigues.</p></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Soluciones</h4><ul class="space-y-2.5"><li><a href="confianza-digital.html" class="text-white/50 text-sm hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="contract-tech.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="text-white/50 text-sm hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="text-white/50 text-sm hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Compania</h4><ul class="space-y-2.5"><li><a href="../nosotros.html" class="text-white/50 text-sm hover:text-accent transition-colors">Nosotros</a></li><li><a href="../contacto.html" class="text-white/50 text-sm hover:text-accent transition-colors">Contacto</a></li></ul></div><div><h4 class="text-sm font-semibold text-accent mb-4 uppercase tracking-wider">Contacto</h4><p class="text-white/50 text-sm">info@g-digital.garrigues.com</p><p class="text-white/50 text-sm mt-1">Madrid, Espana</p></div></div><div class="border-t border-white/10 mt-12 pt-8 text-center"><p class="text-white/30 text-xs">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p></div></div></footer>
+<footer class="bg-[#0a0a0a] text-gray-400 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-10 pb-10 border-b border-white/10">
+      <div><span class="text-xl font-bold text-white">g<span class="text-accent">-digital</span></span><p class="text-sm mt-3 leading-relaxed">División de negocios digitales de Garrigues. Infraestructura digital con garantía legal.</p></div>
+      <div><h4 class="text-white font-semibold text-sm mb-4">Soluciones</h4><ul class="space-y-2 text-sm"><li><a href="factoria.html" class="hover:text-accent transition-colors">La Factoría</a></li><li><a href="confianza-digital.html" class="hover:text-accent transition-colors">Confianza Digital</a></li><li><a href="enterprise-suite.html" class="hover:text-accent transition-colors">Enterprise Suite</a></li><li><a href="contract-tech.html" class="hover:text-accent transition-colors">Contract Tech</a></li><li><a href="activos-digitales.html" class="hover:text-accent transition-colors">Activos Digitales</a></li><li><a href="legaltech-ia.html" class="hover:text-accent transition-colors">LegalTech &amp; IA</a></li></ul></div>
+      <div><h4 class="text-white font-semibold text-sm mb-4">Compañía</h4><ul class="space-y-2 text-sm"><li><a href="../nosotros.html" class="hover:text-accent transition-colors">Nosotros</a></li><li><a href="../recursos.html" class="hover:text-accent transition-colors">Recursos</a></li><li><a href="../contacto.html" class="hover:text-accent transition-colors">Contacto</a></li></ul></div>
+      <div><h4 class="text-white font-semibold text-sm mb-4">Contacto</h4><p class="text-sm">info@g-digital.garrigues.com</p><p class="text-sm mt-1">Madrid, España</p><div class="flex gap-3 mt-4"><a href="https://www.linkedin.com/company/g-digital-garrigues" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center hover:bg-accent/20 transition-colors"><i class="ph ph-linkedin-logo text-sm"></i></a></div></div>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-6 text-xs text-gray-500">
+      <p>&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
+      <div class="flex gap-6"><a href="../aviso-legal.html" class="hover:text-accent transition-colors">Aviso Legal</a><a href="../politica-privacidad.html" class="hover:text-accent transition-colors">Política de Privacidad</a><a href="../politica-cookies.html" class="hover:text-accent transition-colors">Política de Cookies</a><button onclick="document.getElementById('cookie-banner').classList.remove('hidden')" class="hover:text-accent transition-colors">Preferencias de cookies</button></div>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 p-4 md:p-6 hidden">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-4">
+    <div class="flex-1"><p class="text-sm text-gray-700"><strong>Cookies:</strong> Utilizamos Plausible Analytics (sin cookies) para métricas básicas. Si aceptas, activaremos Google Analytics para mejorar tu experiencia. <a href="../politica-cookies.html" class="text-accent underline">Más información</a>.</p></div>
+    <div class="flex gap-3 shrink-0">
+      <button onclick="document.getElementById('cookie-banner').classList.add('hidden'); localStorage.setItem('cookies','essential')" class="px-4 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">Solo esenciales</button>
+      <button onclick="document.getElementById('cookie-banner').classList.add('hidden'); localStorage.setItem('cookies','all')" class="px-4 py-2 text-sm font-medium text-white bg-accent rounded-lg hover:bg-accent/80 transition-colors">Aceptar analíticas</button>
+    </div>
+  </div>
+</div>
 
 <script src="../js/main.js"></script>
+<script>
+if (!localStorage.getItem('cookies')) { document.getElementById('cookie-banner').classList.remove('hidden'); }
+const navToggle = document.getElementById('nav-toggle'); const mobileMenu = document.getElementById('mobile-menu'); const mobileOverlay = document.getElementById('mobile-overlay');
+if (navToggle && mobileMenu && mobileOverlay) { navToggle.addEventListener('click', () => { mobileMenu.classList.toggle('translate-x-full'); mobileOverlay.classList.toggle('hidden'); }); mobileOverlay.addEventListener('click', () => { mobileMenu.classList.add('translate-x-full'); mobileOverlay.classList.add('hidden'); }); }
+</script>
+<style>.nav-dropdown-menu{display:none}.nav-dropdown:hover .nav-dropdown-menu{display:block}.mobile-menu{transform:translateX(100%);transition:transform .3s ease}.mobile-menu:not(.translate-x-full){transform:translateX(0)}</style>
 </body>
 </html>
