@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glosario Técnico-Legal — Confianza Digital, eIDAS, CLM | g-digital</title>
+  <meta name="description" content="Glosario de términos técnico-legales de g-digital: Deuda Legal, Compliance Injection, QTSP, QES, ERDS, WORM, LTV, AES, QDLT, CLM, DMN, Catala y más.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{primary:'#004438',accent:'#009A77',dark:'#003030',light:'#F9FAFB',gold:'#D4AF37'},fontFamily:{serif:['Playfair Display','serif'],sans:['Manrope','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="font-sans text-gray-700 bg-white antialiased">
+
+<nav class="nav-main fixed top-0 w-full z-50 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-[72px]">
+    <a href="../" class="flex items-center gap-2"><span class="text-xl font-bold text-white">g<span class="text-accent">-digital</span></span></a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="../" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Inicio</a>
+      <a href="../nosotros.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Nosotros</a>
+      <a href="../recursos.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Recursos</a>
+      <a href="../contacto.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contacto</a>
+      <a href="../contacto.html" class="bg-accent text-white px-5 py-2.5 rounded-lg text-sm font-medium hover:bg-accent/80 transition-all">Contactar</a>
+    </div>
+  </div>
+</nav>
+
+<section class="relative bg-gradient-to-br from-[#022C22] via-primary to-dark text-white overflow-hidden">
+  <div class="relative z-10 max-w-4xl mx-auto px-6 pt-36 pb-16 md:pt-44 md:pb-20">
+    <a href="../recursos.html" class="inline-flex items-center gap-2 text-sm text-accent hover:text-white transition-colors mb-8"><i class="ph ph-arrow-left"></i> Biblioteca de Conocimiento</a>
+    <h1 class="font-serif text-3xl md:text-5xl text-white font-medium leading-[1.1] mb-6 tracking-tight">Glosario <span class="text-accent italic">Técnico-Legal</span></h1>
+    <p class="text-lg text-gray-300 font-light max-w-xl leading-relaxed">Términos clave del ecosistema g-digital. Cada definición conecta derecho, tecnología y negocio.</p>
+  </div>
+</section>
+
+<section class="py-16 bg-white">
+  <div class="max-w-3xl mx-auto px-6">
+    <!-- Search -->
+    <div class="mb-12">
+      <input type="text" id="glossary-search" placeholder="Buscar término..." class="w-full px-4 py-3 rounded-lg border border-gray-300 text-sm focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors" oninput="filterGlossary(this.value)">
+    </div>
+
+    <div id="glossary-list" class="space-y-6">
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="aes firma avanzada">
+        <h3 class="font-serif text-lg text-primary mb-1">AES <span class="text-sm font-sans text-gray-400">(Advanced Electronic Signature)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Firma electrónica avanzada. Identifica al firmante, está vinculada a los datos firmados y detecta modificaciones posteriores. No requiere certificado cualificado. Admisible como prueba pero sin la presunción legal de la QES.</p>
+        <span class="text-xs font-mono text-accent">eIDAS Art. 26</span>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="compliance injection inyección cumplimiento">
+        <h3 class="font-serif text-lg text-primary mb-1">Compliance Injection</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Concepto g-digital. Inyectar servicios de confianza eIDAS cualificados en procesos existentes mediante una llamada API, sin migrar plataformas ni rediseñar flujos. El proceso no cambia; su valor probatorio, sí.</p>
+        <a href="deuda-legal.html" class="text-xs text-accent font-medium">→ Ver artículo Deuda Legal</a>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="deuda legal legal debt">
+        <h3 class="font-serif text-lg text-primary mb-1">Deuda Legal</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Concepto g-digital. Análogo a la deuda técnica: operaciones digitales (o no) sin validez probatoria cualificada que se acumulan silenciosamente. No duele hasta que necesitas demostrar algo ante un juez, regulador o auditor.</p>
+        <a href="deuda-legal.html" class="text-xs text-accent font-medium">→ Artículo completo</a>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="derecho computable computable law">
+        <h3 class="font-serif text-lg text-primary mb-1">Derecho Computable</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Disciplina que traduce normas jurídicas a representaciones formales ejecutables por una máquina. No reemplaza al derecho tradicional: lo complementa con precisión y automatización. Herramientas: Catala, DMN, Accord Project.</p>
+        <a href="derecho-computable.html" class="text-xs text-accent font-medium">→ Artículo completo</a>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="dmn decision model notation">
+        <h3 class="font-serif text-lg text-primary mb-1">DMN <span class="text-sm font-sans text-gray-400">(Decision Model and Notation)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Estándar OMG para modelar reglas de decisión como tablas legibles por humanos y ejecutables por motores de reglas. Clave en el contrato computable: las reglas contractuales se externalizan del código.</p>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="eidas reglamento identidad digital">
+        <h3 class="font-serif text-lg text-primary mb-1">eIDAS <span class="text-sm font-sans text-gray-400">(Electronic IDentification, Authentication and trust Services)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Reglamento (UE) 910/2014. Marco europeo de identificación electrónica y servicios de confianza. Define firma electrónica, sellos de tiempo, entrega certificada, custodia y credenciales con efectos legales en toda la UE.</p>
+        <a href="eidas-2.html" class="text-xs text-accent font-medium">→ Ver eIDAS 2.0</a>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="erds entrega electrónica certificada">
+        <h3 class="font-serif text-lg text-primary mb-1">ERDS <span class="text-sm font-sans text-gray-400">(Electronic Registered Delivery Service)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Entrega electrónica certificada regulada en eIDAS (Arts. 43-44). Prueba de envío, entrega y contenido. El equivalente regulado al burofax, pero digital y con efectos en toda la UE.</p>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="ltv long term validation custodia">
+        <h3 class="font-serif text-lg text-primary mb-1">LTV <span class="text-sm font-sans text-gray-400">(Long Term Validation)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Perfiles de firma (PAdES-LTV, XAdES-LTA) que garantizan la validez de una firma electrónica a largo plazo mediante re-sellado periódico. Cuando el certificado original caduca, la firma sigue siendo verificable.</p>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="qdlt qualified dlt blockchain cualificado">
+        <h3 class="font-serif text-lg text-primary mb-1">QDLT <span class="text-sm font-sans text-gray-400">(Qualified Electronic Ledger)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Registro electrónico cualificado introducido por eIDAS 2.0. Un registro DLT operado por un QTSP que goza de presunción legal de unicidad, autenticidad e integridad. No toda blockchain es QDLT: solo las operadas por QTSPs supervisados.</p>
+        <a href="qdlt-blockchain.html" class="text-xs text-accent font-medium">→ Artículo completo</a>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="qes firma cualificada qualified electronic signature">
+        <h3 class="font-serif text-lg text-primary mb-1">QES <span class="text-sm font-sans text-gray-400">(Qualified Electronic Signature)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Firma electrónica cualificada. Equivalente legal a la firma manuscrita en toda la UE (Art. 25.2 eIDAS). Requiere certificado cualificado emitido por QTSP y dispositivo cualificado de creación (QSCD).</p>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="qtsp prestador cualificado trust service provider">
+        <h3 class="font-serif text-lg text-primary mb-1">QTSP <span class="text-sm font-sans text-gray-400">(Qualified Trust Service Provider)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Prestador Cualificado de Servicios de Confianza. Entidad supervisada y auditada que emite servicios eIDAS con efectos legales privilegiados. EADTrust es el QTSP del Grupo Garrigues, participado al 51%.</p>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="rpaas regulated platform as a service">
+        <h3 class="font-serif text-lg text-primary mb-1">rPaaS <span class="text-sm font-sans text-gray-400">(Regulated Platform as a Service)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Concepto g-digital. Plataforma regulada como servicio: los productos de g-digital se implementan sobre la infraestructura regulada de EADTrust, garantizando cumplimiento normativo nativo.</p>
+      </div>
+
+      <div class="glossary-item border-b border-gray-100 pb-6" data-term="worm write once read many inmutable audit">
+        <h3 class="font-serif text-lg text-primary mb-1">WORM <span class="text-sm font-sans text-gray-400">(Write Once, Read Many)</span></h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Almacenamiento inmutable: una vez escrito, no se puede modificar ni eliminar. Utilizado en el GRC Compass Core para audit trail y en la custodia de evidencias. Garantiza integridad para auditorías regulatorias.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-light">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="text-sm text-gray-500 mb-4">¿Falta algún término? <a href="../contacto.html" class="text-accent font-medium hover:underline">Sugiérelo aquí</a></p>
+    <a href="../recursos.html" class="inline-flex items-center gap-2 text-accent font-medium text-sm hover:gap-3 transition-all"><i class="ph ph-arrow-left"></i> Volver a la Biblioteca de Conocimiento</a>
+  </div>
+</section>
+
+<footer class="bg-[#0a0a0a] text-gray-400 pt-12 pb-8">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <p class="text-xs text-gray-500">&copy; 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+function filterGlossary(query) {
+  const items = document.querySelectorAll('.glossary-item');
+  const q = query.toLowerCase();
+  items.forEach(item => {
+    const term = item.dataset.term || '';
+    const text = item.textContent.toLowerCase();
+    item.style.display = (q === '' || term.includes(q) || text.includes(q)) ? '' : 'none';
+  });
+}
+</script>
+<script src="../js/main.js"></script>
+</body>
+</html>
