@@ -23,51 +23,13 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
--e 
+
 # Environment files
 *.env
 *.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
--e 
-# Environment files
-*.env
-*.env.*
+
+# Project-specific exclusions
+CLAUDE.md
+memory/
+EAD_Factory_Plan_Direccion_Consejo.pptx
+~$EAD_Factory_Plan_Direccion_Consejo.pptx
