@@ -1,0 +1,75 @@
+---
+import Linea from '../../layouts/Linea.astro';
+
+const capas = [
+  { tag: 'INFRA', icon: 'ph-lightning', title: 'La Factoría (Trust API + MCP)', who: 'Para equipos técnicos que quieren inyectar eIDAS en sus sistemas', body: '4 microservicios eIDAS como primitivas REST —Evidence, Signature, Notification, Custody— y ahora también como servidor MCP para agentes de IA. JSON-native. Sin migrar plataformas.' },
+  { tag: 'PLATAFORMA', icon: 'ph-buildings', title: 'EAD Enterprise Suite', who: 'Para grandes organizaciones que necesitan una plataforma unificada', body: 'Agrega Signature Manager, Notice Manager, eArchiving y Credential Manager con soberanía digital. Crece incorporando nuevos servicios eIDAS 2.0 sin re-arquitectura.' },
+  { tag: 'PRODUCTO', icon: 'ph-squares-four', title: 'Soluciones diseñadas por g-digital', who: 'Productos individuales con UX empresarial, sueltos o dentro de la Suite', body: 'Signature Manager, Notice Manager (sustituye al burofax), eArchiving (LTV), Credential Manager (EUDI Wallet Ready). Diseñados por g-digital, operados por EADTrust.' },
+  { tag: 'EXPERIENCIA', icon: 'ph-device-mobile', title: 'GoCertius', who: 'Para profesionales y pymes sin integración técnica', body: 'SuperApp que agrega certificación de hechos, sello de tiempo cualificado, Chat Certificado y multimedia certificada. +40.000 evidencias en producción.' },
+  { tag: 'BASE QTSP', icon: 'ph-certificate', title: 'Servicios QTSP EADTrust', who: 'Servicios de confianza cualificados directos', body: 'La base regulada sobre la que todo se construye: firma con certificados, sellos RFC 3161, entrega certificada (ERDS), custodia LTV y credenciales. EUDI Wallet Ready.' },
+];
+const eidas2 = [
+  ['Archivo Electrónico Cualificado', 'Arts. 45i-45j. Presunción de integridad y origen.'],
+  ['EUDI Wallet', 'Cartera digital europea. Interoperabilidad nativa.'],
+  ['QEA/QEAA Attestations', 'Atestaciones cualificadas de atributos.'],
+  ['QSCD Cloud', 'Firma cualificada en nube con autenticación fuerte.'],
+];
+---
+<Linea
+  linea="Línea 01"
+  kicker="Confianza Digital"
+  title="Confianza Digital. Cinco formas de acceder."
+  intro="Servicios eIDAS cualificados —firma, sello, entrega, custodia, certificados— accesibles como API, MCP, plataforma enterprise, app móvil o servicios QTSP directos. No es un producto: es una arquitectura por capas."
+>
+  <!-- Cinco capas -->
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">Cinco tipologías de producto</p>
+      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">Desde la infraestructura API hasta la app de bolsillo.</h2>
+      <p class="mt-5 text-cloud/65 max-w-2xl">Cada tipología ofrece un nivel distinto de acceso a los mismos servicios eIDAS cualificados.</p>
+      <div class="mt-12 space-y-4">
+        {capas.map((c) => (
+          <article class="card rounded-2xl p-7 reveal flex flex-col md:flex-row md:items-start gap-5">
+            <div class="flex items-center gap-4 md:w-72 shrink-0">
+              <i class={`ph ${c.icon} text-green text-3xl`}></i>
+              <div><span class="mono text-[11px] text-green block">{c.tag}</span><h3 class="head text-lg text-cloud font-semibold leading-tight">{c.title}</h3></div>
+            </div>
+            <div>
+              <p class="text-cloud/50 text-xs mb-2 italic">{c.who}</p>
+              <p class="text-cloud/75 text-sm leading-relaxed">{c.body}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- El modelo -->
+  <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">El modelo: diseño + operación</p>
+      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">g-digital diseña con criterio jurídico de Garrigues. EADTrust opera y comercializa.</h2>
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
+        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-scales text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">Garrigues</h3><p class="label text-cloud/40 mt-2">Conocimiento jurídico</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">80+ años de excelencia legal. Define los requisitos de cumplimiento que cada producto debe satisfacer.</p></div>
+        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-code text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">g-digital</h3><p class="label text-cloud/40 mt-2">Diseño y desarrollo</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">Diseña productos con Compliance by Design. Abogados y tecnólogos juntos desde la concepción.</p></div>
+        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-certificate text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">EADTrust</h3><p class="label text-cloud/40 mt-2">Operación cualificada</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">QTSP del Grupo Garrigues. Opera, comercializa y soporta. eadtrust.eu</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- eIDAS 2.0 -->
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <p class="label text-green mb-6">Plataformas evolutivas</p>
+        <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Preparadas para eIDAS 2.0 y la EUDI Wallet.</h2>
+        <p class="mt-6 text-cloud/65 leading-relaxed">Enterprise Suite y GoCertius incorporarán automáticamente los nuevos servicios eIDAS 2.0 conforme se publiquen los actos delegados. Sin migraciones, sin re-arquitectura, sin interrupciones.</p>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
+        {eidas2.map(([t, d]) => (
+          <div class="card rounded-xl p-5 reveal"><h3 class="text-cloud font-semibold text-sm flex items-center gap-2"><i class="ph ph-sparkle text-green"></i>{t}</h3><p class="text-cloud/55 text-sm mt-2">{d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Linea>

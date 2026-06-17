@@ -1,0 +1,6 @@
+---
+// Etiqueta de sección tipo dossier: "01 — La revelación".
+interface Props { num?: string; text: string; color?: string }
+const { num, text, color = 'text-green' } = Astro.props;
+---
+<p class={`label ${color} mb-6`}>{num ? `${num} — ` : ''}{text}</p>

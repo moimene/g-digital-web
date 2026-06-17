@@ -1,0 +1,52 @@
+---
+import Linea from '../../layouts/Linea.astro';
+
+const modulos = [
+  ['Signature Manager', 'Orquestación de firma con validador legal, verificación SHA-256, firma vía WhatsApp.'],
+  ['Notice Manager', 'Notificaciones certificadas multicanal (email, WhatsApp, SMS, RCS). Sustituye al burofax.'],
+  ['eArchiving', 'Custodia con garantía LTV, re-sellado periódico, preparado para arts. 45i-45j eIDAS 2.'],
+  ['Credential Manager', 'Certificados cualificados en Cloud HSM. Delegación segura. EUDI Wallet Ready.'],
+];
+const soberania = [
+  ['Riesgo Legal/Probatorio', 'Evidencia cualificada eIDAS con presunción legal en la UE, no solo logs técnicos.'],
+  ['Riesgo Schrems II', 'Datos y operación en la UE; sin transferencias internacionales problemáticas.'],
+  ['Riesgo CLOUD Act', 'Infraestructura soberana europea, fuera del alcance extraterritorial.'],
+];
+---
+<Linea
+  linea="Confianza Digital · Capa plataforma"
+  kicker="EAD Enterprise Suite"
+  title="El sistema operativo de certeza legal."
+  intro="Una plataforma que agrega todos los servicios eIDAS con soberanía digital. Diseñada por Garrigues, operada por EADTrust (QTSP). Crece incorporando nuevos servicios eIDAS 2.0 sin re-arquitectura."
+  cta="Descubrir Enterprise Suite"
+>
+  <!-- Módulos -->
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">Módulos actuales</p>
+      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">Una plataforma, todos los servicios eIDAS.</h2>
+      <div class="mt-12 grid sm:grid-cols-2 gap-5">
+        {modulos.map(([t, d]) => (
+          <article class="card rounded-2xl p-7 reveal"><h3 class="head text-lg text-cloud font-semibold flex items-center gap-2"><i class="ph ph-cube text-green"></i>{t}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{d}</p></article>
+        ))}
+      </div>
+      <p class="text-cloud/45 text-sm mt-6 italic">Próximos módulos: chat certificado, archivo cualificado, EUDI Wallet y más — se agregan progresivamente.</p>
+    </div>
+  </section>
+
+  <!-- Soberanía -->
+  <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">Soberanía digital vs. plataformas US</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        {soberania.map(([t, d]) => (
+          <article class="card rounded-2xl p-7 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-shield-check text-green"></i>{t}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{d}</p></article>
+        ))}
+      </div>
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-cloud/60">
+        <span class="flex items-center gap-2"><i class="ph ph-sparkle text-green"></i> eIDAS 2.0 &amp; EUDI Wallet</span>
+        <span class="flex items-center gap-2"><i class="ph ph-shield-star text-green"></i> Post-Quantum ready</span>
+      </div>
+    </div>
+  </section>
+</Linea>

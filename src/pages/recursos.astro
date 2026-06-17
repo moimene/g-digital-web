@@ -1,0 +1,26 @@
+---
+import Linea from '../layouts/Linea.astro';
+const recursos = [
+  ['Whitepaper', 'Deuda Legal: el pasivo que tu balance no ve', 'Cómo cuantificar y reducir las operaciones sin valor probatorio en tu sector.'],
+  ['Guía', 'EUDI Wallet: prepara tus obligaciones 2026-2027', 'Qué cambia con eIDAS 2 y cómo llegar a tiempo, sector a sector.'],
+  ['Artículo', 'Confianza cualificada para agentes de IA (MCP)', 'Por qué exponer servicios eIDAS por MCP cambia las operaciones autónomas.'],
+  ['Glosario', 'Deuda Legal, Compliance Injection, QTSP, QES, ERDS, WORM, AES, EUDI, MCP', 'El vocabulario mínimo para entender la categoría.'],
+];
+---
+<Linea
+  kicker="Recursos"
+  title="Aprende la categoría antes que tu competencia."
+  intro="Blog, whitepapers, glosario y eventos del Observatorio LegalTech Garrigues-ICADE. Educación de categoría para un mercado que aún se está formando."
+  cta="Suscríbete a las novedades"
+>
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">Borrador · Fase 3 (con CMS / Content Collections)</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        {recursos.map(([cat, t, d]) => (
+          <article class="card rounded-2xl p-7 reveal"><span class="label text-green">{cat}</span><h3 class="head text-xl text-cloud mt-3 font-semibold leading-snug">{t}</h3><p class="text-cloud/60 text-sm mt-3">{d}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Linea>

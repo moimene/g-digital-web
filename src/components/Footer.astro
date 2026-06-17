@@ -1,0 +1,45 @@
+---
+import Wordmark from './Wordmark.astro';
+import { SITE, SOLUCIONES } from '../consts';
+---
+<footer class="bg-ink border-t border-cloud/10">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-4 gap-10">
+      <div>
+        <Wordmark class="text-xl" />
+        <p class="text-cloud/50 text-sm mt-4 leading-relaxed">La infraestructura legal del Grupo Garrigues: tecnología real para que cada operación de tu organización tenga validez probatoria.</p>
+      </div>
+      <div>
+        <p class="label text-cloud/40 mb-4">Soluciones</p>
+        <ul class="space-y-2.5 text-sm text-cloud/65">
+          {SOLUCIONES.map((s) => <li><a href={s.href} class="hover:text-cloud">{s.title}</a></li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="label text-cloud/40 mb-4">Compañía</p>
+        <ul class="space-y-2.5 text-sm text-cloud/65">
+          <li><a href="/nosotros" class="hover:text-cloud">Nosotros</a></li>
+          <li><a href="/recursos" class="hover:text-cloud">Recursos</a></li>
+          <li><a href="/contacto" class="hover:text-cloud">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label text-cloud/40 mb-4">Contacto</p>
+        <ul class="space-y-2.5 text-sm text-cloud/65">
+          <li>{SITE.email}</li>
+          <li>{SITE.city}</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hairline my-10"></div>
+    <div class="flex flex-col md:flex-row justify-between gap-4 text-xs text-cloud/40">
+      <p>© 2026 g-digital (Grupo Garrigues). Todos los derechos reservados.</p>
+      <div class="flex gap-5">
+        <a href="https://www.garrigues.com/es_ES/aviso-legal" class="hover:text-cloud">Aviso Legal</a>
+        <a href="https://www.garrigues.com/es_ES/politica-privacidad" class="hover:text-cloud">Privacidad</a>
+        <a href="https://www.garrigues.com/es_ES/politica-cookies" class="hover:text-cloud">Cookies</a>
+      </div>
+    </div>
+    <p class="mono text-[10.5px] text-cloud/25 mt-6">Analítica Plausible (sin cookies). Contenido en evolución (Fase 1 de la refactorización v4).</p>
+  </div>
+</footer>

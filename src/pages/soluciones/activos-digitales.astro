@@ -1,0 +1,65 @@
+---
+import Linea from '../../layouts/Linea.astro';
+
+const cadena = [
+  ['Estructuración', 'Diseño del SPV, dictamen regulatorio y régimen de colocación por Garrigues.'],
+  ['Tokenización', 'Emisión de tokens en DLT con smart contracts auditados por ioBuilders.'],
+  ['Colocación', 'Distribución a inversores con KYC/AML integrado y onboarding digital.'],
+  ['Mercado secundario', 'Liquidez regulada bajo Régimen Piloto DLT con supervisión CNMV.'],
+];
+const otras = [
+  { icon: 'ph-hand-coins', title: 'Financiación y Deuda Tokenizada', body: 'Sindicación de créditos en blockchain. Instrumentos de deuda con waterfall programable y KYC/AML por operación.' },
+  { icon: 'ph-bank', title: 'Mercados de Capitales Digitales', body: 'Bonos digitales, CBDC e instrumentos de renta fija tokenizados. Marco MiFID II y CSDR; ámbito diferenciado de MiCA.' },
+  { icon: 'ph-leaf', title: 'Activos No Financieros y ESG', body: 'Certificados de energía, créditos de carbono y activos ambientales con trazabilidad y prevención de doble contabilidad.' },
+];
+const pilares = [
+  ['Conformidad Legal', 'Equipo de Regulación Financiera de Garrigues. Cumplimiento CNMV, BdE y ESMA. Dictamen, estructura de vehículo y régimen de colocación.'],
+  ['Infraestructura DLT', 'Blockchain de clase empresarial con ioBuilders. Nodos permisionados, smart contracts auditados y conectores a sistemas core.'],
+  ['Gobernanza y Evidencia', 'EADTrust integra eIDAS: sellado de operaciones, custodia de registros y controles de integridad para auditoría.'],
+];
+---
+<Linea
+  linea="Línea 03"
+  kicker="Activos Digitales"
+  title="Tokenización y blockchain con gobernanza jurídica."
+  intro="Emite, negocia y liquida activos tokenizados con cumplimiento regulatorio en la UE. Arquitectura DLT con ioBuilders, evidencia cualificada con EADTrust y modelo legal del equipo de Regulación Financiera de Garrigues."
+  cta="Solicitar evaluación regulatoria de tokenización"
+>
+  <!-- OpenBrick -->
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">OpenBrick · el ecosistema inicial</p>
+      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">Tokenización inmobiliaria bajo el Régimen Piloto DLT de la UE.</h2>
+      <p class="mt-6 text-cloud/70 max-w-3xl leading-relaxed">Fracciona activos inmobiliarios en tokens regulados, accesibles desde cantidades reducidas, con liquidez secundaria en mercados supervisados. Cada token está respaldado por un vehículo jurídico (SPV) diseñado por Garrigues, bajo el Reglamento (UE) 2022/858, con supervisión de la CNMV.</p>
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {cadena.map(([t, d], i) => (
+          <div class="card rounded-2xl p-6 reveal"><span class="mono text-green text-sm">0{i + 1}</span><h3 class="head text-cloud font-semibold mt-2">{t}</h3><p class="text-cloud/60 text-sm mt-2">{d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Otras áreas -->
+  <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">Otras áreas de solución</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        {otras.map((o) => (
+          <article class="card rounded-2xl p-7 reveal"><i class={`ph ${o.icon} text-green text-3xl`}></i><h3 class="head text-lg text-cloud mt-4 font-semibold">{o.title}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{o.body}</p></article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Propuesta de valor -->
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">Propuesta de valor</p>
+      <div class="grid md:grid-cols-3 gap-8">
+        {pilares.map(([t, d]) => (
+          <div class="reveal"><div class="hairline mb-6"></div><h3 class="head text-xl text-cloud font-semibold">{t}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{d}</p></div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Linea>

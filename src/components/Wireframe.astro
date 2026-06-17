@@ -1,0 +1,14 @@
+---
+// Recurso gráfico de marca: wireframe geométrico de línea fina (esfera).
+interface Props { class?: string; accent?: boolean }
+const { class: cls = '', accent = true } = Astro.props;
+---
+<svg viewBox="0 0 460 460" class={cls} aria-hidden="true">
+  <g class="spin-slow" fill="none" stroke="rgba(244,246,245,.14)" stroke-width="1">
+    <circle cx="230" cy="230" r="190" />
+    <ellipse cx="230" cy="230" rx="190" ry="62" /><ellipse cx="230" cy="230" rx="190" ry="120" />
+    <ellipse cx="230" cy="230" rx="62" ry="190" /><ellipse cx="230" cy="230" rx="120" ry="190" />
+    <line x1="40" y1="230" x2="420" y2="230" /><line x1="230" y1="40" x2="230" y2="420" />
+  </g>
+  {accent && <circle cx="230" cy="230" r="190" fill="none" stroke="rgba(12,242,93,.30)" stroke-width="1.5" />}
+</svg>

@@ -1,0 +1,55 @@
+---
+import Linea from '../../layouts/Linea.astro';
+
+const stack = [
+  { icon: 'ph-fingerprint', title: 'Evidence Manager', sub: 'Inmutabilidad como servicio', body: 'Hashing SHA-256 + Qualified Timestamping (TSA). Perfiles XAdES-T/LTA con re-sellado. Verificabilidad offline.', law: 'Presunción de fecha (Art. 41.2 eIDAS) · Inversión de carga (Art. 326.4 LEC)' },
+  { icon: 'ph-pen-nib', title: 'Signature Manager', sub: 'Firma como servicio', body: 'Niveles AES y QES. Perfiles PAdES, XAdES, CAdES. QSCD cloud (Cloud HSM). SDK mobile.', law: 'Equivalencia a firma manuscrita (Art. 25.2 eIDAS)' },
+  { icon: 'ph-envelope-simple', title: 'Notification Manager', sub: 'Entrega electrónica certificada', body: 'ERDS con prueba de envío, entrega y contenido con sellos cualificados. Comunicaciones laborales, regulatorias y contractuales.', law: 'ERDS (Arts. 43-44 Reglamento 910/2014)' },
+  { icon: 'ph-archive', title: 'Custody Manager', sub: 'Custodia como servicio', body: 'Integridad a largo plazo (LTV). Perfiles PAdES-LTV/XAdES-LTA, re-sellado periódico. Nube soberana europea.', law: 'Integridad a largo plazo (LTV) · eIDAS' },
+];
+---
+<Linea
+  linea="Confianza Digital · Capa infraestructura"
+  kicker="La Factoría — Trust API + MCP"
+  title="Una llamada REST. Evidencia legal cualificada."
+  intro="Inyectamos servicios eIDAS por API —o por MCP, para agentes de IA— para que cada operación sea evidencia probatoria. Sin migrar plataformas. Con QTSP propio del Grupo Garrigues. +298 escenarios en 18 sectores."
+  cta="Probar Trust API en tu proceso crítico"
+>
+  <!-- Deuda Legal -->
+  <section class="relative grain py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <p class="label text-green mb-5">El problema</p>
+      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold">Tu organización acumula <span class="green-text">Deuda Legal</span>.</h2>
+      <p class="mt-6 text-cloud/70 max-w-2xl mx-auto leading-relaxed">Igual que la deuda técnica, son operaciones sin validez probatoria que se acumulan en silencio. No duelen hasta que las necesitas — ante un juez, un regulador o un auditor.</p>
+    </div>
+  </section>
+
+  <!-- The Stack -->
+  <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">The Stack</p>
+      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold">Cuatro microservicios eIDAS. Una API unificada.</h2>
+      <div class="mt-12 grid md:grid-cols-2 gap-6">
+        {stack.map((s) => (
+          <article class="card rounded-2xl p-7 reveal">
+            <i class={`ph ${s.icon} text-green text-3xl`}></i>
+            <h3 class="head text-xl text-cloud mt-4 font-semibold">{s.title}</h3>
+            <p class="text-green text-sm mt-1">{s.sub}</p>
+            <p class="text-cloud/65 text-sm mt-4 leading-relaxed">{s.body}</p>
+            <p class="mono text-[11px] text-cloud/45 mt-4 border-t border-cloud/10 pt-3">{s.law}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MCP -->
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="rounded-2xl bg-green/10 border border-green/30 p-8 reveal">
+        <p class="text-green font-semibold flex items-center gap-2 text-lg"><i class="ph ph-robot"></i> Agent-ready: confianza cualificada por MCP</p>
+        <p class="text-cloud/75 mt-3 leading-relaxed">Expón los mismos cuatro microservicios como servidor <span class="mono text-cloud">MCP</span>. Tus agentes de IA invocan firma, sello o entrega como herramienta nativa, con los guardrails del QTSP y trazabilidad de cada invocación. La acumulación de innovación que diferencia a g-digital: de la API al agente.</p>
+      </div>
+    </div>
+  </section>
+</Linea>
