@@ -1,5 +1,6 @@
 ---
 import Linea from '../../layouts/Linea.astro';
+import poster from '../../assets/infografias/03-activos-digitales.svg?raw';
 
 const cadena = [
   ['Estructuración', 'Diseño del SPV, dictamen regulatorio y régimen de colocación por Garrigues.'],
@@ -20,6 +21,8 @@ const pilares = [
 ---
 <Linea
   linea="Línea 03"
+  tone="aqua"
+  motif="grid"
   kicker="Activos Digitales"
   title="Tokenización y blockchain con gobernanza jurídica."
   intro="Emite, negocia y liquida activos tokenizados con cumplimiento regulatorio en la UE. Arquitectura DLT con ioBuilders, evidencia cualificada con EADTrust y modelo legal del equipo de Regulación Financiera de Garrigues."
@@ -59,6 +62,15 @@ const pilares = [
         {pilares.map(([t, d]) => (
           <div class="reveal"><div class="hairline mb-6"></div><h3 class="head text-xl text-cloud font-semibold">{t}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{d}</p></div>
         ))}
+      </div>
+    </div>
+  </section>
+  <!-- La línea de un vistazo (infografía) -->
+  <section class="relative grain py-20 lg:py-28 border-t border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-aqua mb-6">La línea de un vistazo</p>
+      <div class="max-w-[460px] mx-auto rounded-2xl border border-cloud/10 overflow-hidden shadow-2xl shadow-black/40 reveal [&>svg]:block [&>svg]:w-full [&>svg]:h-auto">
+        <Fragment set:html={poster} />
       </div>
     </div>
   </section>

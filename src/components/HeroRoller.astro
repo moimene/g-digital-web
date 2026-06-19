@@ -1,0 +1,30 @@
+---
+interface Props {
+  phrases: string[];
+}
+const { phrases } = Astro.props;
+const first = phrases[0] ?? '';
+const phrasesJson = JSON.stringify(phrases);
+---
+<span class="hero-roller" data-hero-roller data-phrases={phrasesJson} set:html={first}></span>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('[data-hero-roller]').forEach((node) => {
+    const el = node as HTMLElement;
+    const phrases = JSON.parse(el.dataset.phrases || '[]') as string[];
+    if (reduceMotion || phrases.length < 2) return;
+
+    let index = 0;
+    window.setInterval(() => {
+      if (document.hidden) return;
+      el.classList.add('is-out');
+      window.setTimeout(() => {
+        index = (index + 1) % phrases.length;
+        el.innerHTML = phrases[index];
+        el.classList.remove('is-out');
+      }, 220);
+    }, 2600);
+  });
+</script>

@@ -1,9 +1,9 @@
 ---
-// Logotipo g-digital — "g" minúscula en verde corporativo (regla de marca).
+// Logotipo g-digital: "g" minúscula en verde corporativo (regla de marca).
 interface Props { class?: string; tag?: boolean }
 const { class: cls = '', tag = true } = Astro.props;
 ---
-<a href="/" class={`head font-bold leading-none ${cls}`} aria-label="g-digital — inicio">
+<a href="/" class={`head font-bold leading-none ${cls}`} aria-label="g-digital: inicio">
   <span class="green-text">g</span><span class="text-cloud">-digital</span>
-  {tag && <span class="block mono text-[7px] tracking-[.4em] text-cloud/40 mt-0.5">GRUPO GARRIGUES</span>}
+  {tag && <span class="block mono text-[7px] tracking-[.4em] text-cloud/55 mt-0.5">GRUPO GARRIGUES</span>}
 </a>

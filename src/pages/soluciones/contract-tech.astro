@@ -1,5 +1,6 @@
 ---
 import Linea from '../../layouts/Linea.astro';
+import poster from '../../assets/infografias/02-contract-tech.svg?raw';
 
 const modelos = [
   { tag: 'BLOCKS', title: 'Soporte a tu estrategia digital', body: 'Integración de servicios de confianza cualificados en tu hoja de ruta. Cada transición contractual genera prueba criptográfica y trazabilidad eIDAS.' },
@@ -15,6 +16,8 @@ const fases = [
 ---
 <Linea
   linea="Línea 02"
+  tone="lime"
+  motif="ribbon"
   kicker="Contract Tech"
   title="Del contrato como documento al contrato como proceso."
   intro="Gestión integral del ciclo de vida contractual con motores de reglas, evidencia cualificada y visión de posición contractual. CLM en tres dimensiones de madurez."
@@ -58,6 +61,15 @@ const fases = [
       <div class="mt-10 grid md:grid-cols-2 gap-5">
         <div class="card rounded-xl p-6 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-shield-check text-green"></i> Contract Guardian (IA)</h3><p class="text-cloud/65 text-sm mt-3">Agente IA que monitorea cambios, vencimientos, incumplimientos y oportunidades en tu cartera.</p></div>
         <div class="card rounded-xl p-6 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-git-branch text-green"></i> Estándares abiertos</h3><p class="text-cloud/65 text-sm mt-3">Accord Project, Catalá, DMN, eIDAS. Motores de reglas, no hardcoding. De lo transaccional a lo estratégico.</p></div>
+      </div>
+    </div>
+  </section>
+  <!-- La línea de un vistazo (infografía) -->
+  <section class="relative grain py-20 lg:py-28 border-t border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-lime mb-6">La línea de un vistazo</p>
+      <div class="max-w-[460px] mx-auto rounded-2xl border border-cloud/10 overflow-hidden shadow-2xl shadow-black/40 reveal [&>svg]:block [&>svg]:w-full [&>svg]:h-auto">
+        <Fragment set:html={poster} />
       </div>
     </div>
   </section>

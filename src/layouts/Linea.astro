@@ -9,16 +9,24 @@ interface Props {
   intro: string;
   linea?: string;       // "Línea 01" …
   cta?: string;         // texto del CTA final
+  tone?: 'green' | 'lime' | 'aqua' | 'azure';   // acento de la línea
+  motif?: 'sphere' | 'tunnel' | 'spiral' | 'grid' | 'ribbon';  // motivo wireframe
 }
-const { kicker, title, intro, linea, cta = 'Habla con un experto' } = Astro.props;
+const { kicker, title, intro, linea, cta = 'Habla con un experto', tone = 'green', motif = 'tunnel' } = Astro.props;
+const tones: Record<string, { t: string; rgba: string }> = {
+  green: { t: 'text-green', rgba: 'rgba(12,242,93,.5)' },
+  lime: { t: 'text-lime', rgba: 'rgba(204,249,67,.5)' },
+  aqua: { t: 'text-aqua', rgba: 'rgba(43,212,176,.5)' },
+  azure: { t: 'text-azure', rgba: 'rgba(91,156,246,.5)' },
+};
+const tk = tones[tone] ?? tones.green;
 ---
 <Base title={`${title} | ${SITE.name}`} description={intro}>
   <!-- HERO de línea -->
   <header class="relative grain overflow-hidden border-b border-cloud/10">
-    <div class="absolute -right-32 -top-24 w-[40rem] h-[40rem] bg-green/10 blur-[150px] rounded-full"></div>
-    <Wireframe class="absolute right-[-7rem] top-1/2 -translate-y-1/2 w-[30rem] h-[30rem] opacity-40 hidden md:block" />
+    <Wireframe variant={motif} density="strong" color={tk.rgba} class="absolute right-[-12rem] top-20 translate-y-0 w-[25rem] h-[25rem] opacity-20 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[32rem] md:h-[32rem] md:opacity-55" />
     <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-20 lg:pt-28 lg:pb-24">
-      <p class="label text-green mb-6">{linea ? `${linea} · ` : ''}{kicker}</p>
+      <p class={`label ${tk.t} mb-6`}>{linea ? `${linea} · ` : ''}{kicker}</p>
       <h1 class="head display text-cloud text-4xl sm:text-5xl lg:text-[4rem] font-semibold max-w-4xl">{title}</h1>
       <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">{intro}</p>
     </div>
@@ -28,12 +36,12 @@ const { kicker, title, intro, linea, cta = 'Habla con un experto' } = Astro.prop
 
   <!-- CTA final estándar -->
   <section class="relative grain overflow-hidden border-t border-cloud/10">
-    <div class="absolute left-1/2 -translate-x-1/2 -top-20 w-[36rem] h-[36rem] bg-green/10 blur-[150px] rounded-full"></div>
+    <Wireframe variant={motif} color={tk.rgba} class="absolute left-1/2 -translate-x-1/2 -top-28 w-[34rem] h-[34rem] opacity-30 hidden md:block" accent={false} />
     <div class="relative max-w-4xl mx-auto px-6 py-24 text-center">
       <h2 class="head display text-3xl lg:text-5xl text-cloud font-semibold">¿Hablamos de tu caso?</h2>
-      <p class="mt-6 text-cloud/70 max-w-xl mx-auto">Cuéntanos una operación crítica y te mostramos cómo convertirla en evidencia con efectos legales.</p>
+      <p class="mt-6 text-cloud/70 max-w-xl mx-auto">Cuéntanos un caso real y te mostramos exactamente cómo lo resolvemos.</p>
       <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-[#26ff75] transition-colors">{cta}</a>
+        <a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">{cta}</a>
         <a href="/#lineas" class="border border-cloud/25 text-cloud px-8 py-4 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Ver las 4 líneas</a>
       </div>
     </div>

@@ -1,8 +1,9 @@
 ---
 import Linea from '../../layouts/Linea.astro';
+import poster from '../../assets/infografias/01-confianza-digital.svg?raw';
 
 const capas = [
-  { tag: 'INFRA', icon: 'ph-lightning', title: 'La Factoría (Trust API + MCP)', who: 'Para equipos técnicos que quieren inyectar eIDAS en sus sistemas', body: '4 microservicios eIDAS como primitivas REST —Evidence, Signature, Notification, Custody— y ahora también como servidor MCP para agentes de IA. JSON-native. Sin migrar plataformas.' },
+  { tag: 'INFRA', icon: 'ph-lightning', title: 'La Factoría (Trust API + MCP)', who: 'Para equipos técnicos que quieren inyectar eIDAS en sus sistemas', body: '4 microservicios eIDAS como primitivas REST: Evidence, Signature, Notification y Custody. Ahora también como servidor MCP para agentes de IA. JSON-native. Sin migrar plataformas.' },
   { tag: 'PLATAFORMA', icon: 'ph-buildings', title: 'EAD Enterprise Suite', who: 'Para grandes organizaciones que necesitan una plataforma unificada', body: 'Agrega Signature Manager, Notice Manager, eArchiving y Credential Manager con soberanía digital. Crece incorporando nuevos servicios eIDAS 2.0 sin re-arquitectura.' },
   { tag: 'PRODUCTO', icon: 'ph-squares-four', title: 'Soluciones diseñadas por g-digital', who: 'Productos individuales con UX empresarial, sueltos o dentro de la Suite', body: 'Signature Manager, Notice Manager (sustituye al burofax), eArchiving (LTV), Credential Manager (EUDI Wallet Ready). Diseñados por g-digital, operados por EADTrust.' },
   { tag: 'EXPERIENCIA', icon: 'ph-device-mobile', title: 'GoCertius', who: 'Para profesionales y pymes sin integración técnica', body: 'SuperApp que agrega certificación de hechos, sello de tiempo cualificado, Chat Certificado y multimedia certificada. +40.000 evidencias en producción.' },
@@ -17,9 +18,11 @@ const eidas2 = [
 ---
 <Linea
   linea="Línea 01"
+  tone="green"
+  motif="sphere"
   kicker="Confianza Digital"
   title="Confianza Digital. Cinco formas de acceder."
-  intro="Servicios eIDAS cualificados —firma, sello, entrega, custodia, certificados— accesibles como API, MCP, plataforma enterprise, app móvil o servicios QTSP directos. No es un producto: es una arquitectura por capas."
+  intro="Servicios eIDAS cualificados (firma, sello, entrega, custodia y certificados) accesibles como API, MCP, plataforma enterprise, app móvil o servicios QTSP directos. No es un producto: es una arquitectura por capas."
 >
   <!-- Cinco capas -->
   <section class="relative grain py-20 lg:py-28">
@@ -50,9 +53,9 @@ const eidas2 = [
       <p class="label text-green mb-6">El modelo: diseño + operación</p>
       <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">g-digital diseña con criterio jurídico de Garrigues. EADTrust opera y comercializa.</h2>
       <div class="mt-12 grid md:grid-cols-3 gap-8">
-        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-scales text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">Garrigues</h3><p class="label text-cloud/40 mt-2">Conocimiento jurídico</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">80+ años de excelencia legal. Define los requisitos de cumplimiento que cada producto debe satisfacer.</p></div>
-        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-code text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">g-digital</h3><p class="label text-cloud/40 mt-2">Diseño y desarrollo</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">Diseña productos con Compliance by Design. Abogados y tecnólogos juntos desde la concepción.</p></div>
-        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-certificate text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">EADTrust</h3><p class="label text-cloud/40 mt-2">Operación cualificada</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">QTSP del Grupo Garrigues. Opera, comercializa y soporta. eadtrust.eu</p></div>
+        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-scales text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">Garrigues</h3><p class="label text-cloud/55 mt-2">Conocimiento jurídico</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">80+ años de excelencia legal. Define los requisitos de cumplimiento que cada producto debe satisfacer.</p></div>
+        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-code text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">g-digital</h3><p class="label text-cloud/55 mt-2">Diseño y desarrollo</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">Diseña productos con Compliance by Design. Abogados y tecnólogos juntos desde la concepción.</p></div>
+        <div class="reveal"><div class="hairline mb-6"></div><i class="ph ph-certificate text-green text-3xl"></i><h3 class="head text-xl text-cloud mt-4 font-semibold">EADTrust</h3><p class="label text-cloud/55 mt-2">Operación cualificada</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">QTSP del Grupo Garrigues. Opera, comercializa y soporta. eadtrust.eu</p></div>
       </div>
     </div>
   </section>
@@ -69,6 +72,15 @@ const eidas2 = [
         {eidas2.map(([t, d]) => (
           <div class="card rounded-xl p-5 reveal"><h3 class="text-cloud font-semibold text-sm flex items-center gap-2"><i class="ph ph-sparkle text-green"></i>{t}</h3><p class="text-cloud/55 text-sm mt-2">{d}</p></div>
         ))}
+      </div>
+    </div>
+  </section>
+  <!-- La línea de un vistazo (infografía) -->
+  <section class="relative grain py-20 lg:py-28 border-t border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">La línea de un vistazo</p>
+      <div class="max-w-[460px] mx-auto rounded-2xl border border-cloud/10 overflow-hidden shadow-2xl shadow-black/40 reveal [&>svg]:block [&>svg]:w-full [&>svg]:h-auto">
+        <Fragment set:html={poster} />
       </div>
     </div>
   </section>

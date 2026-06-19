@@ -1,26 +1,188 @@
 ---
-import Linea from '../layouts/Linea.astro';
-const recursos = [
-  ['Whitepaper', 'Deuda Legal: el pasivo que tu balance no ve', 'Cómo cuantificar y reducir las operaciones sin valor probatorio en tu sector.'],
-  ['Guía', 'EUDI Wallet: prepara tus obligaciones 2026-2027', 'Qué cambia con eIDAS 2 y cómo llegar a tiempo, sector a sector.'],
-  ['Artículo', 'Confianza cualificada para agentes de IA (MCP)', 'Por qué exponer servicios eIDAS por MCP cambia las operaciones autónomas.'],
-  ['Glosario', 'Deuda Legal, Compliance Injection, QTSP, QES, ERDS, WORM, AES, EUDI, MCP', 'El vocabulario mínimo para entender la categoría.'],
+import Base from '../layouts/Base.astro';
+import Wireframe from '../components/Wireframe.astro';
+import { articulos } from '../data/articulos';
+
+const filtros = [
+  { key: 'todos', label: 'Todos' },
+  { key: 'confianza', label: 'Confianza Digital' },
+  { key: 'contract', label: 'Contract Tech' },
+  { key: 'activos', label: 'Activos Digitales' },
+  { key: 'grc', label: 'GRC & IA' },
+];
+
+const glosario = [
+  ['Deuda Legal', 'Operaciones sin valor probatorio que se acumulan en silencio hasta que las necesitas ante un juez, regulador o auditor.'],
+  ['Compliance Injection', 'Inyectar servicios eIDAS cualificados en cualquier proceso por API o MCP, sin migrar plataformas.'],
+  ['QTSP', 'Prestador cualificado de servicios electrónicos de confianza bajo eIDAS (en el grupo, EADTrust).'],
+  ['QES / AES', 'Firma electrónica cualificada (equivalente a manuscrita en la UE) / avanzada.'],
+  ['ERDS', 'Servicio de entrega electrónica certificada (arts. 43-44 eIDAS).'],
+  ['WORM', 'Write Once, Read Many: almacenamiento inmutable apto para auditoría.'],
+  ['EUDI Wallet', 'Cartera de identidad digital europea introducida por eIDAS 2.'],
+  ['MCP', 'Model Context Protocol: expone herramientas, por ejemplo confianza eIDAS, a agentes de IA de forma nativa.'],
+];
+
+const medios = [
+  ['Law.com', '2025: Tecnología Disruptiva'],
+  ['Financial Times', 'Innovative Lawyers: Top 10 Europa'],
+  ['Observatorio LegalTech', 'Garrigues · ICADE'],
 ];
 ---
-<Linea
-  kicker="Recursos"
-  title="Aprende la categoría antes que tu competencia."
-  intro="Blog, whitepapers, glosario y eventos del Observatorio LegalTech Garrigues-ICADE. Educación de categoría para un mercado que aún se está formando."
-  cta="Suscríbete a las novedades"
->
-  <section class="relative grain py-20 lg:py-28">
+<Base title="Recursos: g-digital | Grupo Garrigues" description="Conocimiento para decisiones informadas: blog, guías, glosario y el Observatorio LegalTech Garrigues-ICADE sobre confianza digital, contract tech, activos digitales y GRC & IA.">
+  <!-- HERO -->
+  <header class="relative grain overflow-hidden border-b border-cloud/10">
+    <Wireframe variant="grid" density="strong" class="absolute right-[-12rem] top-20 translate-y-0 w-[25rem] h-[25rem] opacity-20 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[32rem] md:h-[32rem] md:opacity-45" />
+    <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-16 lg:pt-28 lg:pb-20">
+      <p class="label text-green mb-6">Recursos</p>
+      <h1 class="head display text-cloud text-4xl sm:text-5xl lg:text-[4rem] font-semibold max-w-4xl">Conocimiento para decisiones informadas.</h1>
+      <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">Análisis y aprendizajes sobre tecnologías y soluciones donde la seguridad jurídica, la evidencia y la trazabilidad son elementos clave.</p>
+      <!-- Filtros -->
+      <div class="mt-10 flex flex-wrap gap-2.5">
+        {filtros.map((f, i) => (
+          <button type="button" data-filter={f.key} aria-pressed={i === 0 ? 'true' : 'false'} class={`filter-btn text-sm px-4 py-2 rounded-full border transition-colors ${i === 0 ? 'border-green bg-green/15 text-green' : 'border-cloud/15 text-cloud/60 hover:text-cloud hover:border-cloud/40'}`}>{f.label}</button>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <!-- BLOG -->
+  <section class="relative grain py-20 lg:py-24">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Borrador · Fase 3 (con CMS / Content Collections)</p>
-      <div class="grid md:grid-cols-2 gap-6">
-        {recursos.map(([cat, t, d]) => (
-          <article class="card rounded-2xl p-7 reveal"><span class="label text-green">{cat}</span><h3 class="head text-xl text-cloud mt-3 font-semibold leading-snug">{t}</h3><p class="text-cloud/60 text-sm mt-3">{d}</p></article>
+      <p class="label text-green mb-3">Blog</p>
+      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">La voz de g-digital.</h2>
+      <p class="mt-4 text-cloud/60 max-w-2xl">Reflexiones y análisis sobre las tecnologías que soportan operaciones donde la seguridad jurídica es crítica.</p>
+      <div id="grid" class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articulos.map((a) => (
+          <article data-cat={a.cat} class="article card rounded-2xl p-7 flex flex-col reveal">
+            <div class="flex items-center justify-between mb-4">
+              <span class="label text-green">{a.catLabel}</span>
+              <span class="mono text-[11px] text-cloud/55">{a.fecha}</span>
+            </div>
+            <h3 class="head text-lg text-cloud font-semibold leading-snug">{a.titulo}</h3>
+            <p class="text-cloud/55 text-sm mt-3 leading-relaxed flex-1">{a.extracto}</p>
+            <div class="mt-5 flex items-center justify-between">
+              <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium">Ficha editorial</span>
+              <span class="mono text-[11px] text-cloud/55">{a.min}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p id="empty" class="hidden text-cloud/50 text-sm mt-8">No hay artículos en esta categoría todavía.</p>
+    </div>
+  </section>
+
+  <!-- OBSERVATORIO -->
+  <section class="relative grain bg-coal/60 py-20 lg:py-24 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <p class="label text-green mb-6">Observatorio</p>
+        <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">LegalTech Garrigues: ICADE.</h2>
+        <p class="mt-6 text-cloud/65 leading-relaxed">Un punto de encuentro para el sector legal donde conectar e impulsar juntos la transformación del sector y aprovechar las ventajas de la tecnología. Garrigues e ICADE impulsan la investigación aplicada en tecnología legal y la formación de la próxima generación de profesionales del derecho.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="https://www.comillas.edu/investigacion/observatorio-legaltech/" class="inline-flex items-center justify-center gap-2 bg-green text-ink px-6 py-3 rounded-xl font-semibold hover:bg-lime transition-colors">Ver eventos del Observatorio <i class="ph ph-arrow-up-right"></i></a>
+          <a href="/contacto" class="inline-flex items-center justify-center gap-2 border border-cloud/25 text-cloud px-6 py-3 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Proponer colaboración</a>
+        </div>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-3 gap-5">
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-calendar-dots text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3 text-sm">Eventos y encuentros</h3><p class="text-cloud/55 text-sm mt-2">Sesiones presenciales y online con profesionales del sector legal y tecnológico.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-compass-tool text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3 text-sm">Experiencias de adopción</h3><p class="text-cloud/55 text-sm mt-2">Casos reales sobre qué funciona y qué no en la transformación digital del derecho.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-chats-circle text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3 text-sm">Conversaciones sobre desafíos</h3><p class="text-cloud/55 text-sm mt-2">Diálogo abierto sobre oportunidades y retos del sector jurídico-tecnológico.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUÉBALO / DESARROLLADORES -->
+  <section class="relative grain py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-3">Pruébalo tú mismo</p>
+      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Nuestras soluciones, accesibles hoy.</h2>
+      <p class="mt-4 text-cloud/60 max-w-2xl">No es una promesa: son productos en producción. Pruébalos, o llévate el código.</p>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="https://gocertius.io" target="_blank" rel="noopener" class="card rounded-2xl p-7 group reveal">
+          <i class="ph ph-device-mobile text-green text-3xl"></i>
+          <h3 class="head text-cloud font-semibold mt-4">GoCertius</h3>
+          <p class="text-cloud/55 text-sm mt-2">Certifica una evidencia desde el móvil, con validez eIDAS.</p>
+          <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Probar la app <i class="ph ph-arrow-up-right"></i></span>
+        </a>
+        <a href="https://eadtrust.eu" target="_blank" rel="noopener" class="card rounded-2xl p-7 group reveal">
+          <i class="ph ph-buildings text-green text-3xl"></i>
+          <h3 class="head text-cloud font-semibold mt-4">EAD Enterprise Suite</h3>
+          <p class="text-cloud/55 text-sm mt-2">Signature, Notice, eArchiving y Credential Manager en EADTrust.</p>
+          <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Ver productos <i class="ph ph-arrow-up-right"></i></span>
+        </a>
+        <a href="/soluciones/la-factoria" class="card rounded-2xl p-7 group reveal">
+          <i class="ph ph-plugs-connected text-green text-3xl"></i>
+          <h3 class="head text-cloud font-semibold mt-4">Trust API + MCP</h3>
+          <p class="text-cloud/55 text-sm mt-2">La Factoría: 4 microservicios eIDAS por API REST o por MCP.</p>
+          <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Ver la API <i class="ph ph-arrow-right"></i></span>
+        </a>
+        <a href="https://github.com/g-digital-by-Garrigues" target="_blank" rel="noopener" class="card rounded-2xl p-7 group reveal">
+          <i class="ph ph-github-logo text-green text-3xl"></i>
+          <h3 class="head text-cloud font-semibold mt-4">GitHub · desarrolladores</h3>
+          <p class="text-cloud/55 text-sm mt-2">Código, ejemplos e integraciones abiertas para tu equipo técnico.</p>
+          <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Ir a GitHub <i class="ph ph-arrow-up-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOSARIO -->
+  <section class="relative grain py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-3">Glosario</p>
+      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">El vocabulario de la categoría.</h2>
+      <p class="mt-4 text-cloud/60 max-w-2xl">Si vendemos una categoría nueva, conviene nombrarla bien. Los términos que más usamos.</p>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-x-10 gap-y-6">
+        {glosario.map(([t, d]) => (
+          <div class="border-l-2 border-green/40 pl-5 reveal"><dt class="head text-cloud font-semibold">{t}</dt><dd class="text-cloud/60 text-sm mt-1.5 leading-relaxed">{d}</dd></div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- EN LOS MEDIOS -->
+  <section class="relative grain bg-coal/60 py-16 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-cloud/55 mb-8 text-center">En los medios · reconocimientos</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {medios.map(([m, d]) => (
+          <div class="text-center reveal"><p class="head text-cloud font-semibold">{m}</p><p class="text-cloud/55 text-sm mt-1">{d}</p></div>
         ))}
       </div>
     </div>
   </section>
-</Linea>
+
+  <!-- CTA -->
+  <section class="relative grain overflow-hidden">
+    <Wireframe variant="ribbon" class="absolute left-1/2 -translate-x-1/2 -top-24 w-[34rem] h-[34rem] opacity-35 hidden md:block" accent={false} />
+    <div class="relative max-w-4xl mx-auto px-6 py-24 text-center">
+      <h2 class="head display text-3xl lg:text-5xl text-cloud font-semibold">¿Quieres profundizar?</h2>
+      <p class="mt-6 text-cloud/70 max-w-xl mx-auto">Si necesitas orientación sobre firma electrónica, CLM, GRC, IA o activos digitales, escríbenos y te recomendamos recursos según tu caso.</p>
+      <div class="mt-9"><a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Contactar con el equipo</a></div>
+    </div>
+  </section>
+
+  <script>
+    const btns = document.querySelectorAll('.filter-btn');
+    const cards = Array.from(document.querySelectorAll('.article'));
+    const empty = document.getElementById('empty');
+    btns.forEach((b) => b.addEventListener('click', () => {
+      const f = (b as HTMLElement).dataset.filter;
+      btns.forEach((x) => {
+        x.classList.remove('border-green', 'bg-green/15', 'text-green');
+        x.classList.add('border-cloud/15', 'text-cloud/60');
+        x.setAttribute('aria-pressed', 'false');
+      });
+      b.classList.add('border-green', 'bg-green/15', 'text-green');
+      b.classList.remove('border-cloud/15', 'text-cloud/60');
+      b.setAttribute('aria-pressed', 'true');
+      let shown = 0;
+      cards.forEach((c) => {
+        const match = f === 'todos' || (c as HTMLElement).dataset.cat === f;
+        (c as HTMLElement).style.display = match ? '' : 'none';
+        if (match) shown++;
+      });
+      if (empty) empty.classList.toggle('hidden', shown > 0);
+    }));
+  </script>
+</Base>

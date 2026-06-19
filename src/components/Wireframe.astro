@@ -1,14 +1,91 @@
 ---
-// Recurso gráfico de marca: wireframe geométrico de línea fina (esfera).
-interface Props { class?: string; accent?: boolean }
-const { class: cls = '', accent = true } = Astro.props;
+// Recurso gráfico de marca: wireframes geométricos de línea fina.
+interface Props {
+  class?: string;
+  accent?: boolean;
+  variant?: 'sphere' | 'tunnel' | 'spiral' | 'grid' | 'ribbon';
+  density?: 'soft' | 'strong';
+  color?: string;        // acento por línea (rgba); por defecto verde de marca
+}
+const { class: cls = '', accent = true, variant = 'sphere', density = 'soft', color } = Astro.props;
+const main = density === 'strong' ? 'rgba(244,246,245,.64)' : 'rgba(244,246,245,.42)';
+const dim = density === 'strong' ? 'rgba(244,246,245,.30)' : 'rgba(244,246,245,.18)';
+const green = color ?? (density === 'strong' ? 'rgba(12,242,93,.58)' : 'rgba(12,242,93,.36)');
 ---
 <svg viewBox="0 0 460 460" class={cls} aria-hidden="true">
-  <g class="spin-slow" fill="none" stroke="rgba(244,246,245,.14)" stroke-width="1">
-    <circle cx="230" cy="230" r="190" />
-    <ellipse cx="230" cy="230" rx="190" ry="62" /><ellipse cx="230" cy="230" rx="190" ry="120" />
-    <ellipse cx="230" cy="230" rx="62" ry="190" /><ellipse cx="230" cy="230" rx="120" ry="190" />
-    <line x1="40" y1="230" x2="420" y2="230" /><line x1="230" y1="40" x2="230" y2="420" />
-  </g>
-  {accent && <circle cx="230" cy="230" r="190" fill="none" stroke="rgba(12,242,93,.30)" stroke-width="1.5" />}
+  {variant === 'sphere' && (
+    <>
+      <g class="spin-slow" fill="none" stroke={dim} stroke-width="1">
+        <circle cx="230" cy="230" r="190" />
+        <ellipse cx="230" cy="230" rx="190" ry="62" /><ellipse cx="230" cy="230" rx="190" ry="120" />
+        <ellipse cx="230" cy="230" rx="62" ry="190" /><ellipse cx="230" cy="230" rx="120" ry="190" />
+        <line x1="40" y1="230" x2="420" y2="230" /><line x1="230" y1="40" x2="230" y2="420" />
+      </g>
+      {accent && <circle cx="230" cy="230" r="190" fill="none" stroke={green} stroke-width="1.5" />}
+    </>
+  )}
+
+  {variant === 'tunnel' && (
+    <g fill="none" stroke-linejoin="round">
+      {Array.from({ length: 12 }).map((_, i) => {
+        const inset = 38 + i * 14;
+        const size = 384 - i * 28;
+        const opacity = 0.78 - i * 0.045;
+        return <rect x={inset} y={inset} width={size} height={size} stroke={i === 1 && accent ? green : main} stroke-width={i < 3 ? 1.6 : 1} opacity={opacity} />;
+      })}
+      <path d="M38 38 L230 230 L422 38 M422 422 L230 230 L38 422" stroke={dim} />
+    </g>
+  )}
+
+  {variant === 'spiral' && (
+    <g fill="none" stroke-linecap="round" transform="translate(230 230)">
+      {Array.from({ length: 18 }).map((_, i) => (
+        <ellipse
+          cx="0"
+          cy="0"
+          rx={42 + i * 8}
+          ry={18 + i * 5}
+          transform={`rotate(${i * 14})`}
+          stroke={i === 13 && accent ? green : main}
+          stroke-width={i === 13 ? 1.6 : 1}
+          opacity={0.82 - i * 0.025}
+        />
+      ))}
+    </g>
+  )}
+
+  {variant === 'grid' && (
+    <g fill="none" stroke={main} stroke-width="1">
+      <rect x="90" y="90" width="280" height="280" />
+      {Array.from({ length: 8 }).map((_, i) => {
+        const p = 90 + i * 35;
+        return (
+          <>
+            <line x1={p} y1="90" x2="230" y2="230" opacity=".72" />
+            <line x1={p} y1="370" x2="230" y2="230" opacity=".72" />
+            <line x1="90" y1={p} x2="230" y2="230" opacity=".72" />
+            <line x1="370" y1={p} x2="230" y2="230" opacity=".72" />
+          </>
+        );
+      })}
+      {accent && <rect x="206" y="206" width="48" height="48" stroke={green} stroke-width="1.8" />}
+    </g>
+  )}
+
+  {variant === 'ribbon' && (
+    <g fill="none" stroke-linecap="round">
+      {Array.from({ length: 24 }).map((_, i) => {
+        const y = 150 + i * 7;
+        const lift = Math.sin(i / 3) * 26;
+        return (
+          <path
+            d={`M48 ${y} C140 ${80 + lift}, 210 ${292 - lift}, 304 ${180 + lift} S398 ${104 - lift}, 424 ${236 - lift}`}
+            stroke={i === 7 && accent ? green : main}
+            stroke-width={i === 7 ? 1.6 : 1}
+            opacity={0.84 - i * 0.022}
+          />
+        );
+      })}
+    </g>
+  )}
 </svg>

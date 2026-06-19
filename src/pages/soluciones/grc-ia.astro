@@ -1,5 +1,6 @@
 ---
 import Linea from '../../layouts/Linea.astro';
+import poster from '../../assets/infografias/04-grc-ia.svg?raw';
 
 const aims = [
   ['Registro', 'Catálogo completo de todos los sistemas de IA de la organización.'],
@@ -15,6 +16,8 @@ const grc = [
 ---
 <Linea
   linea="Línea 04 · nueva"
+  tone="azure"
+  motif="spiral"
   kicker="GRC & IA"
   title="IA aplicada al derecho: cumplimiento y gobernanza."
   intro="Acompañamos a Garrigues con tecnología: la pieza que hace demostrable el gobierno de tu IA. Servicio híbrido tecnología + derecho, diseñado para facilitar la conformidad con el AI Act."
@@ -56,6 +59,15 @@ const grc = [
         {grc.map((g) => (
           <article class="card rounded-2xl p-7 reveal"><i class={`ph ${g.icon} text-green text-3xl`}></i><h3 class="head text-lg text-cloud mt-4 font-semibold">{g.title}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{g.body}</p></article>
         ))}
+      </div>
+    </div>
+  </section>
+  <!-- La línea de un vistazo (infografía) -->
+  <section class="relative grain py-20 lg:py-28 border-t border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-azure mb-6">La línea de un vistazo</p>
+      <div class="max-w-[460px] mx-auto rounded-2xl border border-cloud/10 overflow-hidden shadow-2xl shadow-black/40 reveal [&>svg]:block [&>svg]:w-full [&>svg]:h-auto">
+        <Fragment set:html={poster} />
       </div>
     </div>
   </section>
