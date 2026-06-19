@@ -1,0 +1,28 @@
+---
+// Perfil objetivo (Para:) + el mismo valor en 3 idiomas de rol (Jurista / IT-Dev / Negocio).
+import { lineaBySlug } from '../consts';
+interface Props { slug: string }
+const { slug } = Astro.props;
+const l = lineaBySlug(slug);
+---
+{l && (
+  <section class="relative grain py-16 lg:py-24 border-t border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-10 reveal">
+        <span class={`label ${l.toneText}`}>Para</span>
+        <span class="text-cloud/80 text-lg">{l.para}</span>
+      </div>
+      <p class="label text-cloud/55 mb-2">El mismo valor, en tu idioma</p>
+      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Según tu rol, esto te interesa.</h2>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        {l.roles.map((r) => (
+          <div class="card rounded-2xl p-7 reveal">
+            <i class={`ph ${r.icon} ${l.toneText} text-3xl`}></i>
+            <h3 class="head text-cloud font-semibold mt-4">{r.rol}</h3>
+            <p class="text-cloud/65 text-sm mt-3 leading-relaxed">{r.txt}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
