@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://g-digital-web-sage.vercel.app/sitemap-index.xml
