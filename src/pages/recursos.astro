@@ -22,10 +22,10 @@ const glosario = [
   ['MCP', 'Model Context Protocol: expone herramientas, por ejemplo confianza eIDAS, a agentes de IA de forma nativa.'],
 ];
 
-const medios = [
-  ['Law.com', '2025: Tecnología Disruptiva'],
-  ['Financial Times', 'Innovative Lawyers: Top 10 Europa'],
-  ['Observatorio LegalTech', 'Garrigues · ICADE'],
+const medios: [string, string, string?][] = [
+  ['elderecho.com', 'Acuerdo Garrigues × Microsoft para impulsar la IA', 'https://g-digital.garrigues.com/node/14274'],
+  ['Observatorio LegalTech', 'Garrigues · ICADE', 'https://www.comillas.edu/investigacion/observatorio-legaltech/'],
+  ['Noticias', 'Los medios hablan de g-digital', 'https://g-digital.garrigues.com/es_ES/recursos/noticias'],
 ];
 ---
 <Base title="Recursos: g-digital | Grupo Garrigues" description="Conocimiento para decisiones informadas: blog, guías, glosario y el Observatorio LegalTech Garrigues-ICADE sobre confianza digital, contract tech, activos digitales y GRC & IA.">
@@ -61,7 +61,9 @@ const medios = [
             <h3 class="head text-lg text-cloud font-semibold leading-snug">{a.titulo}</h3>
             <p class="text-cloud/55 text-sm mt-3 leading-relaxed flex-1">{a.extracto}</p>
             <div class="mt-5 flex items-center justify-between">
-              <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium">Ficha editorial</span>
+              {a.url
+                ? <a href={a.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-green text-sm font-medium">Leer artículo <i class="ph ph-arrow-up-right"></i></a>
+                : <span class="inline-flex items-center gap-1.5 text-cloud/45 text-sm">En preparación</span>}
               <span class="mono text-[11px] text-cloud/55">{a.min}</span>
             </div>
           </article>
@@ -176,10 +178,12 @@ const medios = [
   <!-- EN LOS MEDIOS -->
   <section class="relative grain bg-coal/60 py-16 border-y border-cloud/10">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-cloud/55 mb-8 text-center">En los medios · reconocimientos</p>
+      <p class="label text-cloud/55 mb-8 text-center">En los medios</p>
       <div class="grid sm:grid-cols-3 gap-6">
-        {medios.map(([m, d]) => (
-          <div class="text-center reveal"><p class="head text-cloud font-semibold">{m}</p><p class="text-cloud/55 text-sm mt-1">{d}</p></div>
+        {medios.map(([m, d, u]) => (
+          u
+            ? <a href={u} target="_blank" rel="noopener" class="text-center reveal block group"><p class="head text-cloud font-semibold group-hover:text-green transition-colors">{m}</p><p class="text-cloud/55 text-sm mt-1">{d}</p></a>
+            : <div class="text-center reveal"><p class="head text-cloud font-semibold">{m}</p><p class="text-cloud/55 text-sm mt-1">{d}</p></div>
         ))}
       </div>
     </div>
