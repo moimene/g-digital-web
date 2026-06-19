@@ -1,154 +1,135 @@
 ---
 import Base from '../layouts/Base.astro';
 import Wireframe from '../components/Wireframe.astro';
-import { escenarios, LINEA_META, SECTORES, type EscLinea } from '../data/escenarios';
-
-const lineas: { key: EscLinea | 'todas'; label: string }[] = [
-  { key: 'todas', label: 'Todas' },
-  { key: 'confianza', label: 'Confianza Digital' },
-  { key: 'contract', label: 'Contract Tech' },
-  { key: 'activos', label: 'Activos Digitales' },
-  { key: 'grc', label: 'GRC & IA' },
-];
+import TrustSimulator from '../components/TrustSimulator.astro';
+import { casos } from '../data/casos-uso';
+import CertificationsBar from '../components/CertificationsBar.astro';
 ---
-<Base title="Escenarios: casos de uso | g-digital" description="Directorio de escenarios de g-digital clasificados por línea y sector: casos de uso tangibles de confianza digital, contract tech, activos digitales y GRC & IA, con una demo viva de sellado de evidencia.">
+<Base
+  title="Trust Explorer · La Factoría | g-digital"
+  description="Simulador de casos de uso de la Trust API: convierte cada operación en evidencia legal cualificada. Compara la operación sin regulación frente a la operación con Trust API (eIDAS)."
+>
   <!-- HERO -->
   <header class="relative grain overflow-hidden border-b border-cloud/10">
-    <Wireframe variant="grid" density="strong" class="absolute right-[-12rem] top-20 w-[26rem] h-[26rem] opacity-20 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[34rem] md:h-[34rem] md:opacity-50" />
+    <Wireframe variant="grid" density="strong" class="absolute right-[-12rem] top-20 w-[25rem] h-[25rem] opacity-20 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[34rem] md:h-[34rem] md:opacity-50" />
     <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-16 lg:pt-28 lg:pb-20">
-      <p class="label text-green mb-6">Escenarios</p>
-      <h1 class="head display text-cloud text-4xl sm:text-5xl lg:text-[4rem] font-semibold max-w-4xl">Casos de uso, tangibles.</h1>
-      <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">No vendemos abstracciones. Aquí tienes escenarios reales por línea y sector — y una demo que puedes ejecutar ahora mismo.</p>
+      <p class="label text-green mb-6">La Factoría · Trust Explorer</p>
+      <h1 class="head display text-cloud text-4xl sm:text-5xl lg:text-[4rem] font-semibold max-w-4xl">Cada operación, convertida en evidencia legal.</h1>
+      <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">El simulador de la Trust API: elige un caso de uso y compara, paso a paso, la misma operación <span class="text-cloud font-medium">sin regulación</span> (deuda legal) frente a <span class="text-green font-medium">con Trust API</span> (evidencia cualificada conforme a eIDAS).</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="#explorer" class="bg-green text-ink px-7 py-3.5 rounded-xl font-semibold hover:bg-lime transition-colors">Explorar casos de uso</a>
+        <a href="/soluciones/la-factoria" class="border border-cloud/25 text-cloud px-7 py-3.5 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Conoce La Factoría</a>
+      </div>
     </div>
   </header>
 
-  <!-- DEMO VIVA -->
+  <!-- EL EJE: SIN vs CON -->
   <section class="relative grain py-16 lg:py-20 border-b border-cloud/10">
-    <div class="max-w-5xl mx-auto px-6">
-      <p class="label text-green mb-3">Demo viva</p>
-      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Sella una evidencia, ahora.</h2>
-      <p class="mt-4 text-cloud/60 max-w-2xl">Escribe una operación y pulsa: tu navegador calcula el hash SHA-256 y genera una evidencia con sello de tiempo. Así de simple es <span class="text-cloud">Compliance Injection</span>.</p>
-      <div class="mt-8 grid md:grid-cols-2 gap-6 items-start">
-        <div class="card rounded-2xl p-6">
-          <label class="block text-sm text-cloud/70">Operación a certificar</label>
-          <input id="op" type="text" value="albaran.entrega · pedido 4815" class="mt-2 w-full bg-coal border border-cloud/15 rounded-lg px-4 py-3 text-cloud focus:border-green outline-none mono text-sm" />
-          <button id="sellar" type="button" class="mt-4 inline-flex items-center gap-2 bg-green text-ink px-6 py-3 rounded-xl font-semibold hover:bg-lime transition-colors">Sellar evidencia <i class="ph ph-seal-check"></i></button>
-          <p class="mono text-[11px] text-cloud/40 mt-3">* Demo 100% en tu navegador (SHA-256). En producción, el sello es cualificado por el QTSP (EADTrust).</p>
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-8">El eje de cada simulación</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-7 reveal">
+          <p class="mono text-[11px] text-red-400/90">SIN REGULACIÓN</p>
+          <h3 class="head text-xl text-cloud font-semibold mt-2 flex items-center gap-2"><i class="ph ph-warning-circle text-red-400"></i> Deuda legal</h3>
+          <p class="text-cloud/65 text-sm mt-3 leading-relaxed">La operación ocurre, pero no deja prueba con valor jurídico. El gap probatorio se acumula en silencio hasta que un juez, regulador o auditor lo reclama.</p>
         </div>
-        <div id="rescard" class="rounded-2xl p-6 bg-green/5 border border-green/30 hidden">
-          <div class="flex items-center gap-2 text-green font-semibold"><i class="ph ph-seal-check text-lg"></i> Evidencia cualificada</div>
-          <dl class="mt-4 space-y-2.5 text-sm mono">
-            <div class="flex justify-between gap-4"><dt class="text-cloud/45">ID</dt><dd id="r-id" class="text-cloud text-right"></dd></div>
-            <div class="flex justify-between gap-4"><dt class="text-cloud/45">Operación</dt><dd id="r-op" class="text-cloud text-right truncate max-w-[60%]"></dd></div>
-            <div class="flex justify-between gap-4"><dt class="text-cloud/45">Fecha (UTC)</dt><dd id="r-time" class="text-cloud text-right"></dd></div>
-            <div class="flex justify-between gap-4"><dt class="text-cloud/45">SHA-256</dt><dd id="r-hash" class="text-green text-right break-all"></dd></div>
-            <div class="flex justify-between gap-4"><dt class="text-cloud/45">Cualificada</dt><dd class="text-green text-right">true</dd></div>
+        <div class="rounded-2xl border border-green/30 bg-green/5 p-7 reveal">
+          <p class="mono text-[11px] text-green">CON TRUST API</p>
+          <h3 class="head text-xl text-cloud font-semibold mt-2 flex items-center gap-2"><i class="ph ph-seal-check text-green"></i> Evidencia cualificada</h3>
+          <p class="text-cloud/65 text-sm mt-3 leading-relaxed">La misma operación invoca los microservicios eIDAS de la Factoría y produce evidencia sellada, verificable e inmutable. La carga de la prueba se invierte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CertificationsBar />
+
+  <!-- SIMULADOR (componente reutilizable) -->
+  <TrustSimulator
+    casos={casos}
+    kicker="Casos de uso"
+    title="Elige una operación para simularla."
+    subtitle="Ocho casos reales de distintos sectores. Cada uno muestra el evento del cliente, la llamada a la API y el resultado legal con y sin la capa de confianza."
+  />
+
+  <!-- DEMOSTRADORES SECTORIALES -->
+  <section class="relative grain py-20 lg:py-24 border-t border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-3">Demostradores sectoriales</p>
+      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Profundiza por sector.</h2>
+      <p class="mt-4 text-cloud/60 max-w-2xl">Recorridos completos de un proceso real, fase a fase, con su expediente probatorio y los managers que intervienen.</p>
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <a href="/escenarios/banca" class="card rounded-2xl p-7 group reveal" style="--tone:#22D3EE">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:#22D3EE1f;color:#22D3EE"><i class="ph ph-bank text-2xl"></i></span>
+            <span class="mono text-[10px] text-cloud/50">5 escenarios A–E</span>
+          </div>
+          <h3 class="head text-xl text-cloud font-semibold group-hover:text-green transition-colors">Banca · crédito al consumo</h3>
+          <p class="text-cloud/60 text-sm mt-2 leading-relaxed">Oferta preconcedida, modificación contractual, línea in-app, crédito estándar y originación con agente IA. Expediente probatorio fase a fase.</p>
+          <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Abrir demostrador <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+        </a>
+        <a href="/escenarios/seguros" class="card rounded-2xl p-7 group reveal" style="--tone:#5B9CF6">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-11 h-11 rounded-xl flex items-center justify-center" style="background:#5B9CF61f;color:#5B9CF6"><i class="ph ph-shield-check text-2xl"></i></span>
+            <span class="mono text-[10px] text-cloud/50">5 casos de uso</span>
+          </div>
+          <h3 class="head text-xl text-cloud font-semibold group-hover:text-green transition-colors">Seguros · ciclo de póliza</h3>
+          <p class="text-cloud/60 text-sm mt-2 leading-relaxed">Cotización con IPID, test de exigencias, declaración de salud, suscripción IBIP y siniestro con fotos certificadas. Evidencia conforme a IDD/LCS.</p>
+          <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Abrir demostrador <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO SHA-256 EN VIVO -->
+  <section class="relative grain py-20 lg:py-24 border-t border-cloud/10">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="label text-green mb-3">Pruébalo · en tu navegador</p>
+      <h2 class="head display text-3xl lg:text-[2.2rem] text-cloud font-semibold">Sella una evidencia ahora mismo.</h2>
+      <p class="mt-4 text-cloud/60">Escribe cualquier operación: tu navegador calcula su huella SHA-256 y le pone fecha. Es el mismo principio que el Evidence Manager — aquí sin valor cualificado, solo para ilustrar.</p>
+      <div class="mt-8 card rounded-2xl p-6">
+        <label for="op" class="label text-cloud/55">Operación</label>
+        <textarea id="op" rows="3" class="mt-2 w-full rounded-xl bg-ink border border-cloud/15 p-4 text-cloud text-sm focus:border-green focus:outline-none" placeholder="Ej.: Aceptación de oferta por María García, pedido #45892…"></textarea>
+        <button id="sellar" class="mt-4 bg-green text-ink px-6 py-3 rounded-xl font-semibold hover:bg-lime transition-colors inline-flex items-center gap-2"><i class="ph ph-seal"></i> Sellar evidencia</button>
+        <div id="rescard" class="hidden mt-6 rounded-xl border border-green/30 bg-green/5 p-5">
+          <p class="mono text-[11px] text-green mb-3">EVIDENCIA SELLADA</p>
+          <dl class="space-y-2 text-sm">
+            <div class="flex gap-3"><dt class="mono text-[11px] text-cloud/45 w-24 shrink-0">event_id</dt><dd id="r-id" class="mono text-cloud/80 break-all"></dd></div>
+            <div class="flex gap-3"><dt class="mono text-[11px] text-cloud/45 w-24 shrink-0">timestamp</dt><dd id="r-time" class="mono text-cloud/80"></dd></div>
+            <div class="flex gap-3"><dt class="mono text-[11px] text-cloud/45 w-24 shrink-0">sha-256</dt><dd id="r-hash" class="mono text-green break-all"></dd></div>
           </dl>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DIRECTORIO -->
-  <section class="relative grain py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <p class="label text-green mb-3">Directorio</p>
-          <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold"><span id="esc-count">{escenarios.length}</span> escenarios por línea y sector.</h2>
-        </div>
-        <p class="mono text-[11px] text-cloud/45 max-w-xs">Selección inicial. Escalable al catálogo completo (+298) por línea, sector y caso.</p>
-      </div>
-
-      <!-- Filtros -->
-      <div class="mt-8 flex flex-wrap gap-2.5">
-        {lineas.map((l, i) => (
-          <button type="button" data-fl={l.key} class={`fbtn-l text-sm px-4 py-2 rounded-full border transition-colors ${i === 0 ? 'border-green bg-green/15 text-green' : 'border-cloud/15 text-cloud/60 hover:text-cloud hover:border-cloud/40'}`}>{l.label}</button>
-        ))}
-      </div>
-      <div class="mt-3 flex flex-wrap gap-2">
-        <button type="button" data-fs="todos" class="fbtn-s text-xs px-3 py-1.5 rounded-full border border-green/40 bg-green/10 text-green transition-colors">Todos los sectores</button>
-        {SECTORES.map((s) => (
-          <button type="button" data-fs={s} class="fbtn-s text-xs px-3 py-1.5 rounded-full border border-cloud/15 text-cloud/55 hover:text-cloud hover:border-cloud/40 transition-colors">{s}</button>
-        ))}
-      </div>
-
-      <!-- Grid -->
-      <div id="esc-grid" class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {escenarios.map((e) => (
-          <article data-linea={e.linea} data-sector={e.sector} class="esc-card card rounded-2xl p-6 reveal flex flex-col">
-            <div class="flex items-center justify-between mb-3">
-              <span class={`label ${LINEA_META[e.linea].toneText}`}>{LINEA_META[e.linea].label}</span>
-              <span class="mono text-[11px] text-cloud/45">{e.sector}</span>
-            </div>
-            <h3 class="head text-cloud font-semibold leading-snug">{e.titulo}</h3>
-            <p class="text-cloud/55 text-sm mt-2 leading-relaxed flex-1">{e.dolor}</p>
-            <div class="mt-4 pt-3 border-t border-cloud/10 flex items-center justify-between gap-3 text-[11px] mono">
-              <span class={LINEA_META[e.linea].toneText}>{e.servicio}</span>
-              <span class="text-cloud/45 text-right">{e.norma}</span>
-            </div>
-          </article>
-        ))}
-      </div>
-      <p id="esc-empty" class="hidden text-cloud/50 text-sm mt-8">No hay escenarios para esa combinación todavía.</p>
-    </div>
-  </section>
-
   <!-- CTA -->
   <section class="relative grain overflow-hidden border-t border-cloud/10">
+    <Wireframe variant="sphere" class="absolute left-1/2 -translate-x-1/2 -top-28 w-[34rem] h-[34rem] opacity-30 hidden md:block" accent={false} />
     <div class="relative max-w-4xl mx-auto px-6 py-24 text-center">
-      <h2 class="head display text-3xl lg:text-5xl text-cloud font-semibold">¿No ves tu caso?</h2>
-      <p class="mt-6 text-cloud/70 max-w-xl mx-auto">Mapeamos tus operaciones críticas y te decimos qué escenarios aplican y cómo integrarlos.</p>
+      <h2 class="head display text-3xl lg:text-5xl text-cloud font-semibold">¿Tu operación está generando deuda legal?</h2>
+      <p class="mt-6 text-cloud/70 max-w-xl mx-auto">Cuéntanos tu proceso crítico y te mostramos qué evidencia cualificada produciría con la Trust API.</p>
       <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Mapear mis escenarios</a>
-        <a href="/recursos#desarrolladores" class="border border-cloud/25 text-cloud px-8 py-4 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Recursos para desarrolladores</a>
+        <a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Pon tu reto sobre la mesa</a>
+        <a href="/soluciones/la-factoria" class="border border-cloud/25 text-cloud px-8 py-4 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Ver La Factoría</a>
       </div>
     </div>
   </section>
 
   <script>
-    // Demo viva: sellado SHA-256 en el navegador
-    const sellar = document.getElementById('sellar');
-    sellar?.addEventListener('click', async () => {
-      const op = (document.getElementById('op') as HTMLInputElement)?.value?.trim() || 'operacion.demo';
-      const ts = new Date().toISOString();
-      let hex = '';
-      try {
-        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(op + '|' + ts));
-        hex = Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('');
-      } catch {
-        hex = Math.random().toString(16).slice(2).padEnd(64, '0');
-      }
-      const set = (id: string, v: string) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-      set('r-id', 'EV-' + ts.slice(0, 10).replace(/-/g, '') + '-' + hex.slice(0, 6).toUpperCase());
-      set('r-op', op);
-      set('r-time', ts.replace('T', ' ').slice(0, 19));
-      set('r-hash', hex.slice(0, 28) + '…');
-      document.getElementById('rescard')?.classList.remove('hidden');
-    });
-
-    // Filtros del directorio (línea + sector)
-    let fl = 'todas', fs = 'todos';
-    const cards = Array.from(document.querySelectorAll('.esc-card')) as HTMLElement[];
-    const count = document.getElementById('esc-count');
-    const empty = document.getElementById('esc-empty');
-    const apply = () => {
-      let shown = 0;
-      cards.forEach((c) => {
-        const ok = (fl === 'todas' || c.dataset.linea === fl) && (fs === 'todos' || c.dataset.sector === fs);
-        c.style.display = ok ? '' : 'none';
-        if (ok) shown++;
+    const byId = (id) => document.getElementById(id);
+    const sellar = byId('sellar');
+    if (sellar) {
+      sellar.addEventListener('click', async () => {
+        const op = (byId('op') as HTMLTextAreaElement).value.trim() || 'Operación de ejemplo';
+        const enc = new TextEncoder().encode(op + '|' + new Date().toISOString());
+        const buf = await crypto.subtle.digest('SHA-256', enc);
+        const hash = Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('');
+        byId('r-id')!.textContent = 'ev_' + hash.slice(0, 12);
+        byId('r-time')!.textContent = new Date().toISOString();
+        byId('r-hash')!.textContent = hash;
+        byId('rescard')!.classList.remove('hidden');
       });
-      if (count) count.textContent = String(shown);
-      empty?.classList.toggle('hidden', shown > 0);
-    };
-    const activate = (btns: HTMLElement[], el: HTMLElement, on: string[], off: string[]) => {
-      btns.forEach((b) => { b.classList.remove(...on); b.classList.add(...off); });
-      el.classList.remove(...off); el.classList.add(...on);
-    };
-    const lBtns = Array.from(document.querySelectorAll('.fbtn-l')) as HTMLElement[];
-    const sBtns = Array.from(document.querySelectorAll('.fbtn-s')) as HTMLElement[];
-    lBtns.forEach((b) => b.addEventListener('click', () => { fl = b.dataset.fl || 'todas'; activate(lBtns, b, ['border-green', 'bg-green/15', 'text-green'], ['border-cloud/15', 'text-cloud/60']); apply(); }));
-    sBtns.forEach((b) => b.addEventListener('click', () => { fs = b.dataset.fs || 'todos'; activate(sBtns, b, ['border-green/40', 'bg-green/10', 'text-green'], ['border-cloud/15', 'text-cloud/55']); apply(); }));
+    }
   </script>
 </Base>

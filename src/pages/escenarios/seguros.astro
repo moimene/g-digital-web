@@ -1,0 +1,48 @@
+---
+import Base from '../../layouts/Base.astro';
+import Wireframe from '../../components/Wireframe.astro';
+import TrustSimulator from '../../components/TrustSimulator.astro';
+import { casosSeguros } from '../../data/casos-seguros';
+import CertificationsBar from '../../components/CertificationsBar.astro';
+
+const ACCENT = '#5B9CF6';
+const LIVE = 'https://eidas-car-insure-flow.lovable.app';
+---
+<Base
+  title="Demostrador Seguros · ciclo de póliza | g-digital"
+  description="Cómo la Trust API convierte el ciclo de una póliza en evidencia cualificada: cotización con IPID, test de exigencias, declaración de salud, suscripción IBIP y siniestro con fotos certificadas, conforme a IDD y LCS."
+>
+  <header class="relative grain overflow-hidden border-b border-cloud/10">
+    <Wireframe variant="sphere" density="strong" color={`${ACCENT}80`} class="absolute right-[-12rem] top-20 w-[25rem] h-[25rem] opacity-20 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[34rem] md:h-[34rem] md:opacity-45" />
+    <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-16 lg:pt-28 lg:pb-20">
+      <a href="/escenarios" class="inline-flex items-center gap-1.5 text-cloud/55 hover:text-cloud text-sm mb-6"><i class="ph ph-arrow-left"></i> Trust Explorer</a>
+      <p class="label mb-6" style={`color:${ACCENT}`}>Demostrador sectorial · Seguros</p>
+      <h1 class="head display text-cloud text-4xl sm:text-5xl lg:text-[3.8rem] font-semibold max-w-4xl">La deuda legal de los procesos de seguro.</h1>
+      <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">Las aseguradoras han digitalizado la contratación, los siniestros y la relación con sus clientes, pero siguen teniendo dificultades para demostrar qué se informó, qué se declaró y cuándo. Estos casos del ciclo de póliza convierten cada interacción en evidencia verificable conforme a IDD y LCS.</p>
+      <div class="mt-9 flex flex-col sm:flex-row gap-4">
+        <a href="#explorer" class="bg-green text-ink px-7 py-3.5 rounded-xl font-semibold hover:bg-lime transition-colors">Explorar casos</a>
+        <a href={LIVE} target="_blank" rel="noopener" class="border border-cloud/25 text-cloud px-7 py-3.5 rounded-xl font-medium hover:bg-cloud/5 transition-colors inline-flex items-center gap-2">Ver demostrador completo <i class="ph ph-arrow-up-right"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <CertificationsBar />
+
+  <TrustSimulator
+    casos={casosSeguros}
+    kicker="Seguros · ciclo de póliza"
+    title="Elige una operación del ciclo de póliza."
+    subtitle="Cinco casos reales del sector asegurador. Cada uno muestra el evento, la llamada a la API y el resultado legal con y sin la capa de confianza."
+  />
+
+  <section class="relative grain overflow-hidden border-t border-cloud/10">
+    <div class="relative max-w-4xl mx-auto px-6 py-20 text-center">
+      <h2 class="head display text-3xl lg:text-4xl text-cloud font-semibold">¿Quieres este recorrido para tu aseguradora?</h2>
+      <p class="mt-5 text-cloud/70 max-w-xl mx-auto">Lo adaptamos a tus procesos —contratación, siniestros, IBIP— y te mostramos el expediente probatorio resultante.</p>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Solicitar workshop sectorial</a>
+        <a href="/soluciones/la-factoria" class="border border-cloud/25 text-cloud px-8 py-4 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Ver La Factoría</a>
+      </div>
+    </div>
+  </section>
+</Base>

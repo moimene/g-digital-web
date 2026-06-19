@@ -1,5 +1,6 @@
 ---
 import Linea from '../../layouts/Linea.astro';
+import CertificationsBar from '../../components/CertificationsBar.astro';
 
 const stack = [
   { icon: 'ph-fingerprint', title: 'Evidence Manager', sub: 'Inmutabilidad como servicio', body: 'Hashing SHA-256 + Qualified Timestamping (TSA). Perfiles XAdES-T/LTA con re-sellado. Verificabilidad offline.', law: 'Presunción de fecha (Art. 41.2 eIDAS) · Inversión de carga (Art. 326.4 LEC)' },
@@ -17,6 +18,8 @@ const stack = [
   intro="Inyectamos servicios eIDAS por API o por MCP, para agentes de IA, de modo que cada operación sea evidencia probatoria. Sin migrar plataformas. Con QTSP propio del Grupo Garrigues. +298 escenarios en 18 sectores."
   cta="Probar Trust API en tu proceso crítico"
 >
+  <CertificationsBar />
+
   <!-- Deuda Legal -->
   <section class="relative grain py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6 text-center">
@@ -52,6 +55,25 @@ const stack = [
       <div class="rounded-2xl bg-green/10 border border-green/30 p-8 reveal">
         <p class="text-green font-semibold flex items-center gap-2 text-lg"><i class="ph ph-robot"></i> Agent-ready: confianza cualificada por MCP</p>
         <p class="text-cloud/75 mt-3 leading-relaxed">Expón los mismos cuatro microservicios como servidor <span class="mono text-cloud">MCP</span>. Tus agentes de IA invocan firma, sello o entrega como herramienta nativa, con los guardrails del QTSP y trazabilidad de cada invocación. La acumulación de innovación que diferencia a g-digital: de la API al agente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Explorer · casos de uso -->
+  <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <p class="label text-green mb-4">Trust Explorer · casos de uso</p>
+        <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Míralo en una operación real.</h2>
+        <p class="mt-5 text-cloud/70 leading-relaxed">Elige un caso de uso y compara, paso a paso, la misma operación <span class="text-cloud font-medium">sin regulación</span> (deuda legal) frente a <span class="text-green font-medium">con Trust API</span>: evento del cliente → llamada a la API → resultado legal, con el flujo de los cuatro managers.</p>
+        <div class="mt-7 flex flex-wrap gap-2.5">
+          {['Logística', 'InsurTech', 'PropTech', 'FinTech', 'Salud', 'Food', 'Energy · PPA', 'Banca'].map((s) => (
+            <span class="mono text-[11px] px-2.5 py-1 rounded-full border border-cloud/15 text-cloud/60">{s}</span>
+          ))}
+        </div>
+      </div>
+      <div class="lg:col-span-5 lg:text-right">
+        <a href="/escenarios" class="inline-flex items-center gap-2 bg-green text-ink px-7 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Abrir el Trust Explorer <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
   </section>
