@@ -6,7 +6,7 @@ const { phrases } = Astro.props;
 const first = phrases[0] ?? '';
 const phrasesJson = JSON.stringify(phrases);
 ---
-<span class="hero-roller" data-hero-roller data-phrases={phrasesJson} set:html={first}></span>
+<span class="hero-roller cursor-blink" data-hero-roller data-phrases={phrasesJson} set:html={first}></span>
 
 <script>
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

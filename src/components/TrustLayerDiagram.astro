@@ -1,0 +1,88 @@
+---
+// Trust Layer — diagrama animado nativo (curvas SVG + partículas SMIL).
+// Recreación de la animación conceptual de la flagship, en la marca g-digital.
+// Tus sistemas → una llamada a la Trust API → servicios cualificados eIDAS.
+const systems = [
+  { icon: 'ph-database', label: 'ERP' },
+  { icon: 'ph-users-three', label: 'CRM' },
+  { icon: 'ph-folders', label: 'ECM' },
+  { icon: 'ph-device-mobile', label: 'Apps' },
+  { icon: 'ph-flow-arrow', label: 'Low-Code' },
+];
+const conns = ['SDK', 'REST', 'API', 'POST', 'Webhook'];
+const services = [
+  { icon: 'ph-fingerprint', label: 'Evidence' },
+  { icon: 'ph-pen-nib', label: 'Signature' },
+  { icon: 'ph-envelope-simple', label: 'Notification' },
+  { icon: 'ph-archive', label: 'Custody' },
+];
+const systemX = [10, 30, 50, 70, 90];
+const serviceX = [12.5, 37.5, 62.5, 87.5];
+const sysP = systemX.flatMap((_x, i) => [0, 0.85].map((b) => ({ i, begin: (i * 0.18 + b).toFixed(2) })));
+const svcP = serviceX.flatMap((_x, i) => [0.4, 1.25].map((b) => ({ i, begin: (i * 0.2 + b).toFixed(2) })));
+---
+<div class="relative w-full max-w-4xl mx-auto rounded-2xl border border-cloud/10 overflow-hidden reveal" style="aspect-ratio:16/9;background:radial-gradient(120% 80% at 50% 50%, rgba(12,242,93,.06), transparent 70%)">
+  <!-- Curvas + partículas -->
+  <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+    {systemX.map((x, i) => (
+      <path id={`tl-sp${i}`} d={`M ${x} 28 C ${x} 35, 50 35, 50 42`} fill="none" stroke="rgba(244,246,245,.26)" stroke-width="0.35" />
+    ))}
+    {serviceX.map((x, i) => (
+      <path id={`tl-cp${i}`} d={`M 50 58 C 50 65, ${x} 65, ${x} 72`} fill="none" stroke="rgba(244,246,245,.26)" stroke-width="0.35" />
+    ))}
+    {sysP.map((p) => (
+      <circle r="1.2" fill="#F4F6F5" class="flow-dot" opacity="0">
+        <animateMotion dur="1.7s" begin={`${p.begin}s`} repeatCount="indefinite"><mpath href={`#tl-sp${p.i}`} /></animateMotion>
+        <animate attributeName="opacity" dur="1.7s" begin={`${p.begin}s`} repeatCount="indefinite" values="0;1;1;0.2" keyTimes="0;0.18;0.8;1" />
+      </circle>
+    ))}
+    {svcP.map((p) => (
+      <circle r="1.2" fill="#0CF25D" class="flow-dot" opacity="0">
+        <animateMotion dur="1.6s" begin={`${p.begin}s`} repeatCount="indefinite"><mpath href={`#tl-cp${p.i}`} /></animateMotion>
+        <animate attributeName="opacity" dur="1.6s" begin={`${p.begin}s`} repeatCount="indefinite" values="0;1;1;0" keyTimes="0;0.18;0.8;1" />
+      </circle>
+    ))}
+  </svg>
+
+  <!-- Nodos -->
+  <div class="absolute inset-0 flex flex-col">
+    <div class="h-[7%] flex items-center justify-center"><span class="label text-green text-[10px]">Trust Layer</span></div>
+
+    <div class="h-[19%] flex items-center justify-around px-3">
+      {systems.map((s) => (
+        <div class="flex flex-col items-center gap-1.5">
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-coal border-2 border-cloud/25 grid place-items-center shadow-lg shadow-black/30"><i class={`ph ${s.icon} text-green text-base sm:text-xl`}></i></div>
+          <span class="text-[9px] sm:text-xs text-cloud/80 font-medium">{s.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="h-[6%] flex items-center justify-around px-3">
+      {conns.map((c) => (<span class="mono text-[8px] sm:text-[10px] text-green/70">{c}</span>))}
+    </div>
+
+    <div class="h-[8%]"></div>
+
+    <div class="h-[18%] flex items-center justify-center">
+      <div class="relative pulse-glow rounded-full">
+        <div class="relative flex items-center gap-2 sm:gap-3 pl-5 pr-2 py-1.5 sm:py-2 rounded-full border-2 border-green/50" style="background:linear-gradient(90deg,var(--teal),var(--green))">
+          <span class="head font-bold text-ink text-sm sm:text-lg tracking-wide">Trust API</span>
+          <span class="w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-white/70 bg-white grid place-items-center spin-slow"><img src="/certifications/eidas-seal.png" alt="eIDAS QTSP" class="w-full h-full object-contain p-0.5" loading="lazy" /></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-[14%]"></div>
+
+    <div class="h-[20%] flex items-center justify-around px-3">
+      {services.map((s) => (
+        <div class="flex flex-col items-center gap-1.5">
+          <div class="w-9 h-9 sm:w-12 sm:h-12 rounded-xl bg-coal border-2 border-green/45 grid place-items-center shadow-lg shadow-green/10"><i class={`ph ${s.icon} text-green text-base sm:text-xl`}></i></div>
+          <span class="text-[9px] sm:text-xs text-cloud/60 font-medium">{s.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="h-[8%] flex items-center justify-center"><span class="mono text-[8px] sm:text-[10px] text-cloud/45">Servicios cualificados · eIDAS UE 910/2014</span></div>
+  </div>
+</div>

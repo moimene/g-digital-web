@@ -1,6 +1,7 @@
 ---
 import Linea from '../../layouts/Linea.astro';
 import CertificationsBar from '../../components/CertificationsBar.astro';
+import TrustLayerDiagram from '../../components/TrustLayerDiagram.astro';
 
 const stack = [
   { icon: 'ph-fingerprint', title: 'Evidence Manager', sub: 'Inmutabilidad como servicio', body: 'Hashing SHA-256 + Qualified Timestamping (TSA). Perfiles XAdES-T/LTA con re-sellado. Verificabilidad offline.', law: 'Presunción de fecha (Art. 41.2 eIDAS) · Inversión de carga (Art. 326.4 LEC)' },
@@ -45,6 +46,18 @@ const stack = [
             <p class="mono text-[11px] text-cloud/60 mt-4 border-t border-cloud/10 pt-3">{s.law}</p>
           </article>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cómo se integra · Trust Layer animado -->
+  <section class="relative grain py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label text-green mb-6">Cómo se integra</p>
+      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">Tu sistema + una llamada REST.</h2>
+      <p class="mt-5 text-cloud/70 max-w-2xl leading-relaxed">No te obligamos a usar nuestra plataforma — <span class="text-cloud font-medium">nos integramos en la tuya</span>. Tu ERP, CRM, ECM, tus apps o tu low-code invocan la Trust API, y cada operación vuelve convertida en evidencia cualificada eIDAS.</p>
+      <div class="mt-12">
+        <TrustLayerDiagram />
       </div>
     </div>
   </section>

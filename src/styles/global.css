@@ -50,8 +50,25 @@ body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-ser
 .stamp{transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s ease;transform:scale(1.08);opacity:0}
 .stamp.in{transform:scale(1);opacity:1}
 
+/* ===== Animaciones (portadas de la flagship, adaptadas a marca) ===== */
+/* Texto con degradado verde→lima */
+.gradient-green{background:linear-gradient(120deg,var(--green),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+/* Glow en hover para CTAs verdes (aplica en todo el sitio) */
+a.bg-green,button.bg-green{transition:box-shadow .3s ease,background-color .15s ease,transform .15s ease}
+a.bg-green:hover,button.bg-green:hover{box-shadow:0 0 30px rgba(12,242,93,.42)}
+/* Glow pulsante (para el bar de Trust API) */
+.pulse-glow{animation:pulseGlow 2.6s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 24px rgba(12,242,93,.34)}50%{box-shadow:0 0 50px rgba(12,242,93,.62)}}
+/* Card con glow además del lift */
+.card-glow:hover{box-shadow:0 18px 50px -18px rgba(0,0,0,.55),0 0 60px -22px rgba(12,242,93,.38)}
+/* Cursor parpadeante estilo terminal */
+.cursor-blink::after{content:"▋";margin-left:.05em;color:var(--green);animation:blink 1.05s step-end infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
 @media (prefers-reduced-motion: reduce){
   .reveal,.stamp,.hero-roller{transition:none;opacity:1;transform:none}
-  .spin-slow{animation:none}
+  .spin-slow,.pulse-glow{animation:none}
+  .cursor-blink::after{animation:none}
+  .flow-dot{display:none}
   html{scroll-behavior:auto}
 }
