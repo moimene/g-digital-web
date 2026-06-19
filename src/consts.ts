@@ -20,6 +20,7 @@ export const NAV = [
   { href: '/soluciones/la-factoria', label: 'La Factoría' },
   { href: '/escenarios', label: 'Escenarios' },
   { href: '/recursos', label: 'Recursos' },
+  { href: '/nosotros', label: 'Nosotros' },
 ];
 
 // Fuente única de las 4 líneas (home, mapa, infografías, mensajes por rol).
