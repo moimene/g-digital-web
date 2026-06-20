@@ -16,9 +16,15 @@ export const SOLUCIONES = [
   { href: '/soluciones/grc-ia', icon: 'ph-brain', title: 'GRC & IA', desc: 'GRC Compass · AIMS Console' },
 ];
 
+// Submenú de La Factoría (incluye el Trust Explorer / Escenarios y los sectoriales)
+export const FACTORIA = [
+  { href: '/soluciones/la-factoria', icon: 'ph-lightning', title: 'La Factoría', desc: 'Trust API + MCP · el producto' },
+  { href: '/escenarios', icon: 'ph-flow-arrow', title: 'Trust Explorer', desc: 'Casos de uso · simulador en vivo' },
+  { href: '/escenarios/banca', icon: 'ph-bank', title: 'Banca', desc: 'Crédito al consumo · fase a fase' },
+  { href: '/escenarios/seguros', icon: 'ph-shield-check', title: 'Seguros', desc: 'Ciclo de póliza · IDD/LCS' },
+];
+
 export const NAV = [
-  { href: '/soluciones/la-factoria', label: 'La Factoría' },
-  { href: '/escenarios', label: 'Escenarios' },
   { href: '/recursos', label: 'Recursos' },
   { href: '/nosotros', label: 'Nosotros' },
 ];
