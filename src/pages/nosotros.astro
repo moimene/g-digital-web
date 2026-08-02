@@ -7,10 +7,11 @@ const IMG = 'https://g-digital.garrigues.com/sites/default/files/g-digital/';
 const VID = 'https://g-digital.garrigues.com/themes/custom/gdigitaltheme/videos/';
 const POSTER = 'https://g-digital.garrigues.com/themes/custom/gdigitaltheme/img/gdigital/banner_home.jpg';
 
-const triada = [
-  { icon: 'ph-scales', name: 'Garrigues', tag: 'El primer despacho de la UE', body: 'Firma internacional de servicios legales y fiscales que asesora a nivel local, regional y global desde todos los ángulos del derecho de los negocios.' },
-  { icon: 'ph-globe-hemisphere-west', name: 'Garrigues Digital', tag: 'Equipo experto en derecho digital', body: 'Equipo transversal de profesionales que, desde las distintas áreas de práctica, asesora a las empresas en torno al negocio digital (TechLaw).' },
-  { icon: 'ph-code', name: 'g-digital', tag: 'Desarrolladores de LawTech', body: 'Desarrolla soluciones tecnológicas avanzadas para los servicios legales y actúa como palanca interna de transformación digital del despacho.' },
+const capacidades = [
+  { phase: '01 · Diseño jurídico', icon: 'ph-scales', name: 'Garrigues', tag: 'El primer despacho de la UE', body: 'Firma internacional de servicios legales y fiscales que asesora a nivel local, regional y global desde todos los ángulos del derecho de los negocios.' },
+  { phase: '02 · Derecho digital', icon: 'ph-globe-hemisphere-west', name: 'Garrigues Digital', tag: 'Equipo experto en derecho digital', body: 'Equipo transversal de profesionales que, desde las distintas áreas de práctica, asesora a las empresas en torno al negocio digital (TechLaw).' },
+  { phase: '03 · Tecnología y producto', icon: 'ph-code', name: 'g-digital', tag: 'Desarrolladores de LawTech', body: 'Desarrolla soluciones tecnológicas avanzadas para los servicios legales y actúa como palanca interna de transformación digital del despacho.' },
+  { phase: '04 · Prestación cualificada', icon: 'ph-seal-check', name: 'EADTrust', tag: 'QTSP regulado · participación del 51%', body: 'Prestador cualificado de servicios de confianza (eIDAS). Opera y custodia —en un entorno regulado y supervisado— lo que g-digital diseña e implementa.' },
 ];
 
 const partners = [
@@ -68,15 +69,16 @@ const gobierno = [
     </div>
   </section>
 
-  <!-- Somos Garrigues -->
+  <!-- Modelo 360 de capacidades -->
   <section class="relative grain py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Somos Garrigues</p>
-      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Tecnología y legalidad, integradas desde el diseño.</h2>
-      <p class="mt-5 text-cloud/65 max-w-2xl">Los expertos del despacho en TechLaw trabajan estrechamente con los tecnólogos de g-digital en el diseño de cada solución. Esa colaboración es el factor distintivo que hace nuestros productos innovadores y de confianza.</p>
-      <div class="mt-12 grid md:grid-cols-3 gap-6">
-        {triada.map((t) => (
+      <p class="label text-green mb-6">Modelo 360 de capacidades</p>
+      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Del diseño jurídico a la implementación, en una sola casa.</h2>
+      <p class="mt-5 text-cloud/65 max-w-2xl">No es una suma de proveedores: es una capacidad <span class="text-green">360º</span> que cubre todo el ciclo de una solución digital — del <span class="text-cloud/90">diseño jurídico</span> a la <span class="text-cloud/90">implementación tecnológica</span> y su <span class="text-cloud/90">prestación en un entorno cualificado y regulado</span>. Esa integración extremo a extremo es lo que hace nuestros productos innovadores y de confianza.</p>
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {capacidades.map((t) => (
           <article class="card rounded-2xl p-7 reveal">
+            <p class="mono text-green text-xs mb-3">{t.phase}</p>
             <i class={`ph ${t.icon} text-green text-3xl`}></i>
             <h3 class="head text-xl text-cloud mt-4 font-semibold">{t.name}</h3>
             <p class="label text-cloud/55 mt-2">{t.tag}</p>
