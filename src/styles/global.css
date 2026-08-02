@@ -1,37 +1,164 @@
-/* ===== g-digital · estilos globales (marca oficial) ===== */
+/* ===== g-digital · estilos globales (marca oficial) =====
+   Sistema "Tinta y Papel" (rediseño editorial v4):
+   - Tinta: superficies oscuras (hero, producto, CTA, footer).
+   - Papel: superficies claras de lectura editorial (problema, recursos, nosotros).
+   - El verde #0CF25D es SEÑAL (acción/dato), nunca decoración.
+   Fuentes self-hosted vía @fontsource (sin CDN de terceros). */
+
+@import '@fontsource/poppins/latin-400.css';
+@import '@fontsource/poppins/latin-500.css';
+@import '@fontsource/poppins/latin-500-italic.css';
+@import '@fontsource/poppins/latin-600.css';
+@import '@fontsource/poppins/latin-700.css';
+@import '@fontsource/rubik/latin-300.css';
+@import '@fontsource/rubik/latin-400.css';
+@import '@fontsource/rubik/latin-500.css';
+@import '@fontsource/rubik/latin-600.css';
+@import '@fontsource/rubik/latin-700.css';
+@import '@fontsource/jetbrains-mono/latin-400.css';
+@import '@fontsource/jetbrains-mono/latin-500.css';
+@import './phosphor-subset.css';
+
 :root{
   --green:#0CF25D; --lime:#CCF943; --teal:#007362; --navy:#143259;
   --ink:#05060A; --coal:#0C0E12; --cloud:#F4F6F5;
+  --paper:#FAFAFA; --paper-2:#EFF2F0;
 }
-html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-serif;-webkit-font-smoothing:antialiased}
+
+/* ---------- Superficies: definen texto, línea y acento locales ---------- */
+/* Uso: <section class="surface-paper"> … clases semánticas .t1/.t2/.t3, .rule, .card-s … */
+.surface-ink{
+  background:var(--ink);color:var(--cloud);
+  --t1:var(--cloud); --t2:rgba(244,246,245,.74); --t3:rgba(244,246,245,.56);
+  --line:rgba(244,246,245,.10); --line-strong:rgba(244,246,245,.22);
+  --accent:var(--green); --accent-rgb:12,242,93;
+  --card-bg:rgba(255,255,255,.025); --card-line:rgba(244,246,245,.09);
+  --focus:var(--green);
+}
+.surface-coal{
+  background:var(--coal);color:var(--cloud);
+  --t1:var(--cloud); --t2:rgba(244,246,245,.74); --t3:rgba(244,246,245,.56);
+  --line:rgba(244,246,245,.10); --line-strong:rgba(244,246,245,.22);
+  --accent:var(--green); --accent-rgb:12,242,93;
+  --card-bg:rgba(255,255,255,.03); --card-line:rgba(244,246,245,.10);
+  --focus:var(--green);
+}
+.surface-paper{
+  background:var(--paper);color:var(--navy);
+  --t1:var(--navy); --t2:rgba(20,50,89,.80); --t3:rgba(20,50,89,.70);
+  --line:rgba(20,50,89,.14); --line-strong:rgba(20,50,89,.30);
+  --accent:var(--teal); --accent-rgb:0,115,98;
+  --card-bg:#FFFFFF; --card-line:rgba(20,50,89,.12);
+  --focus:var(--teal);
+}
+.surface-paper-2{
+  background:var(--paper-2);color:var(--navy);
+  --t1:var(--navy); --t2:rgba(20,50,89,.80); --t3:rgba(20,50,89,.70);
+  --line:rgba(20,50,89,.14); --line-strong:rgba(20,50,89,.30);
+  --accent:var(--teal); --accent-rgb:0,115,98;
+  --card-bg:#FFFFFF; --card-line:rgba(20,50,89,.12);
+  --focus:var(--teal);
+}
+.surface-navy{
+  background:var(--navy);color:var(--cloud);
+  --t1:var(--cloud); --t2:rgba(244,246,245,.78); --t3:rgba(244,246,245,.60);
+  --line:rgba(244,246,245,.16); --line-strong:rgba(244,246,245,.30);
+  --accent:var(--green); --accent-rgb:12,242,93;
+  --card-bg:rgba(255,255,255,.05); --card-line:rgba(244,246,245,.14);
+  --focus:var(--green);
+}
+.surface-teal{
+  background:var(--teal);color:var(--cloud);
+  --t1:var(--cloud); --t2:rgba(244,246,245,.82); --t3:rgba(244,246,245,.64);
+  --line:rgba(244,246,245,.20); --line-strong:rgba(244,246,245,.34);
+  --accent:var(--lime); --accent-rgb:204,249,67;
+  --card-bg:rgba(255,255,255,.06); --card-line:rgba(244,246,245,.18);
+  --focus:var(--lime);
+}
+
+/* ---------- Tipografía semántica por superficie ---------- */
+.t1{color:var(--t1)} .t2{color:var(--t2)} .t3{color:var(--t3)}
+.accent{color:var(--accent)}
+.rule{height:1px;background:var(--line);border:0}
+.rule-strong{height:1px;background:var(--line-strong);border:0}
+
+/* Card única por superficie (sustituye al .card clónico en secciones nuevas) */
+.card-s{
+  background:var(--card-bg);border:1px solid var(--card-line);
+  transition:border-color .3s,background .3s,transform .3s;
+}
+.card-s:hover,.card-s:focus-visible{
+  border-color:rgba(var(--accent-rgb),.55);
+  background:rgba(var(--accent-rgb),.05);
+  transform:translateY(-2px);
+}
+
+/* Botones: el verde es acción; sobre papel el outline usa línea navy */
+.btn-primary{
+  background:var(--green);color:var(--ink);font-weight:600;
+  transition:background-color .15s ease,transform .15s ease,box-shadow .3s ease;
+}
+.btn-primary:hover{background:var(--lime)}
+.btn-outline{
+  border:1px solid var(--line-strong);color:var(--t1);font-weight:500;
+  transition:background-color .2s ease,border-color .2s ease;
+}
+.btn-outline:hover{background:rgba(var(--accent-rgb),.07);border-color:rgba(var(--accent-rgb),.55)}
+
+/* ---------- Base ---------- */
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 .head{font-family:Poppins,"Century Gothic",sans-serif}
 .display{line-height:1.04;letter-spacing:-.02em}
+/* Escala editorial */
+.display-1{font-family:Poppins,"Century Gothic",sans-serif;line-height:1.03;letter-spacing:-.022em;font-size:clamp(2.5rem,5.6vw,4.9rem)}
+.display-2{font-family:Poppins,"Century Gothic",sans-serif;line-height:1.06;letter-spacing:-.02em;font-size:clamp(1.9rem,3.6vw,3.1rem)}
+.lead{font-size:clamp(1.05rem,1.4vw,1.25rem);line-height:1.65}
+.measure{max-width:68ch}
 .mono{font-family:"JetBrains Mono",monospace}
 .label{font-family:"JetBrains Mono",monospace;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase}
 .green-text{color:var(--green)}
 .lime-text{color:var(--lime)}
 
-/* grano sutil sobre superficies oscuras (recurso de marca) */
+/* grano sutil SOLO sobre tinta (recurso de marca, no en papel) */
 .grain{position:relative}
 .grain::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.04;mix-blend-mode:overlay;z-index:0;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
-.grain > *{position:relative;z-index:1}
+.grain > :not(.absolute){position:relative;z-index:1}
+.grain > .absolute{z-index:0}
 
-.hairline{height:1px;background:linear-gradient(90deg,transparent,rgba(12,242,93,.45),transparent)}
+.hairline{height:1px;background:linear-gradient(90deg,transparent,rgba(var(--accent-rgb,12,242,93),.45),transparent)}
 
 .link-underline{background-image:linear-gradient(currentColor,currentColor);background-size:0% 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s ease}
-.link-underline:hover{background-size:100% 1px}
+.link-underline:hover,.link-underline:focus-visible{background-size:100% 1px}
 
+:focus-visible{outline:2px solid var(--focus,var(--green));outline-offset:4px}
+
+/* Card legacy (secciones aún no migradas) */
 .card{background:rgba(255,255,255,.025);border:1px solid rgba(244,246,245,.09);transition:border-color .3s,background .3s,transform .3s}
-.card:hover{border-color:rgba(12,242,93,.45);background:rgba(12,242,93,.04);transform:translateY(-2px)}
+.card:hover,.card:focus-visible{border-color:rgba(12,242,93,.45);background:rgba(12,242,93,.04);transform:translateY(-2px)}
 
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
-.reveal.in{opacity:1;transform:none}
+/* ---------- Roller del hero (corte editorial, sin cursor de terminal) ---------- */
+.hero-roller{display:inline-block;max-width:100%;color:var(--cloud)}
+.hero-roller .roller-line{display:inline-block;transition:opacity .24s ease,transform .24s ease}
+.hero-roller.is-out .roller-line{opacity:0;transform:translateY(.35em)}
 
-.nav-dd-menu{opacity:0;visibility:hidden;transform:translateY(6px);transition:all .22s ease}
-.nav-dd:hover .nav-dd-menu{opacity:1;visibility:visible;transform:none}
+/* Reveal por bloques (JS añade .in); sin JS todo visible */
+.reveal{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+/* Escalonado: .reveal-group > * entran con retardo progresivo */
+.js .reveal-group > *{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .reveal-group.in > *{opacity:1;transform:none}
+.js .reveal-group.in > *:nth-child(2){transition-delay:.08s}
+.js .reveal-group.in > *:nth-child(3){transition-delay:.16s}
+.js .reveal-group.in > *:nth-child(4){transition-delay:.24s}
+.js .reveal-group.in > *:nth-child(5){transition-delay:.32s}
+.js .reveal-group.in > *:nth-child(6){transition-delay:.40s}
+
+.nav-dd-menu{opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .22s ease,visibility .22s ease,transform .22s ease}
+.nav-dd:hover .nav-dd-menu,.nav-dd:focus-within .nav-dd-menu{opacity:1;visibility:visible;transform:none}
 
 .mobile-menu{transform:translateX(100%);transition:transform .35s ease}
 .mobile-menu.open{transform:none}
@@ -39,11 +166,38 @@ body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-ser
 .spin-slow{animation:spin 60s linear infinite;transform-origin:center}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-.stamp{transition:transform .5s cubic-bezier(.2,1.4,.4,1),opacity .5s ease;transform:scale(1.4);opacity:0}
+.stamp{transition:transform .5s cubic-bezier(.2,.7,.2,1),opacity .5s ease;transform:scale(1.08);opacity:0}
 .stamp.in{transform:scale(1);opacity:1}
 
+/* Texto con degradado verde→lima (uso excepcional: 1 destello por pantalla) */
+.gradient-green{background:linear-gradient(120deg,var(--green),var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Glows legacy (intensidad reducida; las secciones nuevas usan .btn-primary) */
+a.bg-green,button.bg-green{transition:box-shadow .3s ease,background-color .15s ease,transform .15s ease}
+a.bg-green:hover,button.bg-green:hover{box-shadow:0 0 24px rgba(12,242,93,.30)}
+.pulse-glow{animation:pulseGlow 2.6s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 18px rgba(12,242,93,.26)}50%{box-shadow:0 0 38px rgba(12,242,93,.48)}}
+
+/* ---------- Vídeo de fondo ---------- */
+.video-bg{position:absolute;inset:0;overflow:hidden}
+.video-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.video-bg .video-overlay{position:absolute;inset:0}
+/* Overlay que garantiza AA para texto cloud sobre cualquier frame */
+.video-overlay-aa{background:linear-gradient(105deg,rgba(5,6,10,.88) 0%,rgba(5,6,10,.72) 42%,rgba(5,6,10,.42) 100%)}
+
+/* ---------- Fotografía duotone (teal Garrigues) ---------- */
+/* Gris + tinte teal; al hover revela el color real (momento humano) */
+.duotone{position:relative;overflow:hidden}
+.duotone img{filter:grayscale(1) contrast(1.06);transition:filter .5s ease}
+.duotone::after{content:"";position:absolute;inset:0;background:var(--teal);mix-blend-mode:color;opacity:.38;pointer-events:none;transition:opacity .5s ease}
+.duotone:hover img,.duotone:focus-visible img{filter:grayscale(0) contrast(1)}
+.duotone:hover::after,.duotone:focus-visible::after{opacity:0}
+
 @media (prefers-reduced-motion: reduce){
-  .reveal,.stamp{transition:none;opacity:1;transform:none}
-  .spin-slow{animation:none}
+  .reveal,.stamp,.hero-roller .roller-line{transition:none;opacity:1;transform:none}
+  .js .reveal,.js .reveal-group > *{opacity:1;transform:none;transition:none}
+  .spin-slow,.pulse-glow{animation:none}
+  .flow-dot{display:none}
+  .video-bg video{display:none}
   html{scroll-behavior:auto}
 }

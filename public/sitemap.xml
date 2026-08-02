@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap manual (Astro estático). @astrojs/sitemap rompe el build en Vercel: NO re-añadir.
+     Actualizar al crear rutas nuevas. Última revisión: rediseño editorial v4 (2026-08, R2/R3). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://g-digital-web-sage.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/soluciones/confianza-digital</loc><priority>0.9</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/soluciones/la-factoria</loc><priority>0.9</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/soluciones/enterprise-suite</loc><priority>0.8</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/soluciones/contract-tech</loc><priority>0.9</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/soluciones/activos-digitales</loc><priority>0.9</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/soluciones/grc-ia</loc><priority>0.9</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/escenarios</loc><priority>0.8</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/escenarios/banca</loc><priority>0.7</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/escenarios/seguros</loc><priority>0.7</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/glosario</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/servicios-confianza-regulada</loc><priority>0.7</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/ia-gris</loc><priority>0.7</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/contract-process</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/tokenizacion-dlt</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/ai-act-gobernanza</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/evidencia-cualificada</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/deuda-legal</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/compliance-injection</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/eudi-wallet</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/mcp-agentes</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/albaran-digital</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/fotografia-siniestro</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/credito-sms</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/que-es-deuda-legal</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/deuda-legal-pasivo</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/contract-process</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/clm-a-consola-posicion</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/tokenizacion-dlt</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/openbrick-tokenizacion</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/ai-act-gobernanza</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/business-wallet</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/firma-internet-agentico</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/alquiler-remoto</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/consentimiento-sanitario</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/appcc-trazabilidad</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/ppa-curtailment</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/kyc-videoidentificacion</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/nosotros</loc><priority>0.7</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/contacto</loc><priority>0.8</priority></url>
+</urlset>

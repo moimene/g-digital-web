@@ -1,0 +1,27 @@
+---
+// Glosario contextual del artículo: términos usados, con definición corta y enlace.
+import { getCollection } from 'astro:content';
+
+interface Props { slugs: string[] }
+const { slugs } = Astro.props;
+
+const all = await getCollection('glosario');
+const terms = slugs
+  .map((s) => all.find((g) => g.slug === s))
+  .filter(Boolean) as typeof all;
+---
+{terms.length > 0 && (
+  <div class="rounded-xl border p-5" style="border-color:var(--line);background:var(--card-bg)">
+    <p class="label t3 mb-4">Vocabulario de este artículo</p>
+    <dl class="space-y-4">
+      {terms.map((g) => (
+        <div>
+          <dt class="text-sm font-semibold t1">
+            <a href={`/recursos/glosario#${g!.slug}`} class="hover:text-[var(--accent)] transition-colors">{g!.data.term}</a>
+          </dt>
+          <dd class="text-[13px] t2 mt-1 leading-relaxed">{g!.data.short}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+)}

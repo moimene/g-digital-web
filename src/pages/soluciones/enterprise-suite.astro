@@ -1,52 +1,85 @@
 ---
-import Linea from '../../layouts/Linea.astro';
+import LineaPage from '../../layouts/LineaPage.astro';
+import SectionIntro from '../../components/SectionIntro.astro';
+import StatBand from '../../components/StatBand.astro';
 
 const modulos = [
-  ['Signature Manager', 'Orquestación de firma con validador legal, verificación SHA-256, firma vía WhatsApp.'],
-  ['Notice Manager', 'Notificaciones certificadas multicanal (email, WhatsApp, SMS, RCS). Sustituye al burofax.'],
-  ['eArchiving', 'Custodia con garantía LTV, re-sellado periódico, preparado para arts. 45i-45j eIDAS 2.'],
-  ['Credential Manager', 'Certificados cualificados en Cloud HSM. Delegación segura. EUDI Wallet Ready.'],
+  { icon: 'ph-pen-nib', name: 'Signature Manager', body: 'Orquestación de firma con rol de Validador (revisión y autorización previa por los letrados de cada parte), verificación de versión SHA-256 del documento final, firma vía WhatsApp con OTP y flujos secuenciales, paralelos o mixtos por grupos de firmantes.' },
+  { icon: 'ph-envelope-simple', name: 'Notice Manager', body: 'Notificaciones certificadas multicanal (email, WhatsApp, SMS, RCS) con constancia de contenido, envío y recepción. Sustituye al burofax con la misma eficacia probatoria e inmediatez digital. Respuesta certificada y carga masiva por campaña.' },
+  { icon: 'ph-archive', name: 'eArchiving', body: 'Custodia con garantía de verificabilidad a largo plazo (LTV), re-sellado periódico, lógica WORM con retención y purga verificable. Preparado para el archivo electrónico cualificado de eIDAS 2 (arts. 45i-45j).' },
+  { icon: 'ph-certificate', name: 'Credential Manager', body: 'Certificados cualificados centralizados en Cloud HSM: delegación segura sin compartir claves privadas y gobierno de la identidad corporativa ante las administraciones. Preparado para EUDI Wallet.' },
+];
+const cliente0 = [
+  { value: 1500, suffix: '+', label: 'profesionales activos en Garrigues («Cliente 0»)' },
+  { value: 3000, suffix: '+', label: 'procesos de firma ejecutados' },
+  { value: 20, suffix: '+', label: 'TB de documentación sensible custodiada' },
+  { value: 500, suffix: '+', label: 'data rooms seguros gestionados' },
 ];
 const soberania = [
-  ['Riesgo Legal/Probatorio', 'Evidencia cualificada eIDAS con presunción legal en la UE, no solo logs técnicos.'],
-  ['Riesgo Schrems II', 'Datos y operación en la UE; sin transferencias internacionales problemáticas.'],
-  ['Riesgo CLOUD Act', 'Infraestructura soberana europea, fuera del alcance extraterritorial.'],
+  ['Riesgo legal/probatorio', 'Evidencia cualificada eIDAS con presunción legal en la UE, no solo logs técnicos. Firma cualificada (QES) nativa, no una integración externa.'],
+  ['Riesgo Schrems II', 'Datos y operación en la UE (Oracle EU Sovereign Cloud); sin transferencias internacionales problemáticas.'],
+  ['Riesgo CLOUD Act', 'Infraestructura soberana europea, fuera del alcance de órdenes extraterritoriales.'],
+  ['Preparación post-cuántica', 'RSA 4096/8192 y hoja de ruta hacia algoritmos PQC: las firmas de hoy deben verificarse dentro de décadas.'],
 ];
 ---
-<Linea
+<LineaPage
   linea="Confianza Digital · Capa plataforma"
+  tone="green"
+  motif="sphere"
   kicker="EAD Enterprise Suite"
   title="El sistema operativo de certeza legal."
-  intro="Una plataforma que agrega todos los servicios eIDAS con soberanía digital. Diseñada por Garrigues, operada por EADTrust (QTSP). Crece incorporando nuevos servicios eIDAS 2.0 sin re-arquitectura."
+  intro="La plataforma que agrega todos los servicios eIDAS con soberanía digital: firma, notificación certificada, custodia y credenciales. Diseñada por g-digital, operada por EADTrust (QTSP). Crece incorporando los nuevos servicios eIDAS 2.0 sin re-arquitectura."
   cta="Descubrir Enterprise Suite"
 >
   <!-- Módulos -->
-  <section class="relative grain py-20 lg:py-28">
+  <section class="surface-ink py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Módulos actuales</p>
-      <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">Una plataforma, todos los servicios eIDAS.</h2>
-      <div class="mt-12 grid sm:grid-cols-2 gap-5">
-        {modulos.map(([t, d]) => (
-          <article class="card rounded-2xl p-7 reveal"><h3 class="head text-lg text-cloud font-semibold flex items-center gap-2"><i class="ph ph-cube text-green"></i>{t}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{d}</p></article>
+      <SectionIntro
+        label="Los cuatro módulos"
+        title="Una plataforma, todos los servicios eIDAS."
+      />
+      <div class="mt-12 grid sm:grid-cols-2 gap-5 reveal-group">
+        {modulos.map((m) => (
+          <article class="card-s rounded-2xl p-7">
+            <h3 class="head text-lg t1 font-semibold flex items-center gap-3"><i class={`ph ${m.icon} accent text-2xl`} aria-hidden="true"></i>{m.name}</h3>
+            <p class="t2 text-sm mt-3 leading-relaxed">{m.body}</p>
+          </article>
         ))}
       </div>
-      <p class="text-cloud/45 text-sm mt-6 italic">Próximos módulos: chat certificado, archivo cualificado, EUDI Wallet y más — se agregan progresivamente.</p>
+      <p class="t3 text-sm mt-6 italic">Crece por módulos —chat certificado, archivo cualificado, EUDI Wallet— que se agregan progresivamente sin re-arquitectura.</p>
+    </div>
+  </section>
+
+  <!-- Cliente 0: Garrigues -->
+  <section class="surface-navy py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionIntro
+        label="Cliente 0: Garrigues"
+        title="La usamos nosotros antes que nadie."
+        lead="La Suite corre en producción dentro de Garrigues — el despacho es su primer y más exigente cliente. Estas son las cifras de esa operación real."
+      />
+      <div class="mt-12">
+        <StatBand stats={cliente0} note="Operación interna de Garrigues sobre EAD Enterprise Suite · 2026" />
+      </div>
     </div>
   </section>
 
   <!-- Soberanía -->
-  <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
+  <section class="surface-coal py-20 lg:py-28 border-y border-cloud/10">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Soberanía digital vs. plataformas US</p>
-      <div class="grid md:grid-cols-3 gap-6">
+      <SectionIntro
+        label="Soberanía digital vs. plataformas US"
+        title="La certeza también es una cuestión de jurisdicción."
+      />
+      <div class="mt-10 grid md:grid-cols-2 gap-6 reveal-group">
         {soberania.map(([t, d]) => (
-          <article class="card rounded-2xl p-7 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-shield-check text-green"></i>{t}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{d}</p></article>
+          <article class="card-s rounded-2xl p-7"><h3 class="head t1 font-semibold flex items-center gap-2"><i class="ph ph-shield-check accent" aria-hidden="true"></i>{t}</h3><p class="t2 text-sm mt-3 leading-relaxed">{d}</p></article>
         ))}
       </div>
-      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-cloud/60">
-        <span class="flex items-center gap-2"><i class="ph ph-sparkle text-green"></i> eIDAS 2.0 &amp; EUDI Wallet</span>
-        <span class="flex items-center gap-2"><i class="ph ph-shield-star text-green"></i> Post-Quantum ready</span>
+      <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm t2">
+        <span class="flex items-center gap-2"><i class="ph ph-sparkle accent" aria-hidden="true"></i> eIDAS 2.0 &amp; EUDI Wallet</span>
+        <span class="flex items-center gap-2"><i class="ph ph-shield-star accent" aria-hidden="true"></i> ISO 27001 · ISO 20000 · ISO 9001 · ENS Alta</span>
       </div>
     </div>
   </section>
-</Linea>
+</LineaPage>

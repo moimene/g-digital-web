@@ -1,36 +1,52 @@
 ---
 import Wordmark from './Wordmark.astro';
-import { SOLUCIONES, NAV } from '../consts';
+import { SOLUCIONES, FACTORIA, NAV } from '../consts';
 ---
 <nav id="nav" class="sticky top-0 z-50 bg-ink/85 backdrop-blur-xl border-b border-cloud/10">
   <div class="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
     <Wordmark class="text-xl tracking-tight" />
     <div class="hidden lg:flex items-center gap-9 text-[13.5px] text-cloud/75">
       <div class="nav-dd relative">
-        <button class="flex items-center gap-1.5 hover:text-cloud transition-colors">Soluciones <i class="ph ph-caret-down text-[10px]"></i></button>
+        <button class="flex items-center gap-1.5 hover:text-cloud transition-colors" aria-haspopup="true">Soluciones <i class="ph ph-caret-down text-[10px]" aria-hidden="true"></i></button>
         <div class="nav-dd-menu absolute top-full left-1/2 -translate-x-1/2 pt-3">
           <div class="w-[340px] bg-coal border border-cloud/10 rounded-2xl p-2 shadow-2xl shadow-black/60">
             {SOLUCIONES.map((s) => (
               <a href={s.href} class="flex gap-3 px-4 py-3 rounded-xl hover:bg-green/10 transition-colors">
                 <i class={`ph ${s.icon} text-green text-lg mt-0.5`}></i>
-                <span><span class="block text-cloud font-medium">{s.title}</span><span class="text-xs text-cloud/45">{s.desc}</span></span>
+                <span><span class="block text-cloud font-medium">{s.title}</span><span class="text-xs text-cloud/60">{s.desc}</span></span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="nav-dd relative">
+        <button class="flex items-center gap-1.5 hover:text-cloud transition-colors" aria-haspopup="true">La Factoría <i class="ph ph-caret-down text-[10px]" aria-hidden="true"></i></button>
+        <div class="nav-dd-menu absolute top-full left-1/2 -translate-x-1/2 pt-3">
+          <div class="w-[340px] bg-coal border border-cloud/10 rounded-2xl p-2 shadow-2xl shadow-black/60">
+            {FACTORIA.map((s) => (
+              <a href={s.href} class="flex gap-3 px-4 py-3 rounded-xl hover:bg-green/10 transition-colors">
+                <i class={`ph ${s.icon} text-green text-lg mt-0.5`}></i>
+                <span><span class="block text-cloud font-medium">{s.title}</span><span class="text-xs text-cloud/60">{s.desc}</span></span>
               </a>
             ))}
           </div>
         </div>
       </div>
       {NAV.map((n) => <a href={n.href} class="hover:text-cloud transition-colors">{n.label}</a>)}
-      <a href="/contacto" class="bg-green text-ink px-4 py-2 rounded-lg font-semibold hover:bg-[#26ff75] transition-colors">Hablemos</a>
+      <a href="/contacto" class="bg-green text-ink px-4 py-2 rounded-lg font-semibold hover:bg-lime transition-colors">Hablemos</a>
     </div>
-    <button id="burger" class="lg:hidden text-cloud text-2xl" aria-label="Abrir menú"><i class="ph ph-list"></i></button>
+    <button id="burger" class="lg:hidden text-cloud text-2xl min-h-11 min-w-11 inline-flex items-center justify-center" aria-label="Abrir menú" aria-controls="mmenu" aria-expanded="false"><i class="ph ph-list" aria-hidden="true"></i></button>
   </div>
 </nav>
 
-<div id="mmenu" class="mobile-menu lg:hidden fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-coal z-[60] p-6 pt-8 overflow-y-auto border-l border-cloud/10">
-  <div class="flex justify-between items-center mb-8"><Wordmark tag={false} class="text-lg" /><button id="mclose" class="text-2xl text-cloud" aria-label="Cerrar menú"><i class="ph ph-x"></i></button></div>
+<div id="mmenu" class="mobile-menu lg:hidden fixed inset-y-0 right-0 w-80 max-w-[85vw] bg-coal z-[60] p-6 pt-8 overflow-y-auto border-l border-cloud/10" aria-hidden="true">
+  <div class="flex justify-between items-center mb-8"><Wordmark tag={false} class="text-lg" /><button id="mclose" class="text-2xl text-cloud min-h-11 min-w-11 inline-flex items-center justify-center" aria-label="Cerrar menú"><i class="ph ph-x" aria-hidden="true"></i></button></div>
   <div class="flex flex-col gap-1 text-cloud/80">
-    <p class="label text-cloud/40 px-3 pt-2 pb-1">Soluciones</p>
+    <p class="label text-cloud/55 px-3 pt-2 pb-1">Soluciones</p>
     {SOLUCIONES.map((s) => <a href={s.href} class="mlink px-3 py-2.5 rounded-lg hover:bg-green/10">{s.title}</a>)}
+    <div class="hairline my-3"></div>
+    <p class="label text-cloud/55 px-3 pt-1 pb-1">La Factoría</p>
+    {FACTORIA.map((s) => <a href={s.href} class="mlink px-3 py-2.5 rounded-lg hover:bg-green/10">{s.title}</a>)}
     <div class="hairline my-3"></div>
     {NAV.map((n) => <a href={n.href} class="mlink px-3 py-2.5 rounded-lg hover:bg-green/10">{n.label}</a>)}
     <a href="/contacto" class="mlink mt-3 text-center bg-green text-ink px-4 py-3 rounded-lg font-semibold">Hablemos</a>

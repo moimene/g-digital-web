@@ -1,26 +1,356 @@
 ---
-import Linea from '../layouts/Linea.astro';
-const recursos = [
-  ['Whitepaper', 'Deuda Legal: el pasivo que tu balance no ve', 'Cómo cuantificar y reducir las operaciones sin valor probatorio en tu sector.'],
-  ['Guía', 'EUDI Wallet: prepara tus obligaciones 2026-2027', 'Qué cambia con eIDAS 2 y cómo llegar a tiempo, sector a sector.'],
-  ['Artículo', 'Confianza cualificada para agentes de IA (MCP)', 'Por qué exponer servicios eIDAS por MCP cambia las operaciones autónomas.'],
-  ['Glosario', 'Deuda Legal, Compliance Injection, QTSP, QES, ERDS, WORM, AES, EUDI, MCP', 'El vocabulario mínimo para entender la categoría.'],
+// /recursos — biblioteca de conocimiento g-digital (rediseño editorial v4).
+// Hub unificado: búsqueda + filtros combinables (tipo × línea × tema) + orden,
+// lectura destacada, whitepapers, observatorio, desarrolladores y glosario.
+import Base from '../layouts/Base.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import CTAEditorial from '../components/CTAEditorial.astro';
+import { getCollection } from 'astro:content';
+import { LINEAS_RECURSOS, NIVELES, TAG_LABELS } from '../content/config';
+
+const [arts, cons, cas] = await Promise.all([
+  getCollection('articulos'), getCollection('conceptos'), getCollection('casos'),
+]);
+
+interface Item {
+  tipo: string; tipoLabel: string; href: string; external: boolean;
+  title: string; desc: string; linea: string; tags: string[]; nivel: string;
+  min: number; dateISO: string; draft: boolean; featured: boolean;
+}
+const TIPO_LABELS: Record<string, string> = { articulo: 'Artículo', guia: 'Guía', whitepaper: 'Whitepaper', noticia: 'Noticia' };
+const toItem = (e: any, tipoFallback: string, tipoLabelFallback: string, base: string): Item => ({
+  tipo: e.data.tipo ?? tipoFallback, tipoLabel: TIPO_LABELS[e.data.tipo ?? ''] ?? tipoLabelFallback,
+  href: `${base}/${e.slug}`,
+  external: false,
+  title: e.data.title, desc: e.data.description,
+  linea: e.data.linea, tags: e.data.tags, nivel: e.data.nivel,
+  min: e.data.readingTime ?? Math.max(2, Math.round(e.body.split(/\s+/).length / 200)),
+  dateISO: e.data.pubDate ? e.data.pubDate.toISOString().slice(0, 10) : '',
+  draft: e.data.draft, featured: e.data.featured,
+});
+
+const whitepapers: Item[] = [
+  {
+    tipo: 'whitepaper', tipoLabel: 'Whitepaper', external: true,
+    href: '/whitepapers/eIDAS2-EUDI-Wallet-base-sectorial.pdf',
+    title: 'eIDAS 2 y EUDI Wallet: base sectorial',
+    desc: '33 páginas, 11 sectores. Marco descriptivo de obligaciones y oportunidades sector a sector.',
+    linea: 'confianza', tags: ['eidas', 'eudi-wallet', 'regulacion'], nivel: 'intermedio',
+    min: 35, dateISO: '2026-06-01', draft: false, featured: false,
+  },
+];
+
+const items: Item[] = [
+  ...arts.map((e) => toItem(e, 'articulo', 'Artículo', '/recursos/articulos')),
+  ...cons.map((e) => toItem(e, 'concepto', 'Concepto', '/recursos/conceptos')),
+  ...cas.map((e) => toItem(e, 'caso', 'Caso de uso', '/recursos/casos')),
+  ...whitepapers,
+];
+
+const destacado = items.find((i) => i.href.endsWith('/que-es-deuda-legal'))
+  ?? items.find((i) => i.featured && !i.draft)
+  ?? items[0];
+const resto = items.filter((i) => i !== destacado);
+
+// Temas presentes en el corpus (para el select de tema)
+const temasPresentes = [...new Set(items.flatMap((i) => i.tags))].sort();
+
+const tipos = [
+  { key: 'todos', label: 'Todo' },
+  { key: 'articulo', label: 'Artículos' },
+  { key: 'concepto', label: 'Conceptos' },
+  { key: 'caso', label: 'Casos de uso' },
+  { key: 'whitepaper', label: 'Whitepapers' },
+];
+const lineasFiltro = [
+  { key: 'todas', label: 'Todas las líneas' },
+  ...Object.entries(LINEAS_RECURSOS).map(([key, label]) => ({ key, label })),
+];
+
+const medios: [string, string, string?][] = [
+  ['elderecho.com', 'Acuerdo Garrigues × Microsoft para impulsar la IA', 'https://g-digital.garrigues.com/node/14274'],
+  ['Observatorio LegalTech', 'Garrigues · ICADE', 'https://www.comillas.edu/investigacion/observatorio-legaltech/'],
+  ['Noticias', 'Los medios hablan de g-digital', 'https://g-digital.garrigues.com/es_ES/recursos/noticias'],
 ];
 ---
-<Linea
-  kicker="Recursos"
-  title="Aprende la categoría antes que tu competencia."
-  intro="Blog, whitepapers, glosario y eventos del Observatorio LegalTech Garrigues-ICADE. Educación de categoría para un mercado que aún se está formando."
-  cta="Suscríbete a las novedades"
->
-  <section class="relative grain py-20 lg:py-28">
+<Base title="Recursos: la biblioteca de la infraestructura legal | g-digital" description="Artículos, conceptos, casos de uso, whitepapers y glosario sobre confianza digital, contract tech, activos digitales y GRC & IA. Conocimiento para decisiones informadas.">
+  <!-- HERO + BUSCADOR (papel) -->
+  <div class="surface-paper">
+    <header class="max-w-7xl mx-auto px-6 pt-16 lg:pt-24 pb-12">
+      <p class="label accent mb-6 reveal">Recursos</p>
+      <h1 class="display-1 t1 font-semibold max-w-4xl reveal">La biblioteca de la infraestructura legal.</h1>
+      <p class="mt-7 max-w-2xl lead t2 reveal">Artículos, conceptos, casos de uso y guías sobre las tecnologías donde la seguridad jurídica, la evidencia y la trazabilidad son elementos clave.</p>
+
+      <!-- Búsqueda -->
+      <div class="mt-10 max-w-2xl reveal">
+        <label for="q" class="sr-only">Buscar en la biblioteca</label>
+        <div class="flex items-center gap-3 rounded-2xl border bg-white px-5 py-4" style="border-color:var(--line-strong)">
+          <i class="ph ph-magnifying-glass text-xl t3" aria-hidden="true"></i>
+          <input id="q" type="search" placeholder="Buscar por título, tema o término…"
+                 class="w-full bg-transparent outline-none text-lg t1 placeholder:text-[var(--t3)]" autocomplete="off" />
+          <kbd class="mono text-[10px] t3 border rounded px-1.5 py-0.5 hidden sm:block" style="border-color:var(--line)">/</kbd>
+        </div>
+      </div>
+
+      <!-- Filtros -->
+      <div class="mt-6 flex flex-wrap items-center gap-2.5 reveal" role="group" aria-label="Filtrar por tipo">
+        {tipos.map((f, i) => (
+          <button type="button" data-ftipo={f.key} aria-pressed={i === 0 ? 'true' : 'false'}
+                  class={`ftipo text-sm px-4 py-2 rounded-full border transition-colors ${i === 0 ? 'border-transparent text-white' : 't2 hover:border-[var(--line-strong)]'}`}
+                  style={i === 0 ? 'background:var(--teal)' : 'border-color:var(--line)'}>
+            {f.label}
+          </button>
+        ))}
+        <span class="hidden sm:block w-px h-6 mx-1" style="background:var(--line-strong)"></span>
+        <label class="sr-only" for="flinea">Línea de negocio</label>
+        <select id="flinea" class="text-sm px-3.5 py-2 rounded-full border bg-white t1" style="border-color:var(--line)">
+          {lineasFiltro.map((l) => <option value={l.key}>{l.label}</option>)}
+        </select>
+        <label class="sr-only" for="ftema">Tema</label>
+        <select id="ftema" class="text-sm px-3.5 py-2 rounded-full border bg-white t1" style="border-color:var(--line)">
+          <option value="todos">Todos los temas</option>
+          {temasPresentes.map((t) => <option value={t}>{TAG_LABELS[t] ?? t}</option>)}
+        </select>
+        <label class="sr-only" for="forden">Ordenar</label>
+        <select id="forden" class="text-sm px-3.5 py-2 rounded-full border bg-white t1" style="border-color:var(--line)">
+          <option value="fecha">Más recientes</option>
+          <option value="corta">Lectura más corta</option>
+          <option value="larga">Lectura más larga</option>
+          <option value="az">Título A–Z</option>
+        </select>
+      </div>
+      <p class="mono text-[11px] t3 mt-4"><span id="count">{resto.length + 1}</span> recursos en la biblioteca</p>
+    </header>
+  </div>
+
+  <!-- LECTURA DESTACADA (papel, borde superior) -->
+  <section class="surface-paper border-t" style="border-color:var(--line)">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+      <p class="label t3 mb-6 reveal">Lectura destacada</p>
+      <a href={destacado.href} class="group grid lg:grid-cols-12 gap-8 items-baseline reveal" {...(destacado.external ? { target: '_blank', rel: 'noopener' } : {})}>
+        <div class="lg:col-span-2">
+          <span class="label accent">{destacado.tipoLabel}</span>
+          <p class="mono text-[11px] t3 mt-3">{LINEAS_RECURSOS[destacado.linea as keyof typeof LINEAS_RECURSOS]}</p>
+        </div>
+        <div class="lg:col-span-8">
+          <h2 class="head text-2xl lg:text-4xl t1 font-semibold leading-tight group-hover:text-[var(--accent)] transition-colors">{destacado.title}</h2>
+          <p class="t2 mt-4 leading-relaxed max-w-2xl">{destacado.desc}</p>
+        </div>
+        <div class="lg:col-span-2">
+          <span class="inline-flex items-center gap-2 accent text-sm font-medium">{destacado.external ? 'Descargar' : 'Leer'} <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1" aria-hidden="true"></i></span>
+          <p class="mono text-[11px] t3 mt-2">{destacado.min} min</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- BIBLIOTECA (papel-2) -->
+  <section id="whitepapers" class="surface-paper-2 py-20 lg:py-24 border-t scroll-mt-20" style="border-color:var(--line)">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Borrador · Fase 3 (con CMS / Content Collections)</p>
-      <div class="grid md:grid-cols-2 gap-6">
-        {recursos.map(([cat, t, d]) => (
-          <article class="card rounded-2xl p-7 reveal"><span class="label text-green">{cat}</span><h3 class="head text-xl text-cloud mt-3 font-semibold leading-snug">{t}</h3><p class="text-cloud/60 text-sm mt-3">{d}</p></article>
+      <SectionIntro label="Biblioteca" title="Todo el conocimiento, filtrable." />
+      <div id="biblio" class="mt-12">
+        {resto.map((i) => (
+          <article class="biblio-item grid lg:grid-cols-12 gap-x-8 gap-y-2 py-7 border-t reveal"
+                   style="border-color:var(--line)"
+                   data-tipo={i.tipo} data-linea={i.linea} data-tags={i.tags.join(' ')}
+                   data-date={i.dateISO} data-min={i.min}
+                   data-search={`${i.title} ${i.desc} ${i.tags.map((t) => TAG_LABELS[t] ?? t).join(' ')} ${LINEAS_RECURSOS[i.linea as keyof typeof LINEAS_RECURSOS]} ${i.tipoLabel}`}>
+            <div class="lg:col-span-2">
+              <span class="label accent">{i.tipoLabel}</span>
+              <p class="mono text-[11px] t3 mt-2">{LINEAS_RECURSOS[i.linea as keyof typeof LINEAS_RECURSOS]}</p>
+            </div>
+            <div class="lg:col-span-8">
+              <h3 class="head text-lg lg:text-xl t1 font-semibold leading-snug">
+                <a href={i.href} {...(i.external ? { target: '_blank', rel: 'noopener' } : {})} class="hover:text-[var(--accent)] transition-colors">{i.title}</a>
+              </h3>
+              <p class="t2 text-sm mt-2 leading-relaxed max-w-2xl">{i.desc}</p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                {i.tags.slice(0, 4).map((t) => (
+                  <span class="mono text-[10px] px-2 py-0.5 rounded-full border t3" style="border-color:var(--line)">{TAG_LABELS[t] ?? t}</span>
+                ))}
+              </div>
+            </div>
+            <div class="lg:col-span-2 flex lg:flex-col lg:items-end gap-2">
+              {i.draft
+                ? <span class="mono text-[10px] px-2 py-0.5 rounded-full border" style="border-color:rgba(146,110,20,.4);color:rgba(146,110,20,.9)">EN PREPARACIÓN</span>
+                : <a href={i.href} {...(i.external ? { target: '_blank', rel: 'noopener' } : {})} class="inline-flex items-center gap-1.5 accent text-sm font-medium">{i.external ? 'Descargar' : 'Leer'} <i class="ph ph-arrow-right" aria-hidden="true"></i></a>}
+              <span class="mono text-[11px] t3">{i.dateISO ? new Date(i.dateISO + 'T00:00:00').toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }) + ' · ' : ''}{i.min} min</span>
+              <span class="mono text-[11px] t3">{NIVELES[i.nivel as keyof typeof NIVELES]}</span>
+            </div>
+          </article>
+        ))}
+        <div class="border-t" id="biblio-end" style="border-color:var(--line)"></div>
+        <p id="biblio-empty" class="hidden t2 text-sm mt-8">Ningún recurso coincide con ese filtro. <button type="button" id="biblio-reset" class="accent font-medium">Limpiar filtros</button></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OBSERVATORIO (banda navy) -->
+  <section class="surface-navy py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <p class="label accent mb-6">Observatorio</p>
+        <h2 class="display-2 t1 font-semibold">LegalTech Garrigues · ICADE.</h2>
+        <p class="mt-6 t2 leading-relaxed">Un punto de encuentro para el sector legal donde conectar e impulsar juntos la transformación del sector y aprovechar las ventajas de la tecnología. Investigación aplicada y formación de la próxima generación de profesionales del derecho.</p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="https://www.comillas.edu/investigacion/observatorio-legaltech/" target="_blank" rel="noopener" class="btn-primary inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl">Ver eventos del Observatorio <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+          <a href="/contacto" class="btn-outline inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl">Proponer colaboración</a>
+        </div>
+      </div>
+      <div class="lg:col-span-7 grid sm:grid-cols-3 gap-5 reveal-group">
+        <div class="rounded-2xl p-6 border" style="border-color:var(--line);background:var(--card-bg)"><i class="ph ph-calendar-dots accent text-2xl" aria-hidden="true"></i><h3 class="head t1 font-semibold mt-3 text-sm">Eventos y encuentros</h3><p class="t2 text-sm mt-2">Sesiones presenciales y online con profesionales del sector legal y tecnológico.</p></div>
+        <div class="rounded-2xl p-6 border" style="border-color:var(--line);background:var(--card-bg)"><i class="ph ph-compass-tool accent text-2xl" aria-hidden="true"></i><h3 class="head t1 font-semibold mt-3 text-sm">Experiencias de adopción</h3><p class="t2 text-sm mt-2">Casos reales sobre qué funciona y qué no en la transformación digital del derecho.</p></div>
+        <div class="rounded-2xl p-6 border" style="border-color:var(--line);background:var(--card-bg)"><i class="ph ph-chats-circle accent text-2xl" aria-hidden="true"></i><h3 class="head t1 font-semibold mt-3 text-sm">Conversaciones sobre desafíos</h3><p class="t2 text-sm mt-2">Diálogo abierto sobre oportunidades y retos del sector jurídico-tecnológico.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRUÉBALO / DESARROLLADORES (tinta, momento producto) -->
+  <section id="desarrolladores" class="surface-ink grain py-20 lg:py-24 scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionIntro
+        label="Pruébalo tú mismo"
+        title="Nuestras soluciones, accesibles hoy."
+        lead="No es una promesa: son productos en producción. Pruébalos, o llévate el código."
+      />
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal-group">
+        <a href="https://gocertius.io" target="_blank" rel="noopener" class="card-s rounded-2xl p-7 group">
+          <i class="ph ph-device-mobile accent text-3xl" aria-hidden="true"></i>
+          <h3 class="head t1 font-semibold mt-4">GoCertius</h3>
+          <p class="t3 text-sm mt-2">Certifica una evidencia desde el móvil, con validez eIDAS.</p>
+          <span class="inline-flex items-center gap-1.5 accent text-sm font-medium mt-5">Probar la app <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+        </a>
+        <a href="https://eadtrust.eu" target="_blank" rel="noopener" class="card-s rounded-2xl p-7 group">
+          <i class="ph ph-buildings accent text-3xl" aria-hidden="true"></i>
+          <h3 class="head t1 font-semibold mt-4">EAD Enterprise Suite</h3>
+          <p class="t3 text-sm mt-2">Signature, Notice, eArchiving y Credential Manager en EADTrust.</p>
+          <span class="inline-flex items-center gap-1.5 accent text-sm font-medium mt-5">Ver productos <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+        </a>
+        <a href="/soluciones/la-factoria" class="card-s rounded-2xl p-7 group">
+          <i class="ph ph-plugs-connected accent text-3xl" aria-hidden="true"></i>
+          <h3 class="head t1 font-semibold mt-4">Trust API + MCP</h3>
+          <p class="t3 text-sm mt-2">La Factoría: 4 microservicios eIDAS por API REST o por MCP.</p>
+          <span class="inline-flex items-center gap-1.5 accent text-sm font-medium mt-5">Ver la API <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
+        </a>
+        <a href="https://github.com/g-digital-by-Garrigues" target="_blank" rel="noopener" class="card-s rounded-2xl p-7 group">
+          <i class="ph ph-github-logo accent text-3xl" aria-hidden="true"></i>
+          <h3 class="head t1 font-semibold mt-4">GitHub · desarrolladores</h3>
+          <p class="t3 text-sm mt-2">Código, ejemplos e integraciones abiertas para tu equipo técnico.</p>
+          <span class="inline-flex items-center gap-1.5 accent text-sm font-medium mt-5">Ir a GitHub <i class="ph ph-arrow-up-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOSARIO teaser (papel) -->
+  <section class="surface-paper py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+        <SectionIntro label="Glosario" title="El vocabulario de la categoría." />
+        <a href="/recursos/glosario" class="link-underline accent font-medium text-sm inline-flex items-center gap-2 mb-1">Glosario completo A–Z <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8 reveal-group">
+        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">Deuda Legal</p><p class="t2 text-sm mt-1.5 leading-relaxed">El pasivo invisible de las operaciones sin valor probatorio.</p></div>
+        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">Compliance Injection</p><p class="t2 text-sm mt-1.5 leading-relaxed">Inyectar confianza eIDAS en cualquier proceso, por API o MCP.</p></div>
+        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">EUDI Wallet</p><p class="t2 text-sm mt-1.5 leading-relaxed">La cartera europea: de obligación regulatoria a ventaja temprana.</p></div>
+        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">MCP</p><p class="t2 text-sm mt-1.5 leading-relaxed">Confianza cualificada como herramienta nativa de tus agentes de IA.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EN LOS MEDIOS (papel-2) -->
+  <section class="surface-paper-2 py-16 border-t" style="border-color:var(--line)">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="label t3 mb-8 text-center">En los medios</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {medios.map(([m, d, u]) => (
+          u
+            ? <a href={u} target="_blank" rel="noopener" class="text-center reveal block group"><p class="head t1 font-semibold group-hover:text-[var(--accent)] transition-colors">{m}</p><p class="t3 text-sm mt-1">{d}</p></a>
+            : <div class="text-center reveal"><p class="head t1 font-semibold">{m}</p><p class="t3 text-sm mt-1">{d}</p></div>
         ))}
       </div>
     </div>
   </section>
-</Linea>
+
+  <!-- CTA -->
+  <div class="surface-ink grain">
+    <CTAEditorial
+      title="¿Quieres profundizar?"
+      sub="Si necesitas orientación sobre firma electrónica, CLM, GRC, IA o activos digitales, escríbenos y te recomendamos recursos según tu caso."
+      primary={{ href: '/contacto', label: 'Contactar con el equipo' }}
+      secondary={{ href: '/recursos/glosario', label: 'Explorar el glosario' }}
+    />
+  </div>
+
+  <script>
+    // Búsqueda + filtros combinables (tipo × línea × tema × texto) + orden. Sin dependencias.
+    const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+    const q = document.getElementById('q') as HTMLInputElement;
+    const selLinea = document.getElementById('flinea') as HTMLSelectElement;
+    const selTema = document.getElementById('ftema') as HTMLSelectElement;
+    const selOrden = document.getElementById('forden') as HTMLSelectElement;
+    const count = document.getElementById('count')!;
+    const wrap = document.getElementById('biblio')!;
+    const empty = document.getElementById('biblio-empty')!;
+    const resetBtn = document.getElementById('biblio-reset');
+    const tipoBtns = document.querySelectorAll('.ftipo');
+    let tipoActivo = 'todos';
+
+    const itemsEl = () => Array.from(wrap.querySelectorAll('.biblio-item')) as HTMLElement[];
+
+    function apply() {
+      const text = norm(q.value.trim());
+      const linea = selLinea.value, tema = selTema.value;
+      let shown = 0;
+      itemsEl().forEach((el) => {
+        const okTipo = tipoActivo === 'todos' || el.dataset.tipo === tipoActivo;
+        const okLinea = linea === 'todas' || el.dataset.linea === linea;
+        const okTema = tema === 'todos' || (el.dataset.tags || '').split(' ').includes(tema);
+        const okText = !text || norm(el.dataset.search || '').includes(text);
+        const show = okTipo && okLinea && okTema && okText;
+        el.style.display = show ? '' : 'none';
+        if (show) shown++;
+      });
+      count.textContent = String(shown + 1); // +1 = destacado
+      empty.classList.toggle('hidden', shown > 0);
+    }
+
+    function sort() {
+      const v = selOrden.value;
+      const arr = itemsEl().sort((a, b) => {
+        if (v === 'fecha') return (b.dataset.date || '0000').localeCompare(a.dataset.date || '0000');
+        if (v === 'corta') return Number(a.dataset.min) - Number(b.dataset.min);
+        if (v === 'larga') return Number(b.dataset.min) - Number(a.dataset.min);
+        return (a.dataset.search || '').localeCompare(b.dataset.search || '', 'es');
+      });
+      arr.forEach((el) => wrap.insertBefore(el, document.getElementById('biblio-end')));
+    }
+
+    tipoBtns.forEach((b) => b.addEventListener('click', () => {
+      tipoActivo = (b as HTMLElement).dataset.ftipo!;
+      tipoBtns.forEach((x) => {
+        const on = x === b;
+        x.setAttribute('aria-pressed', String(on));
+        (x as HTMLElement).style.background = on ? 'var(--teal)' : '';
+        (x as HTMLElement).style.color = on ? '#fff' : '';
+        x.classList.toggle('border-transparent', on);
+      });
+      apply();
+    }));
+    q.addEventListener('input', apply);
+    selLinea.addEventListener('change', apply);
+    selTema.addEventListener('change', apply);
+    selOrden.addEventListener('change', () => { sort(); apply(); });
+    resetBtn?.addEventListener('click', () => {
+      q.value = ''; selLinea.value = 'todas'; selTema.value = 'todos';
+      (tipoBtns[0] as HTMLElement).click(); apply();
+    });
+    // Atajo teclado "/" → foco en buscador
+    document.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== q && !/INPUT|TEXTAREA|SELECT/.test((document.activeElement as HTMLElement)?.tagName || '')) {
+        e.preventDefault(); q.focus();
+      }
+    });
+    sort();
+  </script>
+</Base>

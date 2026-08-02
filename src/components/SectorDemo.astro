@@ -1,0 +1,142 @@
+---
+// Demostrador sectorial por fases (escenarios A–E con recorrido probatorio).
+import type { EscenarioFases } from '../data/demo-credito';
+
+interface Props {
+  escenarios: EscenarioFases[];
+  accent?: string;
+}
+const { escenarios, accent = '#22D3EE' } = Astro.props;
+const f = escenarios[0];
+---
+<section class="relative grain py-20 lg:py-24 scroll-mt-20" id="demo" style={`--tone:${accent}`}>
+  <div class="max-w-7xl mx-auto px-6">
+    <p class="label text-green mb-3">Escenarios</p>
+    <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Elige un escenario para recorrerlo.</h2>
+    <p class="mt-4 text-cloud/60 max-w-2xl">Cada escenario reconstruye un proceso real fase a fase. Sin la capa de confianza se acumula deuda legal; con ella, cada hito queda sellado en un expediente verificable.</p>
+
+    <!-- Selector A–E -->
+    <div class="mt-10 flex flex-wrap gap-3">
+      {escenarios.map((e, i) => (
+        <button type="button" class="esc-btn group flex items-center gap-3 card rounded-xl px-4 py-3 border-2 transition-all reveal" data-id={e.id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          <span class="esc-letter w-8 h-8 rounded-lg flex items-center justify-center mono text-sm font-semibold shrink-0" style={`background:${accent}1f;color:${accent}`}>{e.letter}</span>
+          <span class="text-cloud/80 text-sm font-medium text-left leading-tight group-hover:text-cloud">{e.title}</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Detalle -->
+    <div class="mt-10 grid lg:grid-cols-12 gap-6">
+      <!-- Izquierda: objetivo, descripción, SIN/CON, variantes -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="card rounded-2xl p-7 reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <span id="d-letter" class="w-11 h-11 rounded-xl flex items-center justify-center mono text-lg font-semibold shrink-0" style={`background:${accent}1f;color:${accent}`}>{f.letter}</span>
+            <h3 id="d-title" class="head text-xl text-cloud font-semibold leading-tight">{f.title}</h3>
+          </div>
+          <p id="d-objective" class="text-green text-sm font-medium">{f.objective}</p>
+          <p id="d-desc" class="text-cloud/70 text-sm mt-3 leading-relaxed">{f.description}</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-5 reveal">
+            <p class="mono text-[10px] text-red-400/90">SIN TRUST LAYER</p>
+            <h4 class="head text-cloud font-semibold mt-1 flex items-center gap-2"><i class="ph ph-warning-circle text-red-400"></i> Deuda legal</h4>
+            <p class="text-cloud/60 text-sm mt-2 leading-relaxed">Solo registros internos no cualificados. Cada hito sin evidencia eleva el riesgo probatorio.</p>
+          </div>
+          <div class="rounded-2xl border border-green/30 bg-green/5 p-5 reveal">
+            <p class="mono text-[10px] text-green">CON TRUST LAYER</p>
+            <h4 class="head text-cloud font-semibold mt-1 flex items-center gap-2"><i class="ph ph-seal-check text-green"></i> Expediente cualificado</h4>
+            <p class="text-cloud/60 text-sm mt-2 leading-relaxed">Cada fase invoca los managers de la Factoría y produce evidencia sellada eIDAS, verificable por terceros.</p>
+          </div>
+        </div>
+
+        <div class="card rounded-2xl p-6 reveal">
+          <p class="mono text-[11px] text-cloud/45 mb-3">VARIANTES</p>
+          <div class="space-y-3">
+            <div>
+              <p class="text-cloud font-medium text-sm flex items-center gap-2"><i class="ph ph-robot text-green"></i> Modo agéntico (IA)</p>
+              <p id="d-agentic" class="text-cloud/60 text-sm mt-1 leading-relaxed">{f.agenticVariant}</p>
+            </div>
+            <div class="border-t border-cloud/10 pt-3">
+              <p class="text-cloud font-medium text-sm flex items-center gap-2"><i class="ph ph-tag text-green"></i> Modo white-label</p>
+              <p id="d-whitelabel" class="text-cloud/60 text-sm mt-1 leading-relaxed">{f.whiteLabelVariant}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Derecha: fases + managers + evidencias -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="card rounded-2xl p-6 reveal">
+          <p class="mono text-[11px] text-cloud/45 mb-4">RECORRIDO · FASES</p>
+          <ol id="d-phases" class="space-y-2.5">
+            {f.phases.map((p, i) => (
+              <li class="flex items-start gap-3">
+                <span class="mono text-[10px] text-green/80 mt-0.5 w-5 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+                <span class="text-cloud/75 text-sm leading-snug">{p}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div class="card rounded-2xl p-6 reveal">
+          <p class="mono text-[11px] text-cloud/45 mb-3">MANAGERS INVOCADOS</p>
+          <div id="d-managers" class="flex flex-wrap gap-2"></div>
+          <p class="mono text-[11px] text-cloud/45 mt-5 mb-3">EVIDENCIAS PRODUCIDAS</p>
+          <div id="d-evidences" class="flex flex-wrap gap-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mono text-[11px] text-cloud/40 mt-8 text-center">Demo ilustrativa · datos sintéticos · endpoints de ejemplo · no constituye asesoramiento</p>
+  </div>
+</section>
+
+<script define:vars={{ escenarios, accent }}>
+  const byId = (id) => document.getElementById(id);
+  const map = Object.fromEntries(escenarios.map((e) => [e.id, e]));
+  const mgrIcon = (m) =>
+    m.includes('Evidence') ? 'ph-fingerprint' :
+    m.includes('Signature') ? 'ph-pen-nib' :
+    m.includes('Notification') ? 'ph-envelope-simple' :
+    m.includes('Custody') ? 'ph-archive' : 'ph-cube';
+
+  function chip(text, icon) {
+    return `<span class="inline-flex items-center gap-1.5 mono text-[11px] px-2.5 py-1 rounded-full border border-cloud/15 text-cloud/70"><i class="ph ${icon}"></i>${text}</span>`;
+  }
+
+  function render(e) {
+    byId('d-letter').textContent = e.letter;
+    byId('d-title').textContent = e.title;
+    byId('d-objective').textContent = e.objective;
+    byId('d-desc').textContent = e.description;
+    byId('d-agentic').textContent = e.agenticVariant;
+    byId('d-whitelabel').textContent = e.whiteLabelVariant;
+    byId('d-phases').innerHTML = e.phases.map((p, i) =>
+      `<li class="flex items-start gap-3"><span class="mono text-[10px] text-green/80 mt-0.5 w-5 shrink-0">${String(i + 1).padStart(2, '0')}</span><span class="text-cloud/75 text-sm leading-snug">${p}</span></li>`
+    ).join('');
+    byId('d-managers').innerHTML = e.managers.map((m) => chip(m.replace(' Manager', ''), mgrIcon(m))).join('');
+    byId('d-evidences').innerHTML = e.evidences.map((ev) => chip(ev, 'ph-seal-check')).join('');
+  }
+
+  document.querySelectorAll('.esc-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.esc-btn').forEach((b) => {
+        b.setAttribute('aria-pressed', 'false');
+        b.style.borderColor = '';
+      });
+      btn.setAttribute('aria-pressed', 'true');
+      btn.style.borderColor = accent;
+      const e = map[btn.dataset.id];
+      if (e) render(e);
+    });
+  });
+
+  // Init
+  const first = document.querySelector('.esc-btn');
+  if (first) first.style.borderColor = accent;
+  if (escenarios[0]) {
+    byId('d-managers').innerHTML = escenarios[0].managers.map((m) => chip(m.replace(' Manager', ''), mgrIcon(m))).join('');
+    byId('d-evidences').innerHTML = escenarios[0].evidences.map((ev) => chip(ev, 'ph-seal-check')).join('');
+  }
+</script>

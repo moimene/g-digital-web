@@ -1,0 +1,21 @@
+---
+// El dúo dolor → respuesta (patrón narrativo de las páginas de línea).
+// Sobre papel: rojo sobrio para el dolor, teal para la respuesta. Sobre tinta: variantes dark.
+interface Props {
+  pain: string;
+  fix: string;
+  painLabel?: string;
+  fixLabel?: string;
+}
+const { pain, fix, painLabel = 'El dolor', fixLabel = 'La respuesta' } = Astro.props;
+---
+<div class="grid md:grid-cols-2 gap-6 reveal-group">
+  <div class="rounded-2xl p-7 border" style="border-color:rgba(180,60,60,.35);background:rgba(180,60,60,.06)">
+    <p class="mono text-[10px] tracking-widest mb-3" style="color:rgba(196,90,80,.95)">{painLabel.toUpperCase()}</p>
+    <p class="head text-lg t1 font-semibold leading-snug">{pain}</p>
+  </div>
+  <div class="rounded-2xl p-7 border" style="border-color:rgba(var(--accent-rgb),.4);background:rgba(var(--accent-rgb),.06)">
+    <p class="mono text-[10px] tracking-widest accent mb-3">{fixLabel.toUpperCase()}</p>
+    <p class="head text-lg t1 font-semibold leading-snug">{fix}</p>
+  </div>
+</div>

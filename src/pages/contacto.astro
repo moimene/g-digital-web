@@ -1,34 +1,36 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Contacto — g-digital | Grupo Garrigues" description="Cuéntanos una operación crítica y te mostramos cómo convertirla en evidencia con efectos legales.">
-  <section class="relative grain py-20 lg:py-28 border-b border-cloud/10">
-    <div class="max-w-3xl mx-auto px-6">
-      <p class="label text-green mb-6">Contacto</p>
-      <h1 class="head display text-4xl lg:text-5xl text-cloud font-semibold">Empieza a saldar tu <span class="green-text">Deuda Legal</span>.</h1>
-      <p class="mt-6 text-cloud/70 leading-relaxed">Cuéntanos una operación crítica de tu organización y te mostramos cómo convertirla en evidencia cualificada.</p>
+<Base title="Contacto: g-digital | Grupo Garrigues" description="Cuéntanos un caso real (un contrato, una operación, una tokenización o un sistema de IA) y te decimos qué línea lo resuelve y cómo.">
+  <div class="surface-paper">
+    <section class="py-20 lg:py-28">
+      <div class="max-w-3xl mx-auto px-6">
+        <p class="label accent mb-6">Contacto</p>
+        <h1 class="display-1 t1 font-semibold">Pon tu reto <span style="color:var(--teal)">sobre la mesa</span>.</h1>
+        <p class="mt-6 lead t2 leading-relaxed">Cuéntanos un caso real —un contrato, una operación, una tokenización o un sistema de IA— y te decimos qué línea lo resuelve y cómo.</p>
 
-      <form class="mt-10 space-y-5" onsubmit="event.preventDefault(); this.querySelector('[data-ok]').classList.remove('hidden');">
-        <div class="grid sm:grid-cols-2 gap-5">
-          <label class="block"><span class="text-sm text-cloud/70">Nombre y apellidos</span><input required type="text" class="mt-2 w-full bg-coal border border-cloud/15 rounded-lg px-4 py-3 text-cloud focus:border-green outline-none" /></label>
-          <label class="block"><span class="text-sm text-cloud/70">Email corporativo</span><input required type="email" class="mt-2 w-full bg-coal border border-cloud/15 rounded-lg px-4 py-3 text-cloud focus:border-green outline-none" /></label>
+        <form class="mt-10 space-y-5 card-s rounded-2xl p-7 lg:p-9" onsubmit="event.preventDefault(); this.querySelector('[data-ok]').classList.remove('hidden');">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <label class="block"><span class="text-sm t1 font-medium">Nombre y apellidos</span><input required type="text" class="mt-2 w-full bg-white border rounded-lg px-4 py-3 t1 outline-none focus:border-[var(--teal)] transition-colors" style="border-color:var(--line-strong)" /></label>
+            <label class="block"><span class="text-sm t1 font-medium">Email corporativo</span><input required type="email" class="mt-2 w-full bg-white border rounded-lg px-4 py-3 t1 outline-none focus:border-[var(--teal)] transition-colors" style="border-color:var(--line-strong)" /></label>
+          </div>
+          <label class="block"><span class="text-sm t1 font-medium">Tu perfil</span>
+            <select class="mt-2 w-full bg-white border rounded-lg px-4 py-3 t1 outline-none focus:border-[var(--teal)] transition-colors" style="border-color:var(--line-strong)">
+              <option>Legal / Compliance</option><option>Innovación / TI</option><option>Riesgo (CISO/DPO)</option><option>Negocio (CFO/Dirección)</option>
+            </select>
+          </label>
+          <label class="block"><span class="text-sm t1 font-medium">Cuéntanos tu caso</span><textarea rows="4" class="mt-2 w-full bg-white border rounded-lg px-4 py-3 t1 outline-none focus:border-[var(--teal)] transition-colors" style="border-color:var(--line-strong)"></textarea></label>
+          <label class="flex gap-3 text-xs t2"><input required type="checkbox" class="mt-1 accent-[#007362]" /> He leído y acepto la <a href="https://www.garrigues.com/es_ES/politica-privacidad" class="accent underline">política de privacidad</a>.</label>
+          <button type="submit" class="btn-primary px-7 py-3.5 rounded-xl">Solicitar conversación</button>
+          <p data-ok class="hidden text-sm font-medium" style="color:var(--teal)">Gracias: maqueta sin backend todavía. En producción esto enviará el formulario.</p>
+        </form>
+
+        <div class="mt-8 rounded-xl border p-5 text-xs t2 leading-relaxed" style="border-color:var(--line);background:var(--paper-2)">
+          <strong class="t1">Información básica de protección de datos.</strong> Responsable: J&amp;A Garrigues, S.L.P. Finalidad: atender tu consulta. Base legal: interés legítimo. Destinatarios: entidades del Grupo Garrigues y prestadores de servicios. Derechos: acceso, rectificación, supresión y demás según la
+          <a href="https://www.garrigues.com/es_ES/politica-privacidad" class="accent underline">información adicional sobre privacidad</a>.
         </div>
-        <label class="block"><span class="text-sm text-cloud/70">Tu perfil</span>
-          <select class="mt-2 w-full bg-coal border border-cloud/15 rounded-lg px-4 py-3 text-cloud focus:border-green outline-none">
-            <option>Legal / Compliance</option><option>Innovación / TI</option><option>Riesgo (CISO/DPO)</option><option>Negocio (CFO/Dirección)</option>
-          </select>
-        </label>
-        <label class="block"><span class="text-sm text-cloud/70">Cuéntanos tu caso</span><textarea rows="4" class="mt-2 w-full bg-coal border border-cloud/15 rounded-lg px-4 py-3 text-cloud focus:border-green outline-none"></textarea></label>
-        <label class="flex gap-3 text-xs text-cloud/55"><input required type="checkbox" class="mt-1 accent-green" /> He leído y acepto la <a href="https://www.garrigues.com/es_ES/politica-privacidad" class="green-text underline">política de privacidad</a>.</label>
-        <button type="submit" class="bg-green text-ink px-7 py-3.5 rounded-xl font-semibold hover:bg-[#26ff75] transition-colors">Solicitar conversación</button>
-        <p data-ok class="hidden text-green text-sm">Gracias — maqueta sin backend todavía. En producción esto enviará el formulario.</p>
-      </form>
-
-      <div class="mt-10 rounded-xl border border-cloud/10 bg-coal/60 p-5 text-xs text-cloud/55 leading-relaxed">
-        <strong class="text-cloud/70">Información básica de protección de datos.</strong> Responsable: J&amp;A Garrigues, S.L.P. Finalidad: atender tu consulta. Base legal: interés legítimo. Destinatarios: entidades del Grupo Garrigues y prestadores de servicios. Derechos: acceso, rectificación, supresión y demás según la
-        <a href="https://www.garrigues.com/es_ES/politica-privacidad" class="green-text underline">información adicional sobre privacidad</a>.
+        <p class="mt-6 text-sm t2">O escríbenos a <span class="t1 font-medium">info@g-digital.garrigues.com</span> · Madrid, España.</p>
       </div>
-      <p class="mt-6 text-sm text-cloud/60">O escríbenos a <span class="text-cloud">info@g-digital.garrigues.com</span> · Madrid, España.</p>
-    </div>
-  </section>
+    </section>
+  </div>
 </Base>

@@ -1,0 +1,42 @@
+<svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" font-family="Rubik, sans-serif">
+<title id="t">Activos Digitales — g-digital</title>
+<desc id="d">Línea 03 Activos Digitales: tokenizar activos reales con licencia para operar, bajo marco regulado de la UE.</desc>
+<defs>
+<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&amp;family=Rubik:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap');.h{font-family:'Poppins','Century Gothic',sans-serif}.b{font-family:'Rubik',sans-serif}.m{font-family:'JetBrains Mono',monospace}</style>
+<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+</defs>
+<rect width="1080" height="1350" fill="#05060A"/>
+<rect width="1080" height="1350" filter="url(#g)" opacity="0.05"/>
+<rect x="40" y="40" width="1000" height="1270" rx="18" fill="none" stroke="#F4F6F5" stroke-opacity="0.08"/>
+
+<text x="90" y="116" class="m" fill="#2BD4B0" font-size="20" letter-spacing="4">LÍNEA 03 · ACTIVOS DIGITALES</text>
+<text x="1000" y="118" text-anchor="end" class="h" font-size="30" font-weight="700"><tspan fill="#0CF25D">g</tspan><tspan fill="#F4F6F5">-digital</tspan></text>
+<text x="90" y="206" class="h" font-size="50" font-weight="600" fill="#F4F6F5">Tokenizar activos reales</text>
+<text x="90" y="266" class="h" font-size="50" font-weight="600" fill="#F4F6F5">con <tspan fill="#2BD4B0">licencia para operar</tspan>.</text>
+<text x="90" y="324" class="b" font-size="23" fill="#9AA39F">Mercados digitales bajo marco regulado de la Unión Europea.</text>
+
+<!-- motif: retícula / bloques -->
+<g fill="none" stroke="#2BD4B0" stroke-opacity="0.4">
+<rect x="390" y="410" width="300" height="300"/>
+<line x1="390" y1="410" x2="540" y2="560"/><line x1="690" y1="410" x2="540" y2="560"/>
+<line x1="390" y1="710" x2="540" y2="560"/><line x1="690" y1="710" x2="540" y2="560"/>
+<line x1="465" y1="410" x2="540" y2="560"/><line x1="615" y1="410" x2="540" y2="560"/>
+<line x1="465" y1="710" x2="540" y2="560"/><line x1="615" y1="710" x2="540" y2="560"/>
+<rect x="510" y="530" width="60" height="60" stroke-width="1.6"/>
+</g>
+
+<text x="90" y="804" class="h" font-size="30" font-weight="700" fill="#2BD4B0">01</text>
+<text x="162" y="800" class="h" font-size="24" font-weight="600" fill="#F4F6F5">OpenBrick</text>
+<text x="162" y="832" class="b" font-size="18" fill="#9AA39F">Tokenización inmobiliaria bajo el Régimen Piloto DLT (CNMV).</text>
+<text x="90" y="964" class="h" font-size="30" font-weight="700" fill="#2BD4B0">02</text>
+<text x="162" y="960" class="h" font-size="24" font-weight="600" fill="#F4F6F5">ioBuilders + Garrigues</text>
+<text x="162" y="992" class="b" font-size="18" fill="#9AA39F">Infraestructura DLT + regulación financiera del despacho.</text>
+<text x="90" y="1124" class="h" font-size="30" font-weight="700" fill="#2BD4B0">03</text>
+<text x="162" y="1120" class="h" font-size="24" font-weight="600" fill="#F4F6F5">RWA, capital y ESG</text>
+<text x="162" y="1152" class="b" font-size="18" fill="#9AA39F">Del inmobiliario a bonos digitales y créditos de carbono.</text>
+
+<text x="90" y="1200" class="m" font-size="14" fill="#2BD4B0">Reglamento (UE) 2022/858 · Régimen Piloto DLT</text>
+<rect x="80" y="1238" width="920" height="1.5" fill="#F4F6F5" opacity="0.15"/>
+<text x="80" y="1276" class="m" font-size="15" fill="#F4F6F5" fill-opacity="0.55" letter-spacing="1.5">LA TECNOLOGÍA DE GARRIGUES PARA LA COMPLEJIDAD JURÍDICA</text>
+<text x="1000" y="1276" text-anchor="end" class="m" font-size="15" fill="#F4F6F5" fill-opacity="0.7">g-digital.garrigues.com</text>
+</svg>

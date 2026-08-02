@@ -13,6 +13,9 @@ export default {
         ink: '#05060A',     // lienzo negro
         coal: '#0C0E12',    // superficie elevada
         cloud: '#F4F6F5',   // texto sobre oscuro
+        // Acentos por línea de negocio (tintes luminosos para legibilidad sobre negro)
+        aqua: '#2BD4B0',    // Activos Digitales (tinte de teal #007362)
+        azure: '#5B9CF6',   // GRC & IA (tinte de navy #143259)
       },
       fontFamily: {
         head: ['Poppins', 'Century Gothic', 'sans-serif'],

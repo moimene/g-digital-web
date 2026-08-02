@@ -1,0 +1,18 @@
+---
+// Intro de sección editorial: numeración de dossier + titular + lead.
+// Hereda colores de la superficie (.surface-*) que la envuelve.
+interface Props {
+  num?: string;           // "01" — marginalia de dossier
+  label: string;
+  title: string;
+  lead?: string;
+  align?: 'left' | 'center';
+}
+const { num, label, title, lead, align = 'left' } = Astro.props;
+const center = align === 'center';
+---
+<div class={`reveal ${center ? 'text-center mx-auto' : ''} max-w-3xl`}>
+  <p class="label accent mb-6">{num && <span class="t3 font-normal">{num} · </span>}{label}</p>
+  <h2 class="display-2 t1 font-semibold">{title}</h2>
+  {lead && <p class="mt-6 t2 leading-relaxed" set:html={lead} />}
+</div>

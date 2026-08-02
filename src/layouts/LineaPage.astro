@@ -1,0 +1,58 @@
+---
+// Layout de página de línea (rediseño editorial v4).
+// Hero tinta con acento del tono de la línea + wireframe de marca + CTA editorial final.
+// El contenido intermedio vive en el slot (producto = tinta; secciones papel puntuales).
+import Base from './Base.astro';
+import Wireframe from '../components/Wireframe.astro';
+import CTAEditorial from '../components/CTAEditorial.astro';
+import { SITE } from '../consts';
+
+interface Props {
+  kicker: string;
+  title: string;
+  intro: string;
+  linea?: string;                                  // "Línea 01" …
+  cta?: string;
+  tone?: 'green' | 'lime' | 'aqua' | 'azure';
+  motif?: 'sphere' | 'tunnel' | 'spiral' | 'grid' | 'ribbon';
+  ctaSub?: string;
+}
+const { kicker, title, intro, linea, cta = 'Habla con un experto', tone = 'green', motif = 'tunnel', ctaSub } = Astro.props;
+
+const toneRgb: Record<string, string> = {
+  green: '12,242,93',
+  lime: '204,249,67',
+  aqua: '43,212,176',
+  azure: '91,156,246',
+};
+const rgb = toneRgb[tone] ?? toneRgb.green;
+const hasMedia = Astro.slots.has('media');
+---
+<Base title={`${title} | ${SITE.name}`} description={intro}>
+  <!-- HERO de línea (tinta, acento en el tono de la línea) -->
+  <header class="relative overflow-hidden surface-ink" style={`--accent-rgb:${rgb};--accent:rgba(${rgb},1)`}>
+    {!hasMedia && (
+      <Wireframe variant={motif} density="strong" color={`rgba(${rgb},.5)`}
+        class="absolute right-[-12rem] top-20 translate-y-0 w-[25rem] h-[25rem] opacity-25 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[34rem] md:h-[34rem] md:opacity-60" />
+    )}
+    {hasMedia && <slot name="media" />}
+    <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-20 lg:pt-28 lg:pb-24">
+      <p class="label accent mb-6 reveal">{linea ? `${linea} · ` : ''}{kicker}</p>
+      <h1 class="display-1 t1 font-semibold max-w-4xl reveal">{title}</h1>
+      <p class="mt-8 max-w-2xl lead t2 reveal">{intro}</p>
+      <div class="mt-10 h-[3px] w-24 reveal" style={`background:rgba(${rgb},.85)`} aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <slot />
+
+  <!-- CTA final editorial -->
+  <div class="surface-ink grain">
+    <CTAEditorial
+      title="¿Hablamos de tu caso?"
+      sub={ctaSub ?? 'Cuéntanos un caso real y te mostramos exactamente cómo lo resolvemos.'}
+      primary={{ href: '/contacto', label: cta }}
+      secondary={{ href: '/#lineas', label: 'Ver las 4 líneas' }}
+    />
+  </div>
+</Base>

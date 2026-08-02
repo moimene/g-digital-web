@@ -1,0 +1,107 @@
+/* Phosphor regular — subset de marca g-digital (73 iconos usados).
+   Fuente: @phosphor-icons/web@2.1.2 (MIT). Regenerar: ver scripts/build-icon-subset.mjs.
+   NO añadir iconos a mano: actualiza el inventario y re-sube el subset. */
+@font-face {
+  font-family: 'Phosphor';
+  src: url('/fonts/Phosphor-subset.woff2') format('woff2');
+  font-weight: normal; font-style: normal; font-display: block;
+}
+
+.ph {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "Phosphor" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  -webkit-font-variant-ligatures: discretionary-ligatures;
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ph-archive:before { content: "\e00c"; }
+.ph-arrow-down:before { content: "\e03e"; }
+.ph-arrow-left:before { content: "\e058"; }
+.ph-arrow-right:before { content: "\e06c"; }
+.ph-arrow-up-right:before { content: "\e092"; }
+.ph-bank:before { content: "\e0b4"; }
+.ph-brackets-angle:before { content: "\e862"; }
+.ph-brain:before { content: "\e74e"; }
+.ph-buildings:before { content: "\e102"; }
+.ph-calendar-dots:before { content: "\e7b4"; }
+.ph-camera:before { content: "\e10e"; }
+.ph-car:before { content: "\e112"; }
+.ph-caret-down:before { content: "\e136"; }
+.ph-certificate:before { content: "\e766"; }
+.ph-chart-line-up:before { content: "\e156"; }
+.ph-chats-circle:before { content: "\e17e"; }
+.ph-clipboard-text:before { content: "\e198"; }
+.ph-cloud:before { content: "\e1aa"; }
+.ph-code:before { content: "\e1bc"; }
+.ph-code-block:before { content: "\eafe"; }
+.ph-coins:before { content: "\e78e"; }
+.ph-compass:before { content: "\e1c8"; }
+.ph-compass-tool:before { content: "\ea0e"; }
+.ph-cube:before { content: "\e1da"; }
+.ph-database:before { content: "\e1de"; }
+.ph-device-mobile:before { content: "\e1e0"; }
+.ph-download-simple:before { content: "\e20c"; }
+.ph-envelope-simple:before { content: "\e218"; }
+.ph-eye-slash:before { content: "\e224"; }
+.ph-file-dashed:before { content: "\e704"; }
+.ph-file-pdf:before { content: "\e702"; }
+.ph-file-text:before { content: "\e23a"; }
+.ph-fingerprint:before { content: "\e23e"; }
+.ph-flow-arrow:before { content: "\e6ec"; }
+.ph-folders:before { content: "\e260"; }
+.ph-fork-knife:before { content: "\e262"; }
+.ph-gavel:before { content: "\ea32"; }
+.ph-git-branch:before { content: "\e278"; }
+.ph-github-logo:before { content: "\e576"; }
+.ph-globe-hemisphere-west:before { content: "\e28c"; }
+.ph-hand-coins:before { content: "\ea8c"; }
+.ph-handshake:before { content: "\e582"; }
+.ph-heartbeat:before { content: "\e2ac"; }
+.ph-house-line:before { content: "\e2c4"; }
+.ph-leaf:before { content: "\e2da"; }
+.ph-lightning:before { content: "\e2de"; }
+.ph-linkedin-logo:before { content: "\e2ee"; }
+.ph-list:before { content: "\e2f0"; }
+.ph-lock:before { content: "\e2fa"; }
+.ph-magnifying-glass:before { content: "\e30c"; }
+.ph-pen-nib:before { content: "\e3ac"; }
+.ph-plugs-connected:before { content: "\eb5a"; }
+.ph-printer:before { content: "\e3dc"; }
+.ph-robot:before { content: "\e762"; }
+.ph-rocket-launch:before { content: "\e3fe"; }
+.ph-scales:before { content: "\e750"; }
+.ph-scroll:before { content: "\eb7a"; }
+.ph-seal:before { content: "\e604"; }
+.ph-seal-check:before { content: "\e606"; }
+.ph-shield:before { content: "\e40a"; }
+.ph-shield-check:before { content: "\e40c"; }
+.ph-shield-star:before { content: "\ec34"; }
+.ph-sparkle:before { content: "\e6a2"; }
+.ph-squares-four:before { content: "\e464"; }
+.ph-stack:before { content: "\e466"; }
+.ph-stack-minus:before { content: "\edf4"; }
+.ph-tag:before { content: "\e478"; }
+.ph-trend-up:before { content: "\e4ae"; }
+.ph-trophy:before { content: "\e67e"; }
+.ph-truck:before { content: "\e4b4"; }
+.ph-users-three:before { content: "\e68e"; }
+.ph-warning-circle:before { content: "\e4e2"; }
+.ph-x:before { content: "\e4f6"; }
