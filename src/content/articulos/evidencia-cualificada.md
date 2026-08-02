@@ -53,9 +53,9 @@ En producción real: la custodia de g-digital/EADTrust gestiona hoy más de 20 T
 
 ## 6. El efecto procesal: la carga de la prueba cambia de lado
 
-La cadena completa — hash + sello cualificado + firma del nivel adecuado + entrega certificada + custodia — compone un bloque probatorio que el ordenamiento español premia dos veces: las presunciones eIDAS (integridad, fecha, envío) y el art. 326.4 LEC, que otorga prueba plena al documento privado impugnado cuya autenticidad se acredita.
+La cadena completa — hash + sello cualificado + firma del nivel adecuado + entrega certificada + custodia — compone un bloque probatorio que el ordenamiento español premia dos veces: las presunciones eIDAS (integridad, fecha, envío) y el par de la LEC que decide quién trabaja en el juicio: con servicio de confianza cualificado, el art. 326.3 presume la autenticidad e integridad del documento y corresponde a quien lo impugna probar su falsedad; sin él, el art. 326.4 exige acreditar la autenticidad por peritaje sobre el procedimiento empleado.
 
-El resultado práctico: **quien impugna tu evidencia tiene que demostrar que es falsa**, no tú que es verdadera. Las disputas se juegan sobre el fondo; las auditorías cierran antes; las inspecciones dejan de ser una reconstrucción arqueológica de expedientes.
+Traducción práctica: **cualificado → presunción; no cualificado → periciales, costes e incertidumbre**. Quien presenta evidencia cualificada empieza el litigio ganando el plano probatorio: las disputas se juegan sobre el fondo, las auditorías cierran antes y las inspecciones dejan de ser una reconstrucción arqueológica de expedientes.
 
 *El alcance de cada presunción depende del mecanismo y del caso concreto: la estrategia probatoria es territorio de tu asesor legal. La arquitectura que la hace posible es territorio nuestro.*
 

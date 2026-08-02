@@ -69,7 +69,7 @@ La cadena de valor probatorio tiene eslabones concretos, cada uno con efectos ju
 4. **Entrega electrónica certificada (ERDS)** — prueba de envío, entrega y contenido (arts. 43-44 eIDAS).
 5. **Custodia a largo plazo (LTV/LTA, WORM)** — verificabilidad mantenida en el tiempo, con re-sellado periódico.
 
-El efecto procesal agregado en España lo completa el art. 326.4 LEC: el documento privado impugnado cuya autenticidad se acredita hace prueba plena. En la práctica, **la carga de la prueba se desplaza hacia quien impugna** y la disputa se juega sobre el fondo, no sobre la validez de la prueba. *Cada presunción tiene alcance y límites: su aplicación al caso concreto corresponde al asesor legal.*
+El efecto procesal agregado en España lo completa la LEC con una bifurcación decisiva: **con servicio de confianza cualificado** (firma, sello, entrega, archivo), el art. 326.3 presume la autenticidad e integridad del documento — quien lo impugna debe probar su falsedad; **sin él**, el art. 326.4 traslada la prueba al titular del documento, que deberá acreditar su autenticidad por peritaje. En la práctica, **la carga de la prueba se desplaza hacia quien impugna** y la disputa se juega sobre el fondo, no sobre la validez de la prueba. *Cada presunción tiene alcance y límites: su aplicación al caso concreto corresponde al asesor legal.*
 
 ## 6. Metodología de remediación
 

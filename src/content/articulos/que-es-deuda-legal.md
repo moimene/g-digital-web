@@ -39,7 +39,7 @@ La deuda legal no figura en ningún balance: es un pasivo contingente que nadie 
 
 ## El salto probatorio, en llano
 
-No toda prueba digital es igual. Un PDF aislado es fácilmente impugnable: quien lo aporta soporta la carga de demostrar su autenticidad. En cambio, una operación con **firma del nivel adecuado al riesgo, sello de tiempo cualificado y —cuando aplica— notificación certificada** compone un bloque probatorio robusto: el marco eIDAS otorga a estos mecanismos presunciones de integridad y de fecha (art. 41.2), y la LEC premia con prueba plena al documento privado cuya autenticidad se acredita (art. 326.4).
+No toda prueba digital es igual. Un PDF aislado es fácilmente impugnable: quien lo aporta soporta la carga de demostrar su autenticidad. En cambio, una operación con **firma del nivel adecuado al riesgo, sello de tiempo cualificado y —cuando aplica— notificación certificada** compone un bloque probatorio robusto: el marco eIDAS otorga a estos mecanismos presunciones de integridad y de fecha (art. 41.2), y la LEC separa dos destinos probatorios — con servicio de confianza cualificado, presunción de autenticidad e integridad (art. 326.3); sin él, acreditación por peritaje (art. 326.4).
 
 El efecto práctico: la carga de la prueba se desplaza hacia quien impugna. Tus equipos legales dejan de litigar sobre la validez de la evidencia y se concentran en el fondo del asunto. *(El alcance exacto de cada presunción depende del mecanismo y del caso: es territorio de tu asesor legal, no de un artículo.)*
 

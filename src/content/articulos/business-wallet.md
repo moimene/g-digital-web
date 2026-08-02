@@ -39,7 +39,9 @@ El resultado es un **expediente probatorio**: qué se mostró, qué se comprendi
 
 ## Quién tiene que moverse, y cuándo
 
-eIDAS 2 (Reglamento UE 2024/1183) ya está en vigor y despliega sus actos de ejecución con calendario. Los sectores obligados a aceptar la wallet tienen un horizonte marcado; los cuasi-obligados (transporte, movilidad, hostelería) la encontrarán como ventaja competitiva antes que como obligación. La lectura estratégica: quien integra pronto la identidad wallet en sus procesos convierte una obligación regulatoria en la experiencia de entrada más fluida del mercado.
+eIDAS 2 (Reglamento UE 2024/1183) ya está en vigor y su calendario tiene fechas: los Estados miembros ponen la wallet a disposición del ciudadano **antes de finales de 2026** — con la obligación de aceptación del sector público en esa misma ventana — y la obligación de aceptación del **sector privado** llega **hacia finales de 2027** (para organizaciones con autenticación reforzada exigida por ley o contrato: banca, seguros, telco, energía, salud, educación, grandes plataformas…). Los cuasi-obligados (transporte, movilidad, hostelería) la encontrarán como ventaja competitiva antes que como obligación.
+
+No es teoría: el piloto europeo **WE BUILD** (~200 socios, 13 registros mercantiles europeos) está probando ya la Business Wallet en casos reales — KYB entre empresas, mandatos digitales de representación, operativa transfronteriza. La lectura estratégica: quien integra pronto la identidad wallet en sus procesos convierte una obligación regulatoria en la experiencia de entrada más fluida del mercado.
 
 ## El papel de g-digital: el puente
 
