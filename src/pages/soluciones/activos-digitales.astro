@@ -1,6 +1,7 @@
 ---
-import Linea from '../../layouts/Linea.astro';
+import LineaPage from '../../layouts/LineaPage.astro';
 import LineaExtra from '../../components/LineaExtra.astro';
+import PainPair from '../../components/PainPair.astro';
 import poster from '../../assets/infografias/03-activos-digitales.svg?raw';
 
 const cadena = [
@@ -20,7 +21,7 @@ const pilares = [
   ['Gobernanza y Evidencia', 'EADTrust integra eIDAS: sellado de operaciones, custodia de registros y controles de integridad para auditoría.'],
 ];
 ---
-<Linea
+<LineaPage
   linea="Línea 03"
   tone="aqua"
   motif="grid"
@@ -33,27 +34,23 @@ const pilares = [
 
   <!-- El dolor → la respuesta -->
   <section class="relative grain bg-coal/60 py-16 border-b border-cloud/10">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6">
-      <div class="rounded-2xl border border-red-500/30 bg-red-500/5 p-6 reveal">
-        <p class="mono text-[10px] text-red-400/90 mb-2">EL DOLOR</p>
-        <p class="head text-lg text-cloud font-semibold leading-snug">Quieres llevar activos reales a tokens, pero el mercado está lleno de estructuras que no aguantan una revisión del regulador.</p>
-      </div>
-      <div class="rounded-2xl border border-aqua/30 bg-aqua/5 p-6 reveal">
-        <p class="mono text-[10px] text-aqua mb-2">LA RESPUESTA</p>
-        <p class="head text-lg text-cloud font-semibold leading-snug">Tokenización con vehículo jurídico diseñado por Garrigues, DLT de clase empresarial (ioBuilders) y evidencia cualificada (EADTrust), bajo el Régimen Piloto DLT de la UE.</p>
-      </div>
+    <div class="max-w-6xl mx-auto px-6">
+      <PainPair
+        pain="Quieres llevar activos reales a tokens, pero el mercado está lleno de estructuras que no aguantan una revisión del regulador."
+        fix="Tokenización con vehículo jurídico diseñado por Garrigues, DLT de clase empresarial (ioBuilders) y evidencia cualificada (EADTrust), bajo el Régimen Piloto DLT de la UE."
+      />
     </div>
   </section>
 
   <!-- OpenBrick -->
   <section class="relative grain py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">OpenBrick · el ecosistema inicial</p>
+      <p class="label text-aqua mb-6">OpenBrick · el ecosistema inicial</p>
       <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">Tokenización inmobiliaria bajo el Régimen Piloto DLT de la UE.</h2>
       <p class="mt-6 text-cloud/70 max-w-3xl leading-relaxed">Fracciona activos inmobiliarios en tokens regulados, accesibles desde cantidades reducidas, con liquidez secundaria en mercados supervisados. Cada token está respaldado por un vehículo jurídico (SPV) diseñado por Garrigues, bajo el Reglamento (UE) 2022/858, con supervisión de la CNMV. g-digital participa, junto con compañías clave del sector como BME, en una de las primeras plataformas de activos financieros tokenizados autorizadas bajo el Régimen Piloto.</p>
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {cadena.map(([t, d], i) => (
-          <div class="card rounded-2xl p-6 reveal"><span class="mono text-green text-sm">0{i + 1}</span><h3 class="head text-cloud font-semibold mt-2">{t}</h3><p class="text-cloud/60 text-sm mt-2">{d}</p></div>
+          <div class="card rounded-2xl p-6 reveal"><span class="mono text-aqua text-sm">0{i + 1}</span><h3 class="head text-cloud font-semibold mt-2">{t}</h3><p class="text-cloud/60 text-sm mt-2">{d}</p></div>
         ))}
       </div>
     </div>
@@ -62,10 +59,10 @@ const pilares = [
   <!-- Otras áreas -->
   <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Otras áreas de solución</p>
+      <p class="label text-aqua mb-6">Otras áreas de solución</p>
       <div class="grid md:grid-cols-3 gap-6">
         {otras.map((o) => (
-          <article class="card rounded-2xl p-7 reveal"><i class={`ph ${o.icon} text-green text-3xl`}></i><h3 class="head text-lg text-cloud mt-4 font-semibold">{o.title}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{o.body}</p></article>
+          <article class="card rounded-2xl p-7 reveal"><i class={`ph ${o.icon} text-aqua text-3xl`}></i><h3 class="head text-lg text-cloud mt-4 font-semibold">{o.title}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{o.body}</p></article>
         ))}
       </div>
     </div>
@@ -74,7 +71,7 @@ const pilares = [
   <!-- Propuesta de valor -->
   <section class="relative grain py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Propuesta de valor</p>
+      <p class="label text-aqua mb-6">Propuesta de valor</p>
       <div class="grid md:grid-cols-3 gap-8">
         {pilares.map(([t, d]) => (
           <div class="reveal"><div class="hairline mb-6"></div><h3 class="head text-xl text-cloud font-semibold">{t}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{d}</p></div>
@@ -91,4 +88,4 @@ const pilares = [
       </div>
     </div>
   </section>
-</Linea>
+</LineaPage>

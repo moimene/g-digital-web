@@ -1,5 +1,5 @@
 ---
-import Linea from '../../layouts/Linea.astro';
+import LineaPage from '../../layouts/LineaPage.astro';
 import LineaExtra from '../../components/LineaExtra.astro';
 import poster from '../../assets/infografias/04-grc-ia.svg?raw';
 
@@ -15,7 +15,7 @@ const grc = [
   { icon: 'ph-squares-four', title: 'Multi-dominio', body: 'RGPD, Prevención, Canal de Denuncias, AI Act, NIS2, DORA, ESG. Un framework, múltiples dominios.' },
 ];
 ---
-<Linea
+<LineaPage
   linea="Línea 04 · nueva"
   tone="azure"
   motif="spiral"
@@ -29,13 +29,13 @@ const grc = [
   <!-- Cumplimiento & gobernanza -->
   <section class="relative grain py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Cumplimiento &amp; Gobernanza IA</p>
+      <p class="label text-azure mb-6">Cumplimiento &amp; Gobernanza IA</p>
       <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">IA sin gobierno ni trazabilidad no es viable en operaciones empresariales.</h2>
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-gavel text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Cumplimiento AI Act</h3><p class="text-cloud/60 text-sm mt-2">Alineación con la normativa europea de IA en cada proceso que la emplea.</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-shield text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Diseño de guardarraíles</h3><p class="text-cloud/60 text-sm mt-2">Límites y protecciones para un comportamiento seguro y predecible.</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-magnifying-glass text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Análisis de sistemas IA</h3><p class="text-cloud/60 text-sm mt-2">Asistentes, scoring, filtrado de CV y otras aplicaciones de IA.</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-handshake text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Híbrido Tech + Derecho</h3><p class="text-cloud/60 text-sm mt-2">Expertise tecnológico + conocimiento jurídico de Garrigues.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-gavel text-azure text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Cumplimiento AI Act</h3><p class="text-cloud/60 text-sm mt-2">Alineación con la normativa europea de IA en cada proceso que la emplea.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-shield text-azure text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Diseño de guardarraíles</h3><p class="text-cloud/60 text-sm mt-2">Límites y protecciones para un comportamiento seguro y predecible.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-magnifying-glass text-azure text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Análisis de sistemas IA</h3><p class="text-cloud/60 text-sm mt-2">Asistentes, scoring, filtrado de CV y otras aplicaciones de IA.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-handshake text-azure text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Híbrido Tech + Derecho</h3><p class="text-cloud/60 text-sm mt-2">Expertise tecnológico + conocimiento jurídico de Garrigues.</p></div>
       </div>
     </div>
   </section>
@@ -43,11 +43,11 @@ const grc = [
   <!-- AIMS Console -->
   <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">AIMS Console · AI Act · ISO/IEC 42001</p>
+      <p class="label text-azure mb-6">AIMS Console · AI Act · ISO/IEC 42001</p>
       <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Registrar, clasificar y monitorizar la conformidad de tus sistemas de IA.</h2>
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {aims.map(([t, d], i) => (
-          <div class="card rounded-2xl p-6 reveal"><span class="mono text-green text-sm">0{i + 1}</span><h3 class="head text-cloud font-semibold mt-2">{t}</h3><p class="text-cloud/60 text-sm mt-2">{d}</p></div>
+          <div class="card rounded-2xl p-6 reveal"><span class="mono text-azure text-sm">0{i + 1}</span><h3 class="head text-cloud font-semibold mt-2">{t}</h3><p class="text-cloud/60 text-sm mt-2">{d}</p></div>
         ))}
       </div>
     </div>
@@ -56,11 +56,11 @@ const grc = [
   <!-- GRC -->
   <section class="relative grain py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Gobernanza, Riesgo y Cumplimiento</p>
+      <p class="label text-azure mb-6">Gobernanza, Riesgo y Cumplimiento</p>
       <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Obligaciones → Riesgos → Controles → Evidencias → Incidencias.</h2>
       <div class="mt-12 grid md:grid-cols-3 gap-6">
         {grc.map((g) => (
-          <article class="card rounded-2xl p-7 reveal"><i class={`ph ${g.icon} text-green text-3xl`}></i><h3 class="head text-lg text-cloud mt-4 font-semibold">{g.title}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{g.body}</p></article>
+          <article class="card rounded-2xl p-7 reveal"><i class={`ph ${g.icon} text-azure text-3xl`}></i><h3 class="head text-lg text-cloud mt-4 font-semibold">{g.title}</h3><p class="text-cloud/65 text-sm mt-3 leading-relaxed">{g.body}</p></article>
         ))}
       </div>
     </div>
@@ -74,4 +74,4 @@ const grc = [
       </div>
     </div>
   </section>
-</Linea>
+</LineaPage>

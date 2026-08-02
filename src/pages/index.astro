@@ -5,8 +5,24 @@ import VideoBackground from '../components/VideoBackground.astro';
 import SectionIntro from '../components/SectionIntro.astro';
 import StatBand from '../components/StatBand.astro';
 import CTAEditorial from '../components/CTAEditorial.astro';
-import { articulos } from '../data/articulos';
+import { getCollection } from 'astro:content';
+import { LINEAS_RECURSOS } from '../content/config';
 import { LINEAS, SITE } from '../consts';
+
+// Home lee de la colección (fuente única): 2 publicados primero, luego borradores.
+const articulos = (await getCollection('articulos'))
+  .sort((a, b) => (b.data.pubDate?.getTime() ?? 0) - (a.data.pubDate?.getTime() ?? 0))
+  .map((e) => ({
+    catLabel: LINEAS_RECURSOS[e.data.linea],
+    fecha: e.data.pubDate
+      ? new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', year: 'numeric' }).format(e.data.pubDate)
+      : 'En preparación',
+    min: `${e.data.readingTime ?? 8} min`,
+    titulo: e.data.title,
+    extracto: e.data.description,
+    slug: e.slug,
+    url: e.data.externalUrl,
+  }));
 
 const heroPhrases = [
   'para gestionar tu Deuda Legal',

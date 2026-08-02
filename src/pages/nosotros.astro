@@ -1,11 +1,16 @@
 ---
-import Linea from '../layouts/Linea.astro';
+import LineaPage from '../layouts/LineaPage.astro';
+import SectionIntro from '../components/SectionIntro.astro';
 
-// NOTA: imágenes y vídeo se sirven (de momento) desde producción g-digital.garrigues.com.
-// Para el deploy final conviene copiarlos a public/equipo/ y public/video/ y cambiar las rutas.
-const IMG = 'https://g-digital.garrigues.com/sites/default/files/g-digital/';
-const VID = 'https://g-digital.garrigues.com/themes/custom/gdigitaltheme/videos/';
-const POSTER = 'https://g-digital.garrigues.com/themes/custom/gdigitaltheme/img/gdigital/banner_home.jpg';
+// Assets locales (self-hosted; antes hotlink al Drupal legacy).
+const equipo = [
+  { img: 'g-digital-eduardo-abad.jpg', name: 'Eduardo Abad', role: 'Socio responsable de innovación y digitalización de Garrigues. Lidera g-digital dentro de la estrategia del despacho, impulsando la transformación digital y las soluciones tecno-legales.', li: 'https://www.linkedin.com/in/eduardo-abad-valdenebro-0699531' },
+  { img: 'g-digital-moises-menendez.jpg', name: 'Moisés Menéndez', role: 'Dirige g-digital, liderando el desarrollo e implementación de la cartera de soluciones digitales innovadoras.', li: 'https://www.linkedin.com/in/moises-menendez-b4608a10' },
+  { img: 'g-digital-oscar-del-barrio.jpg', name: 'Oscar del Barrio', role: 'Supervisa el desarrollo de producto y las operaciones de g-digital, con soporte a la gestión de negocios relacionados como EADTrust.', li: 'https://www.linkedin.com/in/oscar-del-barrio-aa78056' },
+  { img: 'g-digital-hugo-alonso.jpg', name: 'Hugo Alonso', role: 'Lidera el desarrollo de las soluciones, coordinando los equipos de desarrollo interno y externo para garantizar productos de alta calidad.', li: 'https://www.linkedin.com/in/vhalonso' },
+  { img: 'g-digital-belen-aguayo.jpg', name: 'Belén Aguayo', role: 'Abogada experta en legaltech y product owner de las soluciones; coordina la colaboración entre los profesionales de Garrigues y g-digital.', li: 'https://www.linkedin.com/in/belen-aguayo-ms' },
+  { img: 'g-digital-albi-rodriguez.jpg', name: 'Albi Rodríguez', role: 'Coordina la gestión del Observatorio legaltech y la difusión de g-digital en la región Latam.', li: 'https://www.linkedin.com/in/albi-rodriguez-jaramillo-67413b21' },
+];
 
 const capacidades = [
   { phase: '01 · Diseño jurídico', icon: 'ph-scales', name: 'Garrigues', tag: 'El primer despacho de la UE', body: 'Firma internacional de servicios legales y fiscales que asesora a nivel local, regional y global desde todos los ángulos del derecho de los negocios.' },
@@ -20,15 +25,6 @@ const partners = [
   { icon: 'ph-database', name: 'Oracle Cloud', tag: 'Cloud EU Sovereign', body: 'Plataforma robusta para la gestión de datos y aplicaciones empresariales en procesos digitales complejos.', href: '' },
 ];
 
-const equipo = [
-  { img: 'g-digital-eduardo-abad.jpg', name: 'Eduardo Abad', role: 'Socio responsable de innovación y digitalización de Garrigues. Lidera g-digital dentro de la estrategia del despacho, impulsando la transformación digital y las soluciones tecno-legales.', li: 'https://www.linkedin.com/in/eduardo-abad-valdenebro-0699531' },
-  { img: 'g-digital-moises-menendez.jpg', name: 'Moisés Menéndez', role: 'Dirige g-digital, liderando el desarrollo e implementación de la cartera de soluciones digitales innovadoras.', li: 'https://www.linkedin.com/in/moises-menendez-b4608a10' },
-  { img: 'g-digital-oscar-del-barrio.jpg', name: 'Oscar del Barrio', role: 'Supervisa el desarrollo de producto y las operaciones de g-digital, con soporte a la gestión de negocios relacionados como EADTrust.', li: 'https://www.linkedin.com/in/oscar-del-barrio-aa78056' },
-  { img: 'g-digital-hugo-alonso.jpg', name: 'Hugo Alonso', role: 'Lidera el desarrollo de las soluciones, coordinando los equipos de desarrollo interno y externo para garantizar productos de alta calidad.', li: 'https://www.linkedin.com/in/vhalonso' },
-  { img: 'g-digital-belen-aguayo.jpg', name: 'Belén Aguayo', role: 'Abogada experta en legaltech y product owner de las soluciones; coordina la colaboración entre los profesionales de Garrigues y g-digital.', li: 'https://www.linkedin.com/in/belen-aguayo-ms' },
-  { img: 'g-digital-albi-rodriguez.jpg', name: 'Albi Rodríguez', role: 'Coordina la gestión del Observatorio legaltech y la difusión de g-digital en la región Latam.', li: 'https://www.linkedin.com/in/albi-rodriguez-jaramillo-67413b21' },
-];
-
 const gobierno = [
   { name: 'José Ramón Morales', href: 'https://www.garrigues.com/es_ES/equipo/jose-ramon-morales' },
   { name: 'Cristina Mesa Sánchez', href: 'https://www.garrigues.com/es_ES/equipo/cristina-mesa-sanchez' },
@@ -36,139 +32,143 @@ const gobierno = [
   { name: 'Alejandro Huertas León', href: 'https://www.garrigues.com/es_ES/equipo/alejandro-huertas-leon' },
 ];
 ---
-<Linea
+<LineaPage
   kicker="Nosotros"
   title="El operador tecnológico del Grupo Garrigues."
   intro="g-digital es la división de negocios digitales de Garrigues. Integramos el conocimiento jurídico del despacho en soluciones que mejoran la eficiencia, fortalecen la seguridad jurídica y crean nuevas oportunidades en un entorno regulado."
   cta="Contacta con el equipo"
 >
-  <!-- Misión -->
-  <section class="relative grain py-20 lg:py-28">
+  <!-- Misión (papel) -->
+  <section class="surface-paper py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
       <div class="lg:col-span-5">
-        <p class="label text-green mb-6">Nuestra misión</p>
-        <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold leading-tight">Tecnología real para situaciones de alta complejidad jurídica.</h2>
+        <SectionIntro label="Nuestra misión" title="Tecnología real para situaciones de alta complejidad jurídica." />
       </div>
       <div class="lg:col-span-7 lg:pt-4">
-        <p class="text-cloud/75 text-lg leading-relaxed">Desarrollamos soluciones tecnológicas que integran nuestro conocimiento del derecho de los negocios en los procesos de nuestros clientes: no solo mejorando la eficiencia y la seguridad jurídica, sino habilitando nuevas oportunidades de negocio en un entorno cada vez más digital.</p>
-        <p class="mt-5 text-cloud/60 leading-relaxed">Nuestras soluciones están concebidas como herramientas esenciales para garantizar la seguridad jurídica, la eficiencia y el cumplimiento normativo en los procesos críticos de cada organización.</p>
+        <p class="t1 text-lg leading-relaxed">Desarrollamos soluciones tecnológicas que integran nuestro conocimiento del derecho de los negocios en los procesos de nuestros clientes: no solo mejorando la eficiencia y la seguridad jurídica, sino habilitando nuevas oportunidades de negocio en un entorno cada vez más digital.</p>
+        <p class="mt-5 t2 leading-relaxed">Nuestras soluciones están concebidas como herramientas esenciales para garantizar la seguridad jurídica, la eficiencia y el cumplimiento normativo en los procesos críticos de cada organización.</p>
       </div>
     </div>
   </section>
 
-  <!-- Vídeo de presentación -->
-  <section class="relative grain bg-coal/60 py-16 lg:py-20 border-y border-cloud/10">
+  <!-- Vídeo de presentación (tinta, vídeo real self-hosted) -->
+  <section class="surface-ink grain py-16 lg:py-20">
     <div class="max-w-5xl mx-auto px-6">
-      <p class="label text-green mb-6 text-center">g-digital en un minuto</p>
-      <div class="rounded-2xl overflow-hidden border border-cloud/10 shadow-2xl shadow-black/40 reveal">
-        <video controls preload="none" poster={POSTER} class="w-full block bg-ink">
-          <source src={`${VID}g-digital-presentacion_es.mp4`} type="video/mp4" />
+      <p class="label accent mb-6 text-center">g-digital en un minuto</p>
+      <div class="rounded-2xl overflow-hidden border shadow-2xl shadow-black/40 reveal" style="border-color:var(--line)">
+        <video controls preload="none" poster="/video/nosotros-poster.jpg" class="w-full block bg-ink">
+          <source src="/video/g-digital-presentacion.mp4" type="video/mp4" />
           Tu navegador no soporta vídeo HTML5.
         </video>
       </div>
     </div>
   </section>
 
-  <!-- Modelo 360 de capacidades -->
-  <section class="relative grain py-20 lg:py-28">
+  <!-- Modelo 360 de capacidades (papel) -->
+  <section class="surface-paper py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Modelo 360 de capacidades</p>
-      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Del diseño jurídico a la implementación, en una sola casa.</h2>
-      <p class="mt-5 text-cloud/65 max-w-2xl">No es una suma de proveedores: es una capacidad <span class="text-green">360º</span> que cubre todo el ciclo de una solución digital — del <span class="text-cloud/90">diseño jurídico</span> a la <span class="text-cloud/90">implementación tecnológica</span> y su <span class="text-cloud/90">prestación en un entorno cualificado y regulado</span>. Esa integración extremo a extremo es lo que hace nuestros productos innovadores y de confianza.</p>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <SectionIntro
+        label="Modelo 360 de capacidades"
+        title="Del diseño jurídico a la implementación, en una sola casa."
+        lead="No es una suma de proveedores: es una capacidad <strong>360º</strong> que cubre todo el ciclo de una solución digital — del diseño jurídico a la implementación tecnológica y su prestación en un entorno cualificado y regulado."
+      />
+      <div class="mt-12">
         {capacidades.map((t) => (
-          <article class="card rounded-2xl p-7 reveal">
-            <p class="mono text-green text-xs mb-3">{t.phase}</p>
-            <i class={`ph ${t.icon} text-green text-3xl`}></i>
-            <h3 class="head text-xl text-cloud mt-4 font-semibold">{t.name}</h3>
-            <p class="label text-cloud/55 mt-2">{t.tag}</p>
-            <p class="text-cloud/65 text-sm mt-4 leading-relaxed">{t.body}</p>
-          </article>
+          <div class="grid lg:grid-cols-12 gap-x-8 gap-y-2 py-7 border-t items-baseline reveal" style="border-color:var(--line)">
+            <span class="lg:col-span-2 mono text-[11px] t3">{t.phase}</span>
+            <h3 class="lg:col-span-3 head text-xl t1 font-semibold">{t.name}</h3>
+            <p class="lg:col-span-2 label t3">{t.tag}</p>
+            <p class="lg:col-span-5 t2 text-sm leading-relaxed">{t.body}</p>
+          </div>
         ))}
+        <div class="border-t" style="border-color:var(--line)"></div>
       </div>
     </div>
   </section>
 
-  <!-- EADTrust -->
-  <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
+  <!-- EADTrust 51% (banda navy) -->
+  <section class="surface-navy py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-4">
-        <p class="mono text-green text-sm mb-2">PARTICIPACIÓN GARRIGUES</p>
-        <p class="head display text-cloud font-semibold text-7xl lg:text-8xl leading-none">51<span class="text-green">%</span></p>
-        <p class="text-cloud/55 mt-4">en EADTrust, el QTSP del Grupo Garrigues.</p>
+        <p class="mono accent text-sm mb-2">PARTICIPACIÓN GARRIGUES</p>
+        <p class="head display t1 font-semibold text-7xl lg:text-8xl leading-none">51<span class="accent">%</span></p>
+        <p class="t2 mt-4">en EADTrust, el QTSP del Grupo Garrigues.</p>
       </div>
       <div class="lg:col-span-8">
-        <p class="label text-green mb-4">El operador tecnológico</p>
-        <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">EADTrust opera lo que g-digital diseña.</h2>
-        <p class="mt-6 text-cloud/70 leading-relaxed">La adquisición del 51% de EADTrust por parte de Garrigues es la pieza que hace realidad los productos de g-digital: ofrece un entorno seguro, certificado, regulado y altamente especializado para los clientes del despacho.</p>
-        <p class="mt-4 text-cloud/60 leading-relaxed">Los productos de g-digital, apoyados por los expertos de Garrigues, se implementan en un marco regulado que cumple los más altos estándares normativos, permitiendo operar con total confianza en los contextos más críticos.</p>
-        <a href="https://es.linkedin.com/company/eadtrust" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-green text-sm font-medium mt-6">Conoce EADTrust <i class="ph ph-arrow-up-right"></i></a>
+        <p class="label accent mb-4">El operador tecnológico</p>
+        <h2 class="display-2 t1 font-semibold">EADTrust opera lo que g-digital diseña.</h2>
+        <p class="mt-6 t2 leading-relaxed">La adquisición del 51% de EADTrust por parte de Garrigues es la pieza que hace realidad los productos de g-digital: ofrece un entorno seguro, certificado, regulado y altamente especializado para los clientes del despacho.</p>
+        <p class="mt-4 t3 leading-relaxed">Los productos de g-digital, apoyados por los expertos de Garrigues, se implementan en un marco regulado que cumple los más altos estándares normativos, permitiendo operar con total confianza en los contextos más críticos.</p>
+        <a href="https://es.linkedin.com/company/eadtrust" target="_blank" rel="noopener" class="inline-flex items-center gap-2 accent text-sm font-medium mt-6">Conoce EADTrust <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </section>
 
-  <!-- Partners -->
-  <section class="relative grain py-20 lg:py-28">
+  <!-- Partners (papel) -->
+  <section class="surface-paper py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Nuestros partners</p>
-      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Soluciones respaldadas por la mejor infraestructura.</h2>
-      <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <SectionIntro label="Nuestros partners" title="Soluciones respaldadas por la mejor infraestructura." />
+      <div class="mt-12 grid md:grid-cols-3 gap-6 reveal-group">
         {partners.map((p) => (
-          <article class="card rounded-2xl p-7 reveal">
-            <i class={`ph ${p.icon} text-green text-3xl`}></i>
-            <h3 class="head text-xl text-cloud mt-4 font-semibold">{p.name}</h3>
-            <p class="label text-cloud/55 mt-2">{p.tag}</p>
-            <p class="text-cloud/65 text-sm mt-4 leading-relaxed">{p.body}</p>
-            {p.href && <a href={p.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-4">Saber más <i class="ph ph-arrow-up-right"></i></a>}
+          <article class="card-s rounded-2xl p-7">
+            <i class={`ph ${p.icon} text-3xl`} style="color:var(--teal)" aria-hidden="true"></i>
+            <h3 class="head text-xl t1 mt-4 font-semibold">{p.name}</h3>
+            <p class="label t3 mt-2">{p.tag}</p>
+            <p class="t2 text-sm mt-4 leading-relaxed">{p.body}</p>
+            {p.href && <a href={p.href} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 accent text-sm font-medium mt-4">Saber más <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>}
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Observatorio -->
-  <section class="relative grain bg-coal/60 py-20 lg:py-24 border-y border-cloud/10">
+  <!-- Observatorio (banda teal) -->
+  <section class="surface-teal py-20 lg:py-24">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-10 items-center">
       <div class="lg:col-span-8">
-        <p class="label text-green mb-4">Observatorio legaltech Garrigues · ICADE</p>
-        <h2 class="head display text-2xl lg:text-3xl text-cloud font-semibold">Un punto de encuentro para la investigación del sector legal.</h2>
-        <p class="mt-5 text-cloud/65 leading-relaxed">Un espacio abierto para los actores de la industria legal que quieren compartir experiencias y conocimiento sobre cómo la tecnología está transformando el sector, y analizar los desafíos y oportunidades para la profesión y el negocio.</p>
+        <p class="label accent mb-4">Observatorio legaltech Garrigues · ICADE</p>
+        <h2 class="display-2 t1 font-semibold">Un punto de encuentro para la investigación del sector legal.</h2>
+        <p class="mt-5 t2 leading-relaxed">Un espacio abierto para los actores de la industria legal que quieren compartir experiencias y conocimiento sobre cómo la tecnología está transformando el sector, y analizar los desafíos y oportunidades para la profesión y el negocio.</p>
       </div>
       <div class="lg:col-span-4 lg:text-right">
-        <a href="https://www.comillas.edu/investigacion/observatorio-legaltech/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-green text-ink px-6 py-3.5 rounded-xl font-semibold hover:bg-lime transition-colors">Ir al Observatorio <i class="ph ph-arrow-up-right"></i></a>
+        <a href="https://www.comillas.edu/investigacion/observatorio-legaltech/" target="_blank" rel="noopener" class="btn-primary inline-flex items-center gap-2 px-6 py-3.5 rounded-xl">Ir al Observatorio <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </section>
 
-  <!-- Equipo -->
-  <section class="relative grain py-20 lg:py-28">
+  <!-- Equipo (papel, fotografía duotone) -->
+  <section class="surface-paper py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Nuestros profesionales</p>
-      <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Derecho, tecnología y consultoría estratégica en un mismo equipo.</h2>
-      <p class="mt-5 text-cloud/65 max-w-2xl">El motor de g-digital reúne perfiles que hacen posible el enfoque integral de nuestras soluciones y su integración a medida en los procesos de cada cliente.</p>
-      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <SectionIntro
+        label="Nuestros profesionales"
+        title="Derecho, tecnología y consultoría estratégica en un mismo equipo."
+        lead="El motor de g-digital reúne perfiles que hacen posible el enfoque integral de nuestras soluciones y su integración a medida en los procesos de cada cliente."
+      />
+      <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-group">
         {equipo.map((m) => (
-          <article class="card rounded-2xl p-6 reveal flex flex-col">
-            <img src={`${IMG}${m.img}`} alt={m.name} loading="lazy" class="w-full aspect-[4/5] object-cover object-top rounded-xl mb-5 bg-coal" />
-            <h3 class="head text-lg text-cloud font-semibold">{m.name}</h3>
-            <p class="text-cloud/60 text-sm mt-2 leading-relaxed flex-1">{m.role}</p>
-            <a href={m.li} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-4"><i class="ph ph-linkedin-logo"></i> LinkedIn</a>
+          <article class="card-s rounded-2xl p-6 flex flex-col">
+            <div class="duotone rounded-xl mb-5">
+              <img src={`/equipo/${m.img}`} alt={`Retrato de ${m.name}`} loading="lazy" class="w-full aspect-[4/5] object-cover object-top block" />
+            </div>
+            <h3 class="head text-lg t1 font-semibold">{m.name}</h3>
+            <p class="t2 text-sm mt-2 leading-relaxed flex-1">{m.role}</p>
+            <a href={m.li} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 accent text-sm font-medium mt-4"><i class="ph ph-linkedin-logo" aria-hidden="true"></i> LinkedIn</a>
           </article>
         ))}
       </div>
 
       <!-- Gobierno Garrigues -->
       <div class="mt-16">
-        <p class="label text-cloud/55 mb-6">Profesionales de Garrigues en el gobierno de g-digital</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <p class="label t3 mb-6">Profesionales de Garrigues en el gobierno de g-digital</p>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal-group">
           {gobierno.map((g) => (
-            <a href={g.href} target="_blank" rel="noopener" class="card rounded-xl p-5 reveal flex items-center justify-between group">
-              <span class="text-cloud/85 text-sm font-medium">{g.name}</span>
-              <i class="ph ph-arrow-up-right text-green group-hover:translate-x-0.5 transition-transform"></i>
+            <a href={g.href} target="_blank" rel="noopener" class="card-s rounded-xl p-5 flex items-center justify-between group">
+              <span class="t1 text-sm font-medium">{g.name}</span>
+              <i class="ph ph-arrow-up-right accent transition-transform group-hover:translate-x-0.5" aria-hidden="true"></i>
             </a>
           ))}
         </div>
       </div>
     </div>
   </section>
-</Linea>
+</LineaPage>

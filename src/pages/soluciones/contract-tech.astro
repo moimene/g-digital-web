@@ -1,5 +1,5 @@
 ---
-import Linea from '../../layouts/Linea.astro';
+import LineaPage from '../../layouts/LineaPage.astro';
 import LineaExtra from '../../components/LineaExtra.astro';
 import poster from '../../assets/infografias/02-contract-tech.svg?raw';
 
@@ -15,7 +15,7 @@ const fases = [
   ['Terminación', 'Cierre, finiquito, archivo. Certificado de cumplimiento.'],
 ];
 ---
-<Linea
+<LineaPage
   linea="Línea 02"
   tone="lime"
   motif="ribbon"
@@ -29,12 +29,12 @@ const fases = [
   <!-- Problema -->
   <section class="relative grain py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Más allá del documento</p>
+      <p class="label text-lime mb-6">Más allá del documento</p>
       <h2 class="head display text-3xl lg:text-[2.6rem] text-cloud font-semibold max-w-3xl">Los contratos son sistemas vivos, no PDFs estáticos.</h2>
       <div class="mt-12 grid md:grid-cols-3 gap-6">
-        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-code-block text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Reglas enterradas en código</h3><p class="text-cloud/60 text-sm mt-2">La lógica contractual reside en sistemas legados, dispersa y sin visibilidad.</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-eye-slash text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Falta de trazabilidad</h3><p class="text-cloud/60 text-sm mt-2">Cambios, eventos y transiciones sin registro auditable en tiempo real.</p></div>
-        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-stack-minus text-green text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Posición contractual invisible</h3><p class="text-cloud/60 text-sm mt-2">Sin visibilidad consolidada de derechos, obligaciones y riesgos.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-code-block text-lime text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Reglas enterradas en código</h3><p class="text-cloud/60 text-sm mt-2">La lógica contractual reside en sistemas legados, dispersa y sin visibilidad.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-eye-slash text-lime text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Falta de trazabilidad</h3><p class="text-cloud/60 text-sm mt-2">Cambios, eventos y transiciones sin registro auditable en tiempo real.</p></div>
+        <div class="card rounded-2xl p-6 reveal"><i class="ph ph-stack-minus text-lime text-2xl"></i><h3 class="head text-cloud font-semibold mt-3">Posición contractual invisible</h3><p class="text-cloud/60 text-sm mt-2">Sin visibilidad consolidada de derechos, obligaciones y riesgos.</p></div>
       </div>
     </div>
   </section>
@@ -42,10 +42,10 @@ const fases = [
   <!-- Tres modelos -->
   <section class="relative grain bg-coal/60 py-20 lg:py-28 border-y border-cloud/10">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Tres dimensiones de servicio</p>
+      <p class="label text-lime mb-6">Tres dimensiones de servicio</p>
       <div class="grid md:grid-cols-3 gap-6">
         {modelos.map((m) => (
-          <article class="card rounded-2xl p-7 reveal"><span class="mono text-[11px] text-green">{m.tag}</span><h3 class="head text-xl text-cloud mt-2 font-semibold">{m.title}</h3><p class="text-cloud/65 text-sm mt-4 leading-relaxed">{m.body}</p></article>
+          <article class="card rounded-2xl p-7 reveal"><span class="mono text-[11px] text-lime">{m.tag}</span><h3 class="head text-xl text-cloud mt-2 font-semibold">{m.title}</h3><p class="text-cloud/65 text-sm mt-4 leading-relaxed">{m.body}</p></article>
         ))}
       </div>
     </div>
@@ -54,16 +54,16 @@ const fases = [
   <!-- Contrato computable -->
   <section class="relative grain py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <p class="label text-green mb-6">Contrato computable · ciclo de vida</p>
+      <p class="label text-lime mb-6">Contrato computable · ciclo de vida</p>
       <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold max-w-3xl">Un autómata de estados dirigido por eventos, auditable.</h2>
       <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {fases.map(([t, d], i) => (
-          <div class="card rounded-2xl p-6 reveal"><span class="mono text-green text-sm">0{i + 1}</span><h3 class="head text-cloud font-semibold mt-2">{t}</h3><p class="text-cloud/60 text-sm mt-2">{d}</p></div>
+          <div class="card rounded-2xl p-6 reveal"><span class="mono text-lime text-sm">0{i + 1}</span><h3 class="head text-cloud font-semibold mt-2">{t}</h3><p class="text-cloud/60 text-sm mt-2">{d}</p></div>
         ))}
       </div>
       <div class="mt-10 grid md:grid-cols-2 gap-5">
-        <div class="card rounded-xl p-6 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-shield-check text-green"></i> Contract Guardian (IA)</h3><p class="text-cloud/65 text-sm mt-3">Agente IA que monitorea cambios, vencimientos, incumplimientos y oportunidades en tu cartera.</p></div>
-        <div class="card rounded-xl p-6 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-git-branch text-green"></i> Estándares abiertos</h3><p class="text-cloud/65 text-sm mt-3">Accord Project, Catalá, DMN, eIDAS. Motores de reglas, no hardcoding. De lo transaccional a lo estratégico.</p></div>
+        <div class="card rounded-xl p-6 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-shield-check text-lime"></i> Contract Guardian (IA)</h3><p class="text-cloud/65 text-sm mt-3">Agente IA que monitorea cambios, vencimientos, incumplimientos y oportunidades en tu cartera.</p></div>
+        <div class="card rounded-xl p-6 reveal"><h3 class="head text-cloud font-semibold flex items-center gap-2"><i class="ph ph-git-branch text-lime"></i> Estándares abiertos</h3><p class="text-cloud/65 text-sm mt-3">Accord Project, Catalá, DMN, eIDAS. Motores de reglas, no hardcoding. De lo transaccional a lo estratégico.</p></div>
       </div>
     </div>
   </section>
@@ -76,4 +76,4 @@ const fases = [
       </div>
     </div>
   </section>
-</Linea>
+</LineaPage>

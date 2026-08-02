@@ -185,6 +185,14 @@ a.bg-green:hover,button.bg-green:hover{box-shadow:0 0 24px rgba(12,242,93,.30)}
 /* Overlay que garantiza AA para texto cloud sobre cualquier frame */
 .video-overlay-aa{background:linear-gradient(105deg,rgba(5,6,10,.88) 0%,rgba(5,6,10,.72) 42%,rgba(5,6,10,.42) 100%)}
 
+/* ---------- Fotografía duotone (teal Garrigues) ---------- */
+/* Gris + tinte teal; al hover revela el color real (momento humano) */
+.duotone{position:relative;overflow:hidden}
+.duotone img{filter:grayscale(1) contrast(1.06);transition:filter .5s ease}
+.duotone::after{content:"";position:absolute;inset:0;background:var(--teal);mix-blend-mode:color;opacity:.38;pointer-events:none;transition:opacity .5s ease}
+.duotone:hover img,.duotone:focus-visible img{filter:grayscale(0) contrast(1)}
+.duotone:hover::after,.duotone:focus-visible::after{opacity:0}
+
 @media (prefers-reduced-motion: reduce){
   .reveal,.stamp,.hero-roller .roller-line{transition:none;opacity:1;transform:none}
   .js .reveal,.js .reveal-group > *{opacity:1;transform:none;transition:none}
