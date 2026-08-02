@@ -1,4 +1,7 @@
 ---
+// Roller del hero: rotación de frases con corte editorial (slide-up seco, sin cursor).
+// Contrato a11y: el roller es decorativo (aria-hidden); la página debe incluir
+// un <p class="sr-only"> con todas las frases para lectores de pantalla.
 interface Props {
   phrases: string[];
 }
@@ -6,15 +9,16 @@ const { phrases } = Astro.props;
 const first = phrases[0] ?? '';
 const phrasesJson = JSON.stringify(phrases);
 ---
-<span class="hero-roller cursor-blink" data-hero-roller data-phrases={phrasesJson} set:html={first}></span>
+<span class="hero-roller" data-hero-roller data-phrases={phrasesJson} aria-hidden="true"><span class="roller-line" set:html={first}></span></span>
 
 <script>
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   document.querySelectorAll('[data-hero-roller]').forEach((node) => {
     const el = node as HTMLElement;
+    const line = el.querySelector('.roller-line') as HTMLElement | null;
     const phrases = JSON.parse(el.dataset.phrases || '[]') as string[];
-    if (reduceMotion || phrases.length < 2) return;
+    if (!line || reduceMotion || phrases.length < 2) return;
 
     let index = 0;
     window.setInterval(() => {
@@ -22,9 +26,9 @@ const phrasesJson = JSON.stringify(phrases);
       el.classList.add('is-out');
       window.setTimeout(() => {
         index = (index + 1) % phrases.length;
-        el.innerHTML = phrases[index];
+        line.innerHTML = phrases[index];
         el.classList.remove('is-out');
-      }, 220);
-    }, 2600);
+      }, 240);
+    }, 3000);
   });
 </script>

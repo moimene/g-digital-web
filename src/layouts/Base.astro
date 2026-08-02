@@ -4,11 +4,34 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../consts';
 
-interface Props { title?: string; description?: string }
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;        // ruta absoluta pública, p.ej. /og/default.png
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+}
 const {
   title = `${SITE.name}: ${SITE.positioning} | ${SITE.group}`,
   description = `${SITE.tagline} Servicios eIDAS cualificados integrados por API o MCP para que cada operación de tu organización, digital o no, sea evidencia con efectos legales. ${SITE.group}.`,
+  ogImage = '/og/default.png',
+  ogType = 'website',
+  noindex = false,
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageAbs = new URL(ogImage, Astro.site).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'g-digital',
+  url: Astro.site,
+  parentOrganization: { '@type': 'Organization', name: 'Garrigues', url: 'https://www.garrigues.com' },
+  description: SITE.positioning,
+  email: SITE.email,
+  address: { '@type': 'PostalAddress', addressLocality: 'Madrid', addressCountry: 'ES' },
+};
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -19,18 +42,28 @@ const {
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Rubik:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <script is:inline src="https://unpkg.com/@phosphor-icons/web"></script>
+  <meta property="og:type" content={ogType} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImageAbs} />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content={`${SITE.name} · ${SITE.group}`} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageAbs} />
+  <meta name="theme-color" content="#05060A" />
+  <link rel="preload" href="/fonts/Phosphor-subset.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script is:inline defer data-domain="g-digital.garrigues.com" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-green focus:text-ink focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">Saltar al contenido</a>
   <Nav />
-  <main>
+  <main id="contenido">
     <slot />
   </main>
   <Footer />
@@ -53,8 +86,8 @@ const {
     });
     document.querySelectorAll('.mlink').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
-    // Reveal al hacer scroll
-    const revealEls = document.querySelectorAll('.reveal,.stamp');
+    // Reveal al hacer scroll (bloques individuales y grupos escalonados)
+    const revealEls = document.querySelectorAll('.reveal,.stamp,.reveal-group');
     if ('IntersectionObserver' in window) {
       const io = new IntersectionObserver((es) => {
         es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
@@ -88,7 +121,7 @@ const {
 
     // Sombra de nav al hacer scroll
     const nav = document.getElementById('nav');
-    addEventListener('scroll', () => nav?.classList.toggle('shadow-2xl', scrollY > 40));
+    addEventListener('scroll', () => nav?.classList.toggle('shadow-2xl', scrollY > 40), { passive: true });
   </script>
 </body>
 </html>

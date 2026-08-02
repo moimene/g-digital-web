@@ -12,3 +12,6 @@ node_modules/
 .DS_Store
 npm-debug.log*
 .vercel
+
+# herramientas de QA local
+.playwright-mcp/
