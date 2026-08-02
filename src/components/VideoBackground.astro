@@ -1,0 +1,64 @@
+---
+// Fondo de vídeo sobrio (rediseño editorial v4).
+// - Poster como capa base (es el LCP; el vídeo nunca bloquea).
+// - prefers-reduced-motion o móvil sin `mobileVideo` → solo poster.
+// - Play/pause por IntersectionObserver; preload none.
+interface Props {
+  src: string;            // base sin extensión, p.ej. '/video/hero-home' (espera .webm + .mp4)
+  poster: string;         // p.ej. '/video/hero-home-poster.jpg'
+  posterAlt?: string;
+  overlay?: 'aa' | 'soft' | 'none';   // 'aa' garantiza contraste WCAG AA para texto cloud
+  mobileVideo?: boolean;  // si false (defecto), en <768px solo poster
+  class?: string;
+}
+const { src, poster, posterAlt = '', overlay = 'aa', mobileVideo = false, class: cls = '' } = Astro.props;
+const overlayClass = overlay === 'aa' ? 'video-overlay-aa' : overlay === 'soft' ? 'bg-ink/55' : '';
+---
+<div class={`video-bg ${cls}`} data-video-bg data-mobile-video={mobileVideo ? '1' : '0'} aria-hidden="true">
+  <img src={poster} alt={posterAlt} class="absolute inset-0 w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" />
+  <video muted playsinline loop preload="none" poster={poster} data-video>
+    <source data-src={`${src}.webm`} type="video/webm" />
+    <source data-src={`${src}.mp4`} type="video/mp4" />
+  </video>
+  {overlay !== 'none' && <div class={`video-overlay ${overlayClass}`}></div>}
+</div>
+
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 767px)').matches;
+  const saveData = (navigator as any).connection?.saveData === true;
+
+  document.querySelectorAll('[data-video-bg]').forEach((wrap) => {
+    const video = wrap.querySelector('video[data-video]') as HTMLVideoElement | null;
+    if (!video) return;
+    const allowMobile = (wrap as HTMLElement).dataset.mobileVideo === '1';
+    if (reduceMotion || saveData || (isMobile && !allowMobile)) { video.remove(); return; }
+
+    // Carga diferida de fuentes + play solo cuando es visible
+    let armed = false;
+    const arm = () => {
+      if (armed) return; armed = true;
+      video.querySelectorAll('source[data-src]').forEach((s) => {
+        (s as HTMLSourceElement).src = (s as HTMLSourceElement).dataset.src!;
+      });
+      video.load();
+      video.play().catch(() => {});
+    };
+    if ('IntersectionObserver' in window) {
+      const vio = new IntersectionObserver((es) => {
+        es.forEach((e) => {
+          if (e.isIntersecting) arm();
+          else if (armed) video.pause();
+        });
+      }, { rootMargin: '120px' });
+      vio.observe(wrap);
+      // reanudar al volver a ser visible
+      const vio2 = new IntersectionObserver((es) => {
+        es.forEach((e) => { if (e.isIntersecting && armed) video.play().catch(() => {}); });
+      });
+      vio2.observe(wrap);
+    } else {
+      arm();
+    }
+  });
+</script>

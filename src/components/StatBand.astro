@@ -1,0 +1,22 @@
+---
+// Banda de datos verificables. Contadores con fallback no-cero (guardrail de marca).
+interface Stat { value: number | string; suffix?: string; label: string }
+interface Props {
+  stats: Stat[];
+  note?: string;
+}
+const { stats, note } = Astro.props;
+---
+<div class="reveal-group grid sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
+  {stats.map((s) => (
+    <div>
+      <div class="head text-4xl lg:text-5xl font-semibold accent">
+        {typeof s.value === 'number'
+          ? <span class="counter" data-to={s.value} data-suffix={s.suffix ?? ''}>{new Intl.NumberFormat('es-ES').format(s.value)}{s.suffix ?? ''}</span>
+          : s.value}
+      </div>
+      <p class="t2 text-sm mt-2">{s.label}</p>
+    </div>
+  ))}
+</div>
+{note && <p class="mono text-[11px] t3 mt-10">{note}</p>}

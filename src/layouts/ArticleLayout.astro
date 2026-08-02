@@ -1,0 +1,126 @@
+---
+// Layout de artículo/concepto/caso: papel, progreso de lectura, TOC sticky,
+// glosario contextual, relacionados. SEO article completo.
+import Base from './Base.astro';
+import Prose from '../components/recursos/Prose.astro';
+import ReadingProgress from '../components/recursos/ReadingProgress.astro';
+import TocSticky from '../components/recursos/TocSticky.astro';
+import GlossaryCallout from '../components/recursos/GlossaryCallout.astro';
+import RelatedResources from '../components/recursos/RelatedResources.astro';
+import CTAEditorial from '../components/CTAEditorial.astro';
+import { LINEAS_RECURSOS, NIVELES } from '../content/config';
+
+interface Heading { depth: number; slug: string; text: string }
+interface Props {
+  tipo: string;                 // 'Artículo' | 'Concepto' | 'Caso de uso'
+  base: string;                 // '/recursos/articulos' …
+  entry: {
+    slug: string;
+    data: {
+      title: string; description: string; pubDate?: Date; updatedDate?: Date;
+      linea: keyof typeof LINEAS_RECURSOS; tags: string[]; nivel: keyof typeof NIVELES;
+      readingTime?: number; draft: boolean; featured: boolean;
+      related: string[]; glossary: string[]; author: string;
+      externalUrl?: string; downloadUrl?: string;
+      sector?: string; servicio?: string; norma?: string;
+    };
+    body: string;
+  };
+  headings: Heading[];
+}
+const { tipo, base, entry, headings } = Astro.props;
+const d = entry.data;
+
+// readingTime estimado si falta (~200 ppm en ES técnico)
+const words = entry.body.split(/\s+/).length;
+const minutes = d.readingTime ?? Math.max(2, Math.round(words / 200));
+
+const fecha = d.pubDate
+  ? new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }).format(d.pubDate)
+  : null;
+---
+<Base title={`${d.title} | Recursos g-digital`} description={d.description} ogType="article">
+  <ReadingProgress />
+
+  <!-- Cabecera editorial (papel) -->
+  <div class="surface-paper">
+    <header class="max-w-7xl mx-auto px-6 pt-16 lg:pt-24 pb-10 border-b" style="border-color:var(--line)">
+      <nav aria-label="Migas de pan" class="mono text-[11px] t3 mb-8">
+        <a href="/recursos" class="hover:text-[var(--accent)] transition-colors">Recursos</a>
+        <span class="mx-2">/</span>
+        <a href={base} class="hover:text-[var(--accent)] transition-colors">{tipo}s</a>
+      </nav>
+      <div class="max-w-4xl">
+        <div class="flex flex-wrap items-center gap-x-3 gap-y-2 mb-6">
+          <span class="label accent">{tipo}</span>
+          <span class="t3">·</span>
+          <span class="label t3">{LINEAS_RECURSOS[d.linea]}</span>
+          {d.draft && <span class="mono text-[10px] px-2 py-0.5 rounded-full border" style="border-color:rgba(146,110,20,.45);color:rgba(146,110,20,.95)">BORRADOR · EN PREPARACIÓN</span>}
+        </div>
+        <h1 class="display-2 t1 font-semibold">{d.title}</h1>
+        <p class="mt-6 lead t2 max-w-3xl">{d.description}</p>
+        <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-sm t3">
+          <span>{d.author}</span>
+          {fecha && <><span aria-hidden="true">·</span><time datetime={d.pubDate!.toISOString()}>{fecha}</time></>}
+          <span aria-hidden="true">·</span><span>{minutes} min de lectura</span>
+          <span aria-hidden="true">·</span><span>Nivel {NIVELES[d.nivel].toLowerCase()}</span>
+        </div>
+        {(d.sector || d.servicio || d.norma) && (
+          <div class="mt-6 flex flex-wrap gap-2.5">
+            {d.sector && <span class="mono text-[11px] px-2.5 py-1 rounded-full border t2" style="border-color:var(--line-strong)">{d.sector}</span>}
+            {d.servicio && <span class="mono text-[11px] px-2.5 py-1 rounded-full border t2" style="border-color:var(--line-strong)">{d.servicio}</span>}
+            {d.norma && <span class="mono text-[11px] px-2.5 py-1 rounded-full border accent" style="border-color:rgba(var(--accent-rgb),.45)">{d.norma}</span>}
+          </div>
+        )}
+      </div>
+    </header>
+
+    <!-- Cuerpo + aside -->
+    <div class="max-w-7xl mx-auto px-6 py-14 lg:py-20 grid lg:grid-cols-12 gap-12">
+      <article class="lg:col-span-8">
+        {d.externalUrl && (
+          <div class="rounded-xl border p-5 mb-10 reveal" style="border-color:rgba(var(--accent-rgb),.4);background:rgba(var(--accent-rgb),.05)">
+            <p class="text-sm t2">Publicado originalmente en el blog corporativo.</p>
+            <a href={d.externalUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 accent font-medium text-sm mt-2">Leer el artículo completo <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+          </div>
+        )}
+        <Prose>
+          <slot />
+        </Prose>
+
+        {d.tags.length > 0 && (
+          <div class="mt-12 pt-8 border-t flex flex-wrap gap-2.5" style="border-color:var(--line)">
+            {d.tags.map((t) => (
+              <span class="mono text-[11px] px-2.5 py-1 rounded-full border t2" style="border-color:var(--line)">{t}</span>
+            ))}
+          </div>
+        )}
+
+        <div class="mt-12">
+          <RelatedResources slugs={d.related} />
+        </div>
+      </article>
+
+      <aside class="lg:col-span-4">
+        <div class="lg:sticky lg:top-24 space-y-8">
+          <TocSticky headings={headings} />
+          <GlossaryCallout slugs={d.glossary} />
+          <div class="rounded-xl border p-5" style="border-color:var(--line)">
+            <p class="label t3 mb-3">¿Tu caso en concreto?</p>
+            <p class="text-sm t2 leading-relaxed">Si este tema toca un proceso vivo de tu organización, lo vemos contigo.</p>
+            <a href="/contacto" class="inline-flex items-center gap-1.5 accent text-sm font-medium mt-3">Habla con un experto <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="surface-ink grain">
+    <CTAEditorial
+      title="Pon tu reto sobre la mesa."
+      sub="Cuéntanos un caso real y te mostramos qué línea lo resuelve y cómo."
+      primary={{ href: '/contacto', label: 'Solicitar una conversación' }}
+      secondary={{ href: '/recursos', label: 'Volver a Recursos' }}
+    />
+  </div>
+</Base>

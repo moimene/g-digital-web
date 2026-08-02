@@ -1,0 +1,47 @@
+---
+// Tipografía editorial de artículo sobre papel (MD/MDX render).
+// Uso: <Prose><Content /></Prose> dentro de una .surface-paper.
+---
+<div class="prose-gd measure">
+  <slot />
+</div>
+
+<style is:global>
+  .prose-gd{ color:var(--t2); font-size:1.06rem; line-height:1.78; }
+  .prose-gd > *:first-child{ margin-top:0 }
+  .prose-gd p{ margin:1.15em 0 }
+  .prose-gd strong{ color:var(--t1); font-weight:600 }
+  .prose-gd h2{
+    font-family:Poppins,"Century Gothic",sans-serif; color:var(--t1);
+    font-size:1.7rem; font-weight:600; letter-spacing:-.015em; line-height:1.2;
+    margin:2.4em 0 .9em; scroll-margin-top:96px;
+  }
+  .prose-gd h3{
+    font-family:Poppins,"Century Gothic",sans-serif; color:var(--t1);
+    font-size:1.25rem; font-weight:600; margin:2em 0 .7em; scroll-margin-top:96px;
+  }
+  .prose-gd a{ color:var(--accent); text-decoration:underline; text-decoration-color:rgba(var(--accent-rgb),.35); text-underline-offset:3px; transition:text-decoration-color .2s }
+  .prose-gd a:hover{ text-decoration-color:var(--accent) }
+  .prose-gd ul,.prose-gd ol{ margin:1.15em 0; padding-left:1.4em }
+  .prose-gd li{ margin:.5em 0 }
+  .prose-gd ul > li::marker{ color:var(--accent) }
+  .prose-gd blockquote{
+    margin:1.6em 0; padding:.9em 1.3em;
+    border-left:2px solid var(--accent); border-radius:0 10px 10px 0;
+    background:rgba(var(--accent-rgb),.05); color:var(--t2); font-size:.98rem;
+  }
+  .prose-gd blockquote strong{ color:var(--t1) }
+  .prose-gd code{
+    font-family:"JetBrains Mono",monospace; font-size:.86em;
+    background:rgba(20,50,89,.07); border:1px solid rgba(20,50,89,.12);
+    padding:.12em .4em; border-radius:6px; color:var(--navy);
+  }
+  .prose-gd pre{
+    background:var(--ink); color:rgba(244,246,245,.85);
+    border-radius:12px; padding:1.1em 1.3em; overflow-x:auto;
+    margin:1.6em 0; font-size:.85rem; line-height:1.6;
+  }
+  .prose-gd pre code{ background:none;border:0;padding:0;color:inherit;font-size:inherit }
+  .prose-gd hr{ border:0; height:1px; background:var(--line); margin:2.4em 0 }
+  .prose-gd img{ border-radius:12px; border:1px solid var(--line) }
+</style>

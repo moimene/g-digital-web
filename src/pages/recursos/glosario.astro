@@ -1,0 +1,43 @@
+---
+// Glosario A–Z (papel): anclas por término para el glosario contextual de artículos.
+import Base from '../../layouts/Base.astro';
+import SectionIntro from '../../components/SectionIntro.astro';
+import CTAEditorial from '../../components/CTAEditorial.astro';
+import { getCollection } from 'astro:content';
+import { LINEAS_RECURSOS } from '../../content/config';
+
+const terms = (await getCollection('glosario')).sort((a, b) =>
+  a.data.term.localeCompare(b.data.term, 'es'),
+);
+---
+<Base title="Glosario | Recursos g-digital" description="El vocabulario de la infraestructura legal: Deuda Legal, Compliance Injection, QTSP, QES, ERDS, WORM, EUDI Wallet, MCP y más.">
+  <div class="surface-paper">
+    <div class="max-w-7xl mx-auto px-6 pt-16 lg:pt-24 pb-24">
+      <nav aria-label="Migas de pan" class="mono text-[11px] t3 mb-8">
+        <a href="/recursos" class="hover:text-[var(--accent)] transition-colors">Recursos</a><span class="mx-2">/</span><span>Glosario</span>
+      </nav>
+      <SectionIntro
+        label="Glosario"
+        title="El vocabulario de la categoría."
+        lead="Si vendemos una categoría nueva, conviene nombrarla bien. Los términos que usamos, definidos sin jerga innecesaria."
+      />
+      <dl class="mt-14 grid sm:grid-cols-2 gap-x-12 gap-y-8">
+        {terms.map((g) => (
+          <div id={g.slug} class="border-l-2 pl-5 reveal scroll-mt-28" style="border-color:rgba(var(--accent-rgb),.5)">
+            <dt class="head t1 font-semibold text-lg">{g.data.term}</dt>
+            <dd class="t2 text-sm mt-1.5 leading-relaxed">{g.data.short}</dd>
+            <dd class="mono text-[10px] t3 mt-2">{LINEAS_RECURSOS[g.data.linea]}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+  <div class="surface-ink grain">
+    <CTAEditorial
+      title="¿Un término que no encaja?"
+      sub="Escríbenos y te orientamos sobre firma electrónica, CLM, GRC, IA o activos digitales."
+      primary={{ href: '/contacto', label: 'Contactar con el equipo' }}
+      secondary={{ href: '/recursos', label: 'Volver a Recursos' }}
+    />
+  </div>
+</Base>

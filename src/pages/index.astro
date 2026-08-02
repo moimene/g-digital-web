@@ -1,262 +1,302 @@
 ---
 import Base from '../layouts/Base.astro';
-import Wireframe from '../components/Wireframe.astro';
-import SectionLabel from '../components/SectionLabel.astro';
-import HeroRoller from '../components/HeroRoller.astro';
+import HeroEditorial from '../components/HeroEditorial.astro';
+import VideoBackground from '../components/VideoBackground.astro';
+import SectionIntro from '../components/SectionIntro.astro';
+import StatBand from '../components/StatBand.astro';
+import CTAEditorial from '../components/CTAEditorial.astro';
 import { articulos } from '../data/articulos';
 import { LINEAS, SITE } from '../consts';
 
 const heroPhrases = [
-  'inyectar cumplimiento en tus procesos',
-  'mitigar tu riesgo legal',
-  'automatizar tus contratos',
-  'tokenizar RWA regulados',
-  'conectar tus agentes de IA por MCP',
-  'establecer tu QTSP <em>in-house</em>',
-  'ser una organización <em>EUDI&nbsp;Wallet&nbsp;ready</em>',
-  'dar validez probatoria a cada operación',
+  'para gestionar tu Deuda Legal',
+  'para automatizar tus contratos',
+  'para tokenizar RWA regulados',
+  'para desplegar GRC e IA auditables',
+  'para integrar eIDAS en tus procesos',
 ];
+const srPhrases = `La infraestructura legal: ${heroPhrases.join('; ')}.`;
+
+const trustbar = [
+  { icon: 'ph-stack', txt: '4 líneas de negocio' },
+  { icon: 'ph-seal-check', txt: 'QTSP propio · EADTrust (51% Garrigues)' },
+  { icon: 'ph-trophy', txt: 'Top 10 · FT Innovative Lawyers Europa' },
+  { icon: 'ph-buildings', txt: 'Tecnología en producción real' },
+];
+
+// El problema (dolor → respuesta), un hueco por línea
+const dolores = [
+  { n: '01', pain: 'Tus operaciones digitales no dejan prueba oponible.', fix: 'Evidencia cualificada eIDAS en cada operación, por API o MCP.', line: 'Confianza Digital', href: '/soluciones/confianza-digital' },
+  { n: '02', pain: 'Gestionas miles de contratos sin ver tu posición ni tus riesgos.', fix: 'El contrato como proceso vivo, con trazabilidad y evidencia.', line: 'Contract Tech', href: '/soluciones/contract-tech' },
+  { n: '03', pain: 'Quieres tokenizar activos, pero sin un marco que aguante al regulador.', fix: 'Tokenización con vehículo jurídico, DLT y evidencia cualificada.', line: 'Activos Digitales', href: '/soluciones/activos-digitales' },
+  { n: '04', pain: 'Despliegas IA sin poder demostrar su gobierno ante el AI Act.', fix: 'Registrar, clasificar y evidenciar la conformidad de tu IA.', line: 'GRC & IA', href: '/soluciones/grc-ia' },
+];
+
 const palancas = [
   { icon: 'ph-scales', t: 'Garrigues', k: 'Conocimiento jurídico', d: 'Primer despacho de la UE. El derecho incorporado desde el diseño: regulación, validez y gobierno corporativo.' },
   { icon: 'ph-code', t: 'g-digital', k: 'Producto y tecnología', d: 'Traducimos requisitos legales en productos que funcionan: de la app integrable a la API/MCP en el core.' },
   { icon: 'ph-certificate', t: 'EADTrust', k: 'Operación regulada · QTSP', d: 'Prestador cualificado bajo eIDAS, participado al 51% por Garrigues. Opera y da el entorno regulado.' },
 ];
-const comparten = [
-  { icon: 'ph-scales', t: 'Criterio jurídico de Garrigues', d: 'Cada solución nace con el derecho incorporado, no añadido después.' },
-  { icon: 'ph-seal-check', t: 'Operación regulada', d: 'EADTrust, QTSP del grupo, opera y respalda lo que diseñamos.' },
-  { icon: 'ph-rocket-launch', t: 'Tecnología en producción', d: 'No PowerPoint: producto real, integrable y medible.' },
+
+const perfiles = [
+  { icon: 'ph-gavel', t: 'Legal / Compliance', q: '“Necesito que cada operación genere prueba oponible.”', line: 'Confianza Digital', href: '/soluciones/confianza-digital' },
+  { icon: 'ph-file-text', t: 'General Counsel / Ops', q: '“Gestiono miles de contratos sin visibilidad de mi posición.”', line: 'Contract Tech', href: '/soluciones/contract-tech' },
+  { icon: 'ph-coins', t: 'Financiero / Mercados', q: '“Quiero tokenizar activos con un marco que aguante al regulador.”', line: 'Activos Digitales', href: '/soluciones/activos-digitales' },
+  { icon: 'ph-brain', t: 'Riesgo / DPO / Consejo', q: '“Tengo que gobernar la IA y demostrar el cumplimiento.”', line: 'GRC & IA', href: '/soluciones/grc-ia' },
 ];
-// El problema (dolor → solución), un hueco por línea
-const dolores = [
-  { icon: 'ph-seal-check', tone: 'text-green', pain: 'Tus operaciones digitales no dejan prueba oponible.', fix: 'Evidencia cualificada eIDAS en cada operación, por API o MCP.', line: 'Confianza Digital', href: '/soluciones/confianza-digital' },
-  { icon: 'ph-scroll', tone: 'text-lime', pain: 'Gestionas miles de contratos sin ver tu posición ni tus riesgos.', fix: 'El contrato como proceso vivo, con trazabilidad y evidencia.', line: 'Contract Tech', href: '/soluciones/contract-tech' },
-  { icon: 'ph-coins', tone: 'text-aqua', pain: 'Quieres tokenizar activos, pero sin un marco que aguante al regulador.', fix: 'Tokenización con vehículo jurídico, DLT y evidencia cualificada.', line: 'Activos Digitales', href: '/soluciones/activos-digitales' },
-  { icon: 'ph-brain', tone: 'text-azure', pain: 'Despliegas IA sin poder demostrar su gobierno ante el AI Act.', fix: 'Registrar, clasificar y evidenciar la conformidad de tu IA.', line: 'GRC & IA', href: '/soluciones/grc-ia' },
-];
+
+const featured = articulos.slice(0, 3);
 ---
 <Base>
-  <!-- HERO -->
-  <header class="relative grain overflow-hidden border-b border-cloud/10">
-    <Wireframe variant="sphere" density="strong" class="absolute right-[-11rem] top-24 translate-y-0 w-[24rem] h-[24rem] opacity-25 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[36rem] md:h-[36rem] md:opacity-75" />
-    <div class="relative max-w-7xl mx-auto px-6 pt-24 pb-28 lg:pt-32 lg:pb-36">
-      <p class="label text-green mb-8 reveal">g-digital · Grupo Garrigues</p>
-      <h1 class="head display text-cloud font-semibold max-w-5xl reveal">
-        <span class="block text-[2.55rem] sm:text-6xl lg:text-[5.1rem]">Tecnología para</span>
-        <span class="block mt-3 min-h-[6.8rem] text-[2.05rem] leading-[1.08] sm:min-h-[3.5rem] sm:text-5xl lg:min-h-[5rem] lg:text-[4.45rem]">
-          <HeroRoller phrases={heroPhrases} />
-        </span>
-      </h1>
-      <p class="sr-only">Tecnología para inyectar cumplimiento en tus procesos, mitigar tu riesgo legal, automatizar tus contratos, tokenizar RWA regulados, conectar tus agentes de IA por MCP, establecer tu QTSP in-house, ser una organización EUDI Wallet ready y dar validez probatoria a cada operación.</p>
-      <p class="mt-9 max-w-2xl text-lg lg:text-xl text-cloud/70 leading-relaxed reveal">
-        El <span class="text-cloud font-semibold">brazo tecnológico de Garrigues</span>: cuatro líneas que convierten la complejidad jurídica en tecnología que funciona — <span class="text-cloud">confianza digital</span>, <span class="text-cloud">contratos</span>, <span class="text-cloud">activos digitales</span> y <span class="text-cloud">GRC&nbsp;e&nbsp;IA</span>. Cada una con su propio terreno.
-      </p>
-      <p class="mt-4 text-cloud/60 text-sm reveal">Tecnología real para situaciones de alta complejidad jurídica. Diseñado por Garrigues. Operado por EADTrust (QTSP bajo eIDAS).</p>
-      <div class="mt-11 flex flex-col sm:flex-row gap-4 reveal">
-        <a href="#lineas" class="group inline-flex items-center justify-center gap-2 bg-green text-ink px-7 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Ver las 4 líneas <i class="ph ph-arrow-down group-hover:translate-y-0.5 transition-transform"></i></a>
-        <a href="/contacto" class="inline-flex items-center justify-center gap-2 border border-cloud/25 text-cloud px-7 py-4 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Habla con un experto</a>
-      </div>
-    </div>
-    <div class="relative border-t border-cloud/10">
-      <div class="max-w-7xl mx-auto px-6 py-7 grid grid-cols-2 lg:grid-cols-4 gap-y-6 text-cloud/70">
-        <div class="flex items-center gap-3"><i class="ph ph-stack text-green text-xl"></i><span class="text-sm">4 líneas de negocio</span></div>
-        <div class="flex items-center gap-3"><i class="ph ph-seal-check text-green text-xl"></i><span class="text-sm">QTSP propio (EADTrust, 51% Garrigues)</span></div>
-        <div class="flex items-center gap-3"><i class="ph ph-trophy text-green text-xl"></i><span class="text-sm">Top 10 · FT Innovative Lawyers Europa</span></div>
-        <div class="flex items-center gap-3"><i class="ph ph-buildings text-green text-xl"></i><span class="text-sm">Tecnología en producción real</span></div>
-      </div>
-    </div>
-  </header>
+  <!-- HERO (tinta + vídeo) -->
+  <HeroEditorial
+    kicker="g-digital · Grupo Garrigues"
+    title="La infraestructura legal"
+    phrases={heroPhrases}
+    srPhrases={srPhrases}
+    sub="El <span class='t1 font-semibold'>brazo tecnológico de Garrigues</span>: cuatro líneas que convierten la complejidad jurídica en tecnología que funciona — confianza digital, contratos, activos digitales y GRC&nbsp;e&nbsp;IA."
+    note="Tecnología real para situaciones de alta complejidad jurídica. Diseñado por Garrigues. Operado por EADTrust (QTSP bajo eIDAS)."
+    primaryCta={{ href: '#lineas', label: 'Ver las 4 líneas' }}
+    secondaryCta={{ href: '/contacto', label: 'Habla con un experto' }}
+  >
+    <VideoBackground slot="media" src="/video/hero-home" poster="/video/hero-home-poster.jpg" overlay="aa" />
+  </HeroEditorial>
 
-  <!-- 01 · EL PROBLEMA (dolor → solución) -->
-  <section class="relative grain bg-coal/60 py-24 lg:py-32 border-b border-cloud/10">
+  <!-- Trust bar -->
+  <div class="surface-ink border-t border-b" style="border-color:var(--line)">
+    <div class="max-w-7xl mx-auto px-6 py-6 grid grid-cols-2 lg:grid-cols-4 gap-y-5">
+      {trustbar.map((t) => (
+        <div class="flex items-center gap-3">
+          <i class={`ph ${t.icon} accent text-xl`} aria-hidden="true"></i>
+          <span class="text-sm t2">{t.txt}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- 01 · EL PROBLEMA (papel) -->
+  <section class="surface-paper py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl reveal">
-        <SectionLabel num="01" text="El problema" />
-        <h2 class="head display text-4xl lg:text-[3.3rem] text-cloud font-semibold">Lo digital corre más rápido que su seguridad jurídica.</h2>
-        <p class="mt-7 text-cloud/70 leading-relaxed">Cada vez que un proceso se digitaliza, se abre un hueco entre lo que ocurre y lo que puedes <span class="text-cloud">demostrar, controlar o gobernar</span>. Cuatro huecos. Una línea para cerrar cada uno.</p>
-      </div>
-      <div class="mt-14 grid sm:grid-cols-2 gap-6">
+      <SectionIntro
+        num="01"
+        label="El problema"
+        title="Lo digital corre más rápido que su seguridad jurídica."
+        lead="Cada vez que un proceso se digitaliza se abre un hueco entre lo que ocurre y lo que puedes <strong>demostrar, controlar o gobernar</strong>. Cuatro huecos. Una línea para cerrar cada uno."
+      />
+      <div class="mt-16">
         {dolores.map((d) => (
-          <a href={d.href} class="card rounded-2xl p-7 reveal group flex gap-5">
-            <i class={`ph ${d.icon} ${d.tone} text-3xl mt-0.5 shrink-0`}></i>
-            <div>
-              <p class="mono text-[10px] text-cloud/45 mb-1.5">EL DOLOR</p>
-              <p class="head text-lg text-cloud font-semibold leading-snug">{d.pain}</p>
-              <p class="text-cloud/65 text-sm mt-3 leading-relaxed"><span class="mono text-[10px] text-cloud/45 block mb-1">LA RESPUESTA</span>{d.fix}</p>
-              <span class={`link-underline inline-flex items-center gap-1.5 ${d.tone} text-sm font-medium mt-4`}>{d.line} <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
-            </div>
+          <a href={d.href} class="group grid lg:grid-cols-12 gap-x-8 gap-y-3 items-baseline py-8 border-t reveal" style="border-color:var(--line)">
+            <span class="lg:col-span-1 mono text-sm t3">{d.n}</span>
+            <h3 class="lg:col-span-5 head text-xl lg:text-2xl t1 font-semibold leading-snug">{d.pain}</h3>
+            <p class="lg:col-span-4 t2 text-[15px] leading-relaxed">{d.fix}</p>
+            <span class="lg:col-span-2 inline-flex items-center gap-2 accent text-sm font-medium lg:justify-end">
+              {d.line} <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+            </span>
           </a>
         ))}
+        <div class="border-t" style="border-color:var(--line)"></div>
       </div>
     </div>
   </section>
 
-  <!-- 02 · LAS CUATRO LÍNEAS -->
-  <section id="lineas" class="relative grain py-24 lg:py-32">
+  <!-- 02 · LAS CUATRO LÍNEAS (papel, índice editorial) -->
+  <section id="lineas" class="surface-paper pb-24 lg:pb-32">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl reveal">
-        <SectionLabel num="02" text="Las cuatro líneas" />
-        <h2 class="head display text-4xl lg:text-[3.3rem] text-cloud font-semibold">Cuatro negocios. Una casa.</h2>
-        <p class="mt-7 text-cloud/70 leading-relaxed">{SITE.umbrella} Cada línea resuelve un problema distinto y habla su propio idioma: <span class="text-cloud">no todo es eIDAS</span>. Esto es lo que hacemos, y dónde.</p>
-      </div>
-      <div class="mt-14 grid lg:grid-cols-2 gap-6">
+      <SectionIntro
+        num="02"
+        label="Las cuatro líneas"
+        title="Cuatro negocios. Una casa."
+        lead={`${SITE.umbrella} Cada línea resuelve un problema distinto y habla su propio idioma: <strong>no todo es eIDAS</strong>.`}
+      />
+      <div class="mt-16">
         {LINEAS.map((l) => (
-          <a href={l.href} class="card rounded-3xl p-8 reveal block">
-            <div class="flex items-center justify-between">
-              <i class={`ph ${l.icon} ${l.toneText} text-3xl`}></i>
-              <span class="label text-cloud/55">Línea {l.n}</span>
+          <a href={l.href} class="group grid lg:grid-cols-12 gap-x-8 gap-y-4 py-10 border-t items-start reveal" style="border-color:var(--line)">
+            <div class="lg:col-span-2 flex items-center gap-4">
+              <span class="head text-5xl font-semibold t3 leading-none">{l.n}</span>
+              <span class="w-2.5 h-2.5 rounded-sm mt-1" style={`background:${l.toneRgba.replace('.5', '1')}`} aria-hidden="true"></span>
             </div>
-            <p class={`label ${l.toneText} mt-5`}>{l.kicker}</p>
-            <h3 class="head text-2xl text-cloud mt-1 font-semibold">{l.title}</h3>
-            <p class="text-cloud/85 mt-3 leading-relaxed">{l.promesa}</p>
-            <p class="text-cloud/55 text-sm mt-2 leading-relaxed">{l.desc}</p>
-            <div class="mt-6 space-y-2.5 text-sm">
-              {l.keys.map(([k, v]) => (
-                <div class="flex items-center gap-3 text-cloud/85"><span class={`mono text-[11px] ${l.toneText} w-32 shrink-0`}>{k}</span> {v}</div>
+            <div class="lg:col-span-6">
+              <p class="label t3 mb-2">{l.kicker}</p>
+              <h3 class="head text-2xl lg:text-3xl t1 font-semibold">{l.title}</h3>
+              <p class="t2 mt-3 leading-relaxed">{l.promesa}</p>
+            </div>
+            <div class="lg:col-span-3 space-y-2 text-sm t2">
+              {l.keys.slice(0, 3).map(([k, v]) => (
+                <div class="flex gap-3"><span class="mono text-[11px] t3 w-24 shrink-0 pt-0.5">{k}</span><span>{v}</span></div>
               ))}
             </div>
-            <span class={`link-underline inline-flex items-center gap-2 ${l.toneText} text-sm font-medium mt-7`}>Ver {l.title} <i class="ph ph-arrow-right"></i></span>
+            <span class="lg:col-span-1 inline-flex lg:justify-end items-center gap-2 accent text-sm font-medium">
+              Ver línea <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1" aria-hidden="true"></i>
+            </span>
+          </a>
+        ))}
+        <div class="border-t" style="border-color:var(--line)"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 · UNA SOLA CASA (banda navy) -->
+  <section class="surface-navy py-24 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionIntro
+        num="03"
+        label="Una sola casa"
+        title="Lo que comparten las cuatro líneas."
+        lead="No un producto común, sino una forma de trabajar: derecho de Garrigues + tecnología propia + operación regulada. Tres palancas que ningún actor ofrece por separado."
+      />
+      <div class="mt-14 grid md:grid-cols-3 gap-10 reveal-group">
+        {palancas.map((p) => (
+          <div>
+            <div class="rule-strong mb-6" style={`background:linear-gradient(90deg, rgba(var(--accent-rgb),.6), transparent)`}></div>
+            <i class={`ph ${p.icon} accent text-3xl`} aria-hidden="true"></i>
+            <h3 class="head text-2xl t1 mt-4 font-semibold">{p.t}</h3>
+            <p class="label t3 mt-2">{p.k}</p>
+            <p class="t2 text-sm mt-4 leading-relaxed">{p.d}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 · LA FACTORÍA (tinta, producto) -->
+  <section id="factoria" class="surface-ink grain py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-14 items-center">
+      <div class="lg:col-span-5 reveal">
+        <p class="label accent mb-6">04 · Confianza Digital · producto estrella</p>
+        <h2 class="display-2 t1 font-semibold">Una llamada. Cualquier proceso. <span class="green-text">Validez legal.</span></h2>
+        <p class="mt-7 t2 leading-relaxed">Dentro de Confianza Digital, <span class="t1 font-semibold">La Factoría</span> es nuestra API como producto: cuatro microservicios eIDAS (evidencia, firma, notificación y custodia) que inyectas en cualquier sistema sin migrar plataformas.</p>
+        <div class="mt-7 rounded-xl border p-5" style="border-color:rgba(var(--accent-rgb),.35);background:rgba(var(--accent-rgb),.08)">
+          <p class="accent font-semibold flex items-center gap-2"><i class="ph ph-robot" aria-hidden="true"></i> Ahora también agent-ready</p>
+          <p class="text-sm t2 mt-2">Expón la misma confianza cualificada como servidor <span class="mono t1">MCP</span>: tus agentes de IA invocan firma o sello como herramienta nativa, con los guardrails del QTSP.</p>
+        </div>
+        <a href="/soluciones/la-factoria" class="link-underline inline-flex items-center gap-2 accent text-sm font-medium mt-7">Ver La Factoría <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="lg:col-span-7 reveal">
+        <div class="rounded-2xl overflow-hidden border shadow-2xl shadow-black/50" style="border-color:var(--line)">
+          <div class="flex items-center gap-2 px-4 py-3 bg-ink border-b" style="border-color:var(--line)">
+            <span class="w-3 h-3 rounded-full bg-red-400/50"></span><span class="w-3 h-3 rounded-full bg-lime/60"></span><span class="w-3 h-3 rounded-full bg-green/70"></span>
+            <span class="ml-3 mono text-xs t3">trust-api · sellar evidencia</span>
+          </div>
+          <pre class="mono text-[12.5px] leading-relaxed bg-coal p-5 overflow-x-auto" style="color:rgba(244,246,245,.8)"><span class="t3"># Por API REST: una operación, una evidencia</span>
+<span class="green-text">POST</span> https://api.eadtrust.eu/v2/<span class="lime-text">evidence</span>
+<span class="t3">Authorization:</span> Bearer ••••••
+&#123;
+  <span class="lime-text">"operation"</span>: <span class="t1">"albaran.entrega"</span>,
+  <span class="lime-text">"payload_hash"</span>: <span class="t1">"a3f9…"</span>,
+  <span class="lime-text">"qualified"</span>: <span class="green-text">true</span>
+&#125;
+<span class="t3">→ 201 · evidencia eIDAS cualificada + sello de tiempo</span>
+
+<span class="t3"># Por MCP: para tu agente de IA</span>
+<span class="lime-text">tool</span>: trust.<span class="green-text">seal_evidence</span>(&#123; operation, payload_hash &#125;)</pre>
+        </div>
+        <p class="mono text-[11px] t3 mt-3">* Fragmento ilustrativo. Endpoints y specs definitivos en la página de la línea.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 · POR PERFIL (papel) -->
+  <section id="perfil" class="surface-paper-2 py-24 lg:py-32">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionIntro
+        num="05"
+        label="Tu punto de entrada"
+        title="¿Desde dónde miras el problema?"
+        lead="Cada perfil entra por su propia línea. Elige el tuyo."
+      />
+      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal-group">
+        {perfiles.map((p) => (
+          <a href={p.href} class="card-s rounded-2xl p-7 group block">
+            <i class={`ph ${p.icon} text-3xl`} style="color:var(--teal)" aria-hidden="true"></i>
+            <h3 class="head t1 font-semibold mt-5">{p.t}</h3>
+            <p class="t3 text-sm mt-3 leading-relaxed">{p.q}</p>
+            <span class="link-underline inline-flex items-center gap-1.5 accent text-sm font-medium mt-5">{p.line} <i class="ph ph-arrow-right" aria-hidden="true"></i></span>
           </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- 02 · TRES PALANCAS (el modelo / paraguas) -->
-  <section class="relative grain bg-coal/60 py-24 lg:py-32 border-y border-cloud/10">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl reveal">
-        <SectionLabel num="03" text="Una sola casa" />
-        <h2 class="head display text-4xl lg:text-[3.1rem] text-cloud font-semibold">Lo que comparten las cuatro líneas.</h2>
-        <p class="mt-7 text-cloud/70 leading-relaxed">No un producto común, sino una forma de trabajar: derecho de Garrigues + tecnología propia + operación regulada. Tres palancas que ningún actor ofrece por separado.</p>
-      </div>
-      <div class="mt-14 grid md:grid-cols-3 gap-8">
-        {palancas.map((p) => (
-          <div class="reveal"><div class="hairline mb-6"></div><i class={`ph ${p.icon} text-green text-3xl`}></i><h3 class="head text-2xl text-cloud mt-4 font-semibold">{p.t}</h3><p class="label text-cloud/55 mt-2">{p.k}</p><p class="text-cloud/65 text-sm mt-4 leading-relaxed">{p.d}</p></div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 03 · LA FACTORÍA (producto estrella de Confianza Digital) -->
-  <section id="factoria" class="relative grain py-24 lg:py-32">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-14 items-center">
-      <div class="lg:col-span-5 reveal">
-        <SectionLabel num="04" text="Confianza Digital · producto estrella" color="text-green" />
-        <h2 class="head display text-4xl lg:text-[3.1rem] text-cloud font-semibold">Una llamada. Cualquier proceso. <span class="green-text">Validez legal.</span></h2>
-        <p class="mt-7 text-cloud/70 leading-relaxed">Dentro de Confianza Digital, <span class="text-cloud font-semibold">La Factoría</span> es nuestra API como producto: cuatro microservicios eIDAS (evidencia, firma, notificación y custodia) que inyectas en cualquier sistema sin migrar plataformas.</p>
-        <div class="mt-7 rounded-xl bg-green/10 border border-green/30 p-5">
-          <p class="text-green font-semibold flex items-center gap-2"><i class="ph ph-robot"></i> Ahora también agent-ready</p>
-          <p class="text-sm text-cloud/75 mt-2">Expón la misma confianza cualificada como servidor <span class="mono text-cloud">MCP</span>: tus agentes de IA invocan firma o sello como herramienta nativa, con los guardrails del QTSP.</p>
-        </div>
-        <a href="/soluciones/la-factoria" class="link-underline inline-flex items-center gap-2 text-green text-sm font-medium mt-7">Ver La Factoría <i class="ph ph-arrow-right"></i></a>
-      </div>
-      <div class="lg:col-span-7 reveal">
-        <div class="rounded-2xl overflow-hidden border border-cloud/10 shadow-2xl shadow-black/50">
-          <div class="flex items-center gap-2 px-4 py-3 bg-ink border-b border-cloud/10">
-            <span class="w-3 h-3 rounded-full bg-red-400/50"></span><span class="w-3 h-3 rounded-full bg-lime/60"></span><span class="w-3 h-3 rounded-full bg-green/70"></span>
-            <span class="ml-3 mono text-xs text-cloud/55">trust-api · sellar evidencia</span>
-          </div>
-          <pre class="mono text-[12.5px] leading-relaxed bg-coal text-cloud/80 p-5 overflow-x-auto"><span class="text-cloud/55"># Por API REST: una operación, una evidencia</span>
-<span class="text-green">POST</span> https://api.eadtrust.eu/v2/<span class="lime-text">evidence</span>
-<span class="text-cloud/50">Authorization:</span> Bearer ••••••
-&#123;
-  <span class="lime-text">"operation"</span>: <span class="text-cloud">"albaran.entrega"</span>,
-  <span class="lime-text">"payload_hash"</span>: <span class="text-cloud">"a3f9…"</span>,
-  <span class="lime-text">"qualified"</span>: <span class="text-green">true</span>
-&#125;
-<span class="text-cloud/55">→ 201 · evidencia eIDAS cualificada + sello de tiempo</span>
-
-<span class="text-cloud/55"># Por MCP: para tu agente de IA</span>
-<span class="lime-text">tool</span>: trust.<span class="text-green">seal_evidence</span>(&#123; operation, payload_hash &#125;)</pre>
-        </div>
-        <p class="mono text-[11px] text-cloud/50 mt-3">* Fragmento ilustrativo. Endpoints y specs definitivos en la página de la línea.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 04 · POR PERFIL -->
-  <section id="perfil" class="relative grain bg-coal/60 py-24 lg:py-32 border-y border-cloud/10">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="max-w-3xl reveal">
-        <SectionLabel num="05" text="Tu punto de entrada" />
-        <h2 class="head display text-4xl lg:text-[3.1rem] text-cloud font-semibold">¿Desde dónde miras el problema?</h2>
-        <p class="mt-6 text-cloud/70">Cada perfil entra por su propia línea. Elige el tuyo.</p>
-      </div>
-      <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="card rounded-2xl p-7 reveal"><i class="ph ph-gavel text-green text-3xl"></i><h3 class="head text-cloud font-semibold mt-5">Legal / Compliance</h3><p class="text-cloud/55 text-sm mt-3 leading-relaxed">"Necesito que cada operación genere prueba oponible."</p><a href="/soluciones/confianza-digital" class="link-underline inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Confianza Digital <i class="ph ph-arrow-right"></i></a></div>
-        <div class="card rounded-2xl p-7 reveal"><i class="ph ph-file-text text-lime text-3xl"></i><h3 class="head text-cloud font-semibold mt-5">General Counsel / Ops</h3><p class="text-cloud/55 text-sm mt-3 leading-relaxed">"Gestiono miles de contratos sin visibilidad de mi posición."</p><a href="/soluciones/contract-tech" class="link-underline inline-flex items-center gap-1.5 text-lime text-sm font-medium mt-5">Contract Tech <i class="ph ph-arrow-right"></i></a></div>
-        <div class="card rounded-2xl p-7 reveal"><i class="ph ph-coins text-aqua text-3xl"></i><h3 class="head text-cloud font-semibold mt-5">Financiero / Mercados</h3><p class="text-cloud/55 text-sm mt-3 leading-relaxed">"Quiero tokenizar activos con un marco que aguante al regulador."</p><a href="/soluciones/activos-digitales" class="link-underline inline-flex items-center gap-1.5 text-aqua text-sm font-medium mt-5">Activos Digitales <i class="ph ph-arrow-right"></i></a></div>
-        <div class="card rounded-2xl p-7 reveal"><i class="ph ph-brain text-azure text-3xl"></i><h3 class="head text-cloud font-semibold mt-5">Riesgo / DPO / Consejo</h3><p class="text-cloud/55 text-sm mt-3 leading-relaxed">"Tengo que gobernar la IA y demostrar el cumplimiento."</p><a href="/soluciones/grc-ia" class="link-underline inline-flex items-center gap-1.5 text-azure text-sm font-medium mt-5">GRC &amp; IA <i class="ph ph-arrow-right"></i></a></div>
-      </div>
-      <a href="/recursos#desarrolladores" class="mt-6 card rounded-2xl p-7 reveal flex flex-col md:flex-row md:items-center gap-5 justify-between group">
+      <a href="/recursos#desarrolladores" class="mt-6 rounded-2xl p-7 reveal flex flex-col md:flex-row md:items-center gap-5 justify-between group surface-navy">
         <div class="flex items-start gap-4">
-          <i class="ph ph-brackets-angle text-green text-3xl mt-0.5"></i>
+          <i class="ph ph-brackets-angle accent text-3xl mt-0.5" aria-hidden="true"></i>
           <div>
-            <h3 class="head text-cloud font-semibold">Desarrollador / Tecnología</h3>
-            <p class="text-cloud/55 text-sm mt-1 leading-relaxed">"Quiero integrar y probar." Trust API + MCP, SDKs, sandboxes de producto y nuestro GitHub — acceso a todos los recursos técnicos.</p>
+            <h3 class="head t1 font-semibold">Desarrollador / Tecnología</h3>
+            <p class="t2 text-sm mt-1 leading-relaxed">"Quiero integrar y probar." Trust API + MCP, SDKs, sandboxes de producto y nuestro GitHub — acceso a todos los recursos técnicos.</p>
           </div>
         </div>
-        <span class="inline-flex items-center gap-2 text-green text-sm font-medium shrink-0">Centro de desarrolladores <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+        <span class="inline-flex items-center gap-2 accent text-sm font-medium shrink-0">Centro de desarrolladores <i class="ph ph-arrow-right transition-transform group-hover:translate-x-1" aria-hidden="true"></i></span>
       </a>
     </div>
   </section>
 
-  <!-- 05 · QUÉ COMPARTEN + PRUEBA -->
-  <section class="relative grain py-24 lg:py-32">
+  <!-- 06 · PRUEBA (tinta) -->
+  <section class="surface-ink grain py-24 lg:py-32 border-t" style="border-color:var(--line)">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="grid lg:grid-cols-3 gap-8">
-        {comparten.map((c) => (
-          <div class="reveal"><i class={`ph ${c.icon} text-green text-3xl`}></i><h3 class="head text-xl text-cloud mt-4 font-semibold">{c.t}</h3><p class="text-cloud/60 text-sm mt-3 leading-relaxed">{c.d}</p></div>
-        ))}
+      <SectionIntro
+        num="06"
+        label="Prueba, no adjetivos"
+        title="Resultados que puedes verificar."
+      />
+      <div class="mt-14">
+        <StatBand
+          stats={[
+            { value: 40000, suffix: '+', label: 'evidencias certificadas en GoCertius' },
+            { value: 298, suffix: '+', label: 'escenarios de integración catalogados' },
+            { value: 4, label: 'líneas de negocio' },
+            { value: 'Top 10', label: 'FT Innovative Lawyers (Europa)' },
+          ]}
+        />
       </div>
-      <div class="hairline my-16"></div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-        <div class="reveal"><div class="head text-5xl font-semibold green-text"><span class="counter" data-to="40000" data-suffix="+">40.000+</span></div><p class="text-cloud/55 text-sm mt-2">evidencias en GoCertius</p></div>
-        <div class="reveal"><div class="head text-5xl font-semibold green-text"><span class="counter" data-to="298" data-suffix="+">298+</span></div><p class="text-cloud/55 text-sm mt-2">escenarios de integración</p></div>
-        <div class="reveal"><div class="head text-5xl font-semibold green-text"><span class="counter" data-to="4">4</span></div><p class="text-cloud/55 text-sm mt-2">líneas de negocio</p></div>
-        <div class="reveal"><div class="head text-5xl font-semibold green-text">Top&nbsp;10</div><p class="text-cloud/55 text-sm mt-2">FT Innovative Lawyers (Europa)</p></div>
-      </div>
-      <div class="mt-16 reveal">
-        <p class="label text-cloud/55 text-center mb-7">Ecosistema y partners</p>
-        <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-5 text-cloud/50 head">
+      <div class="mt-16 pt-10 border-t reveal" style="border-color:var(--line)">
+        <p class="label t3 text-center mb-7">Ecosistema y partners</p>
+        <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-5 t2 head">
           <span class="text-lg">Garrigues</span><span class="mono text-sm tracking-wide">EADTrust</span><span class="font-semibold">ioBuilders</span><span class="font-semibold">Oracle</span><span class="font-semibold">Microsoft</span><span class="text-sm">Observatorio LegalTech Garrigues·ICADE</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 06 · RECURSOS -->
-  <section id="recursos" class="relative grain bg-coal/60 py-24 lg:py-32 border-y border-cloud/10">
+  <!-- 07 · RECURSOS (papel) -->
+  <section id="recursos" class="surface-paper py-24 lg:py-32">
     <div class="max-w-7xl mx-auto px-6">
       <div class="flex flex-wrap items-end justify-between gap-6 reveal">
-        <div><SectionLabel num="06" text="Aprende la categoría" /><h2 class="head display text-4xl lg:text-[3rem] text-cloud font-semibold">Recursos para adelantarte.</h2></div>
-        <a href="/recursos" class="link-underline text-green font-medium text-sm inline-flex items-center gap-2">Ver todos los recursos <i class="ph ph-arrow-right"></i></a>
+        <SectionIntro
+          num="07"
+          label="Aprende la categoría"
+          title="Recursos para adelantarte."
+        />
+        <a href="/recursos" class="link-underline accent font-medium text-sm inline-flex items-center gap-2 mb-1">Ver todos los recursos <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
       </div>
-      <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {articulos.map((a) => (
-          <a href="/recursos" class="card rounded-2xl p-7 group flex flex-col reveal">
-            <div class="flex items-center justify-between mb-3"><span class="label text-green">{a.catLabel}</span><span class="mono text-[11px] text-cloud/55">{a.fecha}</span></div>
-            <h3 class="head text-lg text-cloud leading-snug font-semibold">{a.titulo}</h3>
-            <p class="text-cloud/55 text-sm mt-3 flex-1">{a.extracto}</p>
-            <span class="inline-flex items-center gap-1.5 text-green text-sm font-medium mt-5">Ver en recursos <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
-          </a>
+      <div class="mt-12">
+        {featured.map((a) => (
+          <article class="grid lg:grid-cols-12 gap-x-8 gap-y-3 py-8 border-t reveal" style="border-color:var(--line)">
+            <div class="lg:col-span-2">
+              <p class="label accent">{a.catLabel}</p>
+              <p class="mono text-[11px] t3 mt-2">{a.fecha} · {a.min}</p>
+            </div>
+            <div class="lg:col-span-8">
+              <h3 class="head text-xl lg:text-2xl t1 font-semibold leading-snug">{a.titulo}</h3>
+              <p class="t2 text-[15px] mt-3 leading-relaxed max-w-2xl">{a.extracto}</p>
+            </div>
+            <div class="lg:col-span-2 flex lg:justify-end items-start">
+              {a.url
+                ? <a href={a.url} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 accent text-sm font-medium">Leer artículo <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                : <a href={`/recursos/articulos/${a.slug}`} class="inline-flex items-center gap-1.5 accent text-sm font-medium">Ver ficha <i class="ph ph-arrow-right" aria-hidden="true"></i></a>}
+            </div>
+          </article>
         ))}
+        <div class="border-t" style="border-color:var(--line)"></div>
       </div>
     </div>
   </section>
 
-  <!-- CTA FINAL -->
-  <section class="relative grain overflow-hidden border-t border-cloud/10">
-    <Wireframe variant="ribbon" class="absolute left-[-6rem] bottom-[-5rem] w-[30rem] h-[30rem] opacity-45 hidden md:block" accent={false} />
-    <div class="relative max-w-5xl mx-auto px-6 py-28 text-center">
-      <span class="stamp inline-flex items-center gap-2 mono text-[11px] tracking-widest text-green border border-green/40 rounded-full px-4 py-1.5 mb-8"><i class="ph ph-shield-check"></i> g-digital · GRUPO GARRIGUES</span>
-      <h2 class="head display text-4xl lg:text-6xl text-cloud font-semibold">Pon tu reto sobre la mesa.</h2>
-      <p class="mt-7 text-cloud/70 max-w-xl mx-auto text-lg">Cuéntanos un caso real —un contrato, una operación, una tokenización, un sistema de IA— y te mostramos qué línea lo resuelve y cómo.</p>
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Solicitar una conversación</a>
-        <a href="#lineas" class="border border-cloud/25 text-cloud px-8 py-4 rounded-xl font-medium hover:bg-cloud/5 transition-colors">Ver las 4 líneas</a>
-      </div>
-      <p class="mono text-[11px] text-cloud/55 mt-8">Tratamiento de datos por J&amp;A Garrigues, S.L.P. · Consulta la política de privacidad antes de enviar.</p>
-    </div>
-  </section>
+  <!-- CTA FINAL (tinta) -->
+  <div class="surface-ink grain">
+    <CTAEditorial
+      kicker="g-digital · GRUPO GARRIGUES"
+      title="Pon tu reto sobre la mesa."
+      sub="Cuéntanos un caso real —un contrato, una operación, una tokenización, un sistema de IA— y te mostramos qué línea lo resuelve y cómo."
+      primary={{ href: '/contacto', label: 'Solicitar una conversación' }}
+      secondary={{ href: '#lineas', label: 'Ver las 4 líneas' }}
+      note="Tratamiento de datos por J&A Garrigues, S.L.P. · Consulta la política de privacidad antes de enviar."
+    />
+  </div>
 </Base>

@@ -1,0 +1,50 @@
+---
+// Hero editorial institucional (rediseño v4): label + H1 (+ roller opcional) + lead + CTAs.
+// Media de fondo por slot `media` (VideoBackground, Wireframe…) o vacío (tinta limpia).
+import HeroRoller from './HeroRoller.astro';
+
+interface Props {
+  kicker: string;
+  title: string;            // parte estática del H1
+  phrases?: string[];       // si hay, el H1 termina con roller
+  sub?: string;             // lead (HTML ligero permitido vía set:html en slot 'sub'? no: texto)
+  note?: string;            // nota secundaria pequeña
+  primaryCta?: { href: string; label: string };
+  secondaryCta?: { href: string; label: string };
+  srPhrases?: string;       // texto sr-only con todas las frases del roller
+}
+const { kicker, title, phrases, sub, note, primaryCta, secondaryCta, srPhrases } = Astro.props;
+const hasMedia = Astro.slots.has('media');
+---
+<header class="relative overflow-hidden surface-ink">
+  {hasMedia && <slot name="media" />}
+  <div class="relative max-w-7xl mx-auto px-6 pt-24 pb-24 lg:pt-32 lg:pb-32">
+    <p class="label accent mb-8 reveal">{kicker}</p>
+    <h1 class="display-1 t1 font-semibold max-w-5xl reveal">
+      {title}
+      {phrases && phrases.length > 0 && (
+        <span class="block mt-2 min-h-[2.2em] sm:min-h-[1.15em]">
+          <HeroRoller phrases={phrases} />
+        </span>
+      )}
+    </h1>
+    {srPhrases && <p class="sr-only">{srPhrases}</p>}
+    {sub && <p class="mt-8 max-w-2xl lead t2 reveal" set:html={sub} />}
+    {note && <p class="mt-4 text-sm t3 reveal">{note}</p>}
+    {(primaryCta || secondaryCta) && (
+      <div class="mt-11 flex flex-col sm:flex-row gap-4 reveal">
+        {primaryCta && (
+          <a href={primaryCta.href} class="btn-primary inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl">
+            {primaryCta.label}
+          </a>
+        )}
+        {secondaryCta && (
+          <a href={secondaryCta.href} class="btn-outline inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl">
+            {secondaryCta.label}
+          </a>
+        )}
+      </div>
+    )}
+    <slot />
+  </div>
+</header>
