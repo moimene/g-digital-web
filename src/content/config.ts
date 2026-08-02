@@ -41,6 +41,8 @@ export const TAG_LABELS: Record<string, string> = {
   'kyc': 'KYC/AML',
   'deuda-legal': 'Deuda Legal',
   'compliance-injection': 'Compliance Injection',
+  'contrato-computable': 'Contrato computable',
+  'derecho-computable': 'Derecho computable',
   'regulacion': 'Regulación',
 };
 

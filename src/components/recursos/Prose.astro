@@ -44,4 +44,16 @@
   .prose-gd pre code{ background:none;border:0;padding:0;color:inherit;font-size:inherit }
   .prose-gd hr{ border:0; height:1px; background:var(--line); margin:2.4em 0 }
   .prose-gd img{ border-radius:12px; border:1px solid var(--line) }
+  .prose-gd table{
+    width:100%; border-collapse:collapse; margin:1.8em 0; font-size:.92rem;
+    border-top:2px solid var(--line-strong); border-bottom:2px solid var(--line-strong);
+  }
+  .prose-gd thead th{
+    font-family:"JetBrains Mono",monospace; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--t3); text-align:left; padding:.7em .9em; border-bottom:1px solid var(--line-strong);
+  }
+  .prose-gd tbody td{ padding:.7em .9em; border-bottom:1px solid var(--line); color:var(--t2); vertical-align:top; line-height:1.5 }
+  .prose-gd tbody tr:last-child td{ border-bottom:0 }
+  .prose-gd tbody td:first-child{ color:var(--t1); font-weight:500 }
+  .prose-gd tbody tr:hover td{ background:rgba(var(--accent-rgb),.04) }
 </style>

@@ -4,17 +4,28 @@ description: 'El pasivo invisible de las operaciones sin valor probatorio: se ac
 linea: confianza
 tags: ['deuda-legal', 'evidencia']
 nivel: basico
+readingTime: 4
 featured: true
-draft: true
+draft: false
 aka: ['deuda probatoria']
-related: ['compliance-injection', 'evidencia-cualificada']
-glossary: ['deuda-legal']
+related: ['que-es-deuda-legal', 'deuda-legal-pasivo', 'compliance-injection']
+glossary: ['deuda-legal', 'qtsp']
 ---
 
-> **Borrador editorial.** Concepto acuñado por g-digital; ficha en expansión.
+## La definición
 
-Igual que la deuda técnica, la **Deuda Legal** son las operaciones que tu organización ejecuta cada día sin dejar prueba con valor jurídico: aceptaciones, entregas, consentimientos, comunicaciones. No duelen hasta que las necesitas — ante un juez, un regulador o un auditor — y entonces el coste es muy superior al de haberlas certificado.
+La **Deuda Legal** es la distancia entre lo que tu organización hace y lo que tu organización puede demostrar. Es el trasplante deliberado del concepto de deuda técnica al ámbito jurídico: igual que los atajos de código no duelen hasta que hay que escalar, las operaciones sin prueba cualificada no duelen hasta que hay que demostrar algo — ante un juez, un regulador o un auditor.
 
-La respuesta de categoría es la [Compliance Injection](/recursos/conceptos/compliance-injection): inyectar servicios eIDAS cualificados en el proceso existente, sin migrar plataformas, de modo que cada operación produzca evidencia en el momento en que ocurre.
+## Por qué es deuda y no simplemente riesgo
 
-**Dónde se aplica:** [Confianza Digital](/soluciones/confianza-digital) · [La Factoría](/soluciones/la-factoria) · [Trust Explorer](/escenarios)
+Porque comparte las tres propiedades de la deuda: **se acumula** (cada operación sin certificar suma pasivo), **es invisible** (no figura en ningún balance; es contingente y nadie lo provisiona) y **cobra intereses** (cuanto más tarda en resolverse, mayor es el coste: impagos, sanciones, nulidades, costes procesales, hallazgos de auditoría repetidos).
+
+## Cómo se paga
+
+La deuda legal no se cancela con un parche de última milla: se gestiona con una decisión de arquitectura. Inyectar servicios de confianza cualificados — firma, sello de tiempo, entrega certificada, custodia — en los puntos críticos de los procesos existentes, de modo que cada operación produzca su propia prueba en el momento en que ocurre. Ese patrón es la [Compliance Injection](/recursos/conceptos/compliance-injection).
+
+## Para profundizar
+
+- Artículo: [Qué es la deuda legal de tus operaciones](/recursos/articulos/que-es-deuda-legal)
+- Whitepaper: [Deuda Legal: cuantificar el pasivo](/recursos/articulos/deuda-legal-pasivo)
+- Aplicación: [La Factoría · Trust API + MCP](/soluciones/la-factoria) y el [Trust Explorer](/escenarios)

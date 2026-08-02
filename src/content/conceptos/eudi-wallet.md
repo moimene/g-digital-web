@@ -4,17 +4,28 @@ description: 'La cartera de identidad digital europea introducida por eIDAS 2: d
 linea: confianza
 tags: ['eudi-wallet', 'eidas', 'regulacion']
 nivel: basico
+readingTime: 4
 featured: false
-draft: true
-aka: ['cartera digital europea']
-related: []
-glossary: ['eudi-wallet', 'eidas-2']
+draft: false
+aka: ['cartera digital europea', 'European Digital Identity Wallet']
+related: ['business-wallet', 'servicios-confianza-regulada']
+glossary: ['eudi-wallet', 'business-wallet', 'eidas-2']
 ---
 
-> **Borrador editorial.** Ficha en expansión.
+## La definición
 
-La **EUDI Wallet** es la cartera de identidad digital europea introducida por eIDAS 2: permitirá a ciudadanos y organizaciones identificarse, compartir atributos cualificados (QEA/QEAA) y firmar en toda la UE con interoperabilidad nativa.
+La **EUDI Wallet** es la cartera de identidad digital europea creada por eIDAS 2 (Reglamento UE 2024/1183). Cada Estado miembro la ofrecerá, y permitirá a personas — y, vía la Business Wallet, a organizaciones — identificarse, compartir atributos verificados (edad, titulaciones, poderes de representación) y firmar con validez transfronteriza en toda la UE.
 
-Para las organizaciones reguladas no es solo una obligación que se aproxima: es una ventaja temprana. Las plataformas evolutivas (Enterprise Suite, GoCertius) incorporan los nuevos servicios eIDAS 2.0 conforme se publican los actos delegados, sin migraciones ni re-arquitectura.
+## Por qué no es solo un trámite
 
-**Recurso asociado:** whitepaper *eIDAS 2 y EUDI Wallet: base sectorial* (33 páginas, 11 sectores), disponible en [Recursos → Whitepapers](/recursos#whitepapers).
+Para sectores regulados (banca, seguros, telco, energía, salud, educación, AAPP, grandes plataformas) aceptar la wallet será obligación. Pero la lectura corta es verla como una carga: la wallet convierte la identidad verificada en **interoperable a escala europea**. El onboarding, el KYC y la contratación reforzada — cada paso sellado con fecha cierta — dejan de ser fricción y pasan a ser ventaja temprana.
+
+## Qué hacemos nosotros
+
+Las plataformas de g-digital están preparadas para incorporar los servicios eIDAS 2 conforme se publican los actos delegados, sin re-arquitectura: aceptar credenciales wallet, emitir atestaciones de atributos (QEA/QEAA) a través del QTSP del grupo, y producir el expediente probatorio completo de cada proceso.
+
+## Para profundizar
+
+- Artículo: [La cartera europea… pero para empresas](/recursos/articulos/business-wallet)
+- Whitepaper descargable: [eIDAS 2 y EUDI Wallet: base sectorial](/whitepapers/eIDAS2-EUDI-Wallet-base-sectorial.pdf) (33 páginas, 11 sectores)
+- [Confianza Digital · la línea](/soluciones/confianza-digital)

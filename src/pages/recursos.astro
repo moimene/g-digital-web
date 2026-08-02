@@ -17,8 +17,9 @@ interface Item {
   title: string; desc: string; linea: string; tags: string[]; nivel: string;
   min: number; dateISO: string; draft: boolean; featured: boolean;
 }
-const toItem = (e: any, tipo: string, tipoLabel: string, base: string): Item => ({
-  tipo, tipoLabel,
+const TIPO_LABELS: Record<string, string> = { articulo: 'Artículo', guia: 'Guía', whitepaper: 'Whitepaper', noticia: 'Noticia' };
+const toItem = (e: any, tipoFallback: string, tipoLabelFallback: string, base: string): Item => ({
+  tipo: e.data.tipo ?? tipoFallback, tipoLabel: TIPO_LABELS[e.data.tipo ?? ''] ?? tipoLabelFallback,
   href: `${base}/${e.slug}`,
   external: false,
   title: e.data.title, desc: e.data.description,
@@ -35,21 +36,7 @@ const whitepapers: Item[] = [
     title: 'eIDAS 2 y EUDI Wallet: base sectorial',
     desc: '33 páginas, 11 sectores. Marco descriptivo de obligaciones y oportunidades sector a sector.',
     linea: 'confianza', tags: ['eidas', 'eudi-wallet', 'regulacion'], nivel: 'intermedio',
-    min: 35, dateISO: '2026-06-01', draft: false, featured: true,
-  },
-  {
-    tipo: 'whitepaper', tipoLabel: 'Whitepaper', external: false, href: '#',
-    title: 'Deuda Legal: cuantificar el pasivo',
-    desc: 'Metodología para medir y reducir tu exposición probatoria.',
-    linea: 'confianza', tags: ['deuda-legal'], nivel: 'intermedio',
-    min: 20, dateISO: '', draft: true, featured: false,
-  },
-  {
-    tipo: 'whitepaper', tipoLabel: 'Whitepaper', external: false, href: '#',
-    title: 'Tokenización regulada con OpenBrick',
-    desc: 'Del activo real al token bajo el Régimen Piloto DLT.',
-    linea: 'activos', tags: ['tokenizacion', 'rwa'], nivel: 'experto',
-    min: 24, dateISO: '', draft: true, featured: false,
+    min: 35, dateISO: '2026-06-01', draft: false, featured: false,
   },
 ];
 
@@ -60,7 +47,9 @@ const items: Item[] = [
   ...whitepapers,
 ];
 
-const destacado = items.find((i) => i.featured && !i.draft) ?? items[0];
+const destacado = items.find((i) => i.href.endsWith('/que-es-deuda-legal'))
+  ?? items.find((i) => i.featured && !i.draft)
+  ?? items[0];
 const resto = items.filter((i) => i !== destacado);
 
 // Temas presentes en el corpus (para el select de tema)
