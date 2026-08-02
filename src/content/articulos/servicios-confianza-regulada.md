@@ -19,6 +19,6 @@ tipo: articulo
 
 Los servicios de confianza digital, regulados por eIDAS 2, constituyen la infraestructura legal esencial que responde a la evolución de internet en todas sus dimensiones, permitiendo a los ciudadanos y a las organizaciones operar con seguridad jurídica en la red.
 
-El artículo recorre qué son los servicios de confianza cualificados (firma, sello de tiempo, entrega certificada, custodia), qué efectos jurídicos producen —presunción de integridad y origen, inversión de la carga de la prueba— y por qué son la capa que convierte una operación digital en una evidencia oponible ante jueces, reguladores y auditores.
+El artículo recorre qué son los servicios de confianza cualificados (firma, sello de tiempo, entrega certificada, custodia), qué efectos jurídicos producen —presunciones de integridad, origen y fecha que desplazan la carga al impugnante— y por qué son la capa que convierte una operación digital en una evidencia oponible ante jueces, reguladores y auditores.
 
 **[Leer el artículo completo en g-digital.garrigues.com](https://g-digital.garrigues.com/es_ES/recursos/blog/servicios-confianza-regulada-capa-seguridad-juridica-internet-europa)**

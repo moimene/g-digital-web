@@ -39,7 +39,7 @@ La regla práctica: el nivel de firma debe ser proporcional al riesgo de la oper
 
 ## 4. La entrega: probar el envío, la entrega y el contenido
 
-Para comunicaciones formales — reclamaciones de pago, comunicaciones laborales, avisos contractuales — la pregunta crítica no es "¿lo envié?" sino "¿puedo probar que llegó y qué decía?". La **entrega electrónica certificada (ERDS, arts. 43-44 eIDAS)** produce constancia fehaciente de contenido, envío y recepción. Es el burofax convertido en API: misma eficacia probatoria, inmediatez digital y coste marginal.
+Para comunicaciones formales — reclamaciones de pago, comunicaciones laborales, avisos contractuales — la pregunta crítica no es "¿lo envié?" sino "¿puedo probar que llegó y qué decía?". El **servicio cualificado de entrega electrónica certificada (ERDS cualificado, arts. 43-44 eIDAS)** goza de presunción de integridad de los datos, de envío por el remitente identificado, de recepción por el destinatario identificado y de exactitud de la fecha y hora. Es el burofax convertido en API: misma eficacia probatoria, inmediatez digital y coste marginal.
 
 ## 5. La custodia: que la prueba sobreviva al tiempo
 
@@ -51,11 +51,11 @@ Una evidencia que no se puede verificar dentro de diez años es una evidencia a 
 
 En producción real: la custodia de g-digital/EADTrust gestiona hoy más de 20 TB de documentación sensible y 500+ data rooms, y sustituyó los USB en más de 250 operaciones de M&A de Garrigues.
 
-## 6. El efecto procesal: la carga de la prueba cambia de lado
+## 6. El efecto procesal: la carga de desvirtuar la prueba cambia de lado
 
-La cadena completa — hash + sello cualificado + firma del nivel adecuado + entrega certificada + custodia — compone un bloque probatorio que el ordenamiento español premia dos veces: las presunciones eIDAS (integridad, fecha, envío) y el par de la LEC que decide quién trabaja en el juicio: con servicio de confianza cualificado, el art. 326.3 presume la autenticidad e integridad del documento y corresponde a quien lo impugna probar su falsedad; sin él, el art. 326.4 exige acreditar la autenticidad por peritaje sobre el procedimiento empleado.
+La cadena completa — hash + sello cualificado + firma del nivel adecuado + entrega certificada + custodia — compone un bloque probatorio que el ordenamiento español premia dos veces: las presunciones eIDAS (integridad, fecha, envío) y el art. 326.4 LEC, introducido por la Ley 6/2020, que reconoce a los documentos electrónicos con servicios de confianza cualificados una **presunción legal reforzada de autenticidad e integridad**. Sin servicio cualificado, la autenticidad debe acreditarse por peritaje sobre el procedimiento empleado (arts. 326.2-326.3 LEC).
 
-Traducción práctica: **cualificado → presunción; no cualificado → periciales, costes e incertidumbre**. Quien presenta evidencia cualificada empieza el litigio ganando el plano probatorio: las disputas se juegan sobre el fondo, las auditorías cierran antes y las inspecciones dejan de ser una reconstrucción arqueológica de expedientes.
+Traducción práctica: **cualificado → presunción; no cualificado → periciales, costes e incertidumbre**. Quien presenta evidencia cualificada empieza el litigio ganando el plano probatorio: la presunción —iuris tantum, admite prueba en contrario— desplaza a quien impugna la carga de desvirtuarla. Las disputas se juegan sobre el fondo, las auditorías cierran antes y las inspecciones dejan de ser una reconstrucción arqueológica de expedientes.
 
 *El alcance de cada presunción depende del mecanismo y del caso concreto: la estrategia probatoria es territorio de tu asesor legal. La arquitectura que la hace posible es territorio nuestro.*
 

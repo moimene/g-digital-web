@@ -51,7 +51,7 @@ export const LINEAS: Linea[] = [
     desc: 'Firma, sello, entrega y custodia eIDAS — por API, MCP, Suite o app. La capa de evidencia de tus operaciones.',
     para: 'CLO · CISO · CTO',
     roles: [
-      { rol: 'Para el jurista', icon: 'ph-gavel', txt: 'Inversión de la carga de la prueba (art. 41.2 eIDAS, 326.4 LEC): cada operación es evidencia oponible ante juez o regulador.' },
+      { rol: 'Para el jurista', icon: 'ph-gavel', txt: 'Presunción legal de autenticidad, integridad y fecha (art. 41.2 eIDAS, 326.4 LEC): cada operación es evidencia oponible ante juez o regulador.' },
       { rol: 'Para IT / Dev', icon: 'ph-code', txt: 'Una llamada REST — o un servidor MCP para tus agentes de IA. JSON-native, webhooks, sin migrar plataformas.' },
       { rol: 'Para negocio', icon: 'ph-chart-line-up', txt: 'Menos litigios y sanciones. El coste de certificar es céntimos por operación frente al de no tener prueba.' },
     ],

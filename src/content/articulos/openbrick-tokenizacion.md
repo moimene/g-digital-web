@@ -59,7 +59,7 @@ El resultado: cuando el regulador, el auditor o un inversor pregunta, la respues
 
 ## 5. Por qué OpenBrick
 
-OpenBrick aplica este modelo al activo más comprensible de todos: el inmueble. Fracciona activos inmobiliarios en tokens regulados accesibles desde importes reducidos, con mercado secundario supervisado. g-digital participa, junto con compañías clave del sector como BME, en una de las primeras plataformas de activos financieros tokenizados bajo el Régimen Piloto — y el mismo patrón se extiende a deuda sindicada, bonos digitales y activos ESG.
+OpenBrick aplica este modelo al activo más comprensible de todos: el inmueble. Fracciona activos inmobiliarios en tokens regulados accesibles desde importes reducidos, con mercado secundario supervisado. g-digital participa, junto con compañías como BME, en una plataforma de activos financieros tokenizados autorizada bajo el Régimen Piloto DLT (Reglamento (UE) 2022/858), supervisada por la CNMV — y el mismo patrón se extiende a deuda sindicada, bonos digitales y activos ESG.
 
 ## 6. Checklist para tu comité
 

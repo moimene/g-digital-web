@@ -54,5 +54,18 @@ Content Collections en `src/content/`: `articulos`, `conceptos`, `casos`, `glosa
 
 - **Despliegue:** solo preview (SSO Vercel). `--prod` requiere orden expresa del usuario.
 - Escenarios/Trust Explorer siguen en el sistema anterior (tinta, coherente con producto); restyle fino pendiente si se decide.
-- Cuerpos completos de los 4 artículos draft y 2 whitepapers: pendientes de redacción/aprobación (estructura lista).
 - Contenido F3/F4 del plan v4: catálogo 298 escenarios, hub EUDI, i18n EN.
+
+## Revisión legal — ronda 1 aplicada (2026-08-02)
+
+Respuesta del asesor legal (prompt en `docs/REVISION-LEGAL-prompt.md`) aplicada:
+
+- **LEC: la cita correcta para servicios cualificados es 326.4** (añadido por Ley 6/2020; el 326.3 quedó para no cualificados). El copy legacy era el correcto; los artículos nuevos usan 326.4 + peritaje 326.2-326.3. **No tocar sin nueva consulta.**
+- **"Inversión de la carga de la prueba"** → sustituida por "presunción legal de autenticidad, integridad y fecha" / "desplaza la carga de desvirtuar la prueba al impugnante" en consts, Factoría, escenarios y artículos.
+- **ERDS** siempre como "servicio **cualificado** de entrega electrónica certificada".
+- **Archivo cualificado (45i-45j):** los estándares YA existen (Reg. Ejecución (UE) 2025/2532) — prohibido decir "estándares pendientes"; fórmula aprobada: "diseñado conforme a los requisitos del servicio cualificado…".
+- **EUDI:** fechas con "conforme al calendario previsto en el Reglamento" / "estimada para finales de 2027"; WE BUILD con atribución "según el propio consorcio"; "Business Wallet" marcado como denominación de mercado (no categoría regulatoria).
+- **OpenBrick:** fórmula aprobada "plataforma de activos financieros tokenizados autorizada bajo el Régimen Piloto DLT (Reglamento (UE) 2022/858), supervisada por la CNMV" (sin "una de las primeras").
+- **Métricas:** con fuente y fecha ("Datos internos de g-digital, acumulados a 2026").
+- **Disclaimer uniforme** en todas las fichas de contenido (ArticleLayout): "Contenido divulgativo con fines comerciales; no constituye asesoramiento jurídico".
+- **Pendiente de la ronda 1** (la respuesta no los cubrió): E soberanía/CLOUD Act/PQC, F AI Act, G citas de casos de uso, H.1 sentencia AP Lleida (sin citar hasta tener identificadores verificados).

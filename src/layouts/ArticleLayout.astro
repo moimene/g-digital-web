@@ -88,6 +88,8 @@ const fecha = d.pubDate
           <slot />
         </Prose>
 
+        <p class="mono text-[11px] t3 mt-12 pt-6 border-t" style="border-color:var(--line)">Contenido divulgativo con fines comerciales. No constituye asesoramiento jurídico; la aplicación de cada precepto al caso concreto corresponde a tu asesor legal.</p>
+
         {d.tags.length > 0 && (
           <div class="mt-12 pt-8 border-t flex flex-wrap gap-2.5" style="border-color:var(--line)">
             {d.tags.map((t) => (

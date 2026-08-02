@@ -22,7 +22,7 @@ Para sectores regulados (banca, seguros, telco, energía, salud, educación, AAP
 
 ## Qué hacemos nosotros
 
-Las plataformas de g-digital están preparadas para incorporar los servicios eIDAS 2 conforme se publican los actos delegados, sin re-arquitectura: aceptar credenciales wallet, emitir atestaciones de atributos (QEA/QEAA) a través del QTSP del grupo, y producir el expediente probatorio completo de cada proceso.
+Las plataformas de g-digital están preparadas para incorporar los servicios eIDAS 2 conforme la Comisión publica sus actos de ejecución, sin re-arquitectura: aceptar credenciales wallet, emitir atestaciones de atributos (QEA/QEAA) a través del QTSP del grupo, y producir el expediente probatorio completo de cada proceso.
 
 ## Para profundizar
 

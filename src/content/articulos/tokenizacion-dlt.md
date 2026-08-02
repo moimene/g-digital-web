@@ -39,7 +39,7 @@ Y una capa transversal que sostiene a las cuatro: la **evidencia cualificada** �
 
 ## OpenBrick: el ecosistema inicial
 
-El caso más tangible es inmobiliario: **OpenBrick** fracciona activos inmobiliarios en tokens regulados, accesibles desde importes reducidos, con liquidez secundaria en mercados supervisados. g-digital participa, junto con compañías clave del sector como BME, en una de las primeras plataformas de activos financieros tokenizados bajo el Régimen Piloto.
+El caso más tangible es inmobiliario: **OpenBrick** fracciona activos inmobiliarios en tokens regulados, accesibles desde importes reducidos, con liquidez secundaria en mercados supervisados. g-digital participa, junto con compañías como BME, en una plataforma de activos financieros tokenizados autorizada bajo el Régimen Piloto DLT (Reglamento (UE) 2022/858), supervisada por la CNMV.
 
 El patrón se extiende más allá del ladrillo: deuda sindicada tokenizada (con *waterfall* programable y cesiones documentadas automáticamente), bonos digitales y renta fija bajo MiFID II/CSDR, y activos no financieros — certificados de energía verde o créditos de carbono, donde la trazabilidad y la prevención de la doble contabilidad son el valor entero.
 

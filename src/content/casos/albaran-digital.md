@@ -38,6 +38,6 @@ POST /api/v1/signatures/biometric
 
 ## Análisis jurídico
 
-El sellado de tiempo cualificado (TSA) y la vinculación de datos biométricos convierten una simple firma digital en evidencia admisible según eIDAS Art. 25. La carga de la prueba se invierte: quien impugna tiene que demostrar que la evidencia es falsa.
+El sellado de tiempo cualificado (TSA) y la vinculación de datos biométricos convierten una simple firma digital en evidencia admisible según eIDAS Art. 25. La presunción legal desplaza la carga a quien impugna: es quien debe desvirtuar la evidencia.
 
 **Simulación interactiva:** [Trust Explorer → Firma de albarán digital](/escenarios)

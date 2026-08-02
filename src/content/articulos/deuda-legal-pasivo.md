@@ -69,7 +69,7 @@ La cadena de valor probatorio tiene eslabones concretos, cada uno con efectos ju
 4. **Entrega electrónica certificada (ERDS)** — prueba de envío, entrega y contenido (arts. 43-44 eIDAS).
 5. **Custodia a largo plazo (LTV/LTA, WORM)** — verificabilidad mantenida en el tiempo, con re-sellado periódico.
 
-El efecto procesal agregado en España lo completa la LEC con una bifurcación decisiva: **con servicio de confianza cualificado** (firma, sello, entrega, archivo), el art. 326.3 presume la autenticidad e integridad del documento — quien lo impugna debe probar su falsedad; **sin él**, el art. 326.4 traslada la prueba al titular del documento, que deberá acreditar su autenticidad por peritaje. En la práctica, **la carga de la prueba se desplaza hacia quien impugna** y la disputa se juega sobre el fondo, no sobre la validez de la prueba. *Cada presunción tiene alcance y límites: su aplicación al caso concreto corresponde al asesor legal.*
+El efecto procesal agregado en España lo completa la LEC: el art. 326.4 —introducido por la Ley 6/2020— reconoce a los documentos electrónicos con servicios de confianza cualificados una **presunción legal reforzada de autenticidad e integridad**, de modo que quien los impugna asume la carga de desvirtuarla; **sin servicio cualificado**, la autenticidad debe acreditarse por peritaje sobre el procedimiento empleado (arts. 326.2-326.3). En la práctica, **la carga de desvirtuar la prueba se desplaza hacia quien impugna** y la disputa se juega sobre el fondo, no sobre la validez de la prueba. *Cada presunción es iuris tantum y tiene alcance y límites: su aplicación al caso concreto corresponde al asesor legal.*
 
 ## 6. Metodología de remediación
 
