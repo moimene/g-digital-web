@@ -45,7 +45,7 @@
 }
 .surface-paper{
   background:var(--paper);color:var(--navy);
-  --t1:var(--navy); --t2:rgba(20,50,89,.80); --t3:rgba(20,50,89,.62);
+  --t1:var(--navy); --t2:rgba(20,50,89,.80); --t3:rgba(20,50,89,.70);
   --line:rgba(20,50,89,.14); --line-strong:rgba(20,50,89,.30);
   --accent:var(--teal); --accent-rgb:0,115,98;
   --card-bg:#FFFFFF; --card-line:rgba(20,50,89,.12);
@@ -53,7 +53,7 @@
 }
 .surface-paper-2{
   background:var(--paper-2);color:var(--navy);
-  --t1:var(--navy); --t2:rgba(20,50,89,.80); --t3:rgba(20,50,89,.62);
+  --t1:var(--navy); --t2:rgba(20,50,89,.80); --t3:rgba(20,50,89,.70);
   --line:rgba(20,50,89,.14); --line-strong:rgba(20,50,89,.30);
   --accent:var(--teal); --accent-rgb:0,115,98;
   --card-bg:#FFFFFF; --card-line:rgba(20,50,89,.12);

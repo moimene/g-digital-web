@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Sitemap manual (Astro estático). @astrojs/sitemap rompe el build en Vercel: NO re-añadir.
-     Actualizar al crear rutas nuevas. Última revisión: rediseño editorial v4 (2026-08). -->
+     Actualizar al crear rutas nuevas. Última revisión: rediseño editorial v4 (2026-08, R2/R3). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://g-digital-web-sage.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://g-digital-web-sage.vercel.app/soluciones/confianza-digital</loc><priority>0.9</priority></url>
@@ -13,6 +13,20 @@
   <url><loc>https://g-digital-web-sage.vercel.app/escenarios/banca</loc><priority>0.7</priority></url>
   <url><loc>https://g-digital-web-sage.vercel.app/escenarios/seguros</loc><priority>0.7</priority></url>
   <url><loc>https://g-digital-web-sage.vercel.app/recursos</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/glosario</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/servicios-confianza-regulada</loc><priority>0.7</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/ia-gris</loc><priority>0.7</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/contract-process</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/tokenizacion-dlt</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/ai-act-gobernanza</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/articulos/evidencia-cualificada</loc><priority>0.5</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/deuda-legal</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/compliance-injection</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/eudi-wallet</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/conceptos/mcp-agentes</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/albaran-digital</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/fotografia-siniestro</loc><priority>0.6</priority></url>
+  <url><loc>https://g-digital-web-sage.vercel.app/recursos/casos/credito-sms</loc><priority>0.6</priority></url>
   <url><loc>https://g-digital-web-sage.vercel.app/nosotros</loc><priority>0.7</priority></url>
   <url><loc>https://g-digital-web-sage.vercel.app/contacto</loc><priority>0.8</priority></url>
 </urlset>

@@ -117,7 +117,7 @@ import CertificationsBar from '../components/CertificationsBar.astro';
   </section>
 
   <script>
-    const byId = (id) => document.getElementById(id);
+    const byId = (id: string) => document.getElementById(id);
     const sellar = byId('sellar');
     if (sellar) {
       sellar.addEventListener('click', async () => {
