@@ -60,6 +60,14 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - **(4)** El alias y el `web_fetch` **cachean**: verifica con `?nocache=` o hard-refresh (Cmd+Shift+R).
 - El `EPERM` al limpiar `dist/`/`.astro/` solo ocurre en el sandbox de Claude (mount), no en Vercel/local.
 
+## Estado (02-ago-2026) — rediseño editorial "Tinta y Papel" en rama `codex/redesign-editorial-gdigital`
+- **Rediseño R0–R4 completado** en la rama (no mergeada a `master` ni desplegada a prod). Preview Vercel (SSO): se genera con `npx vercel`. **Memoria del rediseño: `docs/REDISENO-editorial-v4.md`** (sistema de superficies, regeneración de iconos/vídeos, reglas de contenido).
+- Sistema dual tinta/papel en `global.css` (`.surface-*` + `.t1/.t2/.t3` + `.card-s` + `.btn-*`); el verde es acción, teal acento sobre papel. Fuentes self-hosted (@fontsource); iconos = subset Phosphor 9.8KB (`scripts/build-icon-subset.sh`).
+- Home reescrita con vídeo loop de marca en hero (`VideoBackground` + `public/video/hero-home.*`); La Factoría tiene loop tunnel propio; vídeos reales self-hosted en Nosotros y Confianza Digital.
+- Recursos = biblioteca con Content Collections (`src/content/{articulos,conceptos,casos,glosario}` + `config.ts` con schemas/taxonomías). Regla: contenido sin aprobar → `draft: true`. `src/data/articulos.ts` eliminado (la colección es la fuente única).
+- QA: contraste AA verificado (23 pares), `astro check` 0 errores, 0 enlaces muertos, sitemap.xml manual (27 URLs).
+- Build OK: 30 páginas.
+
 ## Estado (17-jun-2026)
 - **LIVE** (F0+F1). Build OK: 10 páginas.
 - **Cambios en working tree SIN desplegar todavía:** Recursos con los 6 artículos + home enlazando esos 6 (`src/data/articulos.ts`) + contadores con fallback no-cero. Re-desplegar con `npx vercel --prod` cuando se quiera.
