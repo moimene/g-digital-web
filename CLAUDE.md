@@ -60,13 +60,14 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - **(4)** El alias y el `web_fetch` **cachean**: verifica con `?nocache=` o hard-refresh (Cmd+Shift+R).
 - El `EPERM` al limpiar `dist/`/`.astro/` solo ocurre en el sandbox de Claude (mount), no en Vercel/local.
 
-## Estado (02-ago-2026) — rediseño editorial "Tinta y Papel" en rama `codex/redesign-editorial-gdigital`
-- **Rediseño R0–R4 completado** en la rama (no mergeada a `master` ni desplegada a prod). Preview Vercel (SSO): se genera con `npx vercel`. **Memoria del rediseño: `docs/REDISENO-editorial-v4.md`** (sistema de superficies, regeneración de iconos/vídeos, reglas de contenido).
+## Estado (02-ago-2026) — rediseño editorial "Tinta y Papel" CONSOLIDADO en `master`
+- **Merge `--no-ff` a `master` hecho (18776c6).** Ramas `codex/*` eliminadas tras mergear. Remoto GitHub (`moimene/g-digital-web`, público): pendiente de push — requiere confirmación explícita del usuario. Prod: pendiente de orden expresa (`npx vercel --prod`).
+- Rediseño R0–R4 + biblioteca de contenido completa (10 artículos, 2 whitepapers, 4 conceptos, 8 casos, glosario 27 términos). **Memoria del rediseño: `docs/REDISENO-editorial-v4.md`** (superficies, regeneración de iconos/vídeos, reglas de contenido).
 - Sistema dual tinta/papel en `global.css` (`.surface-*` + `.t1/.t2/.t3` + `.card-s` + `.btn-*`); el verde es acción, teal acento sobre papel. Fuentes self-hosted (@fontsource); iconos = subset Phosphor 9.8KB (`scripts/build-icon-subset.sh`).
-- Home reescrita con vídeo loop de marca en hero (`VideoBackground` + `public/video/hero-home.*`); La Factoría tiene loop tunnel propio; vídeos reales self-hosted en Nosotros y Confianza Digital.
-- Recursos = biblioteca con Content Collections (`src/content/{articulos,conceptos,casos,glosario}` + `config.ts` con schemas/taxonomías). Regla: contenido sin aprobar → `draft: true`. `src/data/articulos.ts` eliminado (la colección es la fuente única).
-- QA: contraste AA verificado (23 pares), `astro check` 0 errores, 0 enlaces muertos, sitemap.xml manual (27 URLs).
-- Build OK: 30 páginas.
+- Home con vídeo loop de marca en hero (`VideoBackground` + `public/video/hero-home.*`); loop tunnel en La Factoría; vídeos reales self-hosted en Nosotros y Confianza Digital.
+- Recursos = biblioteca con Content Collections (`src/content/{articulos,conceptos,casos,glosario}` + `config.ts`). Regla: contenido sin aprobar → `draft: true`.
+- QA: contraste AA (23 pares), `astro check` 0 errores, 0 enlaces muertos, sitemap.xml (41 URLs), build 41 páginas.
+- **Pendiente de Legal:** el copy legacy cita "art. 326.4 LEC" para la inversión de la carga (`consts.ts`, `la-factoria.astro`); el precepto de la presunción es el 326.3 (los artículos nuevos ya usan el par 326.3/326.4 correcto). Decidir si se alinea el copy legacy.
 
 ## Estado (17-jun-2026)
 - **LIVE** (F0+F1). Build OK: 10 páginas.
