@@ -23,7 +23,7 @@ Control en punto crítico (PCC): el operario registra la lectura de temperatura 
 
 ## Con la Trust API
 
-**APPCC certificado.** Cada lectura de PCC queda sellada con timestamp cualificado: prueba irrefutable del control realizado, con custodia a largo plazo para auditorías.
+**APPCC certificado.** Cada lectura de PCC queda sellada con timestamp cualificado: prueba con presunción legal del control realizado, con custodia a largo plazo para auditorías.
 
 ```
 POST /api/v1/evidence-groups/haccp-checkpoint

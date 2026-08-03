@@ -79,9 +79,19 @@ Cada caso cita su norma: eIDAS art. 25 (albarán logístico) · LEC/cadena de cu
 3. **No publicamos** el argumentario comparativo anti-DocuSign (Schrems II / CLOUD Act / QES-vs-AES) nombrando al competidor: lo tratamos en clave estructural de soberanía. Si queréis una pieza comparativa nombrando competidores, entiendo que exige revisión de publicidad comparativa aparte.
 4. Los cuatro artículos de opinión largos y los dos whitepapers llevan disclaimer de divulgación; los artículos de concepto, no. ¿Queréis disclaimer uniforme en todo el blog?
 
+### I. Ronda 2 — contenidos nuevos (agosto 2026)
+
+**I1 — QEL (registro electrónico cualificado).** Publicamos (concepto propio, sección en Activos Digitales, tarjeta eIDAS 2.0 y glosario): la presunción como *"de integridad de los datos y de orden cronológico secuencial único y exacto de las anotaciones"* (arts. 45k-45l eIDAS 2); el Reglamento de Ejecución **(UE) 2025/2531 en vigor desde el 6-ene-2026**; y tres aclaraciones de prudencia — la presunción no cubre la veracidad del contenido ni el cumplimiento sectorial (explícitamente: un QEL no hace nada "conforme a MiCA"), la presunción la aporta el servicio cualificado del QTSP y no la red subyacente, y el efecto cualificado nace con la inclusión del servicio concreto en las listas de confianza. Sobre servicios propios decimos solo que EADTrust *"trabaja en servicios de registro diseñados conforme al marco de control del Reglamento de Ejecución (UE) 2025/2531"*. Preguntas: (1) ¿citas y formulación de la presunción correctas? (2) ¿es publicitable la frase *"no compras una blockchain: compras el derecho a partir de una presunción, en lugar de probar integridad y orden desde cero"*? (3) ¿y la frase *"el registro prueba el orden; quién responde de cada actividad lo determina su licencia"*?
+
+**I2 — Digitalización certificada del papel.** Nuevo caso con la cadena: pacto de digitalización en condiciones (uso probatorio de la copia y gestión segura del papel) → escaneo conforme *"a las guías técnicas de digitalización certificada (PDF/A, imagen fiel, huella y metadatos; referencia: guías CTEAJE)"* → sello de tiempo cualificado + sello de empresa → entrega certificada → archivo cualificado con re-sellado; el resultado como **"original electrónico único"** (entre comillas), con art. 326.4 LEC y arts. 45i-45j; conservación de 6 años citada para seguros. Preguntas: ¿es correcto invocar las guías CTEAJE (ámbito Justicia) como referencia técnica en una pieza comercial transversal? ¿"original electrónico único" necesita matiz adicional? ¿La mención a la "destrucción segura y pactada" del papel es prudente tal cual?
+
+**I3 — Aceptación separada de cláusulas limitativas (caso Seguros).** Publicamos el patrón (pantalla dedicada, lectura completa por scroll, casilla sin premarcar, segundo factor independiente, sellado inmediato) anclado en el **art. 3 LCS**, y como riesgo del escenario "sin": *"la aceptación específica de las exclusiones no queda acreditada y su oponibilidad puede quedar comprometida"*. **No citamos jurisprudencia** (mismo criterio que H.1). Pregunta: ¿formulación correcta y suficientemente prudente para pieza comercial?
+
+**I4 — "Tres servidores MCP publicados".** Nombramos EAD-Factory-MCP, EAD_Enterprise_Suite_MCP y GoCertius_MCP como repositorios públicos del GitHub corporativo, siempre con el verbo "publicados" (nunca "en producción" ni SLAs). ¿OK?
+
 ---
 
-**Formato de respuesta que necesito:** una tabla o lista por secciones (A–H) con **OK / MATIZAR / RETIRAR** por punto, la redacción sustitutiva cuando aplique, y al final un bloque "cambios bloqueantes para mantener publicado" vs "mejoras opcionales". Recuerda: el objetivo es **comercial**; busco el mayor impacto defendible, no el máximo blindaje teórico.
+**Formato de respuesta que necesito:** una tabla o lista por secciones (A–I) con **OK / MATIZAR / RETIRAR** por punto, la redacción sustitutiva cuando aplique, y al final un bloque "cambios bloqueantes para mantener publicado" vs "mejoras opcionales". Recuerda: el objetivo es **comercial**; busco el mayor impacto defendible, no el máximo blindaje teórico.
 
 ---
 

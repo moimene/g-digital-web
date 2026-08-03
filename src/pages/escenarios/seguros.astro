@@ -10,7 +10,7 @@ const LIVE = 'https://eidas-car-insure-flow.lovable.app';
 ---
 <Base
   title="Demostrador Seguros · ciclo de póliza | g-digital"
-  description="Cómo la Trust API convierte el ciclo de una póliza en evidencia cualificada: cotización con IPID, test de exigencias, declaración de salud, suscripción IBIP y siniestro con fotos certificadas, conforme a IDD y LCS."
+  description="Cómo la Trust API convierte el ciclo de una póliza en evidencia cualificada: cotización con IPID, test de exigencias, declaración de salud, suscripción IBIP, siniestro con fotos certificadas y aceptación separada de cláusulas limitativas, conforme a IDD y LCS."
 >
   <header class="relative grain overflow-hidden border-b border-cloud/10">
     <Wireframe variant="sphere" density="strong" color={`${ACCENT}80`} class="absolute right-[-12rem] top-20 w-[25rem] h-[25rem] opacity-20 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[34rem] md:h-[34rem] md:opacity-45" />
@@ -18,7 +18,7 @@ const LIVE = 'https://eidas-car-insure-flow.lovable.app';
       <a href="/escenarios" class="inline-flex items-center gap-1.5 text-cloud/55 hover:text-cloud text-sm mb-6"><i class="ph ph-arrow-left"></i> Trust Explorer</a>
       <p class="label mb-6" style={`color:${ACCENT}`}>Demostrador sectorial · Seguros</p>
       <h1 class="head display text-cloud text-4xl sm:text-5xl lg:text-[3.8rem] font-semibold max-w-4xl">La deuda legal de los procesos de seguro.</h1>
-      <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">Las aseguradoras han digitalizado la contratación, los siniestros y la relación con sus clientes, pero siguen teniendo dificultades para demostrar qué se informó, qué se declaró y cuándo. Estos casos del ciclo de póliza convierten cada interacción en evidencia verificable conforme a IDD y LCS.</p>
+      <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">Las aseguradoras han digitalizado la contratación, los siniestros y la relación con sus clientes, pero siguen teniendo dificultades para demostrar qué se informó, qué se declaró y cuándo. Estos casos del ciclo de póliza convierten cada interacción en evidencia verificable conforme a IDD y LCS. Y aunque la distribución sea mediada, es la entidad aseguradora quien emite la póliza y responde de los deberes de información y conservación: la capa de evidencia puede residir de forma homogénea en la entidad y extenderse a toda la red de mediación.</p>
       <div class="mt-9 flex flex-col sm:flex-row gap-4">
         <a href="#explorer" class="bg-green text-ink px-7 py-3.5 rounded-xl font-semibold hover:bg-lime transition-colors">Explorar casos</a>
         <a href={LIVE} target="_blank" rel="noopener" class="border border-cloud/25 text-cloud px-7 py-3.5 rounded-xl font-medium hover:bg-cloud/5 transition-colors inline-flex items-center gap-2">Ver demostrador completo <i class="ph ph-arrow-up-right"></i></a>
@@ -32,7 +32,7 @@ const LIVE = 'https://eidas-car-insure-flow.lovable.app';
     casos={casosSeguros}
     kicker="Seguros · ciclo de póliza"
     title="Elige una operación del ciclo de póliza."
-    subtitle="Cinco casos reales del sector asegurador. Cada uno muestra el evento, la llamada a la API y el resultado legal con y sin la capa de confianza."
+    subtitle="Seis casos reales del sector asegurador. Cada uno muestra el evento, la llamada a la API y el resultado legal con y sin la capa de confianza."
   />
 
   <section class="relative grain overflow-hidden border-t border-cloud/10">

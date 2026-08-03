@@ -60,6 +60,15 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - **(4)** El alias y el `web_fetch` **cachean**: verifica con `?nocache=` o hard-refresh (Cmd+Shift+R).
 - El `EPERM` al limpiar `dist/`/`.astro/` solo ocurre en el sandbox de Claude (mount), no en Vercel/local.
 
+## Estado (03-ago-2026) — tanda "Zurich + Hedera" en working tree (SIN desplegar)
+Revisión de contenido vs conversaciones comerciales recientes; informe en `../Web_Refactor_v4/REVISION_CONTENIDO_WEB_Zurich_Hedera.md`. Aplicado:
+- **QEL (categoría nueva):** concepto `conceptos/qel.md`, sección "Del registro distribuido al registro cualificado" en Activos Digitales, 5ª tarjeta eIDAS 2.0 en Confianza Digital, glosario ampliado (arts. 45k-45l, Reg. Ejecución (UE) 2025/2531 en vigor 6-ene-2026). Guardrails: presunción = **integridad + orden secuencial** (nunca "validez legal"); no confiere cumplimiento sectorial/MiCA; la presunción la da el servicio del QTSP, no la red; servicios propios solo "diseñados conforme al marco de control de 2025/2531" (efecto cualificado = Trusted List). **NADA del JV Hedera en la web.**
+- **Casos Zurich:** `casos/digitalizacion-certificada.md` + 9º caso del Trust Explorer (`casos-uso.ts`, "Digitalización certificada del papel") + 6º caso de Seguros "Aceptación separada de limitativas · art. 3 LCS" (`casos-seguros.ts`) — **sin citar sentencias** (criterio H.1).
+- **MCP "ya es real":** los 3 servidores publicados (EAD-Factory-MCP · EAD_Enterprise_Suite_MCP · GoCertius_MCP) nombrados en `recursos#desarrolladores` y en la caja MCP de La Factoría (verbo "publicados", NO "en producción").
+- **Refuerzos:** "Modelo 360 de capacidades" nombrado en la home (sección 03 + enlace a /nosotros); nuevo concepto `conceptos/contratacion-reforzada.md`; callout "IA observable → gobernable" en GRC&IA; 6ª frase del roller (agentes); párrafo de canal mediado en /escenarios/seguros; fix "prueba irrefutable" → "presunción legal" (caso albarán).
+- Contadores de casos actualizados: Trust Explorer 9 · Seguros 6 (chips de La Factoría +Archivo).
+- **PENDIENTE:** ronda 2 de Legal (sección **I** añadida a `docs/REVISION-LEGAL-prompt.md` con QEL/digitalización/limitativas/MCP) · commit + deploy (`git add -A && git commit && npx vercel --prod`).
+
 ## Estado (02-ago-2026) — rediseño editorial "Tinta y Papel" EN PRODUCCIÓN
 - **Consolidado total:** merge `--no-ff` a `main` (antes `master`), push a `origin` (`moimene/g-digital-web`, público). El linaje legacy HTML queda archivado en la rama remota `archive/legacy-html-site`. **LIVE en prod: `g-digital-web-sage.vercel.app`** (rediseño completo, 41 páginas).
 - Rediseño R0–R4 + biblioteca de contenido completa (10 artículos, 2 whitepapers, 4 conceptos, 8 casos, glosario 27 términos). **Memoria del rediseño: `docs/REDISENO-editorial-v4.md`** (superficies, regeneración de iconos/vídeos, reglas de contenido).
@@ -67,7 +76,7 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - Home con vídeo loop de marca en hero (`VideoBackground` + `public/video/hero-home.*`); loop tunnel en La Factoría; vídeos reales self-hosted en Nosotros y Confianza Digital.
 - Recursos = biblioteca con Content Collections (`src/content/{articulos,conceptos,casos,glosario}` + `config.ts`). Regla: contenido sin aprobar → `draft: true`.
 - QA: contraste AA (23 pares), `astro check` 0 errores, 0 enlaces muertos, sitemap.xml (41 URLs).
-- **Pendiente de Legal:** el copy legacy cita "art. 326.4 LEC" para la inversión de la carga (`consts.ts`, `la-factoria.astro`); el precepto de la presunción es el 326.3 (los artículos nuevos ya usan el par 326.3/326.4 correcto). Decidir si se alinea el copy legacy.
+- **Resuelto por Legal (ronda 1):** la cita correcta para servicios cualificados es el **art. 326.4 LEC** (el copy legacy era el correcto; el 326.3 quedó para no cualificados/peritaje). "Inversión de la carga" sustituida por "presunción legal / desplaza la carga de desvirtuar". **No tocar sin nueva consulta.**
 
 ## Estado (17-jun-2026)
 - **LIVE** (F0+F1). Build OK: 10 páginas.
@@ -76,7 +85,7 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - Home con vídeo loop de marca en hero (`VideoBackground` + `public/video/hero-home.*`); loop tunnel en La Factoría; vídeos reales self-hosted en Nosotros y Confianza Digital.
 - Recursos = biblioteca con Content Collections (`src/content/{articulos,conceptos,casos,glosario}` + `config.ts`). Regla: contenido sin aprobar → `draft: true`.
 - QA: contraste AA (23 pares), `astro check` 0 errores, 0 enlaces muertos, sitemap.xml (41 URLs), build 41 páginas.
-- **Pendiente de Legal:** el copy legacy cita "art. 326.4 LEC" para la inversión de la carga (`consts.ts`, `la-factoria.astro`); el precepto de la presunción es el 326.3 (los artículos nuevos ya usan el par 326.3/326.4 correcto). Decidir si se alinea el copy legacy.
+- **Resuelto por Legal (ronda 1):** la cita correcta para servicios cualificados es el **art. 326.4 LEC** (el copy legacy era el correcto; el 326.3 quedó para no cualificados/peritaje). "Inversión de la carga" sustituida por "presunción legal / desplaza la carga de desvirtuar". **No tocar sin nueva consulta.**
 
 ## Estado (17-jun-2026)
 - **LIVE** (F0+F1). Build OK: 10 páginas.

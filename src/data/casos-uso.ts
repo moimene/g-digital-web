@@ -49,7 +49,7 @@ export const casos: CasoUso[] = [
       },
     },
     sin: { status: 'Sin validez legal', description: 'Firma en tablet sin certificar. Fácilmente repudiable en juicio.', riesgo: 'high' },
-    con: { status: 'Evidencia certificada', description: 'Firma biométrica + geolocalización + TSA = prueba legal irrefutable.' },
+    con: { status: 'Evidencia certificada', description: 'Firma biométrica + geolocalización + TSA = prueba con presunción legal a su favor.' },
     analysis: 'El sellado de tiempo cualificado (TSA) y la vinculación de datos biométricos convierten una simple firma digital en evidencia admisible según eIDAS Art. 25.',
   },
   {
@@ -202,7 +202,7 @@ export const casos: CasoUso[] = [
       },
     },
     sin: { status: 'Registros APPCC vulnerables', description: 'Registros en hojas de control o sistemas internos. Ante inspección o brote, la documentación interna puede cuestionarse.', riesgo: 'critical' },
-    con: { status: 'APPCC certificado', description: 'Cada lectura de PCC sellada con timestamp cualificado: prueba irrefutable del control realizado.' },
+    con: { status: 'APPCC certificado', description: 'Cada lectura de PCC sellada con timestamp cualificado: prueba con presunción legal del control realizado.' },
     analysis: 'Cumplimiento del Reglamento (CE) 852/2004 Art. 5, el Codex Alimentarius y el RD 640/2006, demostrable ante AESAN y el sistema RASFF.',
   },
   {
@@ -268,6 +268,40 @@ export const casos: CasoUso[] = [
     sin: { status: 'Expediente fragmentado', description: 'Proceso disperso entre el proveedor de vídeo y el core bancario. Ante inspección SEPBLAC, reconstruir el expediente es costoso.', riesgo: 'critical' },
     con: { status: 'KYC certificado', description: 'Paquete completo sellado: vídeo, documento, checks biométricos, PEP/sanciones y decisión del operador.' },
     analysis: 'Expediente de diligencia debida conforme a la Ley 10/2010 PBC, el RD 304/2014 y la Circular 1/2023 de SEPBLAC.',
+  },
+  {
+    id: 'transversal-digitalizacion',
+    sector: 'Archivo · Transversal',
+    icon: 'ph-scroll',
+    tone: '#0CF25D',
+    title: 'Digitalización certificada del papel',
+    resumen: 'El archivo histórico en papel pasa a "original electrónico único": escaneo fiel + sello de tiempo + sello de empresa + entrega certificada + archivo cualificado.',
+    features: ['PDF/A + huella (imagen fiel)', 'QTS + QSeal + QERDS', 'Archivo cualificado con re-sellado'],
+    managers: ['Evidence', 'Notification', 'Custody'],
+    norma: 'Art. 326.4 LEC · eIDAS 2 (45i-45j)',
+    event: {
+      title: 'Digitalización del archivo contractual en papel',
+      description: 'La organización convierte su stock de contratos y expedientes en papel en copias electrónicas con valor probatorio, bajo un pacto de digitalización.',
+      details: 'Lote: DIG_00412 · 1.240 expedientes · PDF/A imagen fiel · Retención: 6 años',
+    },
+    api: {
+      endpoint: '/api/v1/evidence-groups/certified-digitization',
+      method: 'POST',
+      payload: {
+        batch_id: 'DIG_2026_00412',
+        source: 'archivo_papel',
+        document: { type: 'contrato', pages: 24, format: 'PDF/A-2b' },
+        scan_profile: 'imagen_fiel',
+        document_hash: 'sha256_pdfa',
+        org_seal: 'qseal_aplicado',
+        qualified_timestamp: 'rfc3161_tst',
+        delivery: { channel: 'qerds', recipients: ['parte_a', 'parte_b'] },
+        retention_policy: { years: 6, resealing: 'periodic' },
+      },
+    },
+    sin: { status: 'Copia simple impugnable', description: 'Un escaneo ordinario no prueba cuándo se digitalizó ni que sea imagen fiel. Si el papel se pierde, la posición probatoria queda comprometida; si se conserva, el doble archivo se perpetúa.', riesgo: 'high' },
+    con: { status: 'Original electrónico único', description: 'Copia fiel con fecha cierta, origen sellado, entrega certificada y custodia cualificada con re-sellado: presunciones de fecha, integridad, origen y entrega.' },
+    analysis: 'El art. 326.4 LEC otorga presunción de autenticidad e integridad a los documentos con servicios de confianza cualificados; eIDAS 2 (arts. 45i-45j) añade el archivo cualificado con presunción durante todo el período de conservación.',
   },
 ];
 
