@@ -39,3 +39,18 @@ test('demostrador de banca y casos: custodia dentro de Evidence', () => {
     assert.ok(h.includes('Evidence (custodia)'), slug);
   }
 });
+
+test('La Factoría: cabecera y recorrido con el modelo real', () => {
+  const h = distRead('soluciones/la-factoria/index.html');
+  for (const s of [
+    'La Factoría (EAD Factory)',
+    'La arquitectura sobre la que construimos Enterprise Suite, GoCertius y proyectos enterprise.',
+    'Regulated Platform as a Service',
+    'Evidence (Digital Trust)', 'Custodia de evidencias', 'Nube soberana europea',
+    'Presunción de fecha (Art. 41.2 eIDAS) · Presunción reforzada (Art. 326.4 LEC)',
+    'Testificación con sellado de tiempo', 'Motor de ejecución de contratos',
+    'Sello de tiempo cualificado', 'Plantear un proyecto sobre La Factoría',
+  ]) assert.ok(h.includes(s), `falta «${s}»`);
+  for (const s of ['QTSP interno', 'The Stack', 'Custodia como servicio']) assert.ok(!h.includes(s), `sobra «${s}»`);
+  assert.equal((h.match(/<summary/g) || []).length, 3, 'Evidence, Signature y Notification se despliegan; Chat no tiene ficha');
+});

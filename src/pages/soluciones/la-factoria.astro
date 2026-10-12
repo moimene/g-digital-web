@@ -4,22 +4,17 @@ import VideoBackground from '../../components/VideoBackground.astro';
 import CertificationsBar from '../../components/CertificationsBar.astro';
 import TrustLayerDiagram from '../../components/TrustLayerDiagram.astro';
 import SectionIntro from '../../components/SectionIntro.astro';
-
-const stack = [
-  { icon: 'ph-fingerprint', title: 'Evidence Manager', sub: 'Inmutabilidad como servicio', body: 'Hashing SHA-256 + Qualified Timestamping (TSA). Perfiles XAdES-T/LTA con re-sellado. Verificabilidad offline.', law: 'Presunción de fecha (Art. 41.2 eIDAS) · Presunción reforzada (Art. 326.4 LEC)' },
-  { icon: 'ph-pen-nib', title: 'Signature Manager', sub: 'Firma como servicio', body: 'Niveles AES y QES. Perfiles PAdES, XAdES, CAdES. QSCD cloud (Cloud HSM). SDK mobile.', law: 'Equivalencia a firma manuscrita (Art. 25.2 eIDAS)' },
-  { icon: 'ph-envelope-simple', title: 'Notification Manager', sub: 'Entrega electrónica certificada', body: 'ERDS con prueba de envío, entrega y contenido con sellos cualificados. Comunicaciones laborales, regulatorias y contractuales.', law: 'ERDS (Arts. 43-44 Reglamento 910/2014)' },
-  { icon: 'ph-archive', title: 'Custody Manager', sub: 'Custodia como servicio', body: 'Integridad a largo plazo (LTV). Perfiles PAdES-LTV/XAdES-LTA, re-sellado periódico. Nube soberana europea.', law: 'Integridad a largo plazo (LTV) · eIDAS' },
-];
+import FactoriaRecorrido from '../../components/FactoriaRecorrido.astro';
 ---
 <LineaPage
-  linea="Confianza Digital · Capa infraestructura"
+  linea="Confianza Digital · Arquitectura"
   tone="green"
   motif="tunnel"
-  kicker="La Factoría: Trust API + MCP"
-  title="Una llamada REST. Evidencia legal cualificada."
-  intro="Inyectamos servicios eIDAS por API o por MCP, para agentes de IA, de modo que cada operación sea evidencia probatoria. Sin migrar plataformas. Con QTSP propio del Grupo Garrigues. +298 escenarios en 18 sectores."
-  cta="Probar Trust API en tu proceso crítico"
+  kicker="La Factoría (EAD Factory)"
+  title="La arquitectura sobre la que construimos Enterprise Suite, GoCertius y proyectos enterprise."
+  intro="Tus sistemas la usan por la Trust API, su API REST, y tus agentes de IA por MCP. Lo que no viene de serie se construye sobre ella como proyecto."
+  cta="Plantear un proyecto sobre La Factoría"
+  ctaSub="Cuéntanos qué operación quieres construir sobre La Factoría."
 >
   <VideoBackground slot="media" src="/video/hero-factoria" poster="/video/hero-factoria-poster.jpg" overlay="aa" />
 
@@ -34,39 +29,15 @@ const stack = [
     </div>
   </section>
 
-  <!-- The Stack -->
   <section class="surface-coal py-20 lg:py-28 border-y border-cloud/10">
     <div class="max-w-7xl mx-auto px-6">
       <SectionIntro
-        label="The Stack"
-        title="Cuatro microservicios eIDAS. Una API unificada."
-        lead={`La plataforma de base: un QTSP interno del Grupo Garrigues entregado como <span class="mono t1">rPaaS</span> (Regulated Platform as a Service). Integra servicios eIDAS regulados en cualquier proceso, sin migrar plataformas.`}
+        label="Qué hay dentro"
+        title="El recorrido de una operación por La Factoría."
+        lead={`La diseña g-digital y EAD Factory la presenta como <span class="mono t1">rPaaS</span> (Regulated Platform as a Service). Tus sistemas y tus agentes entran por la Trust API o por MCP; los gestores trabajan sobre un expediente común, y EADTrust, QTSP del Grupo Garrigues, opera los servicios de confianza.`}
       />
-      <div class="mt-12 grid md:grid-cols-2 gap-6 reveal-group">
-        {stack.map((s) => (
-          <article class="card-s rounded-2xl p-7">
-            <i class={`ph ${s.icon} accent text-3xl`} aria-hidden="true"></i>
-            <h3 class="head text-xl t1 mt-4 font-semibold">{s.title}</h3>
-            <p class="accent text-sm mt-1">{s.sub}</p>
-            <p class="t2 text-sm mt-4 leading-relaxed">{s.body}</p>
-            <p class="mono text-[11px] t3 mt-4 border-t pt-3" style="border-color:var(--line)">{s.law}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Cómo se integra · Trust Layer animado -->
-  <section class="surface-ink py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-6">
-      <SectionIntro
-        label="Cómo se integra"
-        title="Tu sistema + una llamada REST."
-        lead={`No te obligamos a usar nuestra plataforma — <span class="t1 font-medium">nos integramos en la tuya</span>. Tu ERP, CRM, ECM, tus apps o tu low-code invocan la Trust API, y cada operación vuelve convertida en evidencia cualificada eIDAS.`}
-      />
-      <div class="mt-12">
-        <TrustLayerDiagram />
-      </div>
+      <div class="mt-12"><FactoriaRecorrido /></div>
+      <div class="mt-16"><TrustLayerDiagram /></div>
     </div>
   </section>
 
