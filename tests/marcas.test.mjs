@@ -1,0 +1,16 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { marksIn } from './helpers.mjs';
+
+// Entradas abiertas del registro que viven en cada fichero que toca la PR de MOI-691.
+// Cada task añade aquí sus ficheros antes de tocarlos.
+export const MARCAS = {
+  'src/data/casos-uso.ts': [13, 15, 16],
+};
+
+for (const [file, nums] of Object.entries(MARCAS)) {
+  test(`marcas en ${file}`, () => {
+    const m = marksIn(file);
+    for (const n of nums) assert.ok(m.has(n), `falta #${n} en ${file}`);
+  });
+}

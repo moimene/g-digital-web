@@ -1,7 +1,8 @@
 ---
 // Simulador reutilizable del Trust Explorer + certificado QTSP nativo.
 // Recibe `casos` (CasoUso[]). Usado por /escenarios y por las páginas sectoriales.
-import { MANAGER_META, type CasoUso } from '../data/casos-uso';
+import { type CasoUso } from '../data/casos-uso';
+import { GESTORES } from '../data/factoria';
 
 interface Props {
   casos: CasoUso[];
@@ -11,7 +12,6 @@ interface Props {
 }
 const { casos, kicker = 'Casos de uso', title = 'Elige una operación para simularla.', subtitle = 'Cada caso muestra el evento del cliente, la llamada a la API y el resultado legal con y sin la capa de confianza.' } = Astro.props;
 const first = casos[0];
-const managersOrder = ['Evidence', 'Signature', 'Notification', 'Custody'] as const;
 ---
 <!-- SELECTOR -->
 <section class="relative grain py-20 lg:py-24 scroll-mt-20" id="explorer">
@@ -66,12 +66,12 @@ const managersOrder = ['Evidence', 'Signature', 'Notification', 'Custody'] as co
           <code id="dg-endpoint" class="mono text-[10px] px-2 py-1 rounded-md bg-ink border whitespace-nowrap" style="border-color:color-mix(in srgb, var(--tone) 45%, transparent);color:var(--tone)">{first.api.method} {first.api.endpoint}</code>
         </div>
         <div class="flex-1 rounded-xl border border-cloud/12 p-4">
-          <p class="mono text-[10px] text-cloud/45 mb-3 text-center">FACTORÍA · MICROSERVICIOS</p>
+          <p class="mono text-[10px] text-cloud/45 mb-3 text-center">LA FACTORÍA · GESTORES</p>
           <div class="grid grid-cols-2 gap-2.5">
-            {managersOrder.map((m) => (
-              <div class="dg-mgr rounded-lg border border-cloud/10 px-3 py-2.5 flex items-center gap-2 opacity-35 transition-all" data-mgr={m}>
-                <i class={`ph ${MANAGER_META[m].icon} text-base`}></i>
-                <span class="text-[11px] text-cloud/80 leading-tight">{MANAGER_META[m].label}</span>
+            {GESTORES.map((g) => (
+              <div class="dg-mgr rounded-lg border border-cloud/10 px-3 py-2.5 flex items-center gap-2 opacity-35 transition-all" data-mgr={g.id}>
+                <i class={`ph ${g.icon} text-base`}></i>
+                <span class="text-[11px] text-cloud/80 leading-tight">{g.id}</span>
               </div>
             ))}
           </div>
