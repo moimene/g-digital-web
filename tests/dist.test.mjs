@@ -27,3 +27,15 @@ test('Trust Explorer: gestores reales en el simulador', () => {
     assert.deepEqual(mgrs, ['Evidence', 'Signature', 'Notification', 'Chat'], page);
   }
 });
+
+test('demostrador de banca y casos: custodia dentro de Evidence', () => {
+  const banca = distRead('escenarios/banca/index.html');
+  assert.ok(banca.includes('Evidence Manager (custodia)'));
+  assert.ok(!banca.includes('Custody'));
+  assert.ok(banca.includes('GESTORES INVOCADOS'));
+  for (const slug of ['digitalizacion-certificada', 'ppa-curtailment', 'kyc-videoidentificacion', 'appcc-trazabilidad']) {
+    const h = distRead(`recursos/casos/${slug}/index.html`);
+    assert.ok(!h.includes('Custody'), slug);
+    assert.ok(h.includes('Evidence (custodia)'), slug);
+  }
+});

@@ -7,7 +7,8 @@ nivel: experto
 featured: false
 draft: false
 sector: 'Energía · PPA'
-servicio: 'Notification + Evidence + Custody'
+servicio: 'Notification + Evidence (custodia)'
+# VALIDAR plan:gdw:w-factoria-arquitectura #13
 norma: 'eIDAS Art. 43'
 related: ['evidencia-cualificada']
 glossary: ['erds', 'qtsp']

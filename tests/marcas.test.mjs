@@ -6,6 +6,9 @@ import { marksIn } from './helpers.mjs';
 // Cada task añade aquí sus ficheros antes de tocarlos.
 export const MARCAS = {
   'src/data/casos-uso.ts': [13, 15, 16],
+  'src/data/demo-credito.ts': [8, 15],
+  'src/content/casos/digitalizacion-certificada.md': [13],
+  'src/content/casos/ppa-curtailment.md': [13],
 };
 
 for (const [file, nums] of Object.entries(MARCAS)) {
