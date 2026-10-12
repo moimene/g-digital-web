@@ -2,7 +2,7 @@
 // Datos reales rescatados del proyecto Lovable "Legal App Factory" (Trust Builder API).
 // Cada caso compara la operación SIN regulación (deuda legal) vs CON Trust API (evidencia cualificada).
 
-export type Manager = 'Evidence' | 'Signature' | 'Notification' | 'Custody';
+import type { Gestor } from './factoria';
 
 export interface CasoUso {
   id: string;
@@ -12,7 +12,7 @@ export interface CasoUso {
   title: string;
   resumen: string;         // descripción corta para la tarjeta
   features: string[];      // 2-3 capacidades
-  managers: Manager[];     // microservicios invocados
+  managers: Gestor[];      // gestores de La Factoría que intervienen
   norma: string;           // referencia normativa corta
   event: { title: string; description: string; details: string };
   api: { endpoint: string; method: string; payload: Record<string, unknown> };
@@ -179,7 +179,7 @@ export const casos: CasoUso[] = [
     title: 'Control APPCC y trazabilidad',
     resumen: 'Cada lectura de punto crítico (cadena de frío, pasteurización) se certifica con timestamp cualificado.',
     features: ['Cadena de frío IoT', 'Trazabilidad RASFF'],
-    managers: ['Evidence', 'Custody'],
+    managers: ['Evidence'],
     norma: 'Reg. (CE) 852/2004 · RD 640/2006',
     event: {
       title: 'Control en punto crítico (PCC)',
@@ -212,8 +212,9 @@ export const casos: CasoUso[] = [
     tone: '#FACC15',
     title: 'Notice de curtailment en PPA',
     resumen: 'En un PPA solar/eólico con precio negativo y curtailment, el productor cursa notice al offtaker acreditando timing y datos de mercado.',
+    // VALIDAR plan:gdw:w-factoria-arquitectura #13 #16
     features: ['QeDelivery + QTimestamp', 'Datasets OMIE/REE sellados', 'QArchive WORM'],
-    managers: ['Notification', 'Evidence', 'Custody'],
+    managers: ['Notification', 'Evidence'],
     norma: 'eIDAS Art. 43',
     event: {
       title: 'Activación de cláusula de ajuste',
@@ -221,6 +222,7 @@ export const casos: CasoUso[] = [
       details: 'PPA: IBE-OFFTAKER-2026-014 · Curtailment 14:00–17:00 · Precio OMIE: -12 €/MWh',
     },
     api: {
+      // VALIDAR plan:gdw:w-factoria-arquitectura #13
       endpoint: '/v1/qedelivery/notices',
       method: 'POST',
       payload: {
@@ -233,6 +235,7 @@ export const casos: CasoUso[] = [
       },
     },
     sin: { status: 'Notice impugnable', description: 'Email ordinario sin presunción de envío/recepción/momento. Disputa sobre si el aviso fue válido y a tiempo.', riesgo: 'high' },
+    // VALIDAR plan:gdw:w-factoria-arquitectura #13
     con: { status: 'Notice con presunción legal', description: 'QeDelivery acredita envío, recepción, integridad y momento. Datasets OMIE/REE sellados con QTimestamp.' },
     analysis: 'eIDAS Art. 43 confiere al envío electrónico certificado cualificado presunción de integridad, envío, recepción y exactitud de fecha y hora. Desplaza la carga de la prueba al offtaker.',
   },
@@ -244,7 +247,7 @@ export const casos: CasoUso[] = [
     title: 'Videoidentificación KYC',
     resumen: 'Alta de cliente con verificación biométrica, liveness check y screening PEP/sanciones, en un expediente sellado.',
     features: ['Liveness + biometría', 'Screening PEP/sanciones', 'Expediente sellado'],
-    managers: ['Evidence', 'Custody'],
+    managers: ['Evidence'],
     norma: 'Ley 10/2010 PBC · SEPBLAC',
     event: {
       title: 'Onboarding digital con videoidentificación',
@@ -275,9 +278,10 @@ export const casos: CasoUso[] = [
     icon: 'ph-scroll',
     tone: '#0CF25D',
     title: 'Digitalización certificada del papel',
+    // VALIDAR plan:gdw:w-factoria-arquitectura #13 #15
     resumen: 'El archivo histórico en papel pasa a "original electrónico único": escaneo fiel + sello de tiempo + sello de empresa + entrega certificada + archivo cualificado.',
     features: ['PDF/A + huella (imagen fiel)', 'QTS + QSeal + QERDS', 'Archivo cualificado con re-sellado'],
-    managers: ['Evidence', 'Notification', 'Custody'],
+    managers: ['Evidence', 'Notification'],
     norma: 'Art. 326.4 LEC · eIDAS 2 (45i-45j)',
     event: {
       title: 'Digitalización del archivo contractual en papel',
@@ -295,19 +299,14 @@ export const casos: CasoUso[] = [
         document_hash: 'sha256_pdfa',
         org_seal: 'qseal_aplicado',
         qualified_timestamp: 'rfc3161_tst',
+        // VALIDAR plan:gdw:w-factoria-arquitectura #13 #15
         delivery: { channel: 'qerds', recipients: ['parte_a', 'parte_b'] },
         retention_policy: { years: 6, resealing: 'periodic' },
       },
     },
     sin: { status: 'Copia simple impugnable', description: 'Un escaneo ordinario no prueba cuándo se digitalizó ni que sea imagen fiel. Si el papel se pierde, la posición probatoria queda comprometida; si se conserva, el doble archivo se perpetúa.', riesgo: 'high' },
+    // VALIDAR plan:gdw:w-factoria-arquitectura #15
     con: { status: 'Original electrónico único', description: 'Copia fiel con fecha cierta, origen sellado, entrega certificada y custodia cualificada con re-sellado: presunciones de fecha, integridad, origen y entrega.' },
     analysis: 'El art. 326.4 LEC otorga presunción de autenticidad e integridad a los documentos con servicios de confianza cualificados; eIDAS 2 (arts. 45i-45j) añade el archivo cualificado con presunción durante todo el período de conservación.',
   },
 ];
-
-export const MANAGER_META: Record<Manager, { label: string; icon: string }> = {
-  Evidence: { label: 'Evidence Manager', icon: 'ph-fingerprint' },
-  Signature: { label: 'Signature Manager', icon: 'ph-pen-nib' },
-  Notification: { label: 'Notification Manager', icon: 'ph-envelope-simple' },
-  Custody: { label: 'Custody Manager', icon: 'ph-archive' },
-};

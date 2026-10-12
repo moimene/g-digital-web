@@ -16,8 +16,10 @@ interface Props {
   tone?: 'green' | 'lime' | 'aqua' | 'azure';
   motif?: 'sphere' | 'tunnel' | 'spiral' | 'grid' | 'ribbon';
   ctaSub?: string;
+  seoTitle?: string;        // <title> si el H1 no nombra el producto
+  seoDescription?: string;  // meta description si la entradilla no se entiende sola
 }
-const { kicker, title, intro, linea, cta = 'Habla con un experto', tone = 'green', motif = 'tunnel', ctaSub } = Astro.props;
+const { kicker, title, intro, linea, cta = 'Habla con un experto', tone = 'green', motif = 'tunnel', ctaSub, seoTitle, seoDescription } = Astro.props;
 
 const toneRgb: Record<string, string> = {
   green: '12,242,93',
@@ -28,7 +30,7 @@ const toneRgb: Record<string, string> = {
 const rgb = toneRgb[tone] ?? toneRgb.green;
 const hasMedia = Astro.slots.has('media');
 ---
-<Base title={`${title} | ${SITE.name}`} description={intro}>
+<Base title={`${seoTitle ?? title} | ${SITE.name}`} description={seoDescription ?? intro}>
   <!-- HERO de línea (tinta, acento en el tono de la línea) -->
   <header class="relative overflow-hidden surface-ink" style={`--accent-rgb:${rgb};--accent:rgba(${rgb},1)`}>
     {!hasMedia && (

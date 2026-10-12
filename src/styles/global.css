@@ -132,6 +132,7 @@ body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-ser
 
 .link-underline{background-image:linear-gradient(currentColor,currentColor);background-size:0% 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .35s ease}
 .link-underline:hover,.link-underline:focus-visible{background-size:100% 1px}
+summary::-webkit-details-marker{display:none}
 
 :focus-visible{outline:2px solid var(--focus,var(--green));outline-offset:4px}
 

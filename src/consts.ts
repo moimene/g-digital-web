@@ -18,7 +18,7 @@ export const SOLUCIONES = [
 
 // Submenú de La Factoría (incluye el Trust Explorer / Escenarios y los sectoriales)
 export const FACTORIA = [
-  { href: '/soluciones/la-factoria', icon: 'ph-lightning', title: 'La Factoría', desc: 'Trust API + MCP · el producto' },
+  { href: '/soluciones/la-factoria', icon: 'ph-lightning', title: 'La Factoría', desc: 'Arquitectura base · Trust API · MCP' },
   { href: '/escenarios', icon: 'ph-flow-arrow', title: 'Trust Explorer', desc: 'Casos de uso · simulador en vivo' },
   { href: '/escenarios/banca', icon: 'ph-bank', title: 'Banca', desc: 'Crédito al consumo · fase a fase' },
   { href: '/escenarios/seguros', icon: 'ph-shield-check', title: 'Seguros', desc: 'Ciclo de póliza · IDD/LCS' },
@@ -52,10 +52,11 @@ export const LINEAS: Linea[] = [
     para: 'CLO · CISO · CTO',
     roles: [
       { rol: 'Para el jurista', icon: 'ph-gavel', txt: 'Presunción legal de autenticidad, integridad y fecha (art. 41.2 eIDAS, 326.4 LEC): cada operación es evidencia oponible ante juez o regulador.' },
+      // VALIDAR plan:gdw:w-factoria-arquitectura #23
       { rol: 'Para IT / Dev', icon: 'ph-code', txt: 'Una llamada REST — o un servidor MCP para tus agentes de IA. JSON-native, webhooks, sin migrar plataformas.' },
       { rol: 'Para negocio', icon: 'ph-chart-line-up', txt: 'Menos litigios y sanciones. El coste de certificar es céntimos por operación frente al de no tener prueba.' },
     ],
-    keys: [['INFRA', 'La Factoría · Trust API + MCP'], ['PLATAFORMA', 'Enterprise Suite'], ['EXPERIENCIA', 'GoCertius'], ['BASE', 'QTSP EADTrust']],
+    keys: [['PLATAFORMAS', 'Enterprise Suite · GoCertius'], ['ARQUITECTURA', 'La Factoría · Trust API · MCP'], ['BASE', 'QTSP EADTrust']],
     href: '/soluciones/confianza-digital',
   },
   {

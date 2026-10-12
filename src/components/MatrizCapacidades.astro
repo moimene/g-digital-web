@@ -1,0 +1,40 @@
+---
+// Matriz de capacidades × formato de La Factoría (MOI-691), leída de la fuente única.
+// Tabla desde 640 px; por debajo, un bloque por capacidad, sin scroll horizontal.
+import { CAPACIDADES, FORMATOS_MATRIZ, MATRIZ_FUENTE } from '../data/factoria';
+const grupos = ['Núcleo', 'En plataformas'] as const;
+---
+<div>
+  <table class="hidden sm:table w-full text-sm border-collapse">
+    <caption class="sr-only">Capacidades de La Factoría en cada formato</caption>
+    <thead>
+      <tr class="border-b" style="border-color:var(--line)">
+        <th scope="col" class="text-left py-3 pr-4 t3 font-normal mono text-[11px] uppercase">Capacidad</th>
+        {FORMATOS_MATRIZ.map((f) => <th scope="col" class="text-left py-3 px-3 t1 font-semibold">{f}</th>)}
+      </tr>
+    </thead>
+    {grupos.map((gr) => (
+      <tbody>
+        <tr><th scope="rowgroup" colspan={6} class="text-left pt-6 pb-2 mono text-[11px] accent uppercase">{gr}</th></tr>
+        {CAPACIDADES.filter((c) => c.grupo === gr).map((c) => (
+          <tr class="border-b align-top" style="border-color:var(--line)">
+            <th scope="row" class="text-left py-3 pr-4 t1 font-medium">{c.nombre}</th>
+            {c.celdas.map((v) => <td class="py-3 px-3 t2">{v}</td>)}
+          </tr>
+        ))}
+      </tbody>
+    ))}
+  </table>
+  <div class="sm:hidden space-y-6">
+    {CAPACIDADES.map((c) => (
+      <section class="border-t pt-4" style="border-color:var(--line)">
+        <p class="mono text-[10px] accent uppercase">{c.grupo}</p>
+        <h3 class="t1 font-semibold mt-1">{c.nombre}</h3>
+        <dl class="mt-3 grid grid-cols-[auto,1fr] gap-x-4 gap-y-2 text-sm">
+          {c.celdas.map((v, i) => (<><dt class="t3">{FORMATOS_MATRIZ[i]}</dt><dd class="t2">{v}</dd></>))}
+        </dl>
+      </section>
+    ))}
+  </div>
+  <p class="mono text-[11px] t3 mt-6">{MATRIZ_FUENTE}</p>
+</div>

@@ -47,7 +47,7 @@ const f = escenarios[0];
           <div class="rounded-2xl border border-green/30 bg-green/5 p-5 reveal">
             <p class="mono text-[10px] text-green">CON TRUST LAYER</p>
             <h4 class="head text-cloud font-semibold mt-1 flex items-center gap-2"><i class="ph ph-seal-check text-green"></i> Expediente cualificado</h4>
-            <p class="text-cloud/60 text-sm mt-2 leading-relaxed">Cada fase invoca los managers de la Factoría y produce evidencia sellada eIDAS, verificable por terceros.</p>
+            <p class="text-cloud/60 text-sm mt-2 leading-relaxed">Cada fase invoca los gestores de La Factoría y produce evidencia sellada eIDAS, verificable por terceros.</p>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ const f = escenarios[0];
           </ol>
         </div>
         <div class="card rounded-2xl p-6 reveal">
-          <p class="mono text-[11px] text-cloud/45 mb-3">MANAGERS INVOCADOS</p>
+          <p class="mono text-[11px] text-cloud/45 mb-3">GESTORES INVOCADOS</p>
           <div id="d-managers" class="flex flex-wrap gap-2"></div>
           <p class="mono text-[11px] text-cloud/45 mt-5 mb-3">EVIDENCIAS PRODUCIDAS</p>
           <div id="d-evidences" class="flex flex-wrap gap-2"></div>
@@ -98,8 +98,7 @@ const f = escenarios[0];
   const mgrIcon = (m) =>
     m.includes('Evidence') ? 'ph-fingerprint' :
     m.includes('Signature') ? 'ph-pen-nib' :
-    m.includes('Notification') ? 'ph-envelope-simple' :
-    m.includes('Custody') ? 'ph-archive' : 'ph-cube';
+    m.includes('Notification') ? 'ph-envelope-simple' : 'ph-cube';
 
   function chip(text, icon) {
     return `<span class="inline-flex items-center gap-1.5 mono text-[11px] px-2.5 py-1 rounded-full border border-cloud/15 text-cloud/70"><i class="ph ${icon}"></i>${text}</span>`;

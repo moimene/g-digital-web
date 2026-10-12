@@ -21,10 +21,11 @@ export const escenariosCredito: EscenarioFases[] = [
     letter: 'A',
     title: 'Oferta preconcedida vía notificación out-of-band',
     objective: 'Evidencia de notificación certificada, acceso, lectura, aceptación, firma y entrega de una oferta preconcedida.',
+    // VALIDAR plan:gdw:w-factoria-arquitectura #8
     description: 'La entidad genera una oferta de crédito al consumo preconcedida para un cliente existente y la comunica por un canal out-of-band (email o SMS certificado). Cada interacción —apertura, lectura, visualización de condiciones precontractuales (TAE, TIN, FEIN/FiAE), aceptación expresa y firma cualificada— queda sellada con timestamp cualificado eIDAS (Art. 41.2) con efectos del 326.4 LEC, generando un expediente íntegro que invierte la carga de la prueba a favor de la entidad.',
     agenticVariant: 'Un agente conversacional IA sustituye la notificación out-of-band: el cliente recibe la oferta dentro de una conversación certificada que explica condiciones, resuelve dudas sobre TAE/TIN y guía la aceptación. La conversación completa se certifica como Anexo B del expediente.',
     whiteLabelVariant: 'Toda la experiencia se presenta bajo la marca de la entidad, sin referencias visibles al prestador cualificado; los certificados mantienen la identidad corporativa del banco mientras la infraestructura opera en backend.',
-    managers: ['Evidence Manager', 'Notification Manager', 'Signature Manager', 'Custody Manager'],
+    managers: ['Evidence Manager (custodia)', 'Notification Manager', 'Signature Manager'],
     evidences: ['TST', 'Acta Notificación', 'Evidencia Firma', 'Custodia', 'Certificado Final'],
     phases: [
       'Generación de oferta preconcedida',
@@ -37,6 +38,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Firma del contrato',
       'Sellado y validación de versión',
       'Entrega del contrato firmado',
+      // VALIDAR plan:gdw:w-factoria-arquitectura #15
       'Ingesta en custodia cualificada',
       'Generación de certificado final',
     ],
@@ -49,7 +51,7 @@ export const escenariosCredito: EscenarioFases[] = [
     description: 'Cuando la entidad ofrece un incremento de límite o modifica condiciones vigentes, se notifica de forma certificada, se presenta una pantalla de impacto (nueva TAE, cuotas, comisiones), se registra el opt-in explícito, se genera y firma la adenda y se entrega copia certificada. Cada hito queda sellado con efectos del 326.4 LEC, protegiendo a la entidad ante reclamaciones por falta de transparencia o consentimiento.',
     agenticVariant: 'El agente IA notifica proactivamente la modificación, presenta el impacto económico, responde preguntas y guía el opt-in y la firma de la adenda. La conversación certificada documenta que el cliente fue debidamente informado antes de consentir.',
     whiteLabelVariant: 'Notificaciones, pantallas de impacto, opt-in y adendas se presentan bajo la marca de la entidad; los sellos y actas se generan en la infraestructura subyacente sin exposición de marca de terceros.',
-    managers: ['Evidence Manager', 'Notification Manager', 'Signature Manager', 'Custody Manager'],
+    managers: ['Evidence Manager (custodia)', 'Notification Manager', 'Signature Manager'],
     evidences: ['TST', 'Acta Notificación', 'Evidencia Firma', 'Custodia', 'Certificado Final'],
     phases: [
       'Notificación de modificación disponible',
@@ -61,6 +63,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Firma de la adenda',
       'Sellado y validación de versión',
       'Entrega de adenda firmada',
+      // VALIDAR plan:gdw:w-factoria-arquitectura #15
       'Ingesta en custodia cualificada',
       'Generación de certificado final',
     ],
@@ -70,10 +73,11 @@ export const escenariosCredito: EscenarioFases[] = [
     letter: 'C',
     title: 'Línea preconcedida disponible in-app',
     objective: 'Evidencia de presentación in-app, exploración, evaluación de solvencia, aceptación, firma y entrega.',
+    // VALIDAR plan:gdw:w-factoria-arquitectura #8
     description: 'La entidad pone a disposición una línea preconcedida directamente en su app (canal in-app). El cliente descubre la oferta al navegar: se certifica la presentación en pantalla, la exploración de condiciones, la evaluación de solvencia (simulación INE), la información precontractual (FEIN/FiAE), la aceptación, la firma cualificada y la entrega. Cada snapshot queda sellado, demostrando acceso voluntario, información y consentimiento cualificado.',
     agenticVariant: 'Un asistente IA integrado en la app acompaña la exploración: presenta condiciones de forma conversacional, ejecuta simulaciones de cuotas/plazos en tiempo real y facilita la transición al flujo formal. La conversación se certifica como parte del expediente.',
     whiteLabelVariant: 'La experiencia in-app es completamente nativa: asistente, pantallas precontractuales, flujos de firma y certificados se integran con el diseño de la app bancaria, sin referencia visible a la infraestructura subyacente.',
-    managers: ['Evidence Manager', 'Signature Manager', 'Custody Manager'],
+    managers: ['Evidence Manager (custodia)', 'Signature Manager'],
     evidences: ['TST', 'Paquete Solvencia', 'Evidencia Firma', 'Custodia', 'Certificado Final'],
     phases: [
       'Presentación de línea preconcedida in-app',
@@ -86,6 +90,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Firma del contrato',
       'Sellado y validación de versión',
       'Entrega del contrato firmado',
+      // VALIDAR plan:gdw:w-factoria-arquitectura #15
       'Ingesta en custodia cualificada',
       'Generación de certificado final',
     ],
@@ -95,10 +100,11 @@ export const escenariosCredito: EscenarioFases[] = [
     letter: 'D',
     title: 'Crédito estándar no preconcedido',
     objective: 'Evidencia completa de solicitud, consentimientos, solvencia, oferta, aceptación, firma y entrega.',
+    // VALIDAR plan:gdw:w-factoria-arquitectura #8
     description: 'El escenario más completo: un cliente solicita un crédito no preconcedido. Solicitud formal → consentimientos explícitos (tratamiento de datos, consulta a bureaus) → evaluación de solvencia con consulta simulada al INE → oferta personalizada (TAE, TIN, plazo, cuotas, FEIN/FiAE) → aceptación → firma cualificada → entrega certificada → custodia. Cada consentimiento, evaluación y decisión se sella individualmente: el expediente más robusto para demostrar cumplimiento íntegro de la normativa de crédito al consumo.',
     agenticVariant: 'El agente IA guía desde la solicitud: recoge información de forma conversacional, explica los consentimientos y su finalidad, presenta la solvencia de forma comprensible, genera simulaciones comparativas y acompaña hasta la firma. La certificación de la conversación añade evidencia sobre la calidad de la información y la voluntariedad.',
     whiteLabelVariant: 'Todo el journey —del formulario inicial al certificado final— opera bajo la marca exclusiva de la entidad, sin revelar la infraestructura de servicios de confianza subyacente.',
-    managers: ['Evidence Manager', 'Signature Manager', 'Notification Manager', 'Custody Manager'],
+    managers: ['Evidence Manager (custodia)', 'Signature Manager', 'Notification Manager'],
     evidences: ['TST', 'Paquete Solvencia', 'Acta Notificación', 'Evidencia Firma', 'Custodia', 'Certificado Final'],
     phases: [
       'Solicitud de crédito por el cliente',
@@ -112,6 +118,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Firma del contrato',
       'Sellado y validación de versión',
       'Entrega del contrato firmado',
+      // VALIDAR plan:gdw:w-factoria-arquitectura #15
       'Ingesta en custodia cualificada',
       'Generación de certificado final',
     ],
@@ -124,7 +131,7 @@ export const escenariosCredito: EscenarioFases[] = [
     description: 'Demuestra de forma nativa la certificación de interacciones completas con un agente conversacional de IA en originación de crédito. El agente inicia la conversación, presenta productos, ejecuta simulaciones de cuotas/plazos, resuelve dudas (TAE/TIN/comisiones), presenta la oferta y ejecuta el handoff al flujo formal. La conversación íntegra se certifica con sello cualificado eIDAS y se incluye como Anexo B del certificado final. Clave para entidades que despliegan agentes IA y necesitan demostrar interacción transparente, informada y conforme a normativa.',
     agenticVariant: 'Este escenario ES la variante agéntica por definición: agente IA como canal de originación con certificación integral de la interacción, incluyendo la gobernanza del agente (identificación, capacidades, limitaciones), las simulaciones y el handoff al flujo contractual formal.',
     whiteLabelVariant: 'El agente se presenta como asistente propio de la entidad (nombre, avatar, tono). Los certificados de conversación y anexos se generan bajo la marca del banco; el cliente no conoce la infraestructura subyacente.',
-    managers: ['Evidence Manager', 'Signature Manager', 'Custody Manager'],
+    managers: ['Evidence Manager (custodia)', 'Signature Manager'],
     evidences: ['TST', 'Certificado Conversación', 'Evidencia Firma', 'Custodia', 'Certificado Final'],
     phases: [
       'Inicio de conversación con agente IA',
@@ -137,6 +144,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Firma del contrato',
       'Certificación de conversación completa',
       'Sellado y validación de versión',
+      // VALIDAR plan:gdw:w-factoria-arquitectura #15
       'Ingesta en custodia cualificada',
       'Generación de certificado final (con Anexo B)',
     ],
