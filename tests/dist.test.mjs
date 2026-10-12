@@ -85,3 +85,11 @@ test('home 04, navegación y Recursos con el modelo real', () => {
   assert.ok(distRead('recursos/index.html').includes('La Factoría (EAD Factory): Trust API y MCP.'));
   assert.ok(distRead('escenarios/index.html').includes('invoca los gestores de La Factoría'));
 });
+
+test('fichas: el giro del icono se detiene con movimiento reducido', () => {
+  const h = distRead('soluciones/la-factoria/index.html');
+  // Los de las fichas (group-open); el menú tiene sus propios caret-down.
+  const carets = [...h.matchAll(/<i class="([^"]*ph-caret-down[^"]*group-open[^"]*)"/g)].map((m) => m[1]);
+  assert.equal(carets.length, 3);
+  for (const c of carets) assert.match(c, /motion-reduce:transition-none/, c);
+});
