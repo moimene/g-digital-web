@@ -54,3 +54,23 @@ test('La Factoría: cabecera y recorrido con el modelo real', () => {
   for (const s of ['QTSP interno', 'The Stack', 'Custodia como servicio']) assert.ok(!h.includes(s), `sobra «${s}»`);
   assert.equal((h.match(/<summary/g) || []).length, 3, 'Evidence, Signature y Notification se despliegan; Chat no tiene ficha');
 });
+
+test('La Factoría: matriz, formatos y Trust Explorer', () => {
+  const h = distRead('soluciones/la-factoria/index.html');
+  for (const s of [
+    'MCP de La Factoría', 'Firma electrónica avanzada y simple', 'Fuente: documentación publicada',
+    'Una llamada REST. Evidencia legal cualificada.',
+    'cada operación vuelve convertida en evidencia cualificada eIDAS',
+    'Agent-ready: confianza cualificada por MCP',
+    'con los guardrails del QTSP y trazabilidad de cada invocación',
+    'clientes MCP compatibles (su publicación no implica SLA, soporte de integración ni compromiso de disponibilidad en producción)',
+    'https://github.com/g-digital-by-Garrigues/EAD-Factory-MCP',
+    'https://github.com/g-digital-by-Garrigues/EAD_Enterprise_Suite_MCP',
+    'https://github.com/g-digital-by-Garrigues/GoCertius_MCP',
+    'id="proyectos"', 'adoptar lo que ya existe',
+    'con los gestores de La Factoría que intervienen', '+298 escenarios en 18 sectores.',
+  ]) assert.ok(h.includes(s), `falta «${s}»`);
+  assert.match(h, /class="[^"]*hidden sm:table/, 'tabla oculta bajo 640 px');
+  assert.match(h, /class="[^"]*sm:hidden/, 'bloques bajo 640 px');
+  assert.equal((h.match(/btn-primary/g) || []).length, 1, 'un solo CTA verde relleno (el final)');
+});

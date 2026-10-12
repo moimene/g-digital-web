@@ -9,6 +9,7 @@ export const MARCAS = {
   'src/data/demo-credito.ts': [8, 15],
   'src/content/casos/digitalizacion-certificada.md': [13],
   'src/content/casos/ppa-curtailment.md': [13],
+  'src/pages/soluciones/la-factoria.astro': [4, 5, 21, 22, 28],
 };
 
 for (const [file, nums] of Object.entries(MARCAS)) {

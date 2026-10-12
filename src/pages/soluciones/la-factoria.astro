@@ -5,6 +5,8 @@ import CertificationsBar from '../../components/CertificationsBar.astro';
 import TrustLayerDiagram from '../../components/TrustLayerDiagram.astro';
 import SectionIntro from '../../components/SectionIntro.astro';
 import FactoriaRecorrido from '../../components/FactoriaRecorrido.astro';
+import MatrizCapacidades from '../../components/MatrizCapacidades.astro';
+import { SERVIDORES_MCP } from '../../data/factoria';
 ---
 <LineaPage
   linea="Confianza Digital · Arquitectura"
@@ -41,13 +43,62 @@ import FactoriaRecorrido from '../../components/FactoriaRecorrido.astro';
     </div>
   </section>
 
-  <!-- MCP -->
-  <section class="surface-ink py-20 lg:py-28 border-t border-cloud/10">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="rounded-2xl border p-8 reveal" style="border-color:rgba(var(--accent-rgb),.35);background:rgba(var(--accent-rgb),.08)">
-        <p class="accent font-semibold flex items-center gap-2 text-lg"><i class="ph ph-robot" aria-hidden="true"></i> Agent-ready: confianza cualificada por MCP</p>
-        <p class="t2 mt-3 leading-relaxed">Expón los mismos cuatro microservicios como servidor <span class="mono t1">MCP</span>. Tus agentes de IA invocan firma, sello o entrega como herramienta nativa, con los guardrails del QTSP y trazabilidad de cada invocación. La acumulación de innovación que diferencia a g-digital: de la API al agente.</p>
-        <p class="t2 mt-3 leading-relaxed">Y no es un roadmap: hay <span class="t1 font-medium">tres servidores MCP publicados</span> en nuestro GitHub — <span class="mono t1">EAD-Factory-MCP</span>, <span class="mono t1">EAD_Enterprise_Suite_MCP</span> y <span class="mono t1">GoCertius_MCP</span> — conectables desde cualquier cliente MCP. <a href="https://github.com/g-digital-by-Garrigues" target="_blank" rel="noopener" class="link-underline accent">Ver los repositorios <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
+  <section id="capacidades" class="surface-ink py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionIntro
+        label="Capacidades"
+        title="Qué puedes hacer en cada formato."
+        lead="El núcleo de La Factoría está en todos los formatos; algunas capacidades viven en las plataformas construidas sobre ella o se construyen como proyecto."
+      />
+      <div class="mt-12"><MatrizCapacidades /></div>
+    </div>
+  </section>
+
+  <section id="formatos" class="surface-coal py-20 lg:py-28 border-y border-cloud/10">
+    <div class="max-w-7xl mx-auto px-6">
+      <SectionIntro label="Formatos" title="Cómo se usa La Factoría." />
+      <div class="mt-12 grid lg:grid-cols-12 gap-10 items-start">
+        <article class="lg:col-span-7">
+          <p class="label accent mb-4">Formato principal · Trust API</p>
+          {/* VALIDAR plan:gdw:w-factoria-arquitectura #4 */}
+          <h3 class="display-2 t1 font-semibold">Una llamada REST. Evidencia legal cualificada.</h3>
+          {/* VALIDAR plan:gdw:w-factoria-arquitectura #4 */}
+          <p class="mt-6 t2 leading-relaxed">La Trust API se integra en tus sistemas, sin migrar plataformas. Tu ERP, CRM, ECM, tus apps o tu low-code invocan la Trust API, y cada operación vuelve convertida en evidencia cualificada eIDAS.</p>
+          <ul class="mt-6 space-y-3 t2 text-sm leading-relaxed list-disc pl-5">
+            <li>API REST de La Factoría (EAD Factory), con los gestores Evidence (Digital Trust), Signature, Notification y Chat sobre un expediente común.</li>
+            <li>Autenticación OAuth 2.0 con credenciales de cliente: un token para todos los gestores.</li>
+            <li>Entorno de integración antes de producción.</li>
+            <li>Acceso por contrato: EADTrust da de alta a tu organización.</li>
+          </ul>
+          <a href="/contacto" class="link-underline inline-flex items-center gap-2 accent text-sm font-medium mt-7">Solicitar acceso <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="lg:col-span-5 rounded-2xl border p-8" style="border-color:rgba(var(--accent-rgb),.35);background:rgba(var(--accent-rgb),.08)">
+          <p class="label t3 mb-4">Formato secundario · MCP</p>
+          {/* VALIDAR plan:gdw:w-factoria-arquitectura #5 */}
+          <p class="accent font-semibold flex items-center gap-2 text-lg"><i class="ph ph-robot" aria-hidden="true"></i> Agent-ready: confianza cualificada por MCP</p>
+          {/* VALIDAR plan:gdw:w-factoria-arquitectura #21 #22 */}
+          <p class="t2 mt-3 leading-relaxed">Expón los gestores de La Factoría como servidor <span class="mono t1">MCP</span>. Tus agentes de IA invocan firma, sello o entrega como herramienta nativa, con los guardrails del QTSP y trazabilidad de cada invocación. La acumulación de innovación que diferencia a g-digital: de la API al agente.</p>
+          <p class="t2 mt-3 leading-relaxed">Y no es un roadmap: hay <span class="t1 font-medium">tres servidores MCP publicados</span> en nuestro GitHub — <span class="mono t1">EAD-Factory-MCP</span>, <span class="mono t1">EAD_Enterprise_Suite_MCP</span> y <span class="mono t1">GoCertius_MCP</span> — conectables desde clientes MCP compatibles (su publicación no implica SLA, soporte de integración ni compromiso de disponibilidad en producción). <a href="https://github.com/g-digital-by-Garrigues" target="_blank" rel="noopener" class="link-underline accent">Ver los repositorios <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a></p>
+          <ul class="mt-6 space-y-5">
+            {SERVIDORES_MCP.map((s) => (
+              <li class="border-t pt-4" style="border-color:var(--line)">
+                <a href={s.repo} target="_blank" rel="noopener" class="mono t1 link-underline">{s.nombre} <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+                <p class="t3 text-xs mt-1">Para {s.de}</p>
+                <p class="t2 text-sm mt-2">{s.cubre}</p>
+                <p class="t3 text-xs mt-2">Herramientas de ejemplo: <span class="mono">{s.herramientas.join(', ')}</span></p>
+                {'nota' in s && <p class="t3 text-xs mt-2">{s.nota}</p>}
+              </li>
+            ))}
+          </ul>
+        </article>
+      </div>
+      <div id="proyectos" class="mt-16 pt-12 border-t scroll-mt-24" style="border-color:var(--line)">
+        <div class="max-w-3xl">
+          <p class="label accent mb-4">Cierre · Proyectos enterprise</p>
+          <h3 class="display-2 t1 font-semibold">Lo que no viene de serie se construye sobre La Factoría.</h3>
+          <p class="mt-6 t2 leading-relaxed">Así construimos Enterprise Suite y GoCertius. Cada proyecto sigue el mismo método: adoptar lo que ya existe, adaptarlo a tu operación o construir una pieza nueva sobre la misma arquitectura. Es el camino para el chat, la captura atestada de foto, vídeo y web, o la orquestación de varios gestores en un mismo proceso.</p>
+          <p class="mt-4 t2 leading-relaxed">g-digital diseña el proyecto; EADTrust opera, comercializa y factura los servicios de confianza que intervienen.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -59,8 +110,10 @@ import FactoriaRecorrido from '../../components/FactoriaRecorrido.astro';
         <SectionIntro
           label="Trust Explorer · casos de uso"
           title="Míralo en una operación real."
-          lead={`Elige un caso de uso y compara, paso a paso, la misma operación <span class="t1 font-medium">sin regulación</span> (deuda legal) frente a <span class="accent font-medium">con Trust API</span>: evento del cliente → llamada a la API → resultado legal, con el flujo de los cuatro managers.`}
+          lead={`Elige un caso de uso y compara, paso a paso, la misma operación <span class="t1 font-medium">sin regulación</span> (deuda legal) frente a <span class="accent font-medium">con Trust API</span>: evento del cliente → llamada a la API → resultado legal, con los gestores de La Factoría que intervienen.`}
         />
+        {/* VALIDAR plan:gdw:w-factoria-arquitectura #28 */}
+        <p class="mono text-[11px] t3 mt-5">+298 escenarios en 18 sectores.</p>
         <div class="mt-7 flex flex-wrap gap-2.5">
           {['Logística', 'InsurTech', 'PropTech', 'FinTech', 'Salud', 'Food', 'Energy · PPA', 'Banca', 'Archivo'].map((s) => (
             <span class="mono text-[11px] px-2.5 py-1 rounded-full border t3" style="border-color:var(--line)">{s}</span>
@@ -68,7 +121,7 @@ import FactoriaRecorrido from '../../components/FactoriaRecorrido.astro';
         </div>
       </div>
       <div class="lg:col-span-5 lg:text-right">
-        <a href="/escenarios" class="btn-primary inline-flex items-center gap-2 px-7 py-4 rounded-xl">Abrir el Trust Explorer <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        <a href="/escenarios" class="btn-outline inline-flex items-center gap-2 px-7 py-4 rounded-xl">Abrir el Trust Explorer <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
       </div>
     </div>
   </section>
