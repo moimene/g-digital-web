@@ -10,6 +10,7 @@ draft: false
 aka: ['confianza como infraestructura']
 related: ['deuda-legal', 'mcp-agentes', 'que-es-deuda-legal']
 glossary: ['qtsp', 'mcp', 'rpas']
+# VALIDAR plan:gdw:w-factoria-arquitectura #4 #5 #6 #21 #22 #23 #25
 ---
 
 ## La definición
@@ -22,10 +23,10 @@ El cumplimiento tradicional es *bolt-on*: se añade después, cuesta proyectos y
 
 ## Las dos vías
 
-- **API REST** — cuatro microservicios (Evidence, Signature, Notification, Custody) como primitivas JSON-native, con webhooks y SDKs. Una llamada por operación.
+- **API REST** — la Trust API de La Factoría (EAD Factory), con sus gestores (Evidence, Signature, Notification y Chat) sobre un expediente común, como primitivas JSON-native, con webhooks y SDKs. Una llamada por operación.
 - **Servidor MCP** — la misma confianza cualificada expuesta como herramienta nativa para agentes de IA, con los guardrails del QTSP y trazabilidad de cada invocación.
 
-Para despliegues a escala corporativa, la Factoría opera como **rPaaS** (Regulated Platform as a Service): el QTSP del grupo entregado como plataforma, con coste fijo predecible.
+Para despliegues a escala corporativa, La Factoría se presenta como **rPaaS** (Regulated Platform as a Service): g-digital la diseña y EADTrust, QTSP del Grupo Garrigues, opera sus servicios de confianza, con coste fijo predecible.
 
 ## Para profundizar
 

@@ -11,6 +11,7 @@ related: ['mcp-agentes', 'compliance-injection', 'ai-act-gobernanza']
 glossary: ['mcp', 'qtsp', 'qes']
 author: 'Equipo g-digital'
 tipo: articulo
+# VALIDAR plan:gdw:w-factoria-arquitectura #4 #5 #21
 ---
 
 Durante treinta años, el software ejecutó operaciones y las personas firmaban. Ese orden se ha invertido: los agentes de IA ya preparan documentos, negocian borradores, confirman recepciones y cursan comunicaciones. La pregunta jurídica que abre esta década no es si tus agentes actuarán —ya lo hacen— sino **si sus actos serán defendibles**.
@@ -23,7 +24,7 @@ Y hay una segunda capa de problema: la **atribución**. Cuando un acto lo ejecut
 
 ## De la API al agente: la confianza como herramienta nativa
 
-La primera ola de integración llevó los servicios de confianza a los sistemas: una llamada REST y la operación volvía sellada. La segunda ola hace lo mismo con los agentes: el **Model Context Protocol (MCP)** estandariza cómo un agente descubre e invoca herramientas, y la Factoría expone sus cuatro microservicios eIDAS — evidencia, firma, notificación, custodia — como servidor MCP.
+La primera ola de integración llevó los servicios de confianza a los sistemas: una llamada REST y la operación volvía sellada. La segunda ola hace lo mismo con los agentes: el **Model Context Protocol (MCP)** estandariza cómo un agente descubre e invoca herramientas, y g-digital publica EAD-Factory-MCP, el servidor MCP de La Factoría (EAD Factory), con sus gestores de evidencias, firma y notificación.
 
 El patrón resultante: cuando el agente llega al paso crítico, invoca `trust.seal_evidence` o `trust.request_signature` como una herramienta más. La operación vuelve con hash, sello de tiempo cualificado y custodia. El acto del agente produce evidencia cualificada, no solo un log.
 

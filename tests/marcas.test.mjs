@@ -14,6 +14,10 @@ export const MARCAS = {
   'src/consts.ts': [23],
   'src/pages/recursos.astro': [5],
   'src/pages/escenarios.astro': [4, 17],
+  'src/content/conceptos/mcp-agentes.md': [5, 21, 22],
+  'src/content/articulos/firma-internet-agentico.md': [4, 5, 21],
+  'src/content/conceptos/compliance-injection.md': [4, 5, 6, 21, 22, 23, 25],
+  'src/content/conceptos/contratacion-reforzada.md': [13],
 };
 
 for (const [file, nums] of Object.entries(MARCAS)) {
