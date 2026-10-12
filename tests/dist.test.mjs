@@ -74,3 +74,14 @@ test('La Factoría: matriz, formatos y Trust Explorer', () => {
   assert.match(h, /class="[^"]*sm:hidden/, 'bloques bajo 640 px');
   assert.equal((h.match(/btn-primary/g) || []).length, 1, 'un solo CTA verde relleno (el final)');
 });
+
+test('home 04, navegación y Recursos con el modelo real', () => {
+  const home = distRead('index.html');
+  assert.ok(home.includes('04 · Confianza Digital · La Factoría'));
+  assert.ok(home.includes('es la arquitectura sobre la que construimos Enterprise Suite, GoCertius y proyectos enterprise'));
+  assert.ok(home.includes('sin migrar plataformas'));
+  assert.ok(home.includes('Arquitectura base · Trust API · MCP'));
+  for (const k of ['PLATAFORMAS', 'ARQUITECTURA', 'BASE']) assert.ok(home.includes(`>${k}<`), k);
+  assert.ok(distRead('recursos/index.html').includes('La Factoría (EAD Factory): Trust API y MCP.'));
+  assert.ok(distRead('escenarios/index.html').includes('invoca los gestores de La Factoría'));
+});

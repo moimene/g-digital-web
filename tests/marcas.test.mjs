@@ -10,6 +10,10 @@ export const MARCAS = {
   'src/content/casos/digitalizacion-certificada.md': [13],
   'src/content/casos/ppa-curtailment.md': [13],
   'src/pages/soluciones/la-factoria.astro': [4, 5, 21, 22, 28],
+  'src/pages/index.astro': [4, 5, 21, 23],
+  'src/consts.ts': [23],
+  'src/pages/recursos.astro': [5],
+  'src/pages/escenarios.astro': [4, 17],
 };
 
 for (const [file, nums] of Object.entries(MARCAS)) {
