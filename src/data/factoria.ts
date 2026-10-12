@@ -62,13 +62,13 @@ export const GESTORES: readonly GestorInfo[] = [
     id: 'Chat',
     nombre: 'Chat',
     icon: 'ph-chats-circle',
-    queHace: 'El gestor existe en la Trust API, sin flujo publicado: se activa como proyecto enterprise.',
+    queHace: 'Gestiona conversaciones sobre el expediente. Existe en la Trust API sin flujo publicado: se activa como proyecto enterprise.',
   },
 ];
 
 export const ACCESOS = [
   { nombre: 'Trust API', detalle: 'La API REST de La Factoría. La llaman tus sistemas: ERP, CRM, ECM o apps.' },
-  { nombre: 'MCP', detalle: 'Servidores MCP publicados. Los invocan tus agentes de IA desde clientes MCP compatibles.' },
+  { nombre: 'MCP', detalle: 'Servidores MCP publicados. Los invocan tus agentes de IA.' },
 ] as const;
 
 export const PLATAFORMAS = [
@@ -107,7 +107,7 @@ export const SERVIDORES_MCP = [
   {
     nombre: 'EAD-Factory-MCP',
     repo: 'https://github.com/g-digital-by-Garrigues/EAD-Factory-MCP',
-    de: 'La Factoría (EAD Factory)',
+    de: 'La Factoría',
     cubre: 'Expedientes, evidencias selladas, informes, firma y notificación. Sin chat.',
     herramientas: ['evidence_case_file_create', 'evidence_create_sealed', 'signature_request_full', 'notification_request_create'],
     nota: 'Enviar una notificación con notification_request_send exige un cliente con MCP Tasks; desde otros clientes se crea con envío automático y se consulta su estado.',

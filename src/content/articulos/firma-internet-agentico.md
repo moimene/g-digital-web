@@ -26,7 +26,7 @@ Y hay una segunda capa de problema: la **atribución**. Cuando un acto lo ejecut
 
 La primera ola de integración llevó los servicios de confianza a los sistemas: una llamada REST y la operación volvía sellada. La segunda ola hace lo mismo con los agentes: el **Model Context Protocol (MCP)** estandariza cómo un agente descubre e invoca herramientas, y g-digital publica EAD-Factory-MCP, el servidor MCP de La Factoría (EAD Factory), con sus gestores de evidencias, firma y notificación.
 
-El patrón resultante: cuando el agente llega al paso crítico, invoca `trust.seal_evidence` o `trust.request_signature` como una herramienta más. La operación vuelve con hash, sello de tiempo cualificado y custodia. El acto del agente produce evidencia cualificada, no solo un log.
+El patrón resultante: cuando el agente llega al paso crítico, invoca `evidence_create_sealed` o `signature_request_full` como una herramienta más. La operación vuelve con hash, sello de tiempo cualificado y custodia. El acto del agente produce evidencia cualificada, no solo un log.
 
 ## Los guardrails no viven en el prompt
 

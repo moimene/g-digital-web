@@ -77,3 +77,13 @@ test('marcas del registro en factoria.ts', () => {
   const m = marksIn('src/data/factoria.ts');
   for (const n of [7, 8, 9, 10, 11, 12, 13, 15, 17, 18, 19, 31, 32, 33, 34]) assert.ok(m.has(n), `falta #${n}`);
 });
+
+test('Chat dice qué hace, sin prometer un flujo publicado', () => {
+  const chat = GESTORES.find((g) => g.id === 'Chat');
+  assert.match(chat.queHace, /conversaciones/);
+  assert.match(chat.queHace, /proyecto enterprise/);
+});
+
+test('el acceso MCP no usa «clientes MCP compatibles» sin su aviso', () => {
+  assert.doesNotMatch(ACCESOS[1].detalle, /clientes MCP compatibles/);
+});

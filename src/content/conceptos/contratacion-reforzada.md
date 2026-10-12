@@ -10,7 +10,7 @@ draft: false
 aka: ['canal contractual probatorio', 'formalización como proceso']
 related: ['evidencia-cualificada', 'business-wallet', 'eudi-wallet']
 glossary: ['qes', 'erds', 'qea', 'qtsp']
-# VALIDAR plan:gdw:w-factoria-arquitectura #13
+# VALIDAR plan:gdw:w-factoria-arquitectura #13 #15
 ---
 
 ## La definición

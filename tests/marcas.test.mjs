@@ -7,7 +7,7 @@ import { marksIn } from './helpers.mjs';
 export const MARCAS = {
   'src/data/casos-uso.ts': [13, 15, 16],
   'src/data/demo-credito.ts': [8, 15],
-  'src/content/casos/digitalizacion-certificada.md': [13],
+  'src/content/casos/digitalizacion-certificada.md': [13, 15],
   'src/content/casos/ppa-curtailment.md': [13],
   'src/pages/soluciones/la-factoria.astro': [4, 5, 21, 22, 28],
   'src/pages/index.astro': [4, 5, 21, 23],
@@ -17,7 +17,7 @@ export const MARCAS = {
   'src/content/conceptos/mcp-agentes.md': [5, 21, 22],
   'src/content/articulos/firma-internet-agentico.md': [4, 5, 21],
   'src/content/conceptos/compliance-injection.md': [4, 5, 6, 21, 22, 23, 25],
-  'src/content/conceptos/contratacion-reforzada.md': [13],
+  'src/content/conceptos/contratacion-reforzada.md': [13, 15],
 };
 
 for (const [file, nums] of Object.entries(MARCAS)) {

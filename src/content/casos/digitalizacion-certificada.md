@@ -8,7 +8,7 @@ featured: true
 draft: false
 sector: 'Transversal'
 servicio: 'Evidence (custodia) + Notification'
-# VALIDAR plan:gdw:w-factoria-arquitectura #13
+# VALIDAR plan:gdw:w-factoria-arquitectura #13 #15
 norma: 'Art. 326.4 LEC · eIDAS 2 arts. 45i-45j'
 related: ['evidencia-cualificada', 'contratacion-reforzada', 'que-es-deuda-legal']
 glossary: ['qea', 'erds', 'qtsp', 'pades', 'worm']

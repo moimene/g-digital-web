@@ -12,7 +12,7 @@ const tag = 'lg:col-span-3 mono text-[11px] t3 uppercase tracking-wider pt-1';
     <p class={tag}>01 · Origen</p>
     <p class="lg:col-span-9 t2 leading-relaxed">
       Tus sistemas (ERP, CRM, ECM o apps) o tus agentes de IA. Junto a ellos, las plataformas construidas sobre La Factoría:
-      {PLATAFORMAS.map((p, i) => (<>{i > 0 && ' · '}<a href={p.href} class="link-underline t1">{p.nombre}</a></>))}.
+      {PLATAFORMAS.map((p, i) => (<>{i > 0 && ' · '}<a href={p.href} class="t1 underline decoration-1 underline-offset-4 hover:decoration-2">{p.nombre}</a></>))}.
     </p>
   </li>
   <li class={row} style="border-color:var(--line)">

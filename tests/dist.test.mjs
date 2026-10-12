@@ -93,3 +93,50 @@ test('fichas: el giro del icono se detiene con movimiento reducido', () => {
   assert.equal(carets.length, 3);
   for (const c of carets) assert.match(c, /motion-reduce:transition-none/, c);
 });
+
+// Pase de correcciones de la revisión final (MOI-691).
+const body = (h) => h.slice(h.indexOf('<body'));
+
+test('«clientes MCP compatibles» siempre lleva su aviso (ronda 2)', () => {
+  for (const f of distFiles()) {
+    const t = readFileSync(f, 'utf8');
+    for (const m of t.matchAll(/clientes MCP compatibles/g)) {
+      assert.ok(t.startsWith(' (su publicación no implica SLA', m.index + m[0].length), `sin aviso en ${f}`);
+    }
+  }
+});
+
+test('La Factoría: nombres y entradillas sin sobreafirmar', () => {
+  const h = distRead('soluciones/la-factoria/index.html');
+  assert.ok(!h.includes('EAD Factory la presenta'), 'EAD Factory como otro actor');
+  assert.equal((body(h).match(/\(EAD Factory\)/g) || []).length, 1, '«(EAD Factory)» solo en la primera mención');
+  assert.ok(!h.includes('en todos los formatos'), 'el núcleo no está en todos los formatos (GoCertius no firma)');
+  assert.ok(!h.includes('Cierre · Proyectos enterprise'));
+  assert.ok(h.includes('Formato a medida · Proyectos enterprise'));
+  assert.match(h, /<title>La Factoría \(EAD Factory\)[^<]*<\/title>/);
+  assert.match(h, /<meta name="description" content="La Factoría \(EAD Factory\) es la arquitectura/);
+});
+
+test('La Factoría: los enlaces a plataformas del recorrido se ven como enlaces', () => {
+  const h = distRead('soluciones/la-factoria/index.html');
+  const ol = h.slice(h.indexOf('<ol'), h.indexOf('</ol>'));
+  assert.ok(ol.includes('01 · Origen'));
+  const clases = [...ol.matchAll(/<a href="[^"]*" class="([^"]*)"/g)].map((m) => m[1]);
+  assert.equal(clases.length, 3);
+  for (const c of clases) assert.match(c, /(^|\s)underline(\s|$)/, c);
+});
+
+test('home y Trust Explorer: el chat no se sobreafirma y los gestores se llaman igual', () => {
+  const home = distRead('index.html');
+  assert.ok(!home.includes('firma, notificación y chat'));
+  assert.ok(home.includes('el de chat se activa como proyecto enterprise'));
+  const esc = distRead('escenarios/index.html');
+  assert.ok(!esc.includes('managers que intervienen'));
+  assert.ok(esc.includes('gestores que intervienen'));
+});
+
+test('artículo: las herramientas citadas son de EAD-Factory-MCP', () => {
+  const h = distRead('recursos/articulos/firma-internet-agentico/index.html');
+  assert.ok(!h.includes('trust.seal_evidence') && !h.includes('trust.request_signature'));
+  assert.ok(h.includes('evidence_create_sealed') && h.includes('signature_request_full'));
+});
