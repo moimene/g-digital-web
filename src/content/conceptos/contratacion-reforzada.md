@@ -22,7 +22,7 @@ El punto débil de la contratación digital rara vez es la firma: es todo lo dem
 
 ## El patrón, en seis pasos
 
-Identificación certificada de las partes → exposición de términos con constancia de la versión mostrada → comprobación de comprensión (hitos de lectura, resúmenes) → **aceptación separada de cláusulas sensibles** (acto propio, sellado en el momento) → firma del nivel adecuado al riesgo → entrega certificada y archivo cualificado. Cada eslabón usa el servicio eIDAS que le corresponde: sello de tiempo cualificado, sello de empresa, entrega certificada (ERDS cualificado) y archivo — la firma es solo uno de los seis.
+Identificación certificada de las partes → exposición de términos con constancia de la versión mostrada → comprobación de comprensión (hitos de lectura, resúmenes) → **aceptación separada de cláusulas sensibles** (acto propio, sellado en el momento) → firma del nivel adecuado al riesgo → entrega certificada y archivo. Cada eslabón usa el servicio eIDAS que le corresponde: sello de tiempo cualificado, sello de empresa, entrega certificada (ERDS cualificado) y archivo — la firma es solo uno de los seis.
 
 El patrón funciona **hoy** con los medios actuales (certificados, OTP con trazabilidad sellada) y queda preparado para la identidad wallet: con credenciales EUDI, la identificación y los atributos entran verificados desde el primer paso.
 

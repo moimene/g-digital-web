@@ -37,6 +37,6 @@ POST /api/v1/evidence/seal
 
 ## Análisis jurídico
 
-El sellado criptográfico del hash y los metadatos EXIF crean una cadena de custodia digital que cumple los requisitos probatorios de la LEC: la imagen se presume íntegra y fechada con precisión cualificada.
+El sellado criptográfico del hash y los metadatos EXIF crean una cadena de custodia digital diseñada para reforzar el valor probatorio de la fotografía conforme a la LEC: la imagen se presume íntegra y fechada con precisión cualificada.
 
 **Simulación interactiva:** [Trust Explorer → Fotografía de siniestro](/escenarios) · **Sectorial:** [Seguros · ciclo de póliza](/escenarios/seguros)

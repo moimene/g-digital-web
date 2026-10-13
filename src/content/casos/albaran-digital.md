@@ -19,7 +19,7 @@ Entrega de mercancía: el repartidor solicita la firma del cliente en una tablet
 
 ## Sin capa de confianza
 
-**Sin validez legal.** Una firma capturada en tablet sin certificar es fácilmente repudiable en juicio: no hay garantía de quién firmó, ni de cuándo, ni de que el documento no se alteró después.
+**Prueba débil.** Una firma capturada en tablet sin certificar es fácilmente repudiable en juicio: no hay garantía de quién firmó, ni de cuándo, ni de que el documento no se alteró después.
 
 ## Con la Trust API
 

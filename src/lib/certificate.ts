@@ -120,7 +120,7 @@ export function buildCertificate(caso: CasoUso): CertificateData {
         'Que el documento electrónico cuyo hash SHA-256 se indica existía en la fecha y hora señaladas.',
         'Que conforme al Art. 41.2 del Reglamento eIDAS, los datos sellados disfrutan de la presunción de exactitud de la fecha y hora indicadas y de integridad.',
         'Que el presente certificado, según el Art. 326.4 de la Ley de Enjuiciamiento Civil, goza de presunción de autenticidad como documento privado electrónico emitido por PSTC cualificado.',
-        'Que la carga de la prueba recae sobre quien impugne este certificado, debiendo aportar pericial técnica que demuestre su inexactitud.',
+        'Que la presunción desplaza a quien impugne este certificado la carga de desvirtuarla.',
       ],
       disclaimer: 'Este certificado representa una simulación con fines demostrativos. En producción, cada transacción genera un certificado real firmado electrónicamente por EADTrust.',
     },
