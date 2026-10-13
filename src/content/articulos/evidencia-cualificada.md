@@ -43,11 +43,11 @@ Para comunicaciones formales — reclamaciones de pago, comunicaciones laborales
 
 ## 5. La custodia: que la prueba sobreviva al tiempo
 
-Una evidencia que no se puede verificar dentro de diez años es una evidencia a medias. La custodia cualificada aporta:
+Una evidencia que no se puede verificar dentro de diez años es una evidencia a medias. La custodia a largo plazo aporta:
 
 - **Perfiles de largo plazo (LTV/LTA)** con re-sellado periódico: la verificabilidad sobrevive a la caducidad de algoritmos y certificados.
 - **Lógica WORM** (Write Once, Read Many): lo archivado no se altera; las purgas siguen políticas verificables.
-- **eIDAS 2 (arts. 45i-45j)**: el archivo electrónico cualificado añade presunción de integridad y origen **durante todo el período de conservación**.
+- **eIDAS 2 (arts. 45 decies y 45 undecies; 45i-45j en la versión inglesa)**: el archivo electrónico cualificado —cuando el servicio figura en las listas de confianza— añade presunción de integridad y origen **durante todo el período de conservación**.
 
 En producción real: la custodia de g-digital/EADTrust gestiona hoy más de 20 TB de documentación sensible y 500+ data rooms, y sustituyó los USB en más de 250 operaciones de M&A de Garrigues.
 

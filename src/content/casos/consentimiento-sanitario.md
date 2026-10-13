@@ -38,6 +38,6 @@ POST /api/v1/healthcare/consent
 
 ## Análisis jurídico
 
-El sistema garantiza el cumplimiento de la Ley 41/2002 de autonomía del paciente con evidencia de la información efectivamente proporcionada: no solo la firma, sino el documento, el momento y la identidad quedan probados.
+El sistema está diseñado para acreditar el cumplimiento de la Ley 41/2002 de autonomía del paciente con evidencia de la información efectivamente proporcionada: no solo la firma, sino el documento, el momento y la identidad quedan documentados y sellados.
 
 **Simulación interactiva:** [Trust Explorer → Consentimiento informado](/escenarios)

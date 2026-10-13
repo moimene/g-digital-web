@@ -13,11 +13,11 @@ const capas = [
   { tag: 'BASE QTSP', icon: 'ph-certificate', title: 'Servicios QTSP EADTrust', who: 'Servicios de confianza cualificados directos', body: 'La base regulada sobre la que todo se construye: firma con certificados, sellos RFC 3161, entrega certificada (ERDS), custodia LTV y credenciales. EUDI Wallet Ready.' },
 ];
 const eidas2 = [
-  ['Archivo Electrónico Cualificado', 'Arts. 45i-45j. Presunción de integridad y origen.'],
+  ['Archivo Electrónico Cualificado', 'Arts. 45 decies y 45 undecies (45i-45j en la versión inglesa). Presunción de integridad y origen si el servicio figura en la lista de confianza.'],
   ['EUDI Wallet', 'Cartera digital europea. Interoperabilidad nativa.'],
-  ['QEA/QEAA Attestations', 'Atestaciones cualificadas de atributos.'],
+  ['Declaración Electrónica Cualificada de Atributos (QEAA)', 'Arts. 45 ter-45 nonies (45b-45h en la versión inglesa). Mismo efecto jurídico que una declaración en papel expedida legalmente.'],
   ['QSCD Cloud', 'Firma cualificada en nube con autenticación fuerte.'],
-  ['Registros Electrónicos (QEL)', 'Arts. 45k-45l. Presunción de integridad y orden secuencial de las anotaciones.'],
+  ['Registros Electrónicos (QEL)', 'Arts. 45 duodecies y 45 terdecies (45k-45l en la versión inglesa). Presunción de integridad y orden secuencial de las anotaciones si el servicio figura en la lista de confianza.'],
 ];
 ---
 <LineaPage
@@ -26,7 +26,7 @@ const eidas2 = [
   motif="sphere"
   kicker="Confianza Digital"
   title="Confianza Digital. Cinco formas de acceder."
-  intro="Servicios eIDAS cualificados (firma, sello, entrega, custodia y certificados) accesibles como API, MCP, plataforma enterprise, app móvil o servicios QTSP directos. No es un producto: es una arquitectura por capas."
+  intro="Servicios eIDAS (firma, sello, entrega y certificados cualificados, y custodia a largo plazo) accesibles como API, MCP, plataforma enterprise, app móvil o servicios QTSP directos. No es un producto: es una arquitectura por capas."
 >
   <LineaExtra slug="confianza-digital" />
 
@@ -35,7 +35,7 @@ const eidas2 = [
     <div class="max-w-6xl mx-auto px-6">
       <PainPair
         pain="Tus operaciones digitales ocurren, pero no dejan prueba oponible. Cuando un juez, un regulador o un auditor lo reclama, no puedes demostrar qué pasó, cuándo, ni quién aceptó qué."
-        fix="Servicios eIDAS cualificados —firma, sello, entrega y custodia— que convierten cada operación en evidencia con presunción de validez. Accesibles como API, MCP, plataforma o app."
+        fix="Servicios eIDAS —firma, sello y entrega cualificados, y custodia a largo plazo— que convierten cada operación en evidencia con presunción legal de integridad y fecha. Accesibles como API, MCP, plataforma o app."
       />
     </div>
   </section>
@@ -105,7 +105,7 @@ const eidas2 = [
         <SectionIntro
           label="Plataformas evolutivas"
           title="Preparadas para eIDAS 2.0 y la EUDI Wallet."
-          lead="Enterprise Suite y GoCertius incorporan los nuevos servicios eIDAS 2.0 conforme la Comisión publica sus actos de ejecución. Sin migraciones, sin re-arquitectura, sin interrupciones."
+          lead="Enterprise Suite y GoCertius están diseñadas para incorporar los nuevos servicios eIDAS 2.0 a medida que la Comisión publica sus actos de ejecución y cada servicio obtiene su cualificación. Sin migraciones, sin re-arquitectura, sin interrupciones."
         />
       </div>
       <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4 reveal-group">

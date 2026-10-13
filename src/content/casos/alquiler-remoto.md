@@ -39,6 +39,6 @@ POST /api/v1/contracts/sign
 
 ## Análisis jurídico
 
-La combinación de certificado digital y OTP cumple los requisitos de la firma electrónica avanzada (eIDAS Art. 26): vinculación exclusiva con el firmante, identificación verificable e integridad del documento. Plena validez jurídica sin desplazamientos.
+La combinación de certificado digital y OTP cumple los requisitos de la firma electrónica avanzada (eIDAS Art. 26): vinculación exclusiva con el firmante, identificación verificable e integridad del documento. Efectos jurídicos y valor probatorio reforzado, sin desplazamientos.
 
 **Simulación interactiva:** [Trust Explorer → Contrato de alquiler remoto](/escenarios)

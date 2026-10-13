@@ -69,3 +69,15 @@ Respuesta del asesor legal (prompt en `docs/REVISION-LEGAL-prompt.md`) aplicada:
 - **Métricas:** con fuente y fecha ("Datos internos de g-digital, acumulados a 2026").
 - **Disclaimer uniforme** en todas las fichas de contenido (ArticleLayout): "Contenido divulgativo con fines comerciales; no constituye asesoramiento jurídico".
 - **Pendiente de la ronda 1** (la respuesta no los cubrió): E soberanía/CLOUD Act/PQC, F AI Act, G citas de casos de uso, H.1 sentencia AP Lleida (sin citar hasta tener identificadores verificados).
+
+## Revisión legal — ronda 2 aplicada (2026-10-10, Harvey)
+
+Sección I del prompt (`docs/REVISION-LEGAL-prompt.md`) revisada con **Harvey** (fuentes UE + España + web; análisis en profundidad). Es un segundo criterio con fuentes primarias, **no** la aprobación del asesor humano. Registro local (no versionado): `.trabajo-local/harvey/2026-10-10/H001/`.
+
+- **Numeración eIDAS en español oficial:** se cita primero la numeración de la versión española y la inglesa entre paréntesis — archivo **45 decies-45 undecies** (45i-45j), libros mayores **45 duodecies-45 terdecies** (45k-45l), declaración de atributos **45 ter-45 nonies** (45b-45h), cartera transfronteriza **5 septies** (5f). Verificado en EUR-Lex (consolidado 18-10-2024).
+- **QEL:** nombre comercial "registro electrónico cualificado (QEL)", glosado una vez como «libro mayor electrónico cualificado» (término oficial ES). La presunción exige que servicio y prestador figuren en las listas de confianza **en el momento relevante**; nada sugiere que EADTrust ya preste un QEL cualificado. Reg. Ejec. (UE) 2025/2531: "en vigor desde el 6-ene-2026, fija las normas y especificaciones de referencia". Fuera: "compras el derecho", "el registro prueba el orden".
+- **Digitalización certificada:** fuera "original electrónico único" y "valor probatorio pleno" → "copia electrónica fiel y trazable" / "reforzar el valor probatorio". Destrucción del papel solo si el régimen legal, contractual y probatorio lo permite. Plazo: art. 30 CCom (seis años) "sin perjuicio de plazos sectoriales". CTEAJE → NTI de Digitalización / Orden EHA/962/2007 como referencias por ámbito.
+- **Seguros (limitativas, art. 3 LCS):** OK; el riesgo "sin" pasa a "puede dificultar la prueba… y comprometer su oponibilidad".
+- **MCP:** "clientes MCP compatibles" + "su publicación no implica SLA, soporte de integración ni compromiso de disponibilidad en producción". Evidencia de los 3 repos públicos (MIT, README) guardada en `evidencias/github-mcp.json`.
+- **Coherencia con ronda 1 (barrido del sitio):** retiradas las fórmulas residuales "inversión de la carga", "garantiza", "plena validez", "queda probado", "presunción de validez" y el H2 de la home "Validez legal." → "Valor probatorio."; archivo propio siempre "diseñado conforme a los requisitos del servicio cualificado".
+- **Pendiente:** contraste humano de las citas que solo aporta Harvey (CCom art. 30, LSSI arts. 23-24, LCD art. 5, NTI, Orden EHA/962/2007); H.1 sigue igual (sin jurisprudencia).
