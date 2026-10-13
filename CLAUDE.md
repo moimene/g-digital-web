@@ -53,6 +53,7 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - Datos verificables (Claim Registry): Top 10 FT Innovative Lawyers, Law.com 2025, +40.000 evidencias GoCertius, 298 escenarios, EADTrust 51% Garrigues.
 
 ## Despliegue (Vercel) y GOTCHAS
+- **Añade ficheros concretos; nunca `git add -A`.** El repositorio es público y la carpeta principal puede contener material comercial (MOI-657).
 - Pre-enlazado al proyecto `g-digital-web` vía `.vercel/project.json`. Deploy: `npx vercel` (preview) / `npx vercel --prod`.
 - **(1)** macOS usa **zsh**: NO pongas comentarios `#` en la línea del comando (los toma como rutas → "Can't deploy more than one path").
 - **(2)** Ejecuta **desde la carpeta del proyecto**, no desde `~`.
