@@ -7,7 +7,8 @@ nivel: experto
 featured: false
 draft: false
 sector: 'Food & Distribución'
-servicio: 'Evidence + Custody'
+# PENDIENTE-RONDA3 MOI-659
+servicio: 'Evidence (custodia)'
 norma: 'Reg. (CE) 852/2004 · RD 640/2006'
 related: ['evidencia-cualificada']
 glossary: ['worm', 'qtsp']

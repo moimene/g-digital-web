@@ -5,6 +5,7 @@ import TrustSimulator from '../components/TrustSimulator.astro';
 import { casos } from '../data/casos-uso';
 import CertificationsBar from '../components/CertificationsBar.astro';
 ---
+{/* VALIDAR plan:gdw:w-factoria-arquitectura #4 */}
 <Base
   title="Trust Explorer · La Factoría | g-digital"
   description="Simulador de casos de uso de la Trust API: convierte cada operación en evidencia legal cualificada. Compara la operación sin regulación frente a la operación con Trust API (eIDAS)."
@@ -15,6 +16,7 @@ import CertificationsBar from '../components/CertificationsBar.astro';
     <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-16 lg:pt-28 lg:pb-20">
       <p class="label text-green mb-6">La Factoría · Trust Explorer</p>
       <h1 class="head display text-cloud text-4xl sm:text-5xl lg:text-[4rem] font-semibold max-w-4xl">Cada operación, convertida en evidencia legal.</h1>
+      {/* VALIDAR plan:gdw:w-factoria-arquitectura #4 */}
       <p class="mt-8 max-w-2xl text-lg text-cloud/70 leading-relaxed">El simulador de la Trust API: elige un caso de uso y compara, paso a paso, la misma operación <span class="text-cloud font-medium">sin regulación</span> (deuda legal) frente a <span class="text-green font-medium">con Trust API</span> (evidencia cualificada conforme a eIDAS).</p>
       <div class="mt-9 flex flex-col sm:flex-row gap-4">
         <a href="#explorer" class="bg-green text-ink px-7 py-3.5 rounded-xl font-semibold hover:bg-lime transition-colors">Explorar casos de uso</a>
@@ -35,8 +37,10 @@ import CertificationsBar from '../components/CertificationsBar.astro';
         </div>
         <div class="rounded-2xl border border-green/30 bg-green/5 p-7 reveal">
           <p class="mono text-[11px] text-green">CON TRUST API</p>
+          {/* VALIDAR plan:gdw:w-factoria-arquitectura #4 */}
           <h3 class="head text-xl text-cloud font-semibold mt-2 flex items-center gap-2"><i class="ph ph-seal-check text-green"></i> Evidencia cualificada</h3>
-          <p class="text-cloud/65 text-sm mt-3 leading-relaxed">La misma operación invoca los microservicios eIDAS de la Factoría y produce evidencia sellada, verificable e inmutable. La presunción legal desplaza la carga a quien impugna.</p>
+          {/* VALIDAR plan:gdw:w-factoria-arquitectura #17 */}
+          <p class="text-cloud/65 text-sm mt-3 leading-relaxed">La misma operación invoca los gestores de La Factoría y produce evidencia sellada, verificable e inmutable. La presunción legal desplaza la carga a quien impugna.</p>
         </div>
       </div>
     </div>
@@ -57,7 +61,7 @@ import CertificationsBar from '../components/CertificationsBar.astro';
     <div class="max-w-7xl mx-auto px-6">
       <p class="label text-green mb-3">Demostradores sectoriales</p>
       <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">Profundiza por sector.</h2>
-      <p class="mt-4 text-cloud/60 max-w-2xl">Recorridos completos de un proceso real, fase a fase, con su expediente probatorio y los managers que intervienen.</p>
+      <p class="mt-4 text-cloud/60 max-w-2xl">Recorridos completos de un proceso real, fase a fase, con su expediente probatorio y los gestores que intervienen.</p>
       <div class="mt-10 grid md:grid-cols-2 gap-6">
         <a href="/escenarios/banca" class="card rounded-2xl p-7 group reveal" style="--tone:#22D3EE">
           <div class="flex items-center justify-between mb-4">
@@ -108,6 +112,7 @@ import CertificationsBar from '../components/CertificationsBar.astro';
     <Wireframe variant="sphere" class="absolute left-1/2 -translate-x-1/2 -top-28 w-[34rem] h-[34rem] opacity-30 hidden md:block" accent={false} />
     <div class="relative max-w-4xl mx-auto px-6 py-24 text-center">
       <h2 class="head display text-3xl lg:text-5xl text-cloud font-semibold">¿Tu operación está generando deuda legal?</h2>
+      {/* VALIDAR plan:gdw:w-factoria-arquitectura #4 */}
       <p class="mt-6 text-cloud/70 max-w-xl mx-auto">Cuéntanos tu proceso crítico y te mostramos qué evidencia cualificada produciría con la Trust API.</p>
       <div class="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contacto" class="bg-green text-ink px-8 py-4 rounded-xl font-semibold hover:bg-lime transition-colors">Pon tu reto sobre la mesa</a>

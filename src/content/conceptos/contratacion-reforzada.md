@@ -10,6 +10,7 @@ draft: false
 aka: ['canal contractual probatorio', 'formalización como proceso']
 related: ['evidencia-cualificada', 'business-wallet', 'eudi-wallet']
 glossary: ['qes', 'erds', 'qea', 'qtsp']
+# VALIDAR plan:gdw:w-factoria-arquitectura #13
 ---
 
 ## La definición
@@ -28,7 +29,7 @@ El patrón funciona **hoy** con los medios actuales (certificados, OTP con traza
 
 ## Qué hacemos nosotros
 
-La Factoría orquesta la cadena completa por API o MCP — Evidence, Signature, Notification y Custody — operada por el QTSP del grupo, de modo que el proceso contractual de cualquier canal (digital, presencial digitalizado o mediado) produzca el mismo expediente verificable.
+La Factoría (EAD Factory) orquesta la cadena completa por API o MCP — Evidence (con custodia), Signature y Notification, con los servicios de confianza de EADTrust —, de modo que el proceso contractual de cualquier canal (digital, presencial digitalizado o mediado) produzca el mismo expediente verificable.
 
 ## Para profundizar
 

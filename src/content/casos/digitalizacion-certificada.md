@@ -7,7 +7,9 @@ nivel: intermedio
 featured: true
 draft: false
 sector: 'Transversal'
-servicio: 'Evidence + Notification + Custody'
+# PENDIENTE-RONDA3 MOI-659
+servicio: 'Evidence (custodia) + Notification'
+# VALIDAR plan:gdw:w-factoria-arquitectura #13 #15
 norma: 'Art. 326.4 LEC · eIDAS 45 decies y ss.'
 related: ['evidencia-cualificada', 'contratacion-reforzada', 'que-es-deuda-legal']
 glossary: ['qea', 'erds', 'qtsp', 'pades', 'worm']

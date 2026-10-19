@@ -7,7 +7,8 @@ nivel: experto
 featured: false
 draft: false
 sector: 'Banca · Operaciones'
-servicio: 'Evidence + Custody'
+# PENDIENTE-RONDA3 MOI-659
+servicio: 'Evidence (custodia)'
 norma: 'Ley 10/2010 PBC · SEPBLAC'
 related: ['evidencia-cualificada', 'deuda-legal']
 glossary: ['worm', 'kyc']
