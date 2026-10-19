@@ -1,19 +1,19 @@
-<svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" font-family="Rubik, sans-serif">
-<title id="t">Contract Tech — g-digital</title>
-<desc id="d">Línea 02 Contract Tech: el contrato como proceso gobernado por reglas, con visión de la posición contractual.</desc>
+<svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ig02-t ig02-d" font-family="Rubik, sans-serif">
+<title id="ig02-t">Contract Tech — g-digital</title>
+<desc id="ig02-d">Línea 02 Contract Tech: el contrato como proceso gobernado por reglas, con visión de la posición contractual.</desc>
 <defs>
-<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&amp;family=Rubik:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap');.h{font-family:'Poppins','Century Gothic',sans-serif}.b{font-family:'Rubik',sans-serif}.m{font-family:'JetBrains Mono',monospace}</style>
-<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+<style>.ig02-h{font-family:'Poppins','Century Gothic',sans-serif}.ig02-b{font-family:'Rubik',sans-serif}.ig02-m{font-family:'JetBrains Mono',monospace}</style>
+<filter id="ig02-g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
 </defs>
 <rect width="1080" height="1350" fill="#05060A"/>
-<rect width="1080" height="1350" filter="url(#g)" opacity="0.05"/>
+<rect width="1080" height="1350" filter="url(#ig02-g)" opacity="0.05"/>
 <rect x="40" y="40" width="1000" height="1270" rx="18" fill="none" stroke="#F4F6F5" stroke-opacity="0.08"/>
 
-<text x="90" y="116" class="m" fill="#CCF943" font-size="20" letter-spacing="4">LÍNEA 02 · CONTRACT TECH</text>
-<text x="1000" y="118" text-anchor="end" class="h" font-size="30" font-weight="700"><tspan fill="#0CF25D">g</tspan><tspan fill="#F4F6F5">-digital</tspan></text>
-<text x="90" y="206" class="h" font-size="52" font-weight="600" fill="#F4F6F5">El contrato como <tspan fill="#CCF943">proceso</tspan>,</text>
-<text x="90" y="268" class="h" font-size="52" font-weight="600" fill="#F4F6F5">no como PDF.</text>
-<text x="90" y="326" class="b" font-size="23" fill="#9AA39F">Gestión del ciclo de vida del contrato, gobernada por reglas.</text>
+<text x="90" y="116" class="ig02-m" fill="#CCF943" font-size="20" letter-spacing="4">LÍNEA 02 · CONTRACT TECH</text>
+<text x="1000" y="118" text-anchor="end" class="ig02-h" font-size="30" font-weight="700"><tspan fill="#0CF25D">g</tspan><tspan fill="#F4F6F5">-digital</tspan></text>
+<text x="90" y="206" class="ig02-h" font-size="52" font-weight="600" fill="#F4F6F5">El contrato como <tspan fill="#CCF943">proceso</tspan>,</text>
+<text x="90" y="268" class="ig02-h" font-size="52" font-weight="600" fill="#F4F6F5">no como PDF.</text>
+<text x="90" y="326" class="ig02-b" font-size="23" fill="#9AA39F">Gestión del ciclo de vida del contrato, gobernada por reglas.</text>
 
 <!-- motif: ribbon / flujo -->
 <g fill="none" stroke="#CCF943" stroke-linecap="round">
@@ -24,18 +24,18 @@
 <path d="M120 640 C320 560,420 740,540 650 S760 560,960 640" stroke-opacity=".15"/>
 </g>
 
-<text x="90" y="804" class="h" font-size="30" font-weight="700" fill="#CCF943">01</text>
-<text x="162" y="800" class="h" font-size="24" font-weight="600" fill="#F4F6F5">Del documento al proceso</text>
-<text x="162" y="832" class="b" font-size="18" fill="#9AA39F">Máquina de estados: preparación, firma, ejecución, cierre.</text>
-<text x="90" y="964" class="h" font-size="30" font-weight="700" fill="#CCF943">02</text>
-<text x="162" y="960" class="h" font-size="24" font-weight="600" fill="#F4F6F5">Motores de reglas, no hardcode</text>
-<text x="162" y="992" class="b" font-size="18" fill="#9AA39F">Lógica explícita, auditable y sin sorpresas en ejecución.</text>
-<text x="90" y="1124" class="h" font-size="30" font-weight="700" fill="#CCF943">03</text>
-<text x="162" y="1120" class="h" font-size="24" font-weight="600" fill="#F4F6F5">Posición contractual visible</text>
-<text x="162" y="1152" class="b" font-size="18" fill="#9AA39F">Contract Guardian vigila tu cartera como un activo.</text>
+<text x="90" y="804" class="ig02-h" font-size="30" font-weight="700" fill="#CCF943">01</text>
+<text x="162" y="800" class="ig02-h" font-size="24" font-weight="600" fill="#F4F6F5">Del documento al proceso</text>
+<text x="162" y="832" class="ig02-b" font-size="18" fill="#9AA39F">Máquina de estados: preparación, firma, ejecución, cierre.</text>
+<text x="90" y="964" class="ig02-h" font-size="30" font-weight="700" fill="#CCF943">02</text>
+<text x="162" y="960" class="ig02-h" font-size="24" font-weight="600" fill="#F4F6F5">Motores de reglas, no hardcode</text>
+<text x="162" y="992" class="ig02-b" font-size="18" fill="#9AA39F">Lógica explícita, auditable y sin sorpresas en ejecución.</text>
+<text x="90" y="1124" class="ig02-h" font-size="30" font-weight="700" fill="#CCF943">03</text>
+<text x="162" y="1120" class="ig02-h" font-size="24" font-weight="600" fill="#F4F6F5">Posición contractual visible</text>
+<text x="162" y="1152" class="ig02-b" font-size="18" fill="#9AA39F">Contract Guardian vigila tu cartera como un activo.</text>
 
-<text x="90" y="1200" class="m" font-size="14" fill="#CCF943">Tres dimensiones de CLM · blocks · mono-contrato · posición</text>
+<text x="90" y="1200" class="ig02-m" font-size="14" fill="#CCF943">Tres dimensiones de CLM · blocks · mono-contrato · posición</text>
 <rect x="80" y="1238" width="920" height="1.5" fill="#F4F6F5" opacity="0.15"/>
-<text x="80" y="1276" class="m" font-size="15" fill="#F4F6F5" fill-opacity="0.55" letter-spacing="1.5">LA TECNOLOGÍA DE GARRIGUES PARA LA COMPLEJIDAD JURÍDICA</text>
-<text x="1000" y="1276" text-anchor="end" class="m" font-size="15" fill="#F4F6F5" fill-opacity="0.7">g-digital.garrigues.com</text>
+<text x="80" y="1276" class="ig02-m" font-size="15" fill="#F4F6F5" fill-opacity="0.55" letter-spacing="1.5">LA TECNOLOGÍA DE GARRIGUES PARA LA COMPLEJIDAD JURÍDICA</text>
+<text x="1000" y="1276" text-anchor="end" class="ig02-m" font-size="15" fill="#F4F6F5" fill-opacity="0.7">g-digital.garrigues.com</text>
 </svg>

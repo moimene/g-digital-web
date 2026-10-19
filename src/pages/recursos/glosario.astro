@@ -23,7 +23,7 @@ const terms = (await getCollection('glosario')).sort((a, b) =>
       />
       <dl class="mt-14 grid sm:grid-cols-2 gap-x-12 gap-y-8">
         {terms.map((g) => (
-          <div id={g.slug} class="border-l-2 pl-5 reveal scroll-mt-28" style="border-color:rgba(var(--accent-rgb),.5)">
+          <div id={g.slug} class="border-l-2 pl-5 reveal " style="border-color:rgba(var(--accent-rgb),.5)">
             <dt class="head t1 font-semibold text-lg">{g.data.term}</dt>
             <dd class="t2 text-sm mt-1.5 leading-relaxed">{g.data.short}</dd>
             <dd class="mono text-[10px] t3 mt-2">{LINEAS_RECURSOS[g.data.linea]}</dd>

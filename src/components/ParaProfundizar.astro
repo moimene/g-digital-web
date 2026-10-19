@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+const { linea } = Astro.props;
+const grupos = await Promise.all(['articulos', 'conceptos', 'casos'].map(async (tipo) => {
+ const entradas = await getCollection(tipo as 'articulos');
+ return entradas.filter(e => e.data.linea === linea && !e.data.draft).map(e => ({title:e.data.title, href:`/recursos/${tipo}/${e.slug}`}));
+}));
+---
+<section class="surface-paper py-16"><div class="max-w-7xl mx-auto px-6"><h2 class="head text-2xl t1">Para profundizar</h2><ul class="mt-6 space-y-4">{grupos.flat().map(e => <li><a class="accent underline" href={e.href}>{e.title}</a></li>)}</ul></div></section>

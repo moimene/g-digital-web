@@ -1,19 +1,19 @@
-<svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" font-family="Rubik, sans-serif">
-<title id="t">GRC & IA — g-digital</title>
-<desc id="d">Línea 04 GRC e IA: gobernar y demostrar el cumplimiento, incluida la IA, de obligaciones a evidencias.</desc>
+<svg viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="ig04-t ig04-d" font-family="Rubik, sans-serif">
+<title id="ig04-t">GRC & IA — g-digital</title>
+<desc id="ig04-d">Línea 04 GRC e IA: gobernar y demostrar el cumplimiento, incluida la IA, de obligaciones a evidencias.</desc>
 <defs>
-<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&amp;family=Rubik:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap');.h{font-family:'Poppins','Century Gothic',sans-serif}.b{font-family:'Rubik',sans-serif}.m{font-family:'JetBrains Mono',monospace}</style>
-<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
+<style>.ig04-h{font-family:'Poppins','Century Gothic',sans-serif}.ig04-b{font-family:'Rubik',sans-serif}.ig04-m{font-family:'JetBrains Mono',monospace}</style>
+<filter id="ig04-g"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter>
 </defs>
 <rect width="1080" height="1350" fill="#05060A"/>
-<rect width="1080" height="1350" filter="url(#g)" opacity="0.05"/>
+<rect width="1080" height="1350" filter="url(#ig04-g)" opacity="0.05"/>
 <rect x="40" y="40" width="1000" height="1270" rx="18" fill="none" stroke="#F4F6F5" stroke-opacity="0.08"/>
 
-<text x="90" y="116" class="m" fill="#5B9CF6" font-size="20" letter-spacing="4">LÍNEA 04 · GRC &amp; IA</text>
-<text x="1000" y="118" text-anchor="end" class="h" font-size="30" font-weight="700"><tspan fill="#0CF25D">g</tspan><tspan fill="#F4F6F5">-digital</tspan></text>
-<text x="90" y="206" class="h" font-size="50" font-weight="600" fill="#F4F6F5">Gobernar y demostrar</text>
-<text x="90" y="266" class="h" font-size="50" font-weight="600" fill="#F4F6F5">el cumplimiento <tspan fill="#5B9CF6">(y la IA)</tspan>.</text>
-<text x="90" y="324" class="b" font-size="23" fill="#9AA39F">De obligaciones a evidencias. La tecnología, junto a Garrigues.</text>
+<text x="90" y="116" class="ig04-m" fill="#5B9CF6" font-size="20" letter-spacing="4">LÍNEA 04 · GRC &amp; IA</text>
+<text x="1000" y="118" text-anchor="end" class="ig04-h" font-size="30" font-weight="700"><tspan fill="#0CF25D">g</tspan><tspan fill="#F4F6F5">-digital</tspan></text>
+<text x="90" y="206" class="ig04-h" font-size="50" font-weight="600" fill="#F4F6F5">Gobernar y demostrar</text>
+<text x="90" y="266" class="ig04-h" font-size="50" font-weight="600" fill="#F4F6F5">el cumplimiento <tspan fill="#5B9CF6">(y la IA)</tspan>.</text>
+<text x="90" y="324" class="ig04-b" font-size="23" fill="#9AA39F">De obligaciones a evidencias. La tecnología, junto a Garrigues.</text>
 
 <!-- motif: anillo / loop -->
 <g fill="none" stroke="#5B9CF6" transform="translate(540 560)">
@@ -26,18 +26,18 @@
 <ellipse rx="152" ry="66" transform="rotate(144)" stroke-opacity=".13"/>
 </g>
 
-<text x="90" y="804" class="h" font-size="30" font-weight="700" fill="#5B9CF6">01</text>
-<text x="162" y="800" class="h" font-size="24" font-weight="600" fill="#F4F6F5">GRC Compass</text>
-<text x="162" y="832" class="b" font-size="18" fill="#9AA39F">Obligaciones → Riesgos → Controles → Evidencias → Issues.</text>
-<text x="90" y="964" class="h" font-size="30" font-weight="700" fill="#5B9CF6">02</text>
-<text x="162" y="960" class="h" font-size="24" font-weight="600" fill="#F4F6F5">AIMS Console</text>
-<text x="162" y="992" class="b" font-size="18" fill="#9AA39F">Inventario, clasificación y evidencia para el AI Act / ISO 42001.</text>
-<text x="90" y="1124" class="h" font-size="30" font-weight="700" fill="#5B9CF6">03</text>
-<text x="162" y="1120" class="h" font-size="24" font-weight="600" fill="#F4F6F5">Multi-dominio · WORM</text>
-<text x="162" y="1152" class="b" font-size="18" fill="#9AA39F">RGPD, DORA, NIS2 y ESG con auditoría inmutable.</text>
+<text x="90" y="804" class="ig04-h" font-size="30" font-weight="700" fill="#5B9CF6">01</text>
+<text x="162" y="800" class="ig04-h" font-size="24" font-weight="600" fill="#F4F6F5">GRC Compass</text>
+<text x="162" y="832" class="ig04-b" font-size="18" fill="#9AA39F">Obligaciones → Riesgos → Controles → Evidencias → Issues.</text>
+<text x="90" y="964" class="ig04-h" font-size="30" font-weight="700" fill="#5B9CF6">02</text>
+<text x="162" y="960" class="ig04-h" font-size="24" font-weight="600" fill="#F4F6F5">AIMS Console</text>
+<text x="162" y="992" class="ig04-b" font-size="18" fill="#9AA39F">Inventario, clasificación y evidencia para el AI Act / ISO 42001.</text>
+<text x="90" y="1124" class="ig04-h" font-size="30" font-weight="700" fill="#5B9CF6">03</text>
+<text x="162" y="1120" class="ig04-h" font-size="24" font-weight="600" fill="#F4F6F5">Multi-dominio · WORM</text>
+<text x="162" y="1152" class="ig04-b" font-size="18" fill="#9AA39F">RGPD, DORA, NIS2 y ESG con auditoría inmutable.</text>
 
-<text x="90" y="1200" class="m" font-size="14" fill="#5B9CF6">Un framework, múltiples dominios</text>
+<text x="90" y="1200" class="ig04-m" font-size="14" fill="#5B9CF6">Un framework, múltiples dominios</text>
 <rect x="80" y="1238" width="920" height="1.5" fill="#F4F6F5" opacity="0.15"/>
-<text x="80" y="1276" class="m" font-size="15" fill="#F4F6F5" fill-opacity="0.55" letter-spacing="1.5">LA TECNOLOGÍA DE GARRIGUES PARA LA COMPLEJIDAD JURÍDICA</text>
-<text x="1000" y="1276" text-anchor="end" class="m" font-size="15" fill="#F4F6F5" fill-opacity="0.7">g-digital.garrigues.com</text>
+<text x="80" y="1276" class="ig04-m" font-size="15" fill="#F4F6F5" fill-opacity="0.55" letter-spacing="1.5">LA TECNOLOGÍA DE GARRIGUES PARA LA COMPLEJIDAD JURÍDICA</text>
+<text x="1000" y="1276" text-anchor="end" class="ig04-m" font-size="15" fill="#F4F6F5" fill-opacity="0.7">g-digital.garrigues.com</text>
 </svg>

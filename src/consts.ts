@@ -25,6 +25,7 @@ export const FACTORIA = [
 ];
 
 export const NAV = [
+  { href: '/soluciones/enterprise-suite', label: 'Enterprise Suite' },
   { href: '/recursos', label: 'Recursos' },
   { href: '/nosotros', label: 'Nosotros' },
 ];

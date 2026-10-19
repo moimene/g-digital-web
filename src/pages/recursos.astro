@@ -47,8 +47,7 @@ const items: Item[] = [
   ...whitepapers,
 ];
 
-const destacado = items.find((i) => i.href.endsWith('/que-es-deuda-legal'))
-  ?? items.find((i) => i.featured && !i.draft)
+const destacado = items.find((i) => i.featured && !i.draft)
   ?? items[0];
 const resto = items.filter((i) => i !== destacado);
 
@@ -145,7 +144,7 @@ const medios: [string, string, string?][] = [
   </section>
 
   <!-- BIBLIOTECA (papel-2) -->
-  <section id="whitepapers" class="surface-paper-2 py-20 lg:py-24 border-t scroll-mt-20" style="border-color:var(--line)">
+  <section id="whitepapers" class="surface-paper-2 py-20 lg:py-24 border-t " style="border-color:var(--line)">
     <div class="max-w-7xl mx-auto px-6">
       <SectionIntro label="Biblioteca" title="Todo el conocimiento, filtrable." />
       <div id="biblio" class="mt-12">
@@ -206,7 +205,7 @@ const medios: [string, string, string?][] = [
   </section>
 
   <!-- PRUÉBALO / DESARROLLADORES (tinta, momento producto) -->
-  <section id="desarrolladores" class="surface-ink grain py-20 lg:py-24 scroll-mt-24">
+  <section id="desarrolladores" class="surface-ink grain py-20 lg:py-24 ">
     <div class="max-w-7xl mx-auto px-6">
       <SectionIntro
         label="Pruébalo tú mismo"
@@ -251,9 +250,9 @@ const medios: [string, string, string?][] = [
       </div>
       <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-8 reveal-group">
         <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">Deuda Legal</p><p class="t2 text-sm mt-1.5 leading-relaxed">El pasivo invisible de las operaciones sin valor probatorio.</p></div>
-        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">Compliance Injection</p><p class="t2 text-sm mt-1.5 leading-relaxed">Inyectar confianza eIDAS en cualquier proceso, por API o MCP.</p></div>
-        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">EUDI Wallet</p><p class="t2 text-sm mt-1.5 leading-relaxed">La cartera europea: de obligación regulatoria a ventaja temprana.</p></div>
-        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">MCP</p><p class="t2 text-sm mt-1.5 leading-relaxed">Confianza cualificada como herramienta nativa de tus agentes de IA.</p></div>
+        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">Contrato computable</p><p class="t2 text-sm mt-1.5 leading-relaxed">El contrato expresado como reglas que pueden ejecutarse.</p></div>
+        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">RWA</p><p class="t2 text-sm mt-1.5 leading-relaxed">Activos del mundo real representados digitalmente.</p></div>
+        <div class="border-l-2 pl-5" style="border-color:rgba(var(--accent-rgb),.5)"><p class="head t1 font-semibold">AI Act</p><p class="t2 text-sm mt-1.5 leading-relaxed">Marco europeo de obligaciones para la inteligencia artificial.</p></div>
       </div>
     </div>
   </section>

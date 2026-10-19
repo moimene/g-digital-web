@@ -14,7 +14,7 @@ const first = casos[0];
 const managersOrder = ['Evidence', 'Signature', 'Notification', 'Custody'] as const;
 ---
 <!-- SELECTOR -->
-<section class="relative grain py-20 lg:py-24 scroll-mt-20" id="explorer">
+<section class="relative grain py-20 lg:py-24 " id="explorer">
   <div class="max-w-7xl mx-auto px-6">
     <p class="label text-green mb-3">{kicker}</p>
     <h2 class="head display text-3xl lg:text-[2.4rem] text-cloud font-semibold">{title}</h2>
@@ -63,9 +63,9 @@ const managersOrder = ['Evidence', 'Signature', 'Notification', 'Custody'] as co
         <div class="flex lg:flex-col items-center justify-center gap-2 px-2">
           <i class="ph ph-arrow-right text-cloud/40 text-xl hidden lg:block"></i>
           <i class="ph ph-arrow-down text-cloud/40 text-xl lg:hidden"></i>
-          <code id="dg-endpoint" class="mono text-[10px] px-2 py-1 rounded-md bg-ink border whitespace-nowrap" style="border-color:color-mix(in srgb, var(--tone) 45%, transparent);color:var(--tone)">{first.api.method} {first.api.endpoint}</code>
+          <code id="dg-endpoint" class="mono text-[10px] px-2 py-1 rounded-md bg-ink border whitespace-normal break-all lg:whitespace-nowrap" style="border-color:color-mix(in srgb, var(--tone) 45%, transparent);color:var(--tone)">{first.api.method} {first.api.endpoint}</code>
         </div>
-        <div class="flex-1 rounded-xl border border-cloud/12 p-4">
+        <div class="flex-1 rounded-xl border border-cloud/10 p-4">
           <p class="mono text-[10px] text-cloud/45 mb-3 text-center">FACTORÍA · MICROSERVICIOS</p>
           <div class="grid grid-cols-2 gap-2.5">
             {managersOrder.map((m) => (
@@ -146,6 +146,7 @@ const managersOrder = ['Evidence', 'Signature', 'Notification', 'Custody'] as co
 <div id="qtsp-modal" class="hidden fixed inset-0 z-[100] bg-black/75 backdrop-blur-sm overflow-y-auto p-4 sm:p-8">
   <div class="max-w-3xl mx-auto">
     <div class="flex flex-wrap justify-end gap-2 mb-3 no-print">
+      {/* VALIDAR plan:gdw:w-factoria-arquitectura #35 */}
       <button id="qtsp-print" type="button" class="bg-green text-ink px-4 py-2 rounded-lg font-semibold text-sm inline-flex items-center gap-1.5"><i class="ph ph-printer"></i> Imprimir / PDF</button>
       <a id="qtsp-tsl" href="https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/ES/tsp/40" target="_blank" rel="noopener" class="border border-cloud/30 text-cloud px-4 py-2 rounded-lg text-sm inline-flex items-center gap-1.5 hover:bg-cloud/10">EU Trust List <i class="ph ph-arrow-up-right"></i></a>
       <button id="qtsp-close" type="button" class="border border-cloud/30 text-cloud px-4 py-2 rounded-lg text-sm inline-flex items-center gap-1.5 hover:bg-cloud/10"><i class="ph ph-x"></i> Cerrar</button>
@@ -259,8 +260,10 @@ const managersOrder = ['Evidence', 'Signature', 'Notification', 'Custody'] as co
     const payloadStr = esc(JSON.stringify(d.evidence.payload, null, 2));
 
     const cert = byId('qtsp-cert')!;
+    // VALIDAR plan:gdw:w-factoria-arquitectura #35
     cert.innerHTML = `
-      <div style="padding:20px">
+      <div style="padding:20px;position:relative">
+      <div style="position:absolute;top:45%;left:5%;width:90%;text-align:center;transform:rotate(-20deg);color:#555;font:700 24px sans-serif;opacity:.65;pointer-events:none;z-index:2">ESPÉCIMEN · SIN VALOR PROBATORIO</div>
        <div style="border:2px solid #003366;border-radius:6px;padding:4px">
         <div style="border:1px solid #003366;border-radius:4px;padding:22px 24px;font-family:Georgia,'Times New Roman',serif">
           <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-bottom:1px solid #00336633;padding-bottom:12px">
@@ -271,7 +274,7 @@ const managersOrder = ['Evidence', 'Signature', 'Notification', 'Custody'] as co
             <img src="/certifications/eidas-seal.png" alt="eIDAS QTSP" style="height:42px;object-fit:contain"/>
           </div>
 
-          <h2 style="text-align:center;color:#003366;font-size:18px;letter-spacing:1px;margin:18px 0 4px">CERTIFICADO DE EVIDENCIA</h2>
+          <h2 style="text-align:center;color:#003366;font-size:18px;letter-spacing:1px;margin:18px 0 4px">CERTIFICADO DE EVIDENCIA (simulación)</h2>
           <p style="text-align:center;color:#003366;font-size:13px;letter-spacing:3px;margin:0 0 14px">ELECTRÓNICA CUALIFICADA</p>
 
           <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-family:monospace;font-size:11px;color:#4a4a4a;background:#00336608;border-radius:4px;padding:8px 12px">

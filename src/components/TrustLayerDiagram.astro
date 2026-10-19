@@ -9,7 +9,6 @@ const systems = [
   { icon: 'ph-device-mobile', label: 'Apps' },
   { icon: 'ph-flow-arrow', label: 'Low-Code' },
 ];
-const conns = ['SDK', 'REST', 'API', 'POST', 'Webhook'];
 const services = [
   { icon: 'ph-fingerprint', label: 'Evidence' },
   { icon: 'ph-pen-nib', label: 'Signature' },
@@ -23,12 +22,12 @@ const svcP = serviceX.flatMap((_x, i) => [0.4, 1.25].map((b) => ({ i, begin: (i 
 ---
 <div class="relative w-full max-w-4xl mx-auto rounded-2xl border border-cloud/10 overflow-hidden reveal" style="aspect-ratio:16/9;background:radial-gradient(120% 80% at 50% 50%, rgba(12,242,93,.06), transparent 70%)">
   <!-- Curvas + partículas -->
-  <svg class="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+  <svg class="absolute inset-0 w-full h-full" viewBox="0 0 160 90" aria-hidden="true">
     {systemX.map((x, i) => (
-      <path id={`tl-sp${i}`} d={`M ${x} 28 C ${x} 35, 50 35, 50 42`} fill="none" stroke="rgba(244,246,245,.26)" stroke-width="0.35" />
+      <path id={`tl-sp${i}`} d={`M ${x*1.6} 25.2 C ${x*1.6} 31.5, 80 31.5, 80 37.8`} fill="none" stroke="rgba(244,246,245,.26)" stroke-width="0.35" />
     ))}
     {serviceX.map((x, i) => (
-      <path id={`tl-cp${i}`} d={`M 50 58 C 50 65, ${x} 65, ${x} 72`} fill="none" stroke="rgba(244,246,245,.26)" stroke-width="0.35" />
+      <path id={`tl-cp${i}`} d={`M 80 52.2 C 80 58.5, ${x*1.6} 58.5, ${x*1.6} 64.8`} fill="none" stroke="rgba(244,246,245,.26)" stroke-width="0.35" />
     ))}
     {sysP.map((p) => (
       <circle r="1.2" fill="#F4F6F5" class="flow-dot" opacity="0">
@@ -58,7 +57,7 @@ const svcP = serviceX.flatMap((_x, i) => [0.4, 1.25].map((b) => ({ i, begin: (i 
     </div>
 
     <div class="h-[6%] flex items-center justify-around px-3">
-      {conns.map((c) => (<span class="mono text-[8px] sm:text-[10px] text-green/70">{c}</span>))}
+
     </div>
 
     <div class="h-[8%]"></div>
