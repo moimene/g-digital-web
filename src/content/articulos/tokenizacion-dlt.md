@@ -45,7 +45,7 @@ El patrón se extiende más allá del ladrillo: deuda sindicada tokenizada (con 
 
 ## El socio tecnológico importa tanto como el marco
 
-La infraestructura DLT la aporta **ioBuilders** — en cuyo capital estamos, y que a su vez integra el ecosistema Hedera — con nodos permisionados, smart contracts auditados y conectores a sistemas core. La regla de lectura: los proveedores de blockchain no tienen regulación eIDAS; los prestadores cualificados no tienen DLT. La combinación de ambos, con el diseño legal de Garrigues, es lo que convierte un piloto en un mercado.
+La infraestructura DLT la aporta **ioBuilders** — en cuyo capital estamos, y que a su vez integra el ecosistema Hedera — con nodos permisionados, smart contracts auditados y conectores a sistemas core. La regla de lectura: una red blockchain, por sí sola, no aporta presunciones eIDAS; un prestador cualificado, por sí solo, no aporta la red. La combinación de ambos, con el diseño legal de Garrigues, es lo que convierte un piloto en un mercado.
 
 ## La pregunta correcta para tu caso
 

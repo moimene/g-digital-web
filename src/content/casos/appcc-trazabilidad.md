@@ -7,6 +7,7 @@ nivel: experto
 featured: false
 draft: false
 sector: 'Food & Distribución'
+# PENDIENTE-RONDA3 MOI-659
 servicio: 'Evidence (custodia)'
 norma: 'Reg. (CE) 852/2004 · RD 640/2006'
 related: ['evidencia-cualificada']
@@ -41,6 +42,6 @@ POST /api/v1/evidence-groups/haccp-checkpoint
 
 ## Análisis jurídico
 
-Cumplimiento del Reglamento (CE) 852/2004 (Art. 5), del Codex Alimentarius y del RD 640/2006, demostrable ante AESAN y el sistema RASFF: cada registro es evidencia con fecha cierta e integridad garantizada.
+Cumplimiento del Reglamento (CE) 852/2004 (Art. 5), del Codex Alimentarius y del RD 640/2006, demostrable ante AESAN y el sistema RASFF: cada registro es evidencia con fecha cierta e integridad verificable.
 
 **Simulación interactiva:** [Trust Explorer → Control APPCC](/escenarios)

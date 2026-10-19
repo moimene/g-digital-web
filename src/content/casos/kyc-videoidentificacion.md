@@ -7,6 +7,7 @@ nivel: experto
 featured: false
 draft: false
 sector: 'Banca · Operaciones'
+# PENDIENTE-RONDA3 MOI-659
 servicio: 'Evidence (custodia)'
 norma: 'Ley 10/2010 PBC · SEPBLAC'
 related: ['evidencia-cualificada', 'deuda-legal']
@@ -41,6 +42,6 @@ POST /api/v1/evidence-groups/video-kyc
 
 ## Análisis jurídico
 
-Expediente de diligencia debida conforme a la Ley 10/2010 de prevención del blanqueo, el RD 304/2014 y la Circular 1/2023 de SEPBLAC: cada componente del onboarding queda probado de forma íntegra y con fecha cierta.
+Expediente de diligencia debida conforme a la Ley 10/2010 de prevención del blanqueo, el RD 304/2014 y la Circular 1/2023 de SEPBLAC: cada componente del onboarding queda sellado, íntegro y con fecha cierta.
 
 **Simulación interactiva:** [Trust Explorer → Videoidentificación KYC](/escenarios) · **Sectorial:** [Banca · crédito al consumo](/escenarios/banca)

@@ -98,8 +98,8 @@ export const casosSeguros: CasoUso[] = [
       },
     },
     sin: { status: 'Declaración cuestionable', description: 'Si hay siniestro y se alega ocultación, la aseguradora debe probar qué preguntas exactas se hicieron y qué respondió el asegurado.', riesgo: 'critical' },
-    con: { status: 'Declaración certificada', description: 'Cuestionario exacto, respuestas y firma sellados: prueba con presunción legal a efectos del Art. 10 LCS.' },
-    analysis: 'Prueba del deber de declaración del riesgo (Art. 10 y 89 LCS) ante siniestros con sospecha de ocultación.',
+    con: { status: 'Declaración certificada', description: 'Cuestionario exacto, respuestas y firma sellados: evidencia con presunción de integridad y fecha de qué cuestionario se sometió y qué se declaró (Art. 10 LCS).' },
+    analysis: 'Evidencia del cuestionario sometido y de las respuestas del tomador (Arts. 10 y 89 LCS) ante siniestros con sospecha de ocultación.',
   },
   {
     id: 'ins-ibip-subscription',
@@ -166,8 +166,8 @@ export const casosSeguros: CasoUso[] = [
       },
     },
     sin: { status: 'Fotos no verificables', description: 'Fotos subidas a la app sin certificar. Si hay disputa sobre su veracidad, no hay prueba de fecha/lugar reales.', riesgo: 'high' },
-    con: { status: 'Evidencia visual certificada', description: 'Cada foto con hash, EXIF y geolocalización sellados: inmutabilidad visual antifraude.' },
-    analysis: 'Prevención del fraude (Art. 19 LCS) con prueba de fotos tomadas en el momento y lugar del accidente.',
+    con: { status: 'Evidencia visual certificada', description: 'Cada foto con hash, EXIF y geolocalización sellados: integridad verificable antifraude.' },
+    analysis: 'Prevención del fraude (Art. 19 LCS) con evidencia sellada de la imagen y de la hora y geolocalización de captura registradas por el dispositivo.',
   },
   {
     id: 'ins-clausulas-limitativas',
@@ -197,8 +197,8 @@ export const casosSeguros: CasoUso[] = [
         qualified_timestamp: 'rfc3161_tst',
       },
     },
-    sin: { status: 'Aceptación no individualizada', description: 'Un único OTP firma a la vez condiciones generales, particulares y limitativas. La aceptación específica de las exclusiones no queda acreditada y su oponibilidad puede quedar comprometida.', riesgo: 'critical' },
-    con: { status: 'Doble acto sellado', description: 'Pantalla dedicada con lectura completa, casilla sin premarcar, segundo factor independiente y sello de tiempo inmediato: la aceptación de las limitativas es un acto propio, probado.' },
+    sin: { status: 'Aceptación no individualizada', description: 'Un único OTP para aceptar a la vez condiciones generales, particulares y limitativas puede dificultar la prueba de una aceptación específica y separada de las exclusiones y comprometer su oponibilidad.', riesgo: 'critical' },
+    con: { status: 'Doble acto sellado', description: 'Pantalla dedicada con lectura completa, casilla sin premarcar, segundo factor independiente y sello de tiempo inmediato: la aceptación de las limitativas es un acto propio, separado y sellado.' },
     analysis: 'El art. 3 LCS exige que las cláusulas limitativas se destaquen de modo especial y se acepten específicamente por escrito. Un acto de aceptación diferenciado y sellado está diseñado para acreditar esa aceptación específica, cláusula a cláusula.',
   },
 ];

@@ -22,7 +22,7 @@ export const escenariosCredito: EscenarioFases[] = [
     title: 'Oferta preconcedida vía notificación out-of-band',
     objective: 'Evidencia de notificación certificada, acceso, lectura, aceptación, firma y entrega de una oferta preconcedida.',
     // VALIDAR plan:gdw:w-factoria-arquitectura #8
-    description: 'La entidad genera una oferta de crédito al consumo preconcedida para un cliente existente y la comunica por un canal out-of-band (email o SMS certificado). Cada interacción —apertura, lectura, visualización de condiciones precontractuales (TAE, TIN, FEIN/FiAE), aceptación expresa y firma cualificada— queda sellada con timestamp cualificado eIDAS (Art. 41.2) con efectos del 326.4 LEC, generando un expediente íntegro que invierte la carga de la prueba a favor de la entidad.',
+    description: 'La entidad genera una oferta de crédito al consumo preconcedida para un cliente existente y la comunica por un canal out-of-band (email o SMS certificado). Cada interacción —apertura, lectura, visualización de condiciones precontractuales (TAE, TIN, FEIN/FiAE), aceptación expresa y firma cualificada— queda sellada con timestamp cualificado eIDAS (Art. 41.2) con efectos del 326.4 LEC, generando un expediente íntegro con presunción legal a favor de la entidad: quien lo impugne soporta la carga de desvirtuarla.',
     agenticVariant: 'Un agente conversacional IA sustituye la notificación out-of-band: el cliente recibe la oferta dentro de una conversación certificada que explica condiciones, resuelve dudas sobre TAE/TIN y guía la aceptación. La conversación completa se certifica como Anexo B del expediente.',
     whiteLabelVariant: 'Toda la experiencia se presenta bajo la marca de la entidad, sin referencias visibles al prestador cualificado; los certificados mantienen la identidad corporativa del banco mientras la infraestructura opera en backend.',
     managers: ['Evidence Manager (custodia)', 'Notification Manager', 'Signature Manager'],
@@ -39,7 +39,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Sellado y validación de versión',
       'Entrega del contrato firmado',
       // VALIDAR plan:gdw:w-factoria-arquitectura #15
-      'Ingesta en custodia cualificada',
+      'Ingesta en custodia LTV con re-sellado',
       'Generación de certificado final',
     ],
   },
@@ -64,7 +64,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Sellado y validación de versión',
       'Entrega de adenda firmada',
       // VALIDAR plan:gdw:w-factoria-arquitectura #15
-      'Ingesta en custodia cualificada',
+      'Ingesta en custodia LTV con re-sellado',
       'Generación de certificado final',
     ],
   },
@@ -91,7 +91,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Sellado y validación de versión',
       'Entrega del contrato firmado',
       // VALIDAR plan:gdw:w-factoria-arquitectura #15
-      'Ingesta en custodia cualificada',
+      'Ingesta en custodia LTV con re-sellado',
       'Generación de certificado final',
     ],
   },
@@ -119,7 +119,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Sellado y validación de versión',
       'Entrega del contrato firmado',
       // VALIDAR plan:gdw:w-factoria-arquitectura #15
-      'Ingesta en custodia cualificada',
+      'Ingesta en custodia LTV con re-sellado',
       'Generación de certificado final',
     ],
   },
@@ -145,7 +145,7 @@ export const escenariosCredito: EscenarioFases[] = [
       'Certificación de conversación completa',
       'Sellado y validación de versión',
       // VALIDAR plan:gdw:w-factoria-arquitectura #15
-      'Ingesta en custodia cualificada',
+      'Ingesta en custodia LTV con re-sellado',
       'Generación de certificado final (con Anexo B)',
     ],
   },

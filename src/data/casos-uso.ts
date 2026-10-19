@@ -48,7 +48,7 @@ export const casos: CasoUso[] = [
         timestamp: '2024-01-15T14:32:00Z',
       },
     },
-    sin: { status: 'Sin validez legal', description: 'Firma en tablet sin certificar. Fácilmente repudiable en juicio.', riesgo: 'high' },
+    sin: { status: 'Prueba débil', description: 'Firma en tablet sin certificar. Fácilmente repudiable en juicio.', riesgo: 'high' },
     con: { status: 'Evidencia certificada', description: 'Firma biométrica + geolocalización + TSA = prueba con presunción legal a su favor.' },
     analysis: 'El sellado de tiempo cualificado (TSA) y la vinculación de datos biométricos convierten una simple firma digital en evidencia admisible según eIDAS Art. 25.',
   },
@@ -78,8 +78,8 @@ export const casos: CasoUso[] = [
       },
     },
     sin: { status: 'Imagen manipulable', description: 'Foto sin metadatos verificables. Puede ser editada o tener fecha alterada.', riesgo: 'high' },
-    con: { status: 'Imagen sellada', description: 'Hash del contenido + EXIF + timestamp certificado = inmutabilidad garantizada.' },
-    analysis: 'El sellado criptográfico del hash y los metadatos EXIF crean una cadena de custodia digital que cumple los requisitos probatorios de la LEC.',
+    con: { status: 'Imagen sellada', description: 'Hash del contenido + EXIF + timestamp certificado = integridad verificable.' },
+    analysis: 'El sellado criptográfico del hash y los metadatos EXIF crean una cadena de custodia digital diseñada para reforzar el valor probatorio de la fotografía conforme a la LEC.',
   },
   {
     id: 'proptech-alquiler',
@@ -110,7 +110,7 @@ export const casos: CasoUso[] = [
     },
     sin: { status: 'Contrato cuestionable', description: 'Firma escaneada o email sin verificación de identidad. Impugnable.', riesgo: 'high' },
     con: { status: 'Contrato vinculante', description: 'Firma electrónica avanzada con verificación de identidad multifactor.' },
-    analysis: 'La combinación de certificado digital y OTP cumple los requisitos de firma electrónica avanzada (eIDAS Art. 26), otorgando plena validez jurídica.',
+    analysis: 'La combinación de certificado digital y OTP cumple los requisitos de firma electrónica avanzada (eIDAS Art. 26), con efectos jurídicos y valor probatorio reforzado.',
   },
   {
     id: 'fintech-credito-sms',
@@ -169,7 +169,7 @@ export const casos: CasoUso[] = [
     },
     sin: { status: 'Consentimiento vulnerable', description: 'Papel firmado sin trazabilidad. Difícil demostrar la información recibida.', riesgo: 'high' },
     con: { status: 'Consentimiento trazable', description: 'Firma biométrica vinculada al documento informativo con audit trail.' },
-    analysis: 'El sistema garantiza el cumplimiento de la Ley 41/2002 de autonomía del paciente con evidencia de la información efectivamente proporcionada.',
+    analysis: 'El sistema está diseñado para acreditar el cumplimiento de la Ley 41/2002 de autonomía del paciente con evidencia de la información efectivamente proporcionada.',
   },
   {
     id: 'food-appcc',
@@ -237,7 +237,7 @@ export const casos: CasoUso[] = [
     sin: { status: 'Notice impugnable', description: 'Email ordinario sin presunción de envío/recepción/momento. Disputa sobre si el aviso fue válido y a tiempo.', riesgo: 'high' },
     // VALIDAR plan:gdw:w-factoria-arquitectura #13
     con: { status: 'Notice con presunción legal', description: 'QeDelivery acredita envío, recepción, integridad y momento. Datasets OMIE/REE sellados con QTimestamp.' },
-    analysis: 'eIDAS Art. 43 confiere al envío electrónico certificado cualificado presunción de integridad, envío, recepción y exactitud de fecha y hora. Desplaza la carga de la prueba al offtaker.',
+    analysis: 'eIDAS Art. 43 confiere al envío electrónico certificado cualificado presunción de integridad, envío, recepción y exactitud de fecha y hora. La presunción desplaza al offtaker que impugne el aviso la carga de desvirtuarla.',
   },
   {
     id: 'banca-kyc',
@@ -279,10 +279,10 @@ export const casos: CasoUso[] = [
     tone: '#0CF25D',
     title: 'Digitalización certificada del papel',
     // VALIDAR plan:gdw:w-factoria-arquitectura #13 #15
-    resumen: 'El archivo histórico en papel pasa a "original electrónico único": escaneo fiel + sello de tiempo + sello de empresa + entrega certificada + archivo cualificado.',
-    features: ['PDF/A + huella (imagen fiel)', 'QTS + QSeal + QERDS', 'Archivo cualificado con re-sellado'],
+    resumen: 'El archivo histórico en papel se convierte en copias electrónicas fieles y trazables: escaneo PDF/A + sello de tiempo + sello de empresa + entrega certificada + archivo con re-sellado.',
+    features: ['PDF/A + huella (imagen fiel)', 'QTS + QSeal + QERDS', 'Archivo LTV con re-sellado'],
     managers: ['Evidence', 'Notification'],
-    norma: 'Art. 326.4 LEC · eIDAS 2 (45i-45j)',
+    norma: 'Art. 326.4 LEC · eIDAS 45 decies y ss.',
     event: {
       title: 'Digitalización del archivo contractual en papel',
       description: 'La organización convierte su stock de contratos y expedientes en papel en copias electrónicas con valor probatorio, bajo un pacto de digitalización.',
@@ -306,7 +306,7 @@ export const casos: CasoUso[] = [
     },
     sin: { status: 'Copia simple impugnable', description: 'Un escaneo ordinario no prueba cuándo se digitalizó ni que sea imagen fiel. Si el papel se pierde, la posición probatoria queda comprometida; si se conserva, el doble archivo se perpetúa.', riesgo: 'high' },
     // VALIDAR plan:gdw:w-factoria-arquitectura #15
-    con: { status: 'Original electrónico único', description: 'Copia fiel con fecha cierta, origen sellado, entrega certificada y custodia cualificada con re-sellado: presunciones de fecha, integridad, origen y entrega.' },
-    analysis: 'El art. 326.4 LEC otorga presunción de autenticidad e integridad a los documentos con servicios de confianza cualificados; eIDAS 2 (arts. 45i-45j) añade el archivo cualificado con presunción durante todo el período de conservación.',
+    con: { status: 'Copia fiel y trazable', description: 'Fecha cierta, integridad verificable, origen sellado, entrega certificada y custodia con re-sellado.' },
+    analysis: 'El art. 326.4 LEC otorga presunción de autenticidad e integridad a los documentos con servicios de confianza cualificados; eIDAS 2 (arts. 45 decies y 45 undecies; 45i-45j en la versión inglesa) añade el archivo cualificado con presunción durante todo el período de conservación, cuando el servicio figura en las listas de confianza.',
   },
 ];

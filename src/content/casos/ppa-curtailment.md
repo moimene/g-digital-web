@@ -41,6 +41,6 @@ POST /v1/qedelivery/notices
 
 ## Análisis jurídico
 
-El art. 43 eIDAS confiere a la entrega electrónica certificada cualificada presunción de integridad, envío, recepción y exactitud de fecha y hora: la carga de la prueba se desplaza al offtaker, no al productor que cursa el aviso.
+El art. 43 eIDAS confiere a la entrega electrónica certificada cualificada presunción de integridad, envío, recepción y exactitud de fecha y hora: esa presunción desplaza al offtaker que impugne el aviso la carga de desvirtuarla.
 
 **Simulación interactiva:** [Trust Explorer → Notice de curtailment en PPA](/escenarios)

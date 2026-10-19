@@ -15,3 +15,14 @@ npm-debug.log*
 
 # herramientas de QA local
 .playwright-mcp/
+
+# Material que no es de la web (MOI-657). No ignorar *.pdf: la web publica uno.
+*.pptx
+*.docx
+~$*
+marketing/
+outputs/
+propuestas/
+skills/
+_informes/
+.serena/

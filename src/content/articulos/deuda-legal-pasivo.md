@@ -55,7 +55,7 @@ No se busca una cifra contable perfecta, sino un **orden de magnitud por dominio
 
 ## 4. Por qué ahora: el superciclo regulatorio
 
-Tres movimientos convergen. Primero, **eIDAS 2** consolida los servicios de confianza cualificados como infraestructura reconocida en los 27 Estados miembros y añade nuevos (archivo electrónico cualificado, atestaciones de atributos). Segundo, la **EUDI Wallet** convierte la identidad verificada en interoperable a escala europea. Tercero, **AI Act, DORA y NIS2** elevan las exigencias de trazabilidad y evidencia en procesos cada vez más automatizados.
+Tres movimientos convergen. Primero, **eIDAS 2** consolida los servicios de confianza cualificados como infraestructura reconocida en los 27 Estados miembros y añade nuevos (archivo electrónico cualificado, declaraciones electrónicas de atributos). Segundo, la **EUDI Wallet** convierte la identidad verificada en interoperable a escala europea. Tercero, **AI Act, DORA y NIS2** elevan las exigencias de trazabilidad y evidencia en procesos cada vez más automatizados.
 
 En paralelo, el mercado de servicios de confianza se consolida en plataformas paneuropeas con escala y acreditaciones: la confianza cualificada deja de ser un componente exótico y pasa a ser infraestructura esperada. La pregunta para una organización regulada ya no es si sus operaciones producirán evidencia cualificada, sino cuándo y con qué coste de integración.
 

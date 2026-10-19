@@ -33,13 +33,13 @@ La wallet no solo identifica: **eleva la contratación**. eIDAS 2 habilita un pa
 3. Comprobación de comprensión (resúmenes, hitos de lectura).
 4. Aceptación separada de cláusulas sensibles (en seguros, las exclusiones del art. 3 LCS).
 5. Firma cualificada remota (rQES).
-6. Entrega certificada (QERDS) y archivo cualificado.
+6. Entrega certificada (QERDS) y archivo.
 
 El resultado es un **expediente probatorio**: qué se mostró, qué se comprendió, qué se aceptó y cuándo. Para sectores con obligación de aceptar la wallet — banca, seguros, telco, energía, salud, educación, administraciones y grandes plataformas — esto no es opcional: es el nuevo estándar de onboarding.
 
 ## Quién tiene que moverse, y cuándo
 
-eIDAS 2 (Reglamento UE 2024/1183) ya está en vigor y su calendario tiene fechas: conforme al calendario previsto en el Reglamento, los Estados miembros ponen la wallet a disposición del ciudadano **antes de finales de 2026** — con la obligación de aceptación del sector público en esa misma ventana — y la obligación de aceptación del **sector privado** se computa conforme al art. 5f del Reglamento, **estimada para finales de 2027** (para organizaciones con autenticación reforzada exigida por ley o contrato: banca, seguros, telco, energía, salud, educación, grandes plataformas…). Los cuasi-obligados (transporte, movilidad, hostelería) la encontrarán como ventaja competitiva antes que como obligación.
+eIDAS 2 (Reglamento UE 2024/1183) ya está en vigor y su calendario tiene fechas: conforme al calendario previsto en el Reglamento, los Estados miembros ponen la wallet a disposición del ciudadano **antes de finales de 2026** — con la obligación de aceptación del sector público en esa misma ventana — y la obligación de aceptación del **sector privado** se computa conforme al art. 5 septies (5f en la versión inglesa) del Reglamento eIDAS, **estimada para finales de 2027** (para organizaciones con autenticación reforzada exigida por ley o contrato: banca, seguros, telco, energía, salud, educación, grandes plataformas…). Los cuasi-obligados (transporte, movilidad, hostelería) la encontrarán como ventaja competitiva antes que como obligación.
 
 No es teoría: el piloto europeo **WE BUILD** —unos 200 socios y 13 registros mercantiles europeos, según el propio consorcio— está probando ya la Business Wallet en casos reales: KYB entre empresas, mandatos digitales de representación, operativa transfronteriza. La lectura estratégica: quien integra pronto la identidad wallet en sus procesos convierte una obligación regulatoria en la experiencia de entrada más fluida del mercado.
 
@@ -47,6 +47,6 @@ No es teoría: el piloto europeo **WE BUILD** —unos 200 socios y 13 registros 
 
 ## El papel de g-digital: el puente
 
-Entre la wallet y tu proceso hay trabajo real: aceptar credenciales, emitir atestaciones de atributos corporativos (QEA/QEAA), conectar la firma y la entrega cualificadas, producir el expediente. Ese es exactamente el puente que construimos: las plataformas de g-digital (Enterprise Suite, GoCertius, la Factoría) están preparadas para incorporar los servicios eIDAS 2 conforme la Comisión publica sus actos de ejecución — sin re-arquitectura para el cliente.
+Entre la wallet y tu proceso hay trabajo real: aceptar credenciales, emitir declaraciones electrónicas cualificadas de atributos corporativos (QEAA), conectar la firma y la entrega cualificadas, producir el expediente. Ese es exactamente el puente que construimos: las plataformas de g-digital (Enterprise Suite, GoCertius, la Factoría) están preparadas para incorporar los servicios eIDAS 2 conforme la Comisión publica sus actos de ejecución — sin re-arquitectura para el cliente.
 
 **Para seguir:** concepto [EUDI Wallet](/recursos/conceptos/eudi-wallet) · whitepaper descargable: [eIDAS 2 y EUDI Wallet: base sectorial](/whitepapers/eIDAS2-EUDI-Wallet-base-sectorial.pdf) (33 páginas, 11 sectores) · [Confianza Digital · la línea](/soluciones/confianza-digital)

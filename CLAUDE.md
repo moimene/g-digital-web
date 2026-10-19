@@ -53,6 +53,7 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - Datos verificables (Claim Registry): Top 10 FT Innovative Lawyers, Law.com 2025, +40.000 evidencias GoCertius, 298 escenarios, EADTrust 51% Garrigues.
 
 ## Despliegue (Vercel) y GOTCHAS
+- **Añade ficheros concretos; nunca `git add -A`.** El repositorio es público y la carpeta principal puede contener material comercial (MOI-657).
 - Pre-enlazado al proyecto `g-digital-web` vía `.vercel/project.json`. Deploy: `npx vercel` (preview) / `npx vercel --prod`.
 - **(1)** macOS usa **zsh**: NO pongas comentarios `#` en la línea del comando (los toma como rutas → "Can't deploy more than one path").
 - **(2)** Ejecuta **desde la carpeta del proyecto**, no desde `~`.
@@ -60,14 +61,14 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - **(4)** El alias y el `web_fetch` **cachean**: verifica con `?nocache=` o hard-refresh (Cmd+Shift+R).
 - El `EPERM` al limpiar `dist/`/`.astro/` solo ocurre en el sandbox de Claude (mount), no en Vercel/local.
 
-## Estado (03-ago-2026) — tanda "Zurich + Hedera" en working tree (SIN desplegar)
+## Estado (03-ago-2026) — tanda "Zurich + Hedera" (desplegada en prod el 03-ago vía push a `main`)
 Revisión de contenido vs conversaciones comerciales recientes; informe en `../Web_Refactor_v4/REVISION_CONTENIDO_WEB_Zurich_Hedera.md`. Aplicado:
 - **QEL (categoría nueva):** concepto `conceptos/qel.md`, sección "Del registro distribuido al registro cualificado" en Activos Digitales, 5ª tarjeta eIDAS 2.0 en Confianza Digital, glosario ampliado (arts. 45k-45l, Reg. Ejecución (UE) 2025/2531 en vigor 6-ene-2026). Guardrails: presunción = **integridad + orden secuencial** (nunca "validez legal"); no confiere cumplimiento sectorial/MiCA; la presunción la da el servicio del QTSP, no la red; servicios propios solo "diseñados conforme al marco de control de 2025/2531" (efecto cualificado = Trusted List). **NADA del JV Hedera en la web.**
 - **Casos Zurich:** `casos/digitalizacion-certificada.md` + 9º caso del Trust Explorer (`casos-uso.ts`, "Digitalización certificada del papel") + 6º caso de Seguros "Aceptación separada de limitativas · art. 3 LCS" (`casos-seguros.ts`) — **sin citar sentencias** (criterio H.1).
 - **MCP "ya es real":** los 3 servidores publicados (EAD-Factory-MCP · EAD_Enterprise_Suite_MCP · GoCertius_MCP) nombrados en `recursos#desarrolladores` y en la caja MCP de La Factoría (verbo "publicados", NO "en producción").
 - **Refuerzos:** "Modelo 360 de capacidades" nombrado en la home (sección 03 + enlace a /nosotros); nuevo concepto `conceptos/contratacion-reforzada.md`; callout "IA observable → gobernable" en GRC&IA; 6ª frase del roller (agentes); párrafo de canal mediado en /escenarios/seguros; fix "prueba irrefutable" → "presunción legal" (caso albarán).
 - Contadores de casos actualizados: Trust Explorer 9 · Seguros 6 (chips de La Factoría +Archivo).
-- **PENDIENTE:** ronda 2 de Legal (sección **I** añadida a `docs/REVISION-LEGAL-prompt.md` con QEL/digitalización/limitativas/MCP) · commit + deploy (`git add -A && git commit && npx vercel --prod`).
+- **Ronda 2 de Legal (sección I) revisada con Harvey y aplicada el 10-oct-2026** — ver `docs/REDISENO-editorial-v4.md` §ronda 2. Citas eIDAS: numeración española primero (p. ej. «45 duodecies-45 terdecies (45k-45l en la versión inglesa)»). Pendiente: contraste humano de las citas aportadas solo por Harvey.
 
 ## Estado (02-ago-2026) — rediseño editorial "Tinta y Papel" EN PRODUCCIÓN
 - **Consolidado total:** merge `--no-ff` a `main` (antes `master`), push a `origin` (`moimene/g-digital-web`, público). El linaje legacy HTML queda archivado en la rama remota `archive/legacy-html-site`. **LIVE en prod: `g-digital-web-sage.vercel.app`** (rediseño completo, 41 páginas).

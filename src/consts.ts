@@ -67,7 +67,7 @@ export const LINEAS: Linea[] = [
     desc: 'Del contrato-documento al contrato-proceso: motores de reglas, trazabilidad y visión real de tu posición contractual.',
     para: 'General Counsel · Legal Ops',
     roles: [
-      { rol: 'Para el jurista', icon: 'ph-gavel', txt: 'Cada hito del contrato queda probado; reduces dificultad probatoria y litigiosidad en toda la cartera.' },
+      { rol: 'Para el jurista', icon: 'ph-gavel', txt: 'Cada hito del contrato queda documentado con evidencia sellada; reduces dificultad probatoria y litigiosidad en toda la cartera.' },
       { rol: 'Para IT / Dev', icon: 'ph-code', txt: 'Motores de reglas y estándares abiertos (Accord, DMN, Catalá): la lógica de negocio, fuera del código rígido.' },
       { rol: 'Para negocio', icon: 'ph-chart-line-up', txt: 'Visibilidad de tu posición contractual: menos fuga de valor, mejor control de obligaciones y vencimientos.' },
     ],
