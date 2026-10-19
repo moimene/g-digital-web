@@ -53,6 +53,10 @@ Evitar: degradados violeta/índigo, glassmorphism por defecto, 3D abstracto/blob
 - Datos verificables (Claim Registry): Top 10 FT Innovative Lawyers, Law.com 2025, +40.000 evidencias GoCertius, 298 escenarios, EADTrust 51% Garrigues.
 
 ## Despliegue (Vercel) y GOTCHAS
+- Por decisión del dueño **no se usan GitHub Actions** ni se crea `.github/`.
+- Antes de entregar o publicar: `npm run verificar`. Ejecuta el veto sin excepciones en todo `src/` de «infraestructura de confianza», `astro check`, `npm run build` y búsquedas sin distinguir mayúsculas en `dist/`: googleapis, infraestructura de confianza, garantiz, inversión de la carga, validez legal, VALIDAR y citas inglesas eIDAS 45a–45l sin la numeración española correspondiente previa. El script documenta el tratamiento de rangos, acentos escapados y recursos binarios; no hay frases desactivadas por D-3.
+- Instalación voluntaria del hook local versionado: `npm run instalar-hooks` configura `core.hooksPath=.githooks`. No se instala automáticamente. El hook pre-push ejecuta la misma verificación desde la raíz. Para revisar sin instalar: `npm run verificar`. El hook es una comprobación local, el dueño conserva el control de commits y publicación.
+
 - **Añade ficheros concretos; nunca `git add -A`.** El repositorio es público y la carpeta principal puede contener material comercial (MOI-657).
 - Pre-enlazado al proyecto `g-digital-web` vía `.vercel/project.json`. Deploy: `npx vercel` (preview) / `npx vercel --prod`.
 - **(1)** macOS usa **zsh**: NO pongas comentarios `#` en la línea del comando (los toma como rutas → "Can't deploy more than one path").
