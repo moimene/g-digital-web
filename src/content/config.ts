@@ -31,6 +31,7 @@ export const TAG_LABELS: Record<string, string> = {
   'clm': 'CLM',
   'qtsp': 'QTSP',
   'qes': 'QES',
+  'firma-avanzada': 'Firma avanzada',
   'evidencia': 'Evidencia',
   'erds': 'ERDS',
   'worm': 'WORM',

@@ -7,7 +7,7 @@ const equipo = [
   { img: 'g-digital-eduardo-abad.jpg', name: 'Eduardo Abad', role: 'Socio responsable de innovación y digitalización de Garrigues. Lidera g-digital dentro de la estrategia del despacho, impulsando la transformación digital y las soluciones tecno-legales.', li: 'https://www.linkedin.com/in/eduardo-abad-valdenebro-0699531' },
   { img: 'g-digital-moises-menendez.jpg', name: 'Moisés Menéndez', role: 'Dirige g-digital, liderando el desarrollo e implementación de la cartera de soluciones digitales innovadoras.', li: 'https://www.linkedin.com/in/moises-menendez-b4608a10' },
   { img: 'g-digital-oscar-del-barrio.jpg', name: 'Oscar del Barrio', role: 'Supervisa el desarrollo de producto y las operaciones de g-digital, con soporte a la gestión de negocios relacionados como EADTrust.', li: 'https://www.linkedin.com/in/oscar-del-barrio-aa78056' },
-  { img: 'g-digital-hugo-alonso.jpg', name: 'Hugo Alonso', role: 'Lidera el desarrollo de las soluciones, coordinando los equipos de desarrollo interno y externo para garantizar productos de alta calidad.', li: 'https://www.linkedin.com/in/vhalonso' },
+  { img: 'g-digital-hugo-alonso.jpg', name: 'Hugo Alonso', role: 'Lidera el desarrollo de las soluciones, coordinando los equipos de desarrollo interno y externo, con un trabajo orientado a la calidad del producto.', li: 'https://www.linkedin.com/in/vhalonso' },
   { img: 'g-digital-belen-aguayo.jpg', name: 'Belén Aguayo', role: 'Abogada experta en legaltech y product owner de las soluciones; coordina la colaboración entre los profesionales de Garrigues y g-digital.', li: 'https://www.linkedin.com/in/belen-aguayo-ms' },
   { img: 'g-digital-albi-rodriguez.jpg', name: 'Albi Rodríguez', role: 'Coordina la gestión del Observatorio legaltech y la difusión de g-digital en la región Latam.', li: 'https://www.linkedin.com/in/albi-rodriguez-jaramillo-67413b21' },
 ];
@@ -21,7 +21,9 @@ const capacidades = [
 
 const partners = [
   { icon: 'ph-cube', name: 'ioBuilders', tag: 'Partner tecnológico · blockchain', body: 'Experiencia en soluciones blockchain con foco en seguridad, eficiencia y cumplimiento. Estamos en su capital.', href: 'https://io.builders/' },
+  // VALIDAR plan:gdw:w-factoria-arquitectura #41
   { icon: 'ph-cloud', name: 'Microsoft Azure', tag: 'Cloud EU Sovereign', body: 'Seguridad y escalabilidad para las soluciones de confianza digital.', href: '' },
+  // VALIDAR plan:gdw:w-factoria-arquitectura #41
   { icon: 'ph-database', name: 'Oracle Cloud', tag: 'Cloud EU Sovereign', body: 'Plataforma robusta para la gestión de datos y aplicaciones empresariales en procesos digitales complejos.', href: '' },
 ];
 
@@ -34,7 +36,7 @@ const gobierno = [
 ---
 <LineaPage
   kicker="Nosotros"
-  title="El operador tecnológico del Grupo Garrigues."
+  title="Diseñamos la tecnología legal del Grupo Garrigues"
   intro="g-digital es la división de negocios digitales de Garrigues. Integramos el conocimiento jurídico del despacho en soluciones que mejoran la eficiencia, fortalecen la seguridad jurídica y crean nuevas oportunidades en un entorno regulado."
   cta="Contacta con el equipo"
 >
@@ -95,10 +97,10 @@ const gobierno = [
         <p class="t2 mt-4">en EADTrust, el QTSP del Grupo Garrigues.</p>
       </div>
       <div class="lg:col-span-8">
-        <p class="label accent mb-4">El operador tecnológico</p>
+        <p class="label accent mb-4">El prestador cualificado del grupo</p>
         <h2 class="display-2 t1 font-semibold">EADTrust opera lo que g-digital diseña.</h2>
         <p class="mt-6 t2 leading-relaxed">La adquisición del 51% de EADTrust por parte de Garrigues es la pieza que hace realidad los productos de g-digital: ofrece un entorno seguro, certificado, regulado y altamente especializado para los clientes del despacho.</p>
-        <p class="mt-4 t3 leading-relaxed">Los productos de g-digital, apoyados por los expertos de Garrigues, se implementan en un marco regulado que cumple los más altos estándares normativos, permitiendo operar con total confianza en los contextos más críticos.</p>
+        <p class="mt-4 t3 leading-relaxed">Los productos de g-digital, apoyados por los expertos de Garrigues, se implementan en un marco cualificado y supervisado (eIDAS) y están diseñados para operar en contextos críticos.</p>
         <a href="https://es.linkedin.com/company/eadtrust" target="_blank" rel="noopener" class="inline-flex items-center gap-2 accent text-sm font-medium mt-6">Conoce EADTrust <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </div>
@@ -107,7 +109,7 @@ const gobierno = [
   <!-- Partners (papel) -->
   <section class="surface-paper py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-6">
-      <SectionIntro label="Nuestros partners" title="Soluciones respaldadas por la mejor infraestructura." />
+      <SectionIntro label="Nuestros partners" title="Partners tecnológicos de nuestras soluciones." />
       <div class="mt-12 grid md:grid-cols-3 gap-6 reveal-group">
         {partners.map((p) => (
           <article class="card-s rounded-2xl p-7">
