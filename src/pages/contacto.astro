@@ -22,6 +22,7 @@ import Base from '../layouts/Base.astro';
           <label class="block"><span class="text-sm t1 font-medium">Cuéntanos tu caso</span><textarea rows="4" class="mt-2 w-full bg-white border rounded-lg px-4 py-3 t1 outline-none focus:border-[var(--teal)] transition-colors" style="border-color:var(--line-strong)"></textarea></label>
           <label class="flex gap-3 text-xs t2"><input required type="checkbox" class="mt-1 accent-[#007362]" /> He leído y acepto la <a href="https://www.garrigues.com/es_ES/politica-privacidad" class="accent underline">política de privacidad</a>.</label>
           <button type="submit" class="btn-primary px-7 py-3.5 rounded-xl">Solicitar conversación</button>
+          {/* VALIDAR plan:gdw:w-factoria-arquitectura #39 */}
           <p data-ok class="hidden text-sm font-medium" style="color:var(--teal)">Gracias: maqueta sin backend todavía. En producción esto enviará el formulario.</p>
         </form>
 
@@ -29,7 +30,7 @@ import Base from '../layouts/Base.astro';
           <strong class="t1">Información básica de protección de datos.</strong> Responsable: J&amp;A Garrigues, S.L.P. Finalidad: atender tu consulta. Base legal: interés legítimo. Destinatarios: entidades del Grupo Garrigues y prestadores de servicios. Derechos: acceso, rectificación, supresión y demás según la
           <a href="https://www.garrigues.com/es_ES/politica-privacidad" class="accent underline">información adicional sobre privacidad</a>.
         </div>
-        <p class="mt-6 text-sm t2">O escríbenos a <span class="t1 font-medium">info@g-digital.garrigues.com</span> · Madrid, España.</p>
+        <p class="mt-6 text-sm t2">O escríbenos a <a href="mailto:info@g-digital.garrigues.com" class="t1 font-medium">info@g-digital.garrigues.com</a> · Madrid, España.</p>
       </div>
     </section>
   </div>

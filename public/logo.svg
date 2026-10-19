@@ -1,11 +1,9 @@
 <svg viewBox="0 0 380 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="g-digital · Grupo Garrigues">
   <title>g-digital · Grupo Garrigues</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&amp;family=JetBrains+Mono:wght@500&amp;display=swap');
-    .wm{font-family:'Poppins','Century Gothic',sans-serif;font-weight:700}
-    .tag{font-family:'JetBrains Mono',monospace}
+  <style>.logo-wm{font-family:'Poppins','Century Gothic',sans-serif;font-weight:700}
+    .logo-tag{font-family:'JetBrains Mono',monospace}
   </style>
   <!-- "g" siempre en verde corporativo; "-digital" hereda el color del contexto (currentColor) -->
-  <text x="6" y="70" class="wm" font-size="68"><tspan fill="#0CF25D">g</tspan><tspan fill="currentColor">-digital</tspan></text>
-  <text x="10" y="98" class="tag" font-size="11" letter-spacing="6" fill="currentColor" fill-opacity="0.6">GRUPO GARRIGUES</text>
+  <text x="6" y="70" class="logo-wm" font-size="68"><tspan fill="#0CF25D">g</tspan><tspan fill="currentColor">-digital</tspan></text>
+  <text x="10" y="98" class="logo-tag" font-size="11" letter-spacing="6" fill="currentColor" fill-opacity="0.6">GRUPO GARRIGUES</text>
 </svg>

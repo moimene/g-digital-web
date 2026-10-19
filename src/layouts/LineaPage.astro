@@ -29,8 +29,9 @@ const rgb = toneRgb[tone] ?? toneRgb.green;
 const hasMedia = Astro.slots.has('media');
 ---
 <Base title={`${title} | ${SITE.name}`} description={intro}>
+  <div class="surface-ink" style={`--tone-rgb:${rgb}`}>
   <!-- HERO de línea (tinta, acento en el tono de la línea) -->
-  <header class="relative overflow-hidden surface-ink" style={`--accent-rgb:${rgb};--accent:rgba(${rgb},1)`}>
+  <header class="relative overflow-hidden surface-ink">
     {!hasMedia && (
       <Wireframe variant={motif} density="strong" color={`rgba(${rgb},.5)`}
         class="absolute right-[-12rem] top-20 translate-y-0 w-[25rem] h-[25rem] opacity-25 md:right-[-7rem] md:top-1/2 md:-translate-y-1/2 md:w-[34rem] md:h-[34rem] md:opacity-60" />
@@ -54,5 +55,6 @@ const hasMedia = Astro.slots.has('media');
       primary={{ href: '/contacto', label: cta }}
       secondary={{ href: '/#lineas', label: 'Ver las 4 líneas' }}
     />
+  </div>
   </div>
 </Base>

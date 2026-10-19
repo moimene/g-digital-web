@@ -7,7 +7,7 @@ interface Props {
 }
 const { stats, note } = Astro.props;
 ---
-<div class="reveal-group grid sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
+<div class:list={["reveal-group grid sm:grid-cols-2 gap-y-10 gap-x-8", stats.length === 3 ? "lg:grid-cols-3" : "lg:grid-cols-4"]}>
   {stats.map((s) => (
     <div>
       <div class="head text-4xl lg:text-5xl font-semibold accent">

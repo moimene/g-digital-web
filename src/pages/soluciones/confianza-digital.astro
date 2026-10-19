@@ -1,4 +1,5 @@
 ---
+import ParaProfundizar from '../../components/ParaProfundizar.astro';
 import LineaPage from '../../layouts/LineaPage.astro';
 import LineaExtra from '../../components/LineaExtra.astro';
 import PainPair from '../../components/PainPair.astro';
@@ -6,11 +7,11 @@ import SectionIntro from '../../components/SectionIntro.astro';
 import poster from '../../assets/infografias/01-confianza-digital.svg?raw';
 
 const capas = [
-  { tag: 'INFRA', icon: 'ph-lightning', title: 'La Factoría (Trust API + MCP)', who: 'Para equipos técnicos que quieren inyectar eIDAS en sus sistemas', body: '4 microservicios eIDAS como primitivas REST: Evidence, Signature, Notification y Custody. Ahora también como servidor MCP para agentes de IA. JSON-native. Sin migrar plataformas.' },
-  { tag: 'PLATAFORMA', icon: 'ph-buildings', title: 'EAD Enterprise Suite', who: 'Para grandes organizaciones que necesitan una plataforma unificada', body: 'Agrega Signature Manager, Notice Manager, eArchiving y Credential Manager con soberanía digital. Crece incorporando nuevos servicios eIDAS 2.0 sin re-arquitectura.' },
-  { tag: 'PRODUCTO', icon: 'ph-squares-four', title: 'Soluciones diseñadas por g-digital', who: 'Productos individuales con UX empresarial, sueltos o dentro de la Suite', body: 'Signature Manager, Notice Manager (sustituye al burofax), eArchiving (LTV), Credential Manager (EUDI Wallet Ready). Diseñados por g-digital, operados por EADTrust.' },
-  { tag: 'EXPERIENCIA', icon: 'ph-device-mobile', title: 'GoCertius', who: 'Para profesionales y pymes sin integración técnica', body: 'SuperApp que agrega certificación de hechos, sello de tiempo cualificado, Chat Certificado y multimedia certificada. +40.000 evidencias en producción. Gratis en Google Play y App Store.' },
-  { tag: 'BASE QTSP', icon: 'ph-certificate', title: 'Servicios QTSP EADTrust', who: 'Servicios de confianza cualificados directos', body: 'La base regulada sobre la que todo se construye: firma con certificados, sellos RFC 3161, entrega certificada (ERDS), custodia LTV y credenciales. EUDI Wallet Ready.' },
+  { href: '/soluciones/la-factoria', tag: 'INFRA', icon: 'ph-lightning', title: 'La Factoría (Trust API + MCP)', who: 'Para equipos técnicos que quieren inyectar eIDAS en sus sistemas', body: '4 microservicios eIDAS como primitivas REST: Evidence, Signature, Notification y Custody. Ahora también como servidor MCP para agentes de IA. JSON-native. Sin migrar plataformas.' },
+  { href: '/soluciones/enterprise-suite', tag: 'PLATAFORMA', icon: 'ph-buildings', title: 'EAD Enterprise Suite', who: 'Para grandes organizaciones que necesitan una plataforma unificada', body: 'Agrega Signature Manager, Notice Manager, eArchiving y Credential Manager con soberanía digital. Crece incorporando nuevos servicios eIDAS 2.0 sin re-arquitectura.' },
+  { href: '/soluciones/enterprise-suite', tag: 'PRODUCTO', icon: 'ph-squares-four', title: 'Soluciones diseñadas por g-digital', who: 'Productos individuales con UX empresarial, sueltos o dentro de la Suite', body: 'Signature Manager, Notice Manager (sustituye al burofax), eArchiving (LTV), Credential Manager (EUDI Wallet Ready). Diseñados por g-digital, operados por EADTrust.' },
+  { href: 'https://www.gocertius.com', tag: 'EXPERIENCIA', icon: 'ph-device-mobile', title: 'GoCertius', who: 'Para profesionales y pymes sin integración técnica', body: 'SuperApp que agrega certificación de hechos, sello de tiempo cualificado, Chat Certificado y multimedia certificada. +40.000 evidencias en producción. Gratis en Google Play y App Store.' },
+  { href: 'https://eadtrust.eu', tag: 'BASE QTSP', icon: 'ph-certificate', title: 'Servicios QTSP EADTrust', who: 'Servicios de confianza cualificados directos', body: 'La base regulada sobre la que todo se construye: firma con certificados, sellos RFC 3161, entrega certificada (ERDS), custodia LTV y credenciales. EUDI Wallet Ready.' },
 ];
 const eidas2 = [
   ['Archivo Electrónico Cualificado', 'Arts. 45 decies y 45 undecies (45i-45j en la versión inglesa). Presunción de integridad y origen si el servicio figura en la lista de confianza.'],
@@ -50,7 +51,7 @@ const eidas2 = [
       />
       <div class="mt-12 space-y-4">
         {capas.map((c) => (
-          <article class="card-s rounded-2xl p-7 reveal flex flex-col md:flex-row md:items-start gap-5">
+          <a href={c.href} class="card-s rounded-2xl p-7 reveal flex flex-col md:flex-row md:items-start gap-5">
             <div class="flex items-center gap-4 md:w-72 shrink-0">
               <i class={`ph ${c.icon} accent text-3xl`} aria-hidden="true"></i>
               <div><span class="mono text-[11px] accent block">{c.tag}</span><h3 class="head text-lg t1 font-semibold leading-tight">{c.title}</h3></div>
@@ -59,7 +60,7 @@ const eidas2 = [
               <p class="t3 text-xs mb-2 italic">{c.who}</p>
               <p class="t2 text-sm leading-relaxed">{c.body}</p>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>
@@ -125,4 +126,5 @@ const eidas2 = [
       </div>
     </div>
   </section>
+<ParaProfundizar linea="confianza" />
 </LineaPage>

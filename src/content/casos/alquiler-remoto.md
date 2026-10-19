@@ -2,7 +2,7 @@
 title: 'Contrato de alquiler firmado a distancia con firma avanzada'
 description: 'Inquilino y propietario firman el arrendamiento a distancia. Certificado digital + OTP = firma electrónica avanzada con verificación de identidad.'
 linea: confianza
-tags: ['evidencia', 'qes']
+tags: ['evidencia', 'firma-avanzada']
 nivel: basico
 featured: false
 draft: false

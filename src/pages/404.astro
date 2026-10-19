@@ -1,0 +1,5 @@
+---
+import Base from '../layouts/Base.astro';
+import { SOLUCIONES } from '../consts';
+---
+<Base title="Página no encontrada | g-digital" noindex><section class="surface-paper py-24"><div class="max-w-4xl mx-auto px-6"><p class="label">Error 404</p><h1 class="display-1 mt-6">Página no encontrada</h1><p class="mt-6">La dirección que buscas no existe. Explora nuestras soluciones o busca en Recursos.</p><ul class="my-8 space-y-4">{SOLUCIONES.map(s => <li><a class="accent underline" href={s.href}>{s.title}</a></li>)}</ul><a class="accent underline" href="/recursos#q">Buscar en Recursos</a></div></section></Base>

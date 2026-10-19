@@ -81,3 +81,6 @@ Sección I del prompt (`docs/REVISION-LEGAL-prompt.md`) revisada con **Harvey** 
 - **MCP:** "clientes MCP compatibles" + "su publicación no implica SLA, soporte de integración ni compromiso de disponibilidad en producción". Evidencia de los 3 repos públicos (MIT, README) guardada en `evidencias/github-mcp.json`.
 - **Coherencia con ronda 1 (barrido del sitio):** retiradas las fórmulas residuales "inversión de la carga", "garantiza", "plena validez", "queda probado", "presunción de validez" y el H2 de la home "Validez legal." → "Valor probatorio."; archivo propio siempre "diseñado conforme a los requisitos del servicio cualificado".
 - **Pendiente:** contraste humano de las citas que solo aporta Harvey (CCom art. 30, LSSI arts. 23-24, LCD art. 5, NTI, Orden EHA/962/2007); H.1 sigue igual (sin jurisprudencia).
+
+### Tanda 1: tonos sobre tinta
+Azure #5B9CF6 / ink #05060A: 7,3:1; aqua #2BD4B0 / ink: 10,8:1; lima #CCF943 / ink: 16,6:1 (auditoría). Tonos locales en superficies oscuras; papel conserva teal y CTA principal verde. Cálculo WCAG independiente: #5B9CF6 7.26:1, #2BD4B0 10.75:1, #CCF943 16.59:1. Confirmación en render pendiente: el sandbox impide iniciar preview y Chromium.

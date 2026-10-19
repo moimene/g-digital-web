@@ -95,12 +95,15 @@ export function buildCertificate(caso: CasoUso): CertificateData {
     qtsp: {
       name: 'EADTrust',
       legal_name: 'European Agency of Digital Trust, S.L.',
+      // VALIDAR plan:gdw:w-factoria-arquitectura #35
       vat_id: 'ESB87654321',
       tsl_url: 'https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls/tl/ES/tsp/40',
       qualified_services: [
         'Qualified Electronic Time Stamps (QTS)',
+        // VALIDAR plan:gdw:w-factoria-arquitectura #13
         'Qualified Electronic Delivery (QERDS)',
         'Qualified Electronic Seals (QeSeal)',
+        // VALIDAR plan:gdw:w-factoria-arquitectura #15
         'Preservación de firmas/sellos cualificados',
       ],
     },
@@ -125,13 +128,16 @@ export function buildCertificate(caso: CasoUso): CertificateData {
       disclaimer: 'Este certificado representa una simulación con fines demostrativos. En producción, cada transacción genera un certificado real firmado electrónicamente por EADTrust.',
     },
     verification: {
+      // VALIDAR plan:gdw:w-factoria-arquitectura #35
       url: `https://verify.eadtrust.eu/${certificateId}`,
       code: certificateId,
+      // VALIDAR plan:gdw:w-factoria-arquitectura #35
       qr_data: `https://verify.eadtrust.eu/${certificateId}`,
     },
     qtsp_seal: {
       seal_name: 'EADTrust Qualified Seal for Evidence Certificates',
       algorithm: 'RSA-SHA256 (4096 bits)',
+      // VALIDAR plan:gdw:w-factoria-arquitectura #35
       serial: '7F:A3:2B:E1:C8:99:D4:5F',
       validity: { from: '2024-01-01T00:00:00Z', to: '2027-12-31T23:59:59Z' },
     },

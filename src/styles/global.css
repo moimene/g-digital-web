@@ -31,7 +31,7 @@
   background:var(--ink);color:var(--cloud);
   --t1:var(--cloud); --t2:rgba(244,246,245,.74); --t3:rgba(244,246,245,.56);
   --line:rgba(244,246,245,.10); --line-strong:rgba(244,246,245,.22);
-  --accent:var(--green); --accent-rgb:12,242,93;
+  --accent:rgb(var(--tone-rgb,12,242,93)); --accent-rgb:var(--tone-rgb,12,242,93);
   --card-bg:rgba(255,255,255,.025); --card-line:rgba(244,246,245,.09);
   --focus:var(--green);
 }
@@ -39,7 +39,7 @@
   background:var(--coal);color:var(--cloud);
   --t1:var(--cloud); --t2:rgba(244,246,245,.74); --t3:rgba(244,246,245,.56);
   --line:rgba(244,246,245,.10); --line-strong:rgba(244,246,245,.22);
-  --accent:var(--green); --accent-rgb:12,242,93;
+  --accent:rgb(var(--tone-rgb,12,242,93)); --accent-rgb:var(--tone-rgb,12,242,93);
   --card-bg:rgba(255,255,255,.03); --card-line:rgba(244,246,245,.10);
   --focus:var(--green);
 }
@@ -63,7 +63,7 @@
   background:var(--navy);color:var(--cloud);
   --t1:var(--cloud); --t2:rgba(244,246,245,.78); --t3:rgba(244,246,245,.60);
   --line:rgba(244,246,245,.16); --line-strong:rgba(244,246,245,.30);
-  --accent:var(--green); --accent-rgb:12,242,93;
+  --accent:rgb(var(--tone-rgb,12,242,93)); --accent-rgb:var(--tone-rgb,12,242,93);
   --card-bg:rgba(255,255,255,.05); --card-line:rgba(244,246,245,.14);
   --focus:var(--green);
 }
@@ -106,8 +106,8 @@
 .btn-outline:hover{background:rgba(var(--accent-rgb),.07);border-color:rgba(var(--accent-rgb),.55)}
 
 /* ---------- Base ---------- */
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:clip;scroll-padding-top:5rem}
+body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-serif;-webkit-font-smoothing:antialiased}
 
 .head{font-family:Poppins,"Century Gothic",sans-serif}
 .display{line-height:1.04;letter-spacing:-.02em}
@@ -137,7 +137,7 @@ body{background:var(--ink);color:var(--cloud);font-family:Rubik,Calibri,sans-ser
 
 /* Card legacy (secciones aún no migradas) */
 .card{background:rgba(255,255,255,.025);border:1px solid rgba(244,246,245,.09);transition:border-color .3s,background .3s,transform .3s}
-.card:hover,.card:focus-visible{border-color:rgba(12,242,93,.45);background:rgba(12,242,93,.04);transform:translateY(-2px)}
+.card:hover,.card:focus-visible{border-color:rgba(var(--accent-rgb,12,242,93),.45);background:rgba(var(--accent-rgb,12,242,93),.04);transform:translateY(-2px)}
 
 /* ---------- Roller del hero (corte editorial, sin cursor de terminal) ---------- */
 .hero-roller{display:inline-block;max-width:100%;color:var(--cloud)}
